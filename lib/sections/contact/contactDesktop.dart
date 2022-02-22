@@ -16,9 +16,9 @@ class ContactDesktop extends StatelessWidget {
           horizontal: width * 0.02, vertical: height * 0.02),
       child: Column(
         children: [
-          CustomSectionHeading(text: "\nGet in Touch"),
-          CustomSectionSubHeading(
-              text: "Let's build something together :)\n\n"),
+          CustomSectionHeading(text: "\n Contact Us"),
+          // CustomSectionSubHeading(
+          //     text: "Let's build something together :)\n\n"),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
@@ -28,7 +28,7 @@ class ContactDesktop extends StatelessWidget {
                 child: WidgetAnimator(
                   child: ProjectCard(
                     cardWidth: width < 1200 ? width * 0.25 : width * 0.2,
-                    cardHeight: width < 1200 ? height * 0.28 : height * 0.25,
+                    cardHeight: width < 1200 ? height * 0.35 : height * 0.32,
                     projectIconData: kContactIcons[index],
                     projectTitle: kContactTitles[index],
                     projectDescription: kContactDetails[index],

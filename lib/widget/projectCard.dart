@@ -113,6 +113,7 @@ class _ProjectCardState extends State<ProjectCard> {
                               Text(
                                 widget.projectTitle,
                                 textAlign: TextAlign.center,
+                                overflow: TextOverflow.ellipsis,
                                 style: GoogleFonts.montserrat(
                                   fontSize: height * 0.015,
                                   letterSpacing: 1.5,
@@ -134,7 +135,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     : Container(),
                 (width > 1135 || width < 950)
                     ? SizedBox(
-                        height: height * 0.02,
+                        height: height * 0.01,
                       )
                     : SizedBox(),
                 (width > 1135 || width < 950)
@@ -151,19 +152,21 @@ class _ProjectCardState extends State<ProjectCard> {
                         ),
                       )
                     : Container(),
-                SizedBox(
-                  height: height * 0.01,
-                ),
+                // SizedBox(
+                //   height: height * 0.01,
+                // ),
                 AdaptiveText(
                   widget.projectDescription,
                   textAlign: TextAlign.center,
+
+                  //overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.montserrat(
-                      fontSize: height * 0.015,
+                      fontSize: height * 0.012,
                       letterSpacing: 2.0,
                       color: _themeProvider.lightTheme
                           ? Colors.black
                           : Colors.white,
-                      fontWeight: FontWeight.w300,
+                      fontWeight: FontWeight.w200,
                       height: width >= 600 ? 2.0 : 1.2),
                 ),
                 SizedBox(

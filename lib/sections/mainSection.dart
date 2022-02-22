@@ -1,3 +1,4 @@
+import 'package:cinarlaw/sections/publications/publication.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
@@ -32,8 +33,9 @@ class _MainPageState extends State<MainPage> {
   final List<String> _sectionsName = [
     "HOME",
     "ABOUT",
-    "SERVICES",
-    "PROJECTS",
+    "PRACTICE AREAS",
+    "OUR TEAM",
+    "NEWS&PUBLICATIONS",
     "CONTACT"
   ];
 
@@ -72,8 +74,10 @@ class _MainPageState extends State<MainPage> {
     } else if (i == 3) {
       return Portfolio();
     } else if (i == 4) {
-      return Contact();
+      return Publication();
     } else if (i == 5) {
+      return Contact();
+    } else if (i == 6) {
       return Footer();
     } else {
       return Container();
@@ -170,10 +174,17 @@ class _MainPageState extends State<MainPage> {
                 onPressed: () => _scroll(index),
                 child: Text(
                   childText,
-                  style: TextStyle(
-                    color:
-                        themeProvider.lightTheme ? Colors.black : Colors.white,
-                  ),
+                  style: GoogleFonts.brygada1918(
+                        // fontSize: height * 0.06,
+                        // fontWeight: FontWeight.w300,
+                        color: themeProvider.lightTheme
+                            ? Colors.black
+                            : Colors.white,
+                      ),
+                  // style: TextStyle(
+                  //   color:
+                  //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                  // ),
                 ),
               ),
             ),
@@ -225,46 +236,46 @@ class _MainPageState extends State<MainPage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
-        EntranceFader(
-          offset: Offset(0, -10),
-          delay: Duration(milliseconds: 100),
-          duration: Duration(milliseconds: 250),
-          child: Container(
-            height: 60.0,
-            width: 120.0,
-            padding: const EdgeInsets.all(8.0),
-            child: MaterialButton(
-              hoverColor: kPrimaryColor.withAlpha(150),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
-                  side: BorderSide(color: kPrimaryColor)),
-              onPressed: () {
-                html.window.open(
-                    'https://drive.google.com/file/d/1GF-wtbu2ob_Uxhw2In2QA8QiYi3XjCj1/view?usp=sharing',
-                    "pdf");
-              },
-              child: Text(
-                "RESUME",
-                style: GoogleFonts.montserrat(
-                  color: _themeProv.lightTheme ? Colors.black : Colors.white,
-                  fontWeight: FontWeight.w300,
-                ),
-              ),
-            ),
-          ),
-        ),
+        // EntranceFader(
+        //   offset: Offset(0, -10),
+        //   delay: Duration(milliseconds: 100),
+        //   duration: Duration(milliseconds: 250),
+        //   child: Container(
+        //     height: 60.0,
+        //     width: 120.0,
+        //     padding: const EdgeInsets.all(8.0),
+        //     child: MaterialButton(
+        //       hoverColor: kPrimaryColor.withAlpha(150),
+        //       shape: RoundedRectangleBorder(
+        //           borderRadius: BorderRadius.circular(5.0),
+        //           side: BorderSide(color: kPrimaryColor)),
+        //       onPressed: () {
+        //         html.window.open(
+        //             'https://drive.google.com/file/d/1GF-wtbu2ob_Uxhw2In2QA8QiYi3XjCj1/view?usp=sharing',
+        //             "pdf");
+        //       },
+        //       child: Text(
+        //         "RESUME",
+        //         style: GoogleFonts.montserrat(
+        //           color: _themeProv.lightTheme ? Colors.black : Colors.white,
+        //           fontWeight: FontWeight.w300,
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
         const SizedBox(width: 15.0),
-        SizedBox(
-          height: 30.0,
-          child: Switch(
-            inactiveTrackColor: Colors.grey,
-            value: !_themeProv.lightTheme,
-            onChanged: (value) {
-              _themeProv.lightTheme = !value;
-            },
-            activeColor: kPrimaryColor,
-          ),
-        ),
+        // SizedBox(
+        //   height: 30.0,
+        //   child: Switch(
+        //     inactiveTrackColor: Colors.grey,
+        //     value: !_themeProv.lightTheme,
+        //     onChanged: (value) {
+        //       _themeProv.lightTheme = !value;
+        //     },
+        //     activeColor: kPrimaryColor,
+        //   ),
+        // ),
         const SizedBox(width: 15.0),
       ],
     );
@@ -287,54 +298,54 @@ class _MainPageState extends State<MainPage> {
               Divider(
                 color: theme.lightTheme ? Colors.grey[200] : Colors.white,
               ),
-              ListTile(
-                leading: Icon(
-                  Icons.light_mode,
-                  color: kPrimaryColor,
-                ),
-                title: Text("Dark Mode",
-                    style: TextStyle(
-                        color: theme.lightTheme ? Colors.black : Colors.white)),
-                trailing: Switch(
-                  inactiveTrackColor: Colors.grey,
-                  value: !theme.lightTheme,
-                  onChanged: (value) {
-                    theme.lightTheme = !value;
-                  },
-                  activeColor: kPrimaryColor,
-                ),
-              ),
+              //ListTile(
+              //   leading: Icon(
+              //     Icons.light_mode,
+              //     color: kPrimaryColor,
+              //   ),
+              //   title: Text("Dark Mode",
+              //       style: TextStyle(
+              //           color: theme.lightTheme ? Colors.black : Colors.white)),
+              //   trailing: Switch(
+              //     inactiveTrackColor: Colors.grey,
+              //     value: !theme.lightTheme,
+              //     onChanged: (value) {
+              //       theme.lightTheme = !value;
+              //     },
+              //     activeColor: kPrimaryColor,
+              //   ),
+              // ),
               Divider(
                 color: theme.lightTheme ? Colors.grey[200] : Colors.white,
               ),
               for (int i = 0; i < _sectionsName.length; i++)
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i], theme),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(150),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      side: BorderSide(color: kPrimaryColor)),
-                  onPressed: () {
-                    launchURL(
-                        "https://drive.google.com/file/d/1GF-wtbu2ob_Uxhw2In2QA8QiYi3XjCj1/view?usp=sharing");
-                  },
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: Colors.red,
-                    ),
-                    title: Text(
-                      "RESUME",
-                      style: GoogleFonts.montserrat(
-                        fontWeight: FontWeight.w300,
-                        color: theme.lightTheme ? Colors.black : Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: MaterialButton(
+              //     hoverColor: kPrimaryColor.withAlpha(150),
+              //     shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(5.0),
+              //         side: BorderSide(color: kPrimaryColor)),
+              //     onPressed: () {
+              //       launchURL(
+              //           "https://drive.google.com/file/d/1GF-wtbu2ob_Uxhw2In2QA8QiYi3XjCj1/view?usp=sharing");
+              //     },
+              //     child: ListTile(
+              //       leading: Icon(
+              //         Icons.book,
+              //         color: Colors.red,
+              //       ),
+              //       title: Text(
+              //         "RESUME",
+              //         style: GoogleFonts.montserrat(
+              //           fontWeight: FontWeight.w300,
+              //           color: theme.lightTheme ? Colors.black : Colors.white,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),

@@ -121,10 +121,10 @@ class _ServiceCardState extends State<ServiceCard> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                widget.serviceIcon,
-                height: height * 0.125,
-              ),
+              // Image.asset(
+              //   widget.serviceIcon,
+              //   height: height * 0.125,
+              // ),
               SizedBox(
                 height: height * 0.02,
               ),

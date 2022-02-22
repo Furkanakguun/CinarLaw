@@ -23,14 +23,14 @@ class AboutDesktop extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: width * 0.02,
+        horizontal: width * 0.018,
       ),
       color: _themeProvider.lightTheme ? Colors.white : mainColorWhite,
       child: Column(
         children: [
-          CustomSectionHeading(text: "\nAbout Us"),
+          CustomSectionHeading(text: "\nAbout Us "),
           //CustomSectionSubHeading(text: "Get to know me :)"),
-          SizedBox(height: 30.0),
+          //SizedBox(height: 5.0),
           Row(
             children: [
               Expanded(
@@ -43,7 +43,7 @@ class AboutDesktop extends StatelessWidget {
               Expanded(
                 flex: width < 1230 ? 2 : 1,
                 child: Container(
-                  padding: EdgeInsets.only(left: width < 1230 ? 25.0 : 0),
+                  padding: EdgeInsets.only(left: width < 1230 ? 15.0 : 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -66,22 +66,22 @@ class AboutDesktop extends StatelessWidget {
                       //   ),
                       // ),
                       SizedBox(
-                        height: height * 0.02,
+                        height: height * 0.018,
                       ),
                       AdaptiveText(
-                        "Established by the third generation children of a lawyer family, with a modern perception of our age, çınar&çınar Law Office provides its Clients high caliber legal consultancy and attorneyship services since 1988. '\n" +
+                        "Established by the third generation children of a lawyer family, with a modern perception of our age, çınar&çınar Law Office provides its Clients high caliber legal consultancy and attorneyship services since 1988.\n" +
                             "çınar&çınar is named after the founding structure of the Firm which was jointly established by Emir and Hakan Çınar. \n" +
                             "Emir Çınar founded the Firm in 1988 and she represented her Clients in the cases regarding commercial law, marriage law, banking law and enforcement law; and provided legal consultancy to various companies until M. Hakan Çınar joined her in 1993. She also practiced in the field of the application to the relative of Authorities for the obtainment of investment incentives. \n" +
                             "M. Hakan Çınar, who officially joined çınar&çınar in 1993 previously worked as an in-house counsel of an American Company having expertise within the fields of labor law, contracts law and international disputes. This expertise enabled the transfer of çınar&çınar services, which were successfully conducted by Emir Çınar, to an international level. Following this transformation, çınar&çınar’s commercial and international services provided today had begun to be shaped as of 1993.\n" +
                             "The main characteristic of çınar&çınar is that it is comprised of its own apprentice attorneys at law. çınar&çınar has raised a large number of apprentices until today, and a significant number of cinar&cinar lawyers working presently are chosen among its apprentice attorneys. The other apprentices, who did not continue to work at çınar&çınar, each proceeded to practice their profession as precious lawyers making çınar&çınar family proud of them.",
                         style: GoogleFonts.roboto(
-                          fontSize: height * 0.02,
+                          fontSize: height * 0.018,
                           color: Colors.grey[500],
                           height: 1.5,
                         ),
                       ),
                       SizedBox(
-                        height: height * 0.025,
+                        height: height * 0.022,
                       ),
                       // Container(
                       //   decoration: BoxDecoration(

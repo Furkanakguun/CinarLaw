@@ -50,7 +50,7 @@ class HomeDesktop extends StatelessWidget {
                   children: [
                     AdaptiveText(
                       "Çınar&Çınar ",
-                      style: GoogleFonts.roboto(
+                      style: GoogleFonts.brygada1918(
                         fontSize: height * 0.06,
                         fontWeight: FontWeight.w300,
                         color: _themeProvider.lightTheme

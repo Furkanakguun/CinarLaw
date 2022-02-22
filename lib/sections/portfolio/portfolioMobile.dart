@@ -13,9 +13,9 @@ class PortfolioMobileTab extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          CustomSectionHeading(text: "\nPortfolio"),
-          CustomSectionSubHeading(
-              text: "Here are few samples of my previous work :)\n\n"),
+          CustomSectionHeading(text: "\nOur Team"),
+          // CustomSectionSubHeading(
+          //     text: "Here are few samples of my previous work :)\n\n"),
           CarouselSlider.builder(
             itemCount: 10,
             itemBuilder: (BuildContext context, int itemIndex, int i) =>
@@ -23,7 +23,8 @@ class PortfolioMobileTab extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 15.0),
               child: ProjectCard(
                 cardWidth: width < 650 ? width * 0.8 : width * 0.4,
-                projectIcon: kProjectsIcons[i],
+                //projectIcon: kProjectsIcons[i],
+                backImage: kProjectsBanner[i],
                 projectTitle: kProjectsTitles[i],
                 projectDescription: kProjectsDescriptions[i],
                 projectLink: kProjectsLinks[i],
@@ -41,11 +42,11 @@ class PortfolioMobileTab extends StatelessWidget {
           SizedBox(
             height: height * 0.03,
           ),
-          OutlinedCustomBtn(
-              btnText: "See More",
-              onPressed: () {
-                launchURL("https://github.com/mhmzdev");
-              })
+          // OutlinedCustomBtn(
+          //     btnText: "See More",
+          //     onPressed: () {
+          //       //launchURL("https://github.com/mhmzdev");
+          //     })
         ],
       ),
     );

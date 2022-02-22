@@ -11,7 +11,7 @@ import 'package:cinarlaw/widget/communityIconBtn.dart';
 import 'package:cinarlaw/widget/toolsTechWidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AboutTab extends StatelessWidget {
+class PublicationTab extends StatelessWidget {
   final _communityLogoHeight = [60.0, 70.0, 30.0];
 
   @override

@@ -4,6 +4,7 @@ import 'package:cinarlaw/widget/customBtn.dart';
 import 'package:cinarlaw/widget/customTextHeading.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_html/html.dart' as html;
+
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/constants.dart';
 import 'package:cinarlaw/widget/aboutMeMetaData.dart';
@@ -11,8 +12,8 @@ import 'package:cinarlaw/widget/communityIconBtn.dart';
 import 'package:cinarlaw/widget/toolsTechWidget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AboutTab extends StatelessWidget {
-  final _communityLogoHeight = [60.0, 70.0, 30.0];
+class PublicationMobile extends StatelessWidget {
+  final _communityLogoHeight = [40.0, 50.0, 20.0];
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class AboutTab extends StatelessWidget {
           ),
           Image.asset(
             'assets/about_cinar.PNG',
-            //height: height * 0.3,
+            //height: height * 0.27,
           ),
           SizedBox(
             height: height * 0.03,
@@ -44,11 +45,24 @@ class AboutTab extends StatelessWidget {
           //   child: Text(
           //     "Who am I?",
           //     style: GoogleFonts.montserrat(
-          //         color: kPrimaryColor, fontSize: height * 0.028),
+          //       color: kPrimaryColor,
+          //       fontSize: height * 0.025,
+          //     ),
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: height * 0.028,
+          // ),
+          // Text(
+          //   "I'm Muhammad Hamza, a Flutter developer, Technical blog writer and UI designer.",
+          //   style: GoogleFonts.montserrat(
+          //     fontSize: height * 0.022,
+          //     fontWeight: FontWeight.w400,
+          //     color: _themeProvider.lightTheme ? Colors.black : Colors.white,
           //   ),
           // ),
           SizedBox(
-            height: height * 0.032,
+            height: height * 0.02,
           ),
           Text(
             "Established by the third generation children of a lawyer family, with a modern perception of our age, çınar&çınar Law Office provides its Clients high caliber legal consultancy and attorneyship services since 1988. '\n" +
@@ -57,123 +71,104 @@ class AboutTab extends StatelessWidget {
                 "M. Hakan Çınar, who officially joined çınar&çınar in 1993 previously worked as an in-house counsel of an American Company having expertise within the fields of labor law, contracts law and international disputes. This expertise enabled the transfer of çınar&çınar services, which were successfully conducted by Emir Çınar, to an international level. Following this transformation, çınar&çınar’s commercial and international services provided today had begun to be shaped as of 1993.\n" +
                 "The main characteristic of çınar&çınar is that it is comprised of its own apprentice attorneys at law. çınar&çınar has raised a large number of apprentices until today, and a significant number of cinar&cinar lawyers working presently are chosen among its apprentice attorneys. The other apprentices, who did not continue to work at çınar&çınar, each proceeded to practice their profession as precious lawyers making çınar&çınar family proud of them.",
             style: GoogleFonts.roboto(
-              fontSize: height * 0.030,
-              fontWeight: FontWeight.w200,
-              color: _themeProvider.lightTheme ? Colors.black : Colors.white,
+              fontSize: height * 0.018,
+              color: Colors.grey[500],
+              height: 1.5,
             ),
           ),
           SizedBox(
-            height: height * 0.02,
+            height: height * 0.025,
           ),
-          // Text(
-          //   "I'm a Final Year Computer Science student enrolled in COMSATS University, Islamabad. I have been developing mobile apps for over 1.5 years now. I have worked in teams for various startups and helped them in launching their prototypes and got valuable learning experience. I'm an active Google Developer Student Clubs (DSC) lead and also CEO/Founder Flutter Islamabad, Pakistan.",
-          //   style: GoogleFonts.montserrat(
-          //     fontSize: height * 0.02,
-          //     color: Colors.grey[500],
-          //     height: 2.0,
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: height * 0.025,
-          // ),
           // Container(
           //   decoration: BoxDecoration(
           //     border: Border(
-          //       bottom: BorderSide(color: Colors.grey[900], width: 2.0),
+          //       bottom: BorderSide(color: Colors.grey[900], width: 1.0),
           //     ),
           //   ),
           // ),
           // SizedBox(
-          //   height: height * 0.02,
+          //   height: height * 0.015,
           // ),
           // Align(
           //   alignment: Alignment.centerLeft,
           //   child: Text(
           //     "Technologies I have worked with:",
           //     style: GoogleFonts.montserrat(
-          //         color: kPrimaryColor, fontSize: height * 0.018),
+          //         color: kPrimaryColor, fontSize: height * 0.015),
           //   ),
           // ),
           // Row(
           //   children: [
-          //     for (int i = 0; i < kTools.length; i++)
+          //     for (int i = 0; i < 4; i++)
+          //       ToolTechWidget(
+          //         techName: kTools[i],
+          //       ),
+          //   ],
+          // ),
+          // Row(
+          //   children: [
+          //     for (int i = 4; i < 8; i++)
           //       ToolTechWidget(
           //         techName: kTools[i],
           //       ),
           //   ],
           // ),
           // SizedBox(
-          //   height: height * 0.02,
+          //   height: height * 0.015,
           // ),
           // Container(
           //   decoration: BoxDecoration(
           //     border: Border(
-          //       bottom: BorderSide(color: Colors.grey[900], width: 2.0),
+          //       bottom: BorderSide(color: Colors.grey[900], width: 1.0),
           //     ),
           //   ),
           // ),
           // SizedBox(
-          //   height: height * 0.025,
-          // ),
-          // Row(
-          //   children: [
-          //     Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         AboutMeMetaData(
-          //           data: "Name",
-          //           information: "Muhammad Hamza",
-          //         ),
-          //         AboutMeMetaData(
-          //           data: "Age",
-          //           information: "23",
-          //         ),
-          //       ],
-          //     ),
-          //     SizedBox(
-          //       width: width > 710 ? width * 0.2 : width * 0.05,
-          //     ),
-          //     Column(
-          //       crossAxisAlignment: CrossAxisAlignment.start,
-          //       children: [
-          //         AboutMeMetaData(
-          //           data: "Email",
-          //           information: "hamza.6.shakeel@gmail.com",
-          //         ),
-          //         AboutMeMetaData(
-          //           data: "From",
-          //           information: "Attock, PK",
-          //         ),
-          //       ],
-          //     ),
-          //   ],
-          // ),
-          // SizedBox(
           //   height: height * 0.02,
           // ),
-          // Row(
-          //   children: [
-          //     Padding(
-          //       padding: const EdgeInsets.all(8.0),
-          //       child: OutlinedCustomBtn(
-          //           btnText: "Resume",
-          //           onPressed: () {
-          //             kIsWeb
-          //                 ? html.window.open(
-          //                     'https://drive.google.com/uc?export=view&id=1OOdcdGEN3thVvpZ4cl_MM0LT-GCMuLIE',
-          //                     "pdf")
-          //                 : launchURL(
-          //                     'https://drive.google.com/uc?export=view&id=1OOdcdGEN3thVvpZ4cl_MM0LT-GCMuLIE');
-          //           }),
-          //     ),
-          //     Container(
-          //       width: width * 0.05,
-          //       decoration: BoxDecoration(
-          //         border: Border(
-          //           bottom: BorderSide(color: Colors.grey[900], width: 2.0),
+          // AboutMeMetaData(
+          //   data: "Name",
+          //   information: "Muhammad Hamza",
+          //   alignment: Alignment.centerLeft,
+          // ),
+          // AboutMeMetaData(
+          //   data: "Email",
+          //   information: "hamza.6.shakeel@gmail.com",
+          //   alignment: Alignment.centerLeft,
+          // ),
+          // SizedBox(
+          //   height: height * 0.015,
+          // ),
+          // Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: Row(
+          //     children: [
+          //       Padding(
+          //         padding: const EdgeInsets.all(8.0),
+          //         child: OutlinedCustomBtn(
+          //             btnText: "Resume",
+          //             onPressed: () {
+          //               kIsWeb
+          //                   ? html.window.open(
+          //                       'https://drive.google.com/uc?export=view&id=1OOdcdGEN3thVvpZ4cl_MM0LT-GCMuLIE',
+          //                       "pdf")
+          //                   : launchURL(
+          //                       'https://drive.google.com/uc?export=view&id=1OOdcdGEN3thVvpZ4cl_MM0LT-GCMuLIE');
+          //             }),
+          //       ),
+          //       Container(
+          //         width: width * 0.2,
+          //         decoration: BoxDecoration(
+          //           border: Border(
+          //             bottom: BorderSide(color: Colors.grey[900], width: 2.0),
+          //           ),
           //         ),
           //       ),
-          //     ),
+          //     ],
+          //   ),
+          // ),
+          // Row(
+          //   children: [
           //     for (int i = 0; i < kCommunityLogo.length; i++)
           //       CommunityIconBtn(
           //         icon: kCommunityLogo[i],
@@ -181,7 +176,7 @@ class AboutTab extends StatelessWidget {
           //         height: _communityLogoHeight[i],
           //       ),
           //   ],
-          // )
+          // ),
         ],
       ),
     );

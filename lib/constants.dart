@@ -11,8 +11,8 @@ const kSocialIcons = [
   "https://img.icons8.com/ios-glyphs/480/ffffff/instagram-new.png",
   "https://img.icons8.com/android/480/ffffff/twitter.png",
   "https://img.icons8.com/metro/308/ffffff/linkedin.png",
-  "https://img.icons8.com/material-rounded/384/ffffff/github.png",
-  "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png"
+  // "https://img.icons8.com/material-rounded/384/ffffff/github.png",
+  // "https://img.icons8.com/ios-filled/500/ffffff/medium-monogram--v1.png"
 ];
 
 const kSocialLinks = [
@@ -60,14 +60,16 @@ final kServicesIcons = [
   "assets/services/rapid.png",
   "assets/services/blog.png",
   "assets/services/open.png",
+   "assets/services/open.png",
 ];
 
 final kServicesTitles = [
-  "Full App Development",
-  "UI/UX Designing",
-  "Rapid Prototyping",
-  "Technical Blog Writing",
-  "Open Source - GitHub",
+  "Construction and Infrastructure",
+  "Litigation & Arbitration",
+  "International Commercial Transactions and International Contracts",
+  "Labour Law/ Employment/ Social Security Law",
+  "Energy, Natural Resources and Mining",
+  "Mergers & Acquisitions"
 ];
 
 // final kServicesDescriptions = [
@@ -84,6 +86,7 @@ final kServicesDescriptions = [
   "Rapid Prototype via Flutter\n- Working MVP\n- Quick & Working prototype",
   "Technical Blog writing\n- Medium blogs\n- Soothing header images\n- SEO friendly\n- Researched topics and more..!",
   "Open source GitHub Projects\n- Awesome README.md\n- Well documented\n- Header images and more...!",
+  "Open source GitHub Projects\n- Awesome README.md\n- Well documented\n- Header images and more...!",
 ];
 
 final kServicesLinks = [
@@ -91,19 +94,22 @@ final kServicesLinks = [
   "https://www.fiverr.com/hamza6shakeel/get-you-modern-ui-design-using-adobe-xd",
   "https://www.fiverr.com/hamza6shakeel/be-your-mobile-app-developer-via-flutter",
   "https://mhamzadev.medium.com",
+  "https://github.com/mhmzdev",
   "https://github.com/mhmzdev"
 ];
 
 // projects
 final kProjectsBanner = [
-  "assets/projects/medkitB.png",
-  "assets/projects/quranB.png",
-  "assets/projects/hereiamB.png",
-  "assets/projects/covidB.png",
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
 ];
 
 final kProjectsIcons = [
-  "assets/projects/medkit.png",
+  "assets/person.jpg",
   "assets/projects/quran.png",
   "assets/projects/hereiam.png",
   "assets/projects/covid.png",
@@ -116,44 +122,92 @@ final kProjectsIcons = [
 ];
 
 final kProjectsTitles = [
-  "MedKit",
-  "The Holy Qur'an",
-  "Here I Am",
-  "COVID-19",
-  "Messenger Chat Head UI",
-  "flutter.dev - Flutter Web",
-  "Earbender",
-  "File Transfer Protocol",
-  "My Order",
-  "Hidev",
+  "Mr Cinar",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
 ];
 
 final kProjectsDescriptions = [
-  "A Phramacy app developed using Flutter powered with Firebase as database with Doctor and Patient panels.",
-  "Application of Holy book of Muslims, Al-Qur'an. Developed using Flutter. Powered with live RestAPI given in README.md",
-  "Here I am is an Alert app that Sends alert SMS holding your location (Address and Google Maps) to your loved ones.",
-  "A live trakcer for COVID19 stats across the Globe and my Home country Pakistan. It uses APIs so the data is live.",
-  "Tried to clone the famous Chat Heads by Facebook Messenger using Flutter. Its basically in-app not exactly like the original chat head.",
-  "Flutter Official Site clone using Flutter Web. Try the live site here. For the time being its not responsive fully so there might be responsiveness issues.",
-  "A concept of Music App developed using Flutter. Having functionality of playing Audio.",
-  "A simple GUI based Java application that sends file from Client to Server but not the other way around.",
-  "A concept app for self-services at various restaurants now a days. More like a Restaurant Ordering System.",
-  "Its my end semester project. The whole design I developed here is an inspiration from my favortie Flutter Developer Marcin Szałek and his blog Fidev."
+  "Emir Çınar",
+  "M. Hakan Çınar",
+  "Duygu Akan",
+  "Ahmet Atakan Gider",
+  "Nurşen Yamantürk",
+  "Onur Özkan",
 ];
 
 final kProjectsLinks = [
-  "https://github.com/mhmzdev/MedKit-Pharmacy-App-Using-Flutter",
-  "https://github.com/mhmzdev/The_Holy_Quran_App",
-  "https://github.com/mhmzdev/Here-I-Am-Alert-App",
-  "https://github.com/mhmzdev/Covid19-Tracker-App",
-  "https://github.com/mhmzdev/Messenger-Chat-Head-Flutter-UI",
-  "https://github.com/mhmzdev/flutter.dev-Flutter-Web-Clone",
-  "https://github.com/mhmzdev/Earbender_Music_App",
-  "https://github.com/mhmzdev/FTP_GUI_Java",
-  "https://github.com/mhmzdev/My-Order-Resturant-Ordering-System",
-  "https://github.com/mhmzdev/Hidev_Web",
+  "https://www.linkedin.com/in/emir-c%C4%B1nar-5a1a8548/",
+  "https://www.linkedin.com/in/m-hakan-cinar-35770136/",
+  "https://www.linkedin.com/in/duygu-akan-5628394a/",
+  "https://www.linkedin.com/in/ahmet-atakan-gider-66b290130/",
+  "https://www.linkedin.com/in/a-nur%C5%9Fen-yamant%C3%BCrk-o%C4%9Fuz-2041a4152/",
+  "https://www.linkedin.com/in/onur-ozkan-a7b628bb/",
 ];
 
+//new&publications
+
+// projects
+final kPublicsBanner = [
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
+];
+
+final kPublicsIcons = [
+  "assets/projects/medkit.png",
+  "assets/projects/quran.png",
+  "assets/projects/hereiam.png",
+  "assets/projects/covid.png",
+  "assets/projects/messenger.png",
+  "assets/projects/flutter.png",
+  "assets/projects/earbender.png",
+  "assets/projects/java.png",
+  "assets/projects/android.png",
+  "assets/services/open.png",
+];
+
+final kPublicsTitles = [
+  "4/5/2020",
+  "4/5/2020",
+  "4/5/2020",
+  "4/5/2020",
+  "4/5/2020",
+  "4/5/2020",
+  "4/5/2020",
+  "",
+  "",
+  "",
+];
+
+final kPublicsDescriptions = [
+  "YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU",
+  "COVID-19 SALGINININ EKONOMİK VE SOSYAL HAYATA ETKİLERİNİN AZALTILMASI AMACIYLA GETİRİLEN YENİ DÜZENLEMELER",
+  "KVKK KAPSAMINDA KONUM VERİSİNİN İŞLENMESİ",
+  "COVID-19 SALGINININ KİRA SÖZLEŞMELERİNE ETKİSİ",
+  "COVID-19 SEBEBİYLE VERGİ USUL KANUNU’NUN MÜCBİR SEBEP HÜKÜMLERİNDEN FAYDALANDIRILMASI",
+  "COVID-19 SALGINININ İŞ SÖZLEŞMELERİNE VE ÇALIŞMA USULLERİNE ETKİSİ",
+  "COVID-19 SALGINININ İŞ SÖZLEŞMELERİNE VE ÇALIŞMA USULLERİNE ETKİSİ",
+];
+
+final kPublicsLinks = [
+  "https://www.linkedin.com/in/emir-c%C4%B1nar-5a1a8548/",
+  "https://www.linkedin.com/in/m-hakan-cinar-35770136/",
+  "https://www.linkedin.com/in/duygu-akan-5628394a/",
+  "https://www.linkedin.com/in/ahmet-atakan-gider-66b290130/",
+  "https://www.linkedin.com/in/a-nur%C5%9Fen-yamant%C3%BCrk-o%C4%9Fuz-2041a4152/",
+  "https://www.linkedin.com/in/onur-ozkan-a7b628bb/",
+];
 // Contact
 final kContactIcons = [
   Icons.home,
@@ -168,7 +222,8 @@ final kContactTitles = [
 ];
 
 final kContactDetails = [
-  "Attock, Pakistan",
-  "(+92) 346 0159889",
-  "hamza@mhmz.dev"
+  "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 Oran/Çankaya / Ankara \n" +
+      "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 Maslak / Sarıyer / İstanbul \n",
+  "Ankara: +90 312 426 90 22 \n" + "İstanbul: +90 212 963 02 29",
+  "info@cinarlaw.com"
 ];

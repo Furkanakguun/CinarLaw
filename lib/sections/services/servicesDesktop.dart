@@ -31,9 +31,12 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
       padding: EdgeInsets.symmetric(horizontal: width * 0.02),
       child: Column(
         children: [
-          CustomSectionHeading(text: "\nWhat I Do"),
-          CustomSectionSubHeading(
-              text: "I may not be perfect, but I'm surely of some help :)\n\n"),
+          CustomSectionHeading(text: "\nOur Practice Areas "),
+          SizedBox(
+            height: 40,
+          ),
+          //CustomSectionSubHeading(
+          //text: "I may not be perfect, but I'm surely of some help :)\n\n"),
           Column(
             children: [
               Row(
@@ -171,79 +174,79 @@ class ServiceCardBackWidget extends StatelessWidget {
               _themeProvider.lightTheme ? Colors.grey[400] : Colors.grey[100],
         ),
         const SizedBox(height: 10.0),
-        SizedBox(
-          height: 40.0,
-          width: 150.0,
-          child: MaterialButton(
-            color: kPrimaryColor,
-            onPressed: () => showDialog(
-                context: context,
-                builder: (contecxt) => AlertDialog(
-                      backgroundColor: _themeProvider.lightTheme
-                          ? Colors.white
-                          : Colors.grey[900],
-                      title: AdaptiveText(
-                        "Hire Me!",
-                        style: TextStyle(
-                            fontSize: 32.0,
-                            color: _themeProvider.lightTheme
-                                ? Colors.black
-                                : Colors.white),
-                      ),
-                      actions: [
-                        TextButton(
-                            onPressed: () => Navigator.pop(context),
-                            child: Text("Back"))
-                      ],
-                      content: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CustomFilledBtn(
-                            height: 40.0,
-                            onPressed: () =>
-                                launchURL("https://wa.me/?text=Hi Hamza!"),
-                            btnColor: Color(0xff34CB62),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(FontAwesomeIcons.whatsapp),
-                                const SizedBox(width: 8.0),
-                                Text("WhatsApp"),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(height: 20.0),
-                          CustomFilledBtn(
-                            height: 40.0,
-                            onPressed: () => launchURL(
-                                "https://www.upwork.com/freelancers/~0197b0f6aaeba9675f"),
-                            btnColor: Color(0xff13A800),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Image.network(
-                                  "https://img.icons8.com/ios-filled/50/000000/upwork.png",
-                                  height: 35.0,
-                                  color: Colors.white,
-                                ),
-                                const SizedBox(width: 8.0),
-                                Text("Upwork"),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )),
-            child: Text(
-              "HIRE ME!",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16.0),
-            ),
-          ),
-        )
+        // SizedBox(
+        //   height: 40.0,
+        //   width: 150.0,
+        //   child: MaterialButton(
+        //     color: kPrimaryColor,
+        //     onPressed: () => showDialog(
+        //         context: context,
+        //         builder: (contecxt) => AlertDialog(
+        //               backgroundColor: _themeProvider.lightTheme
+        //                   ? Colors.white
+        //                   : Colors.grey[900],
+        //               title: AdaptiveText(
+        //                 "Hire Me!",
+        //                 style: TextStyle(
+        //                     fontSize: 32.0,
+        //                     color: _themeProvider.lightTheme
+        //                         ? Colors.black
+        //                         : Colors.white),
+        //               ),
+        //               actions: [
+        //                 TextButton(
+        //                     onPressed: () => Navigator.pop(context),
+        //                     child: Text("Back"))
+        //               ],
+        //               content: Column(
+        //                 mainAxisSize: MainAxisSize.min,
+        //                 mainAxisAlignment: MainAxisAlignment.center,
+        //                 children: [
+        //                   CustomFilledBtn(
+        //                     height: 40.0,
+        //                     onPressed: () =>
+        //                         launchURL("https://wa.me/?text=Hi Hamza!"),
+        //                     btnColor: Color(0xff34CB62),
+        //                     child: Row(
+        //                       mainAxisSize: MainAxisSize.min,
+        //                       children: [
+        //                         Icon(FontAwesomeIcons.whatsapp),
+        //                         const SizedBox(width: 8.0),
+        //                         Text("WhatsApp"),
+        //                       ],
+        //                     ),
+        //                   ),
+        //                   const SizedBox(height: 20.0),
+        //                   CustomFilledBtn(
+        //                     height: 40.0,
+        //                     onPressed: () => launchURL(
+        //                         "https://www.upwork.com/freelancers/~0197b0f6aaeba9675f"),
+        //                     btnColor: Color(0xff13A800),
+        //                     child: Row(
+        //                       mainAxisSize: MainAxisSize.min,
+        //                       children: [
+        //                         Image.network(
+        //                           "https://img.icons8.com/ios-filled/50/000000/upwork.png",
+        //                           height: 35.0,
+        //                           color: Colors.white,
+        //                         ),
+        //                         const SizedBox(width: 8.0),
+        //                         Text("Upwork"),
+        //                       ],
+        //                     ),
+        //                   ),
+        //                 ],
+        //               ),
+        //             )),
+        //     child: Text(
+        //       "HIRE ME!",
+        //       style: TextStyle(
+        //           color: Colors.white,
+        //           fontWeight: FontWeight.bold,
+        //           fontSize: 16.0),
+        //     ),
+        //   ),
+        // )
       ],
     );
   }
