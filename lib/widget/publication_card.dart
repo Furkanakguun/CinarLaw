@@ -1,3 +1,4 @@
+import 'package:cinarlaw/widget/alertDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -20,7 +21,7 @@ class _PublicationCardState extends State<PublicationCard> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => print('launch'),
+      onTap: () => showPublicationAlertDialog(context),
       onHover: (isHovering) {
         if (isHovering) {
           setState(() {
