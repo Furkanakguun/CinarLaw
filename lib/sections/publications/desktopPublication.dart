@@ -1,13 +1,12 @@
 import 'package:cinarlaw/animations/bottomAnimation.dart';
-import 'package:cinarlaw/sections/publications/publications_list.dart';
+import 'package:cinarlaw/sections/publicationsList/publications_list.dart';
+import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
 import 'package:cinarlaw/widget/alertDialog.dart';
 import 'package:cinarlaw/widget/publication_card.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/constants.dart';
 import 'package:cinarlaw/widget/customBtn.dart';
 import 'package:cinarlaw/widget/customTextHeading.dart';
-
-
 
 class PublicationDesktop extends StatelessWidget {
   final _communityLogoHeight = [60.0, 70.0, 30.0];
@@ -60,7 +59,7 @@ class PublicationDesktop extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PublicationsList(),
+                    builder: (context) => PublicationsListDesktop(),
                   ),
                 );
                 //launchURL("https://github.com/mhmzdev");

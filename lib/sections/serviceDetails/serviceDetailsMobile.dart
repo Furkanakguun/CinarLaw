@@ -50,7 +50,7 @@ class _ServiceDetailsMobileState extends State<ServiceDetailsMobile> {
               ),
               const SizedBox(height: 10.0),
               AdaptiveText(
-                kProjectsTitles[_currentIndex],
+                kOurTeamTitles[_currentIndex],
                 style: GoogleFonts.montserrat(
                   fontSize: 28.0,
                   fontWeight: FontWeight.bold,
@@ -60,10 +60,10 @@ class _ServiceDetailsMobileState extends State<ServiceDetailsMobile> {
                 ),
               ),
               CarouselSlider.builder(
-                itemCount: kProjectsBanner.length,
+                itemCount: kOurTeamBanner.length,
                 carouselController: _carouselController,
                 itemBuilder: (context, index, i) => Image.asset(
-                  kProjectsBanner[index],
+                  kOurTeamBanner[index],
                   height: 100.0,
                 ),
                 options: CarouselOptions(
@@ -78,8 +78,8 @@ class _ServiceDetailsMobileState extends State<ServiceDetailsMobile> {
               ),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: kProjectsBanner.map((project) {
-                    int index = kProjectsBanner.indexOf(project);
+                  children: kOurTeamBanner.map((project) {
+                    int index = kOurTeamBanner.indexOf(project);
                     return AnimatedContainer(
                       duration: Duration(milliseconds: 200),
                       width: _currentIndex == index ? 25.0 : 7.0,
