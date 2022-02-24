@@ -1,4 +1,5 @@
 import 'package:cinarlaw/sections/publications/publication.dart';
+import 'package:cinarlaw/sections/publications/publications_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
@@ -31,19 +32,18 @@ class _MainPageState extends State<MainPage> {
   ScrollController _scrollController = ScrollController();
 
   final List<String> _sectionsName = [
-    "HOME",
+    "",
     "ABOUT",
     "PRACTICE AREAS",
     "OUR TEAM",
-    "NEWS&PUBLICATIONS",
-    "CONTACT"
+    "CONTACT",
+  
   ];
 
   final List<IconData> _sectionsIcons = [
     Icons.home,
     Icons.person,
     Icons.settings,
-    Icons.build,
     Icons.article,
     Icons.phone,
   ];
@@ -74,10 +74,8 @@ class _MainPageState extends State<MainPage> {
     } else if (i == 3) {
       return Portfolio();
     } else if (i == 4) {
-      return Publication();
-    } else if (i == 5) {
       return Contact();
-    } else if (i == 6) {
+    } else if (i == 5) {
       return Footer();
     } else {
       return Container();
@@ -175,12 +173,11 @@ class _MainPageState extends State<MainPage> {
                 child: Text(
                   childText,
                   style: GoogleFonts.brygada1918(
-                        // fontSize: height * 0.06,
-                        // fontWeight: FontWeight.w300,
-                        color: themeProvider.lightTheme
-                            ? Colors.black
-                            : Colors.white,
-                      ),
+                    // fontSize: height * 0.06,
+                    // fontWeight: FontWeight.w300,
+                    color:
+                        themeProvider.lightTheme ? Colors.black : Colors.white,
+                  ),
                   // style: TextStyle(
                   //   color:
                   //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -236,6 +233,66 @@ class _MainPageState extends State<MainPage> {
       actions: [
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
+          MediaQuery.of(context).size.width > 760
+        ? EntranceFader(
+            offset: Offset(0, -10),
+            delay: Duration(milliseconds: 100),
+            duration: Duration(milliseconds: 250),
+            child: Container(
+              padding: const EdgeInsets.all(8.0),
+              height: 60.0,
+              child: MaterialButton(
+                hoverColor: kPrimaryColor,
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PublicationsList(),
+                  ),
+                ),
+                child: Text(
+                  "ÇINAR ACADEMIA",
+                  style: GoogleFonts.brygada1918(
+                    // fontSize: height * 0.06,
+                    // fontWeight: FontWeight.w300,
+                    color:
+                        _themeProv.lightTheme ? Colors.black : Colors.white,
+                  ),
+                  // style: TextStyle(
+                  //   color:
+                  //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                  // ),
+                ),
+              ),
+            ),
+          )
+        : Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: MaterialButton(
+              hoverColor: kPrimaryColor.withAlpha(70),
+              onPressed: () {
+                //_scroll(index);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PublicationsList(),
+                  ),
+                );
+                //Navigator.pop(context);
+              },
+              child: ListTile(
+                leading: Icon(
+                  Icons.book,
+                  color: kPrimaryColor,
+                ),
+                title: Text("Çınar Museum",
+                    style: TextStyle(
+                      color: _themeProv.lightTheme
+                          ? Colors.black
+                          : Colors.white,
+                    )),
+              ),
+            ),
+          ),
         // EntranceFader(
         //   offset: Offset(0, -10),
         //   delay: Duration(milliseconds: 100),
@@ -264,7 +321,7 @@ class _MainPageState extends State<MainPage> {
         //     ),
         //   ),
         // ),
-        const SizedBox(width: 15.0),
+        //const SizedBox(width: 15.0),
         // SizedBox(
         //   height: 30.0,
         //   child: Switch(
