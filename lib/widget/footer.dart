@@ -13,30 +13,63 @@ class Footer extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Container(
       margin: EdgeInsets.fromLTRB(0, height * 0.05, 0, 0),
-      height: height * 0.07,
+      height: height * 0.25,
       width: width,
       color: _themeProvider.lightTheme ? Colors.white : Colors.grey[900],
-      child: Center(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            AdaptiveText(
-              "Developed in 💙 with ",
-              style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w300,
-                color: _themeProvider.lightTheme ? Colors.black : Colors.white,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            height: height * 0.25,
+            width: width / 2,
+            color: Colors.white60,
+          ),
+          Container(
+            height: height * 0.25,
+            width: width / 2,
+            color: Colors.white30,
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: AdaptiveText(
+                    "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 Oran/Çankaya / Ankara \n\n" +
+                        "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 Maslak / Sarıyer / İstanbul \n\n" +
+                        "Ankara: +90 312 426 90 22 \n\n" +
+                        "İstanbul: +90 212 963 02 29 \n\n" +
+                        "info@cinarlaw.com"),
               ),
             ),
-            InkWell(
-              onTap: () => launchURL("https://github.com/mhmzdev/DevFolio"),
-              child: Text(
-                "Flutter",
-                style: TextStyle(color: Colors.blue),
-              ),
-            )
-          ],
-        ),
+          ),
+        ],
       ),
+    );
+  }
+
+  Widget mySign(ThemeProvider _themeProvider) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        AdaptiveText(
+          "Developed in 💙 with ",
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.w300,
+            fontSize: 9,
+            fontStyle: FontStyle.italic,
+            color: _themeProvider.lightTheme ? Colors.black : Colors.white,
+          ),
+        ),
+        InkWell(
+          onTap: () => launchURL("https://github.com/Furkanakguun"),
+          child: Text(
+            "Furkan",
+            style: TextStyle(
+              color: Colors.blue,
+              fontSize: 9,
+            ),
+          ),
+        )
+      ],
     );
   }
 }

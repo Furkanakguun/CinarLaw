@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // Colors
-const Color kPrimaryColor = Color(0xffC0392B);
+const Color kPrimaryColor = Color(0xFF3A2E1E);
 const Color mainColor = Color(0xFF3A2E1E);
 const Color mainColorWhite = Color(0xFF86754D);
 // Social Media
@@ -60,7 +60,7 @@ final kServicesIcons = [
   "assets/services/rapid.png",
   "assets/services/blog.png",
   "assets/services/open.png",
-   "assets/services/open.png",
+  "assets/services/open.png",
 ];
 
 final kServicesTitles = [
@@ -98,8 +98,12 @@ final kServicesLinks = [
   "https://github.com/mhmzdev"
 ];
 
-// projects
-final kProjectsBanner = [
+// Our Team
+final kOurTeamBanner = [
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
+  "assets/person.jpg",
   "assets/person.jpg",
   "assets/person.jpg",
   "assets/person.jpg",
@@ -108,7 +112,7 @@ final kProjectsBanner = [
   "assets/person.jpg",
 ];
 
-final kProjectsIcons = [
+final kOurTeamIcons = [
   "assets/person.jpg",
   "assets/projects/quran.png",
   "assets/projects/hereiam.png",
@@ -121,7 +125,7 @@ final kProjectsIcons = [
   "assets/services/open.png",
 ];
 
-final kProjectsTitles = [
+final kOurTeamTitles = [
   "Mr Cinar",
   "",
   "",
@@ -134,21 +138,29 @@ final kProjectsTitles = [
   "",
 ];
 
-final kProjectsDescriptions = [
+final kOurTeamDescriptions = [
   "Emir Çınar",
   "M. Hakan Çınar",
   "Duygu Akan",
   "Ahmet Atakan Gider",
   "Nurşen Yamantürk",
   "Onur Özkan",
+  "Onur Özkan",
+  "Onur Özkan",
+  "Onur Özkan",
+  "Onur Özkan",
 ];
 
-final kProjectsLinks = [
+final kOurTeamLinks = [
   "https://www.linkedin.com/in/emir-c%C4%B1nar-5a1a8548/",
   "https://www.linkedin.com/in/m-hakan-cinar-35770136/",
   "https://www.linkedin.com/in/duygu-akan-5628394a/",
   "https://www.linkedin.com/in/ahmet-atakan-gider-66b290130/",
   "https://www.linkedin.com/in/a-nur%C5%9Fen-yamant%C3%BCrk-o%C4%9Fuz-2041a4152/",
+  "https://www.linkedin.com/in/onur-ozkan-a7b628bb/",
+  "https://www.linkedin.com/in/onur-ozkan-a7b628bb/",
+  "https://www.linkedin.com/in/onur-ozkan-a7b628bb/",
+  "https://www.linkedin.com/in/onur-ozkan-a7b628bb/",
   "https://www.linkedin.com/in/onur-ozkan-a7b628bb/",
 ];
 
@@ -185,9 +197,6 @@ final kPublicsTitles = [
   "4/5/2020",
   "4/5/2020",
   "4/5/2020",
-  "",
-  "",
-  "",
 ];
 
 final kPublicsDescriptions = [

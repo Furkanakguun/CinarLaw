@@ -42,7 +42,11 @@ class _ProjectCardState extends State<ProjectCard> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return InkWell(
-      onTap: () => launch(widget.projectLink),
+      onTap: () {
+        setState(() {
+          isHover = !isHover;
+        });
+      },
       onHover: (isHovering) {
         if (isHovering) {
           setState(() {

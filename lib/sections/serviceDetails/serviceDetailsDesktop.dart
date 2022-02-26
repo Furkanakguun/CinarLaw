@@ -209,7 +209,7 @@ class _ServicesShowCaseState extends State<ServicesShowCase> {
           Row(
             children: [
               AdaptiveText(
-                " ${kProjectsTitles[_currentIndex]} ",
+                " ${kOurTeamTitles[_currentIndex]} ",
                 style: GoogleFonts.montserrat(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
@@ -218,7 +218,7 @@ class _ServicesShowCaseState extends State<ServicesShowCase> {
                       _themeProvider.lightTheme ? Colors.black : Colors.white,
                 ),
               ),
-              kProjectsTitles[_currentIndex] == kProjectsTitles[1]
+              kOurTeamTitles[_currentIndex] == kOurTeamTitles[1]
                   ? InkWell(
                       onTap: () => launchURL(
                           "https://play.google.com/store/apps/details?id=com.hmz.al_quran&pli=1"),
@@ -229,7 +229,7 @@ class _ServicesShowCaseState extends State<ServicesShowCase> {
                   : Container(),
               Expanded(child: Container()),
               IconButton(
-                onPressed: () => launchURL(kProjectsLinks[_currentIndex]),
+                onPressed: () => launchURL(kOurTeamLinks[_currentIndex]),
                 icon: Icon(Icons.arrow_forward,
                     color: _themeProvider.lightTheme
                         ? Colors.black
@@ -259,7 +259,7 @@ class _ServicesShowCaseState extends State<ServicesShowCase> {
                   width: screenSize.width,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(kProjectsBanner[_currentIndex]),
+                          image: AssetImage(kOurTeamBanner[_currentIndex]),
                           fit: BoxFit.cover)),
                   child: SizedBox(
                     height: screenSize.height * 0.55,
@@ -279,10 +279,10 @@ class _ServicesShowCaseState extends State<ServicesShowCase> {
                   child: Align(
                     alignment: Alignment.center,
                     child: CarouselSlider.builder(
-                      itemCount: kProjectsBanner.length,
+                      itemCount: kOurTeamBanner.length,
                       carouselController: _carouselController,
                       itemBuilder: (context, index, i) => Image.asset(
-                        kProjectsBanner[index],
+                        kOurTeamBanner[index],
                         height: 300.0,
                       ),
                       options: CarouselOptions(
@@ -303,8 +303,8 @@ class _ServicesShowCaseState extends State<ServicesShowCase> {
           const SizedBox(height: 20.0),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: kProjectsBanner.map((project) {
-                int index = kProjectsBanner.indexOf(project);
+              children: kOurTeamBanner.map((project) {
+                int index = kOurTeamBanner.indexOf(project);
                 return AnimatedContainer(
                   duration: Duration(milliseconds: 200),
                   width: _currentIndex == index ? 25.0 : 7.0,
