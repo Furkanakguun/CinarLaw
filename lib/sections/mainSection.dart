@@ -1,3 +1,4 @@
+import 'package:cinarlaw/sections/museum/museum_listMobile.dart';
 import 'package:cinarlaw/sections/publications/publication.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_list.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
@@ -20,6 +21,8 @@ import 'package:cinarlaw/sections/services/services.dart';
 import 'package:cinarlaw/widget/arrowOnTop.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'museum/museum_listDesktop.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -275,6 +278,66 @@ class _MainPageState extends State<MainPage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
+                      ),
+                    );
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text("Çınar Museum",
+                        style: TextStyle(
+                          color: _themeProv.lightTheme
+                              ? Colors.black
+                              : Colors.white,
+                        )),
+                  ),
+                ),
+              ),
+              MediaQuery.of(context).size.width > 760
+            ? EntranceFader(
+                offset: Offset(0, -10),
+                delay: Duration(milliseconds: 100),
+                duration: Duration(milliseconds: 250),
+                child: Container(
+                  padding: const EdgeInsets.all(8.0),
+                  height: 60.0,
+                  child: MaterialButton(
+                    hoverColor: kPrimaryColor,
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MuseumListDesktop(),
+                      ),
+                    ),
+                    child: Text(
+                      "ÇINAR MUSEUM",
+                      style: GoogleFonts.brygada1918(
+                        // fontSize: height * 0.06,
+                        // fontWeight: FontWeight.w300,
+                        color:
+                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                      ),
+                      // style: TextStyle(
+                      //   color:
+                      //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                      // ),
+                    ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MuseumListDesktop(),
                       ),
                     );
                     //Navigator.pop(context);

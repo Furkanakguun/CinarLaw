@@ -60,16 +60,45 @@ final kServicesIcons = [
   "assets/services/rapid.png",
   "assets/services/blog.png",
   "assets/services/open.png",
+ "assets/services/app.png",
+  "assets/services/ui.png",
+  "assets/services/rapid.png",
+  "assets/services/blog.png",
+  "assets/services/open.png",
+   "assets/services/app.png",
+  "assets/services/ui.png",
+  "assets/services/rapid.png",
+  "assets/services/blog.png",
+  "assets/services/open.png",
+   "assets/services/app.png",
+  "assets/services/ui.png",
+  "assets/services/rapid.png",
+  "assets/services/blog.png",
   "assets/services/open.png",
 ];
 
 final kServicesTitles = [
   "Construction and Infrastructure",
+  "Corporate Services ",
+  "Mergers & Acquisitions",
   "Litigation & Arbitration",
   "International Commercial Transactions and International Contracts",
   "Labour Law/ Employment/ Social Security Law",
   "Energy, Natural Resources and Mining",
-  "Mergers & Acquisitions"
+  "International Commercial Transactions and International Contracts",
+  "Labour Law/ Employment/ Social Security Law",
+  "Energy, Natural Resources and Mining",
+    "Construction and Infrastructure",
+  "Corporate Services ",
+  "Mergers & Acquisitions",
+  "Litigation & Arbitration",
+  "International Commercial Transactions and International Contracts",
+  "Labour Law/ Employment/ Social Security Law",
+  "Energy, Natural Resources and Mining",
+  "International Commercial Transactions and International Contracts",
+  "Labour Law/ Employment/ Social Security Law",
+  "Energy, Natural Resources and Mining",
+  
 ];
 
 // final kServicesDescriptions = [
@@ -81,21 +110,53 @@ final kServicesTitles = [
 // ];
 
 final kServicesDescriptions = [
-  "Android app development via Flutter\n- Splash Screen\n- Firebase Auth/Cloud\n- REST APIs\n- Maps integration and more...!",
-  "Modern UI/UX Designing\n- Adobe XD\n- Mobile & Web designs\n- Interactive UI designs\n- Responsiveness\n- Promo Videos and more..!",
-  "Rapid Prototype via Flutter\n- Working MVP\n- Quick & Working prototype",
-  "Technical Blog writing\n- Medium blogs\n- Soothing header images\n- SEO friendly\n- Researched topics and more..!",
-  "Open source GitHub Projects\n- Awesome README.md\n- Well documented\n- Header images and more...!",
-  "Open source GitHub Projects\n- Awesome README.md\n- Well documented\n- Header images and more...!",
+
+  "",
+  "",
+  "",
+  "",
+  "",
+  
+  "",
+  "",
+  "",
+  "",
+  "",
+  
+  "",
+  "",
+  "",
+  "",
+  "",
+  
+  "",
+  "",
+  "",
+  "",
+  "",
 ];
 
 final kServicesLinks = [
-  "https://www.fiverr.com/hamza6shakeel/be-your-mobile-app-developer-via-flutter",
+ "Expert local advice is a major element for the International Commercial Transactions and International Contracts. We represent and advise both major Turkish exporters and foreign investors in the area of international contracts and international commercial transactions including international sales agreements, agency agreements, distribution agreements, export & import issues, free trade zones, licensing agreements, know-how agreements, franchise agreements and joint-ventures. Çınar & Çınar members have been involved in many international commercial transactions. In addition to our experience, our partners have been regularly lecturing at Ankara Bar Association on International Commercial Transactions and International Contracts. ",
+ "Çınar & Çınar provides high-quality corporate advice to both international and domestic corporations from general corporate issues to most challenging matters. We consult on legal matters at ali stages of development of a business. We assist our Clients in incorporation transactions of domestic companies or companies with foreign Capital such as preparation of foundation documents, Articles of Associations and applications to relevant authorities. We also advise on share transfers, shareholder's rights, opening branches or liaison offıces in or outside Turkey, corporate governance issues, general assembly meetings, board meetings, Capital increase operations, class change operations; contracting issues such as employment contracts, stock option agreements, licensing agreements, franchise agreements, supply agreements, distributorship and agency contracts. Furthermore, çınar & çınar provides consultancy servicesin a diverse set of partnership transactions such as joint venture structuring. çınar & çınar possesses outstanding reputation for further advising joint-ventures on issues related to competition law, arbitration, intellectual property law and corporate governance. We always collaborate with the parties' in-house counsels to better identify their objectives and commercial culture, and to meet their commercial needs. We develop innovative and effıcient approaches to deal with complex and challenging matters  and to structure most effıcient way to develop a business. ",
+  "Mergers, acquisitions and takeovers together constitute one of çınar & çınar most common practice area. Our team members have considerable knowledge and experience in the structure and negotiation of M&A transactions. Our team has experience in all relevant aspects relevant to a business acquisition and is prepared to succeed at all stages of the acquisition transaction including pre-negotiation, extensive due diligence investigation, drafting and negotiating share transfer and asset transfer agreements, and coordinating fınancial arrangements. Additionally we guide our clients in matters such as employment, environmental, competition and real estate issues",
   "https://www.fiverr.com/hamza6shakeel/get-you-modern-ui-design-using-adobe-xd",
   "https://www.fiverr.com/hamza6shakeel/be-your-mobile-app-developer-via-flutter",
-  "https://mhamzadev.medium.com",
-  "https://github.com/mhmzdev",
-  "https://github.com/mhmzdev"
+ "Expert local advice is a major element for the International Commercial Transactions and International Contracts. We represent and advise both major Turkish exporters and foreign investors in the area of international contracts and international commercial transactions including international sales agreements, agency agreements, distribution agreements, export & import issues, free trade zones, licensing agreements, know-how agreements, franchise agreements and joint-ventures. Çınar & Çınar members have been involved in many international commercial transactions. In addition to our experience, our partners have been regularly lecturing at Ankara Bar Association on International Commercial Transactions and International Contracts. ",
+ "Çınar & Çınar provides high-quality corporate advice to both international and domestic corporations from general corporate issues to most challenging matters. We consult on legal matters at ali stages of development of a business. We assist our Clients in incorporation transactions of domestic companies or companies with foreign Capital such as preparation of foundation documents, Articles of Associations and applications to relevant authorities. We also advise on share transfers, shareholder's rights, opening branches or liaison offıces in or outside Turkey, corporate governance issues, general assembly meetings, board meetings, Capital increase operations, class change operations; contracting issues such as employment contracts, stock option agreements, licensing agreements, franchise agreements, supply agreements, distributorship and agency contracts. Furthermore, çınar & çınar provides consultancy servicesin a diverse set of partnership transactions such as joint venture structuring. çınar & çınar possesses outstanding reputation for further advising joint-ventures on issues related to competition law, arbitration, intellectual property law and corporate governance. We always collaborate with the parties' in-house counsels to better identify their objectives and commercial culture, and to meet their commercial needs. We develop innovative and effıcient approaches to deal with complex and challenging matters  and to structure most effıcient way to develop a business. ",
+  "Mergers, acquisitions and takeovers together constitute one of çınar & çınar most common practice area. Our team members have considerable knowledge and experience in the structure and negotiation of M&A transactions. Our team has experience in all relevant aspects relevant to a business acquisition and is prepared to succeed at all stages of the acquisition transaction including pre-negotiation, extensive due diligence investigation, drafting and negotiating share transfer and asset transfer agreements, and coordinating fınancial arrangements. Additionally we guide our clients in matters such as employment, environmental, competition and real estate issues",
+  "https://www.fiverr.com/hamza6shakeel/get-you-modern-ui-design-using-adobe-xd",
+  "https://www.fiverr.com/hamza6shakeel/be-your-mobile-app-developer-via-flutter",
+   "Expert local advice is a major element for the International Commercial Transactions and International Contracts. We represent and advise both major Turkish exporters and foreign investors in the area of international contracts and international commercial transactions including international sales agreements, agency agreements, distribution agreements, export & import issues, free trade zones, licensing agreements, know-how agreements, franchise agreements and joint-ventures. Çınar & Çınar members have been involved in many international commercial transactions. In addition to our experience, our partners have been regularly lecturing at Ankara Bar Association on International Commercial Transactions and International Contracts. ",
+ "Çınar & Çınar provides high-quality corporate advice to both international and domestic corporations from general corporate issues to most challenging matters. We consult on legal matters at ali stages of development of a business. We assist our Clients in incorporation transactions of domestic companies or companies with foreign Capital such as preparation of foundation documents, Articles of Associations and applications to relevant authorities. We also advise on share transfers, shareholder's rights, opening branches or liaison offıces in or outside Turkey, corporate governance issues, general assembly meetings, board meetings, Capital increase operations, class change operations; contracting issues such as employment contracts, stock option agreements, licensing agreements, franchise agreements, supply agreements, distributorship and agency contracts. Furthermore, çınar & çınar provides consultancy servicesin a diverse set of partnership transactions such as joint venture structuring. çınar & çınar possesses outstanding reputation for further advising joint-ventures on issues related to competition law, arbitration, intellectual property law and corporate governance. We always collaborate with the parties' in-house counsels to better identify their objectives and commercial culture, and to meet their commercial needs. We develop innovative and effıcient approaches to deal with complex and challenging matters  and to structure most effıcient way to develop a business. ",
+  "Mergers, acquisitions and takeovers together constitute one of çınar & çınar most common practice area. Our team members have considerable knowledge and experience in the structure and negotiation of M&A transactions. Our team has experience in all relevant aspects relevant to a business acquisition and is prepared to succeed at all stages of the acquisition transaction including pre-negotiation, extensive due diligence investigation, drafting and negotiating share transfer and asset transfer agreements, and coordinating fınancial arrangements. Additionally we guide our clients in matters such as employment, environmental, competition and real estate issues",
+  "https://www.fiverr.com/hamza6shakeel/get-you-modern-ui-design-using-adobe-xd",
+  "https://www.fiverr.com/hamza6shakeel/be-your-mobile-app-developer-via-flutter",
+   "Expert local advice is a major element for the International Commercial Transactions and International Contracts. We represent and advise both major Turkish exporters and foreign investors in the area of international contracts and international commercial transactions including international sales agreements, agency agreements, distribution agreements, export & import issues, free trade zones, licensing agreements, know-how agreements, franchise agreements and joint-ventures. Çınar & Çınar members have been involved in many international commercial transactions. In addition to our experience, our partners have been regularly lecturing at Ankara Bar Association on International Commercial Transactions and International Contracts. ",
+ "Çınar & Çınar provides high-quality corporate advice to both international and domestic corporations from general corporate issues to most challenging matters. We consult on legal matters at ali stages of development of a business. We assist our Clients in incorporation transactions of domestic companies or companies with foreign Capital such as preparation of foundation documents, Articles of Associations and applications to relevant authorities. We also advise on share transfers, shareholder's rights, opening branches or liaison offıces in or outside Turkey, corporate governance issues, general assembly meetings, board meetings, Capital increase operations, class change operations; contracting issues such as employment contracts, stock option agreements, licensing agreements, franchise agreements, supply agreements, distributorship and agency contracts. Furthermore, çınar & çınar provides consultancy servicesin a diverse set of partnership transactions such as joint venture structuring. çınar & çınar possesses outstanding reputation for further advising joint-ventures on issues related to competition law, arbitration, intellectual property law and corporate governance. We always collaborate with the parties' in-house counsels to better identify their objectives and commercial culture, and to meet their commercial needs. We develop innovative and effıcient approaches to deal with complex and challenging matters  and to structure most effıcient way to develop a business. ",
+  "Mergers, acquisitions and takeovers together constitute one of çınar & çınar most common practice area. Our team members have considerable knowledge and experience in the structure and negotiation of M&A transactions. Our team has experience in all relevant aspects relevant to a business acquisition and is prepared to succeed at all stages of the acquisition transaction including pre-negotiation, extensive due diligence investigation, drafting and negotiating share transfer and asset transfer agreements, and coordinating fınancial arrangements. Additionally we guide our clients in matters such as employment, environmental, competition and real estate issues",
+  "https://www.fiverr.com/hamza6shakeel/get-you-modern-ui-design-using-adobe-xd",
+  "https://www.fiverr.com/hamza6shakeel/be-your-mobile-app-developer-via-flutter",
 ];
 
 // Our Team

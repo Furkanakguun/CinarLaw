@@ -21,17 +21,17 @@ class _PublicationListCardState extends State<PublicationListCard> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => showPublicationAlertDialog(context),
-      onHover: (isHovering) {
-        if (isHovering) {
-          setState(() {
-            isHover = true;
-          });
-        } else {
-          setState(() {
-            isHover = false;
-          });
-        }
-      },
+      // onHover: (isHovering) {
+      //   if (isHovering) {
+      //     setState(() {
+      //       isHover = true;
+      //     });
+      //   } else {
+      //     setState(() {
+      //       isHover = false;
+      //     });
+      //   }
+      // },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(

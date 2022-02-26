@@ -13,6 +13,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:cinarlaw/constants.dart';
 import 'package:provider/provider.dart';
 
+import '../../widget/alertDialog.dart';
+
 class ServiceDesktop extends StatefulWidget {
   @override
   _ServiceDesktopState createState() => _ServiceDesktopState();
@@ -42,14 +44,14 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
-                  3,
+                  5,
                   (index) => Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: WidgetAnimator(
                       child: ServiceCard(
-                        cardWidth: width < 1200 ? width * 0.25 : width * 0.22,
+                        cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
                         cardHeight:
-                            width < 1200 ? height * 0.37 : height * 0.35,
+                            width < 1200 ? height * 0.25 : height * 0.23,
                         serviceIcon: kServicesIcons[index],
                         serviceTitle: kServicesTitles[index],
                         serviceDescription: kServicesDescriptions[index],
@@ -59,7 +61,8 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                             serviceDesc: kServicesDescriptions[index],
                             themeProvider: _themeProvider,
                             height: height,
-                            width: width),
+                            width: width,
+                             constantIndex: index),
                       ),
                     ),
                   ),
@@ -71,14 +74,14 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  for (int index = 3; index < kServicesIcons.length; index++)
+                  for (int index = 5; index < 10; index++)
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15.0),
                       child: WidgetAnimator(
                         child: ServiceCard(
-                          cardWidth: width < 1200 ? width * 0.25 : width * 0.22,
-                          cardHeight:
-                              width < 1200 ? height * 0.37 : height * 0.35,
+                         cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
+                        cardHeight:
+                            width < 1200 ? height * 0.25 : height * 0.23,
                           serviceIcon: _themeProvider.lightTheme && index == 4
                               ? "assets/services/open_b.png"
                               : kServicesIcons[index],
@@ -91,6 +94,73 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                             themeProvider: _themeProvider,
                             height: height,
                             width: width,
+                            constantIndex: index
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+               SizedBox(
+                height: height * 0.04,
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (int index = 10; index < 15; index++)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: WidgetAnimator(
+                        child: ServiceCard(
+                         cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
+                        cardHeight:
+                            width < 1200 ? height * 0.25 : height * 0.23,
+                          serviceIcon: _themeProvider.lightTheme && index == 4
+                              ? "assets/services/open_b.png"
+                              : kServicesIcons[index],
+                          serviceTitle: kServicesTitles[index],
+                          serviceDescription: kServicesDescriptions[index],
+                          serviceLink: kServicesLinks[index],
+                          cardBack: ServiceCardBackWidget(
+                            serviceDesc: kServicesDescriptions[index],
+                            serviceTitle: kServicesTitles[index],
+                            themeProvider: _themeProvider,
+                            height: height,
+                            width: width,
+                            constantIndex: index
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+               SizedBox(
+                height: height * 0.04,
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  for (int index = 15; index < 20; index++)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: WidgetAnimator(
+                        child: ServiceCard(
+                         cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
+                        cardHeight:
+                            width < 1200 ? height * 0.25 : height * 0.23,
+                          serviceIcon: _themeProvider.lightTheme && index == 4
+                              ? "assets/services/open_b.png"
+                              : kServicesIcons[index],
+                          serviceTitle: kServicesTitles[index],
+                          serviceDescription: kServicesDescriptions[index],
+                          serviceLink: kServicesLinks[index],
+                          cardBack: ServiceCardBackWidget(
+                            serviceDesc: kServicesDescriptions[index],
+                            serviceTitle: kServicesTitles[index],
+                            themeProvider: _themeProvider,
+                            height: height,
+                            width: width,
+                            constantIndex: index
                           ),
                         ),
                       ),
@@ -112,7 +182,7 @@ class ServiceCardBackWidget extends StatelessWidget {
       @required this.height,
       @required this.width,
       this.serviceDesc,
-      this.serviceTitle})
+      this.serviceTitle, this.constantIndex})
       : _themeProvider = themeProvider,
         super(key: key);
 
@@ -121,6 +191,7 @@ class ServiceCardBackWidget extends StatelessWidget {
   final double width;
   final String serviceDesc;
   final String serviceTitle;
+  final int constantIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -144,19 +215,7 @@ class ServiceCardBackWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(5.0),
               side: BorderSide(color: kPrimaryColor)),
           onPressed: () {
-            serviceTitle == kServicesTitles[3]
-                ? launchURL(kServicesLinks[3])
-                : serviceTitle == kServicesTitles[4]
-                    ? launchURL(kServicesLinks[4])
-                    : Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => ServiceDetails(
-                            title: serviceTitle,
-                            dec: serviceDesc,
-                          ),
-                        ),
-                      );
+            showOurAreasAlertDialog(context , constantIndex);
           },
           child: Text(
             "Details",
