@@ -1,11 +1,14 @@
+import 'package:cinarlaw/animations/bottomAnimation.dart';
 import 'package:cinarlaw/sections/museum/museum_listMobile.dart';
 import 'package:cinarlaw/sections/publications/publication.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_list.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
+import 'package:cinarlaw/widget/socialMediaIcon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:cinarlaw/provider/themeProvider.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:flutter/gestures.dart';
@@ -126,9 +129,18 @@ class _MainPageState extends State<MainPage> {
               iconTheme: IconThemeData(
                   color: _themeProv.lightTheme ? Colors.black : Colors.white),
               elevation: 0,
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.white,
               actions: [
-                NavBarLogo(),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(left: 18.0, top: 10, bottom: 10),
+                  child: Image.asset(
+                    'assets/cinar_Logo.png',
+                    fit: BoxFit.cover,
+                    height: 100,
+                    width: 180,
+                  ),
+                ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.05,
                 )
@@ -168,6 +180,7 @@ class _MainPageState extends State<MainPage> {
             delay: Duration(milliseconds: 100),
             duration: Duration(milliseconds: 250),
             child: Container(
+              color: mainColorWhite,
               padding: const EdgeInsets.all(8.0),
               height: 60.0,
               child: MaterialButton(
@@ -175,11 +188,11 @@ class _MainPageState extends State<MainPage> {
                 onPressed: () => _scroll(index),
                 child: Text(
                   childText,
-                  style: GoogleFonts.brygada1918(
-                    // fontSize: height * 0.06,
-                    // fontWeight: FontWeight.w300,
+                  style: GoogleFonts.montserrat(
+                    fontSize: MediaQuery.of(context).size.height * 0.013,
+                    //fontWeight: FontWeight.w300,
                     color:
-                        themeProvider.lightTheme ? Colors.black : Colors.white,
+                        themeProvider.lightTheme ? Colors.white : Colors.white,
                   ),
                   // style: TextStyle(
                   //   color:
@@ -217,6 +230,10 @@ class _MainPageState extends State<MainPage> {
     return AppBar(
       elevation: 0.0,
       backgroundColor: _themeProv.lightTheme ? Colors.white : Colors.black,
+      // flexibleSpace: Image(
+      //   image: AssetImage('assets/navbar.png'),
+      //   fit: BoxFit.cover,
+      // ),
       title: MediaQuery.of(context).size.width < 780
           ? EntranceFader(
               duration: Duration(milliseconds: 250),
@@ -225,17 +242,16 @@ class _MainPageState extends State<MainPage> {
               child: NavBarLogo(
                 height: 20.0,
               ))
-          : EntranceFader(
-              offset: Offset(0, -10),
-              duration: Duration(milliseconds: 250),
-              delay: Duration(milliseconds: 100),
-              child: NavBarLogo(
-                height: MediaQuery.of(context).size.height * 0.035,
+          : Padding(
+              padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
+              child: Image.asset(
+                'assets/cinar_Logo.png',
+                fit: BoxFit.fitWidth,
+                height: 120,
+                width: 200,
               ),
             ),
       actions: [
-        for (int i = 0; i < _sectionsName.length; i++)
-          _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
         MediaQuery.of(context).size.width > 760
             ? EntranceFader(
                 offset: Offset(0, -10),
@@ -254,11 +270,12 @@ class _MainPageState extends State<MainPage> {
                     ),
                     child: Text(
                       "ÇINAR ACADEMIA",
-                      style: GoogleFonts.brygada1918(
-                        // fontSize: height * 0.06,
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.height * 0.013,
                         // fontWeight: FontWeight.w300,
-                        color:
-                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                        color: _themeProv.lightTheme
+                            ? mainColorWhite
+                            : Colors.white,
                       ),
                       // style: TextStyle(
                       //   color:
@@ -287,16 +304,19 @@ class _MainPageState extends State<MainPage> {
                       Icons.book,
                       color: kPrimaryColor,
                     ),
-                    title: Text("Çınar Museum",
-                        style: TextStyle(
-                          color: _themeProv.lightTheme
-                              ? Colors.black
-                              : Colors.white,
-                        )),
+                    title: Text(
+                      "Çınar Academia",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.height * 0.013,
+                        // fontWeight: FontWeight.w300,
+                        color:
+                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ),
-              MediaQuery.of(context).size.width > 760
+        MediaQuery.of(context).size.width > 760
             ? EntranceFader(
                 offset: Offset(0, -10),
                 delay: Duration(milliseconds: 100),
@@ -314,11 +334,12 @@ class _MainPageState extends State<MainPage> {
                     ),
                     child: Text(
                       "ÇINAR MUSEUM",
-                      style: GoogleFonts.brygada1918(
-                        // fontSize: height * 0.06,
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.height * 0.013,
                         // fontWeight: FontWeight.w300,
-                        color:
-                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                        color: _themeProv.lightTheme
+                            ? mainColorWhite
+                            : Colors.white,
                       ),
                       // style: TextStyle(
                       //   color:
@@ -347,56 +368,110 @@ class _MainPageState extends State<MainPage> {
                       Icons.book,
                       color: kPrimaryColor,
                     ),
-                    title: Text("Çınar Museum",
-                        style: TextStyle(
-                          color: _themeProv.lightTheme
-                              ? Colors.black
-                              : Colors.white,
-                        )),
+                    title: Text(
+                      "Çınar Museum",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.height * 0.013,
+                        // fontWeight: FontWeight.w300,
+                        color:
+                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ),
-        // EntranceFader(
-        //   offset: Offset(0, -10),
-        //   delay: Duration(milliseconds: 100),
-        //   duration: Duration(milliseconds: 250),
-        //   child: Container(
-        //     height: 60.0,
-        //     width: 120.0,
-        //     padding: const EdgeInsets.all(8.0),
-        //     child: MaterialButton(
-        //       hoverColor: kPrimaryColor.withAlpha(150),
-        //       shape: RoundedRectangleBorder(
-        //           borderRadius: BorderRadius.circular(5.0),
-        //           side: BorderSide(color: kPrimaryColor)),
-        //       onPressed: () {
-        //         html.window.open(
-        //             'https://drive.google.com/file/d/1GF-wtbu2ob_Uxhw2In2QA8QiYi3XjCj1/view?usp=sharing',
-        //             "pdf");
-        //       },
-        //       child: Text(
-        //         "RESUME",
-        //         style: GoogleFonts.montserrat(
-        //           color: _themeProv.lightTheme ? Colors.black : Colors.white,
-        //           fontWeight: FontWeight.w300,
+        for (int i = 0; i < _sectionsName.length; i++)
+          _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
+        Container(
+            color: mainColorWhite,
+            child: Row(
+              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 12,
+                ),
+                EntranceFader(
+                    offset: Offset(0, -10),
+                    delay: Duration(milliseconds: 100),
+                    duration: Duration(milliseconds: 250),
+                    child: IconButton(
+                      icon: Icon(
+                        AntDesign.instagram,
+                        color: Colors.white,
+                      ),
+                      //iconSize: height,
+                      onPressed: () => launchURL('www'),
+                      //hoverColor: kPrimaryColor,
+                    )),
+                SizedBox(
+                  width: 12,
+                ),
+                EntranceFader(
+                    offset: Offset(0, -10),
+                    delay: Duration(milliseconds: 100),
+                    duration: Duration(milliseconds: 250),
+                    child: IconButton(
+                      icon: Icon(
+                        AntDesign.twitter,
+                        color: Colors.white,
+                      ),
+                      //iconSize: height,
+                      onPressed: () => launchURL('www'),
+                      //hoverColor: kPrimaryColor,
+                    )),
+                SizedBox(
+                  width: 12,
+                ),
+                EntranceFader(
+                  offset: Offset(0, -10),
+                  delay: Duration(milliseconds: 100),
+                  duration: Duration(milliseconds: 250),
+                  child: IconButton(
+                    icon: Icon(
+                      AntDesign.facebook_square,
+                      color: Colors.white,
+                    ),
+                    //iconSize: height,
+                    onPressed: () => launchURL('www'),
+                    //hoverColor: kPrimaryColor,
+                  ),
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                EntranceFader(
+                  offset: Offset(0, -10),
+                  delay: Duration(milliseconds: 100),
+                  duration: Duration(milliseconds: 250),
+                  child: IconButton(
+                    icon: Icon(
+                      AntDesign.linkedin_square,
+                      color: Colors.white,
+                    ),
+                    //iconSize: height,
+                    onPressed: () => launchURL('www'),
+                    //hoverColor: kPrimaryColor,
+                  ),
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+              ],
+            ))
+        //  Row(
+        //         mainAxisSize: MainAxisSize.min,
+        //         children: List.generate(
+        //           kSocialIcons.length,
+        //           (index) => WidgetAnimator(
+        //             child: SocialMediaIconBtn(
+        //               icon: kSocialIcons[index],
+        //               socialLink: kSocialLinks[index],
+        //               height: height * 0.035,
+        //               horizontalPadding: width * 0.005,
+        //             ),
+        //           ),
         //         ),
         //       ),
-        //     ),
-        //   ),
-        // ),
-        //const SizedBox(width: 15.0),
-        // SizedBox(
-        //   height: 30.0,
-        //   child: Switch(
-        //     inactiveTrackColor: Colors.grey,
-        //     value: !_themeProv.lightTheme,
-        //     onChanged: (value) {
-        //       _themeProv.lightTheme = !value;
-        //     },
-        //     activeColor: kPrimaryColor,
-        //   ),
-        // ),
-        const SizedBox(width: 15.0),
       ],
     );
   }
@@ -410,62 +485,74 @@ class _MainPageState extends State<MainPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: NavBarLogo(
-                  height: 28,
-                ),
+              NavBarLogo(
+                height: 28,
               ),
-              Divider(
-                color: theme.lightTheme ? Colors.grey[200] : Colors.white,
-              ),
-              //ListTile(
-              //   leading: Icon(
-              //     Icons.light_mode,
-              //     color: kPrimaryColor,
-              //   ),
-              //   title: Text("Dark Mode",
-              //       style: TextStyle(
-              //           color: theme.lightTheme ? Colors.black : Colors.white)),
-              //   trailing: Switch(
-              //     inactiveTrackColor: Colors.grey,
-              //     value: !theme.lightTheme,
-              //     onChanged: (value) {
-              //       theme.lightTheme = !value;
-              //     },
-              //     activeColor: kPrimaryColor,
-              //   ),
-              // ),
               Divider(
                 color: theme.lightTheme ? Colors.grey[200] : Colors.white,
               ),
               for (int i = 0; i < _sectionsName.length; i++)
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i], theme),
-              // Padding(
-              //   padding: const EdgeInsets.all(8.0),
-              //   child: MaterialButton(
-              //     hoverColor: kPrimaryColor.withAlpha(150),
-              //     shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(5.0),
-              //         side: BorderSide(color: kPrimaryColor)),
-              //     onPressed: () {
-              //       launchURL(
-              //           "https://drive.google.com/file/d/1GF-wtbu2ob_Uxhw2In2QA8QiYi3XjCj1/view?usp=sharing");
-              //     },
-              //     child: ListTile(
-              //       leading: Icon(
-              //         Icons.book,
-              //         color: Colors.red,
-              //       ),
-              //       title: Text(
-              //         "RESUME",
-              //         style: GoogleFonts.montserrat(
-              //           fontWeight: FontWeight.w300,
-              //           color: theme.lightTheme ? Colors.black : Colors.white,
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(150),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                      side: BorderSide(color: kPrimaryColor)),
+                  onPressed: () {
+                   Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PublicationsListDesktop(),
+                      ),
+                    );
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Entypo.open_book,
+                      color: mainColorWhite,
+                    ),
+                    title: Text(
+                      "Çınar ACADEMIA",
+                      style: GoogleFonts.montserrat(
+                        fontWeight: FontWeight.w300,
+                        color: theme.lightTheme ? Colors.black : Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+               Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(150),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                      side: BorderSide(color: kPrimaryColor)),
+                  onPressed: () {
+                   Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MuseumListDesktop(),
+                      ),
+                    );
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      MaterialCommunityIcons.leaf_maple,
+                      color: mainColorWhite,
+                    ),
+                    title: Text(
+                      "Çınar MUSEUM",
+                      style: GoogleFonts.montserrat(
+                        fontWeight: FontWeight.w300,
+                        color: theme.lightTheme ? Colors.black : Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

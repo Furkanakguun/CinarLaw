@@ -1,14 +1,10 @@
 import 'package:flip_card/flip_card.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/animations/bottomAnimation.dart';
 import 'package:cinarlaw/provider/themeProvider.dart';
-import 'package:cinarlaw/sections/serviceDetails/serviceDetails.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
-import 'package:cinarlaw/widget/customBtn.dart';
 import 'package:cinarlaw/widget/customTextHeading.dart';
 import 'package:cinarlaw/widget/serviceCard.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cinarlaw/constants.dart';
 import 'package:provider/provider.dart';

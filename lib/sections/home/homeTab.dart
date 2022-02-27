@@ -6,6 +6,8 @@ import 'package:cinarlaw/widget/socialMediaIcon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../animations/entranceFader.dart';
+
 class HomeTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,12 @@ class HomeTab extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
-      color: mainColor,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/CINAR.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
       height: height,
       width: width,
       child: Stack(
@@ -33,27 +40,43 @@ class HomeTab extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      "Çınar&Çınar Hukuk Bürosu ",
+                  Text(
+                      "We are always here for ",
                       style: GoogleFonts.montserrat(
-                        fontSize: height * 0.03,
-                        fontWeight: FontWeight.w300,
-                        color: _themeProvider.lightTheme
-                            ? Colors.black
-                            : Colors.white,
+                          fontSize: height * 0.042,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400),
+                    ),
+                     SizedBox(height: 12,),
+                    Text(
+                      "Solutions that will\n" + "change your life",
+                      style: GoogleFonts.montserrat(
+                          fontSize: height * 0.035,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300),
+                    ),
+                    SizedBox(height: 50,),
+                    EntranceFader(
+                      offset: Offset(-10, 0),
+                      delay: Duration(seconds: 1),
+                      duration: Duration(milliseconds: 800),
+                      child: Text(
+                        "In cinar&cinar we always estalish a close working\n" +
+                            "relationships with our clients.  \n" +
+                            "We are comitted to serving and \n"
+                            "protecting our Client's interests in today's ever-changing\n" +
+                            "economical and legal environment",
+                        style: GoogleFonts.montserrat(
+                            fontSize: height * 0.020,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w200),
+                            //textAlign: TextAlign.left,
                       ),
+                      
                     ),
-                    Container(
-                      color: Colors.black,
-                      height: height * 0.05,
-                    ),
-                    // Image.asset(
-                    //   "assets/hi.gif",
-                    //   height: height * 0.05,
-                    // ),
                   ],
                 ),
                 SizedBox(

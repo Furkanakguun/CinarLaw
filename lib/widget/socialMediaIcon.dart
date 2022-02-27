@@ -19,7 +19,7 @@ class SocialMediaIconBtn extends StatelessWidget {
       child: IconButton(
         icon: Image.network(
           icon,
-          color: _themeProvider.lightTheme ? Colors.black : Colors.white,
+          color: _themeProvider.lightTheme ? Colors.white : Colors.white,
         ),
         iconSize: height,
         onPressed: () => launchURL(socialLink),

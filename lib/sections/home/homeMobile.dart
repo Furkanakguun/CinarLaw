@@ -7,6 +7,8 @@ import 'package:cinarlaw/widget/socialMediaIcon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../animations/entranceFader.dart';
+
 class HomeMobile extends StatefulWidget {
   @override
   _HomeMobileState createState() => _HomeMobileState();
@@ -20,7 +22,12 @@ class _HomeMobileState extends State<HomeMobile> {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
-      color: mainColor,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/CINAR.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
       height: height,
       width: width,
       child: Stack(
@@ -34,76 +41,53 @@ class _HomeMobileState extends State<HomeMobile> {
           //   ),
           // ),
           Container(
+            color: Colors.transparent,
             margin: EdgeInsets.fromLTRB(width * 0.07, height * 0.12, 0, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.min,
+                Column(
+                  //mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Çınar&Çınar Hukuk Bürosu ",
+                      "We are always here for ",
                       style: GoogleFonts.montserrat(
-                          fontSize: height * 0.025,
-                          color: _themeProvider.lightTheme
-                              ? Colors.black
-                              : Colors.white,
-                          fontWeight: FontWeight.w200),
+                          fontSize: height * 0.042,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400),
                     ),
-                    Container(
-                      color: Colors.black,
-                      height: height * 0.03,
+                     SizedBox(height: 12,),
+                    Text(
+                      "Solutions that will\n" + "change your life",
+                      style: GoogleFonts.montserrat(
+                          fontSize: height * 0.035,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300),
                     ),
-                    // Image.asset(
-                    //   "assets/hi.gif",
-                    //   height: height * 0.03,
-                    // ),
+                    SizedBox(height: 50,),
+                    EntranceFader(
+                      offset: Offset(-10, 0),
+                      delay: Duration(seconds: 1),
+                      duration: Duration(milliseconds: 800),
+                      child: Text(
+                        "In cinar&cinar we always estalish a close working\n" +
+                            "relationships with our clients.  \n" +
+                            "We are comitted to serving and \n"
+                            "protecting our Client's interests in today's ever-changing\n" +
+                            "economical and legal environment",
+                        style: GoogleFonts.montserrat(
+                            fontSize: height * 0.020,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w200),
+                            //textAlign: TextAlign.left,
+                      ),
+                      
+                    ),
                   ],
                 ),
                 SizedBox(
                   height: height * 0.01,
                 ),
-                // Text(
-                //   "Çınar&Çınar",
-                //   style: GoogleFonts.montserrat(
-                //       fontSize: height * 0.055,
-                //       color: _themeProvider.lightTheme
-                //           ? Colors.black
-                //           : Colors.white,
-                //       fontWeight: FontWeight.w100,
-                //       letterSpacing: 1.1),
-                // ),
-                // Text(
-                //   "Çınar&Çınar",
-                //   style: GoogleFonts.montserrat(
-                //       color: _themeProvider.lightTheme
-                //           ? Colors.black
-                //           : Colors.white,
-                //       fontSize: height * 0.055,
-                //       fontWeight: FontWeight.w500),
-                // ),
-                // Row(
-                //   children: [
-                //     Icon(
-                //       Icons.play_arrow_rounded,
-                //       color: kPrimaryColor,
-                //     ),
-                //     TyperAnimatedTextKit(
-                //         isRepeatingAnimation: true,
-                //         speed: Duration(milliseconds: 50),
-                //         textStyle: GoogleFonts.montserrat(
-                //             fontSize: height * 0.03,
-                //             color: _themeProvider.lightTheme
-                //                 ? Colors.black
-                //                 : Colors.white,
-                //             fontWeight: FontWeight.w200),
-                //         text: [
-                //           " Flutter Developer",
-                //           " Technical Writer",
-                //           " UI/UX Enthusiast"
-                //         ]),
-                //   ],
-                // ),
                 SizedBox(
                   height: height * 0.035,
                 ),
