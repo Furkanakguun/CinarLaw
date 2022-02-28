@@ -1,15 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:cinarlaw/provider/themeProvider.dart';
-import 'package:cinarlaw/widget/customBtn.dart';
-import 'package:cinarlaw/widget/customTextHeading.dart';
 import 'package:provider/provider.dart';
-import 'package:universal_html/html.dart' as html;
 
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/constants.dart';
-import 'package:cinarlaw/widget/aboutMeMetaData.dart';
-import 'package:cinarlaw/widget/communityIconBtn.dart';
-import 'package:cinarlaw/widget/toolsTechWidget.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 
 class AboutMobile extends StatelessWidget {
@@ -28,14 +22,29 @@ class AboutMobile extends StatelessWidget {
       color: _themeProvider.lightTheme ? Colors.white : mainColor,
       child: Column(
         children: [
-          CustomSectionHeading(text: "\nAbout Us"),
-          //CustomSectionSubHeading(text: "Get to know me :)"),
           SizedBox(
             height: height * 0.05,
           ),
-          Image.asset(
-            'assets/about_cinar.PNG',
-            //height: height * 0.27,
+
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "ABOUT US",
+              style: GoogleFonts.montserrat(
+                  color: mainColorWhite,
+                  fontSize: height * 0.018,
+                  fontWeight: FontWeight.w200),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Who are we?",
+              style: GoogleFonts.montserrat(
+                  color: kPrimaryColor,
+                  fontSize: height * 0.045,
+                  fontWeight: FontWeight.w500),
+            ),
           ),
           SizedBox(
             height: height * 0.03,
@@ -50,11 +59,11 @@ class AboutMobile extends StatelessWidget {
           //     ),
           //   ),
           // ),
-          // SizedBox(
-          //   height: height * 0.028,
-          // ),
+          SizedBox(
+            height: height * 0.028,
+          ),
           // Text(
-          //   "I'm Muhammad Hamza, a Flutter developer, Technical blog writer and UI designer.",
+          //   "I'm Furkan Akgun, a Flutter developer, Technical blog writer and UI designer.",
           //   style: GoogleFonts.montserrat(
           //     fontSize: height * 0.022,
           //     fontWeight: FontWeight.w400,
@@ -65,11 +74,30 @@ class AboutMobile extends StatelessWidget {
             height: height * 0.02,
           ),
           Text(
-            "Established by the third generation children of a lawyer family, with a modern perception of our age, çınar&çınar Law Office provides its Clients high caliber legal consultancy and attorneyship services since 1988. '\n" +
-                "çınar&çınar is named after the founding structure of the Firm which was jointly established by Emir and Hakan Çınar. \n" +
-                "Emir Çınar founded the Firm in 1988 and she represented her Clients in the cases regarding commercial law, marriage law, banking law and enforcement law; and provided legal consultancy to various companies until M. Hakan Çınar joined her in 1993. She also practiced in the field of the application to the relative of Authorities for the obtainment of investment incentives. \n" +
-                "M. Hakan Çınar, who officially joined çınar&çınar in 1993 previously worked as an in-house counsel of an American Company having expertise within the fields of labor law, contracts law and international disputes. This expertise enabled the transfer of çınar&çınar services, which were successfully conducted by Emir Çınar, to an international level. Following this transformation, çınar&çınar’s commercial and international services provided today had begun to be shaped as of 1993.\n" +
-                "The main characteristic of çınar&çınar is that it is comprised of its own apprentice attorneys at law. çınar&çınar has raised a large number of apprentices until today, and a significant number of cinar&cinar lawyers working presently are chosen among its apprentice attorneys. The other apprentices, who did not continue to work at çınar&çınar, each proceeded to practice their profession as precious lawyers making çınar&çınar family proud of them.",
+            "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.\n\n" +
+                "We have a diverse range of Clients from individual entrepreneurs and local companies to leading domestic and international companies, fınancial institutions and governmental authorities. At çınar & çınar, in addition to representing our Clients in complex fınancial and corporate transactions and litigations, we collaborate with leading international law firms and provide cutting edge consultancy services to local and foreign investors on their projects in Turkey\n\n",
+            style: GoogleFonts.roboto(
+              fontSize: height * 0.018,
+              color: Colors.grey[500],
+              height: 1.5,
+            ),
+          ),
+          SizedBox(
+            height: height * 0.025,
+          ),
+          Divider(
+            indent: 40, // empty space to the leading edge of divider.
+            endIndent: 40, // empty space to the trailing edge of the divider.
+            color: Colors.grey[300],
+            thickness: 1,
+          ),
+          SizedBox(
+            height: height * 0.025,
+          ),
+          Text(
+            "çınar & çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law \n\n" +
+                "Our Offıce, located at the heart of Turkey, in Ankara, has given us a competitive edge, enabling us to help manage and improve our Clients' business affairs with governmental and political authorities as well as administrative bodies.\n\n" +
+                "In çınar & çınar we always establish a close working relationship with our Clients. We are committed to serving and protecting our Clients' interests in today's ever-changing economical and legal environment",
             style: GoogleFonts.roboto(
               fontSize: height * 0.018,
               color: Colors.grey[500],

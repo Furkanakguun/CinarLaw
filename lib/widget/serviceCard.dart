@@ -94,14 +94,14 @@ class _ServiceCardState extends State<ServiceCard> {
           padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
           decoration: BoxDecoration(
             color: _themeProvider.lightTheme ? Colors.white : Colors.grey[900],
-            border: Border(
-              bottom: isHover
-                  ? BorderSide(
-                      color: kPrimaryColor,
-                      width: 3.0,
-                    )
-                  : BorderSide(),
-            ),
+            // border: Border(
+            //   bottom: isHover
+            //       ? BorderSide(
+            //           color: kPrimaryColor,
+            //           width: 3.0,
+            //         )
+            //       : BorderSide(),
+            // ),
             boxShadow: isHover
                 ? [
                     BoxShadow(

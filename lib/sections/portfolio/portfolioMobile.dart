@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/constants.dart';
-import 'package:cinarlaw/widget/customBtn.dart';
 import 'package:cinarlaw/widget/customTextHeading.dart';
 import 'package:cinarlaw/widget/projectCard.dart';
 

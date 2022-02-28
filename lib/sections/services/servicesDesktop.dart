@@ -26,145 +26,316 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: width * 0.02),
+      color: mainColor.withOpacity(0.9),
+      //padding: EdgeInsets.symmetric(horizontal: width * 0.02),
       child: Column(
         children: [
-          CustomSectionHeading(text: "\nOur Practice Areas "),
           SizedBox(
-            height: 40,
+            height: height * 0.05,
           ),
-          //CustomSectionSubHeading(
-          //text: "I may not be perfect, but I'm surely of some help :)\n\n"),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  5,
-                  (index) => Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                    child: WidgetAnimator(
-                      child: ServiceCard(
-                        cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
-                        cardHeight:
-                            width < 1200 ? height * 0.25 : height * 0.23,
-                        serviceIcon: kServicesIcons[index],
-                        serviceTitle: kServicesTitles[index],
-                        serviceDescription: kServicesDescriptions[index],
-                        serviceLink: kServicesLinks[index],
-                        cardBack: ServiceCardBackWidget(
-                            serviceTitle: kServicesTitles[index],
-                            serviceDesc: kServicesDescriptions[index],
-                            themeProvider: _themeProvider,
-                            height: height,
-                            width: width,
-                             constantIndex: index),
-                      ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "OUR PRACTICE AREAS",
+              style: GoogleFonts.montserrat(
+                  color: mainColorWhite.withOpacity(0.9),
+                  fontSize: height * 0.018,
+                  fontWeight: FontWeight.w200),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Why  Çınar&Çınar",
+              style: GoogleFonts.montserrat(
+                  color: Colors.white,
+                  fontSize: height * 0.045,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          SizedBox(
+            height: height * 0.03,
+          ),
+          IntrinsicHeight(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: width * 0.32,
+                  height: 50,
+                  child: AdaptiveText(
+                    "",
+                    style: GoogleFonts.roboto(
+                      fontSize: height * 0.018,
+                      color: Colors.grey[500],
+                      height: 1.5,
                     ),
                   ),
                 ),
+                VerticalDivider(
+                  color: Colors.grey[300],
+                  thickness: 3,
+                ),
+                Container(
+                  height: 50,
+                  width: width * 0.32,
+                  child: AdaptiveText(
+                    "",
+                    style: GoogleFonts.roboto(
+                      fontSize: height * 0.018,
+                      color: Colors.grey[500],
+                      height: 1.5,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                color: Colors.transparent,
+                height: height * 0.40,
+                width: width * 0.30,
+                child: Column(
+                  children: [
+                    for (int index = 0; index < 7; index++)
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () => {},
+                              child: Text(
+                                kServicesTitles[index],
+                                style: GoogleFonts.montserrat(
+                                    color: Colors.white.withOpacity(0.9),
+                                    fontSize: height * 0.018,
+                                    fontWeight: FontWeight.w200),
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                            Divider(
+                              color: Colors.grey[300],
+                              thickness: 2,
+                            )
+                          ],
+                        ),
+                      )
+                  ],
+                ),
               ),
               SizedBox(
-                height: height * 0.04,
+                width: 20,
               ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  for (int index = 5; index < 10; index++)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: WidgetAnimator(
-                        child: ServiceCard(
-                         cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
-                        cardHeight:
-                            width < 1200 ? height * 0.25 : height * 0.23,
-                          serviceIcon: _themeProvider.lightTheme && index == 4
-                              ? "assets/services/open_b.png"
-                              : kServicesIcons[index],
-                          serviceTitle: kServicesTitles[index],
-                          serviceDescription: kServicesDescriptions[index],
-                          serviceLink: kServicesLinks[index],
-                          cardBack: ServiceCardBackWidget(
-                            serviceDesc: kServicesDescriptions[index],
-                            serviceTitle: kServicesTitles[index],
-                            themeProvider: _themeProvider,
-                            height: height,
-                            width: width,
-                            constantIndex: index
-                          ),
+              Container(
+                color: Colors.transparent,
+                height: height * 0.40,
+                width: width * 0.30,
+                child: Column(
+                  children: [
+                    for (int index = 7; index < 14; index++)
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () => {},
+                              child: Text(
+                                kServicesTitles[index],
+                                style: GoogleFonts.montserrat(
+                                    color: Colors.white.withOpacity(0.9),
+                                    fontSize: height * 0.018,
+                                    fontWeight: FontWeight.w200),
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                            Divider(
+                              color: Colors.grey[300],
+                              thickness: 2,
+                            )
+                          ],
                         ),
-                      ),
-                    ),
-                ],
+                      )
+                  ],
+                ),
               ),
-               SizedBox(
-                height: height * 0.04,
+              SizedBox(
+                width: 20,
               ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  for (int index = 10; index < 15; index++)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: WidgetAnimator(
-                        child: ServiceCard(
-                         cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
-                        cardHeight:
-                            width < 1200 ? height * 0.25 : height * 0.23,
-                          serviceIcon: _themeProvider.lightTheme && index == 4
-                              ? "assets/services/open_b.png"
-                              : kServicesIcons[index],
-                          serviceTitle: kServicesTitles[index],
-                          serviceDescription: kServicesDescriptions[index],
-                          serviceLink: kServicesLinks[index],
-                          cardBack: ServiceCardBackWidget(
-                            serviceDesc: kServicesDescriptions[index],
-                            serviceTitle: kServicesTitles[index],
-                            themeProvider: _themeProvider,
-                            height: height,
-                            width: width,
-                            constantIndex: index
-                          ),
+              Container(
+                color: Colors.transparent,
+                height: height * 0.40,
+                width: width * 0.30,
+                child: Column(
+                  children: [
+                    for (int index = 14; index < 20; index++)
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () => {},
+                              child: Text(
+                                kServicesTitles[index],
+                                style: GoogleFonts.montserrat(
+                                    color: Colors.white.withOpacity(0.9),
+                                    fontSize: height * 0.018,
+                                    fontWeight: FontWeight.w200),
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                            Divider(
+                              color: Colors.grey[300],
+                              thickness: 2,
+                            )
+                          ],
                         ),
-                      ),
-                    ),
-                ],
-              ),
-               SizedBox(
-                height: height * 0.04,
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  for (int index = 15; index < 20; index++)
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: WidgetAnimator(
-                        child: ServiceCard(
-                         cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
-                        cardHeight:
-                            width < 1200 ? height * 0.25 : height * 0.23,
-                          serviceIcon: _themeProvider.lightTheme && index == 4
-                              ? "assets/services/open_b.png"
-                              : kServicesIcons[index],
-                          serviceTitle: kServicesTitles[index],
-                          serviceDescription: kServicesDescriptions[index],
-                          serviceLink: kServicesLinks[index],
-                          cardBack: ServiceCardBackWidget(
-                            serviceDesc: kServicesDescriptions[index],
-                            serviceTitle: kServicesTitles[index],
-                            themeProvider: _themeProvider,
-                            height: height,
-                            width: width,
-                            constantIndex: index
-                          ),
-                        ),
-                      ),
-                    ),
-                ],
+                      )
+                  ],
+                ),
               ),
             ],
+          ),
+          SizedBox(
+            height: 40,
           )
+          //CustomSectionSubHeading(
+          //text: "I may not be perfect, but I'm surely of some help :)\n\n"),
+          // Column(
+          //   children: [
+          //     Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: List.generate(
+          //         5,
+          //         (index) => Padding(
+          //           padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          //           child: WidgetAnimator(
+          //             child: ServiceCard(
+          //               cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
+          //               cardHeight:
+          //                   width < 1200 ? height * 0.25 : height * 0.23,
+          //               serviceIcon: kServicesIcons[index],
+          //               serviceTitle: kServicesTitles[index],
+          //               serviceDescription: kServicesDescriptions[index],
+          //               serviceLink: kServicesLinks[index],
+          //               cardBack: ServiceCardBackWidget(
+          //                   serviceTitle: kServicesTitles[index],
+          //                   serviceDesc: kServicesDescriptions[index],
+          //                   themeProvider: _themeProvider,
+          //                   height: height,
+          //                   width: width,
+          //                   constantIndex: index),
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //     SizedBox(
+          //       height: height * 0.04,
+          //     ),
+          //     Row(
+          //       mainAxisSize: MainAxisSize.min,
+          //       children: [
+          //         for (int index = 5; index < 10; index++)
+          //           Padding(
+          //             padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          //             child: WidgetAnimator(
+          //               child: ServiceCard(
+          //                 cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
+          //                 cardHeight:
+          //                     width < 1200 ? height * 0.25 : height * 0.23,
+          //                 serviceIcon: _themeProvider.lightTheme && index == 4
+          //                     ? "assets/services/open_b.png"
+          //                     : kServicesIcons[index],
+          //                 serviceTitle: kServicesTitles[index],
+          //                 serviceDescription: kServicesDescriptions[index],
+          //                 serviceLink: kServicesLinks[index],
+          //                 cardBack: ServiceCardBackWidget(
+          //                     serviceDesc: kServicesDescriptions[index],
+          //                     serviceTitle: kServicesTitles[index],
+          //                     themeProvider: _themeProvider,
+          //                     height: height,
+          //                     width: width,
+          //                     constantIndex: index),
+          //               ),
+          //             ),
+          //           ),
+          //       ],
+          //     ),
+          //     SizedBox(
+          //       height: height * 0.04,
+          //     ),
+          //     Row(
+          //       mainAxisSize: MainAxisSize.min,
+          //       children: [
+          //         for (int index = 10; index < 15; index++)
+          //           Padding(
+          //             padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          //             child: WidgetAnimator(
+          //               child: ServiceCard(
+          //                 cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
+          //                 cardHeight:
+          //                     width < 1200 ? height * 0.25 : height * 0.23,
+          //                 serviceIcon: _themeProvider.lightTheme && index == 4
+          //                     ? "assets/services/open_b.png"
+          //                     : kServicesIcons[index],
+          //                 serviceTitle: kServicesTitles[index],
+          //                 serviceDescription: kServicesDescriptions[index],
+          //                 serviceLink: kServicesLinks[index],
+          //                 cardBack: ServiceCardBackWidget(
+          //                     serviceDesc: kServicesDescriptions[index],
+          //                     serviceTitle: kServicesTitles[index],
+          //                     themeProvider: _themeProvider,
+          //                     height: height,
+          //                     width: width,
+          //                     constantIndex: index),
+          //               ),
+          //             ),
+          //           ),
+          //       ],
+          //     ),
+          //     SizedBox(
+          //       height: height * 0.04,
+          //     ),
+          //     Row(
+          //       mainAxisSize: MainAxisSize.min,
+          //       children: [
+          //         for (int index = 15; index < 20; index++)
+          //           Padding(
+          //             padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          //             child: WidgetAnimator(
+          //               child: ServiceCard(
+          //                 cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
+          //                 cardHeight:
+          //                     width < 1200 ? height * 0.25 : height * 0.23,
+          //                 serviceIcon: _themeProvider.lightTheme && index == 4
+          //                     ? "assets/services/open_b.png"
+          //                     : kServicesIcons[index],
+          //                 serviceTitle: kServicesTitles[index],
+          //                 serviceDescription: kServicesDescriptions[index],
+          //                 serviceLink: kServicesLinks[index],
+          //                 cardBack: ServiceCardBackWidget(
+          //                     serviceDesc: kServicesDescriptions[index],
+          //                     serviceTitle: kServicesTitles[index],
+          //                     themeProvider: _themeProvider,
+          //                     height: height,
+          //                     width: width,
+          //                     constantIndex: index),
+          //               ),
+          //             ),
+          //           ),
+          //       ],
+          //     ),
+          //   ],
+          // )
         ],
       ),
     );
@@ -178,7 +349,8 @@ class ServiceCardBackWidget extends StatelessWidget {
       @required this.height,
       @required this.width,
       this.serviceDesc,
-      this.serviceTitle, this.constantIndex})
+      this.serviceTitle,
+      this.constantIndex})
       : _themeProvider = themeProvider,
         super(key: key);
 
@@ -211,7 +383,7 @@ class ServiceCardBackWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(5.0),
               side: BorderSide(color: kPrimaryColor)),
           onPressed: () {
-            showOurAreasAlertDialog(context , constantIndex);
+            showOurAreasAlertDialog(context, constantIndex);
           },
           child: Text(
             "Details",

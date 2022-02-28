@@ -1,8 +1,10 @@
+import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/animations/bottomAnimation.dart';
 import 'package:cinarlaw/widget/customTextHeading.dart';
 import 'package:cinarlaw/widget/projectCard.dart';
 import 'package:cinarlaw/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PortfolioDesktop extends StatelessWidget {
   @override
@@ -19,9 +21,67 @@ class PortfolioDesktop extends StatelessWidget {
           horizontal: width * 0.08, vertical: height * 0.02),
       child: Column(
         children: [
-          CustomSectionHeading(text: "\nOur Team"),
-          // CustomSectionSubHeading(
-          //     text: "Here are few samples of my previous work :)\n\n"),
+          SizedBox(
+            height: height * 0.05,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "ABOUT US",
+              style: GoogleFonts.montserrat(
+                  color: mainColorWhite,
+                  fontSize: height * 0.018,
+                  fontWeight: FontWeight.w200),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Who are we?",
+              style: GoogleFonts.montserrat(
+                  color: kPrimaryColor,
+                  fontSize: height * 0.045,
+                  fontWeight: FontWeight.w500),
+            ),
+          ),
+          SizedBox(
+            height: height * 0.03,
+          ),
+          IntrinsicHeight(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: width * 0.32,
+                  height: 50,
+                  child: AdaptiveText(
+                    "",
+                    style: GoogleFonts.roboto(
+                      fontSize: height * 0.018,
+                      color: Colors.grey[500],
+                      height: 1.5,
+                    ),
+                  ),
+                ),
+                VerticalDivider(
+                  color: Colors.grey[300],
+                  thickness: 3,
+                ),
+                Container(
+                  height: 50,
+                  width: width * 0.32,
+                  child: AdaptiveText(
+                    "",
+                    style: GoogleFonts.roboto(
+                      fontSize: height * 0.018,
+                      color: Colors.grey[500],
+                      height: 1.5,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           SizedBox(
             height: width > 1200 ? height * 0.30 : width * 0.14,
             child: ListView.separated(

@@ -39,7 +39,6 @@ class _MainPageState extends State<MainPage> {
   ScrollController _scrollController = ScrollController();
 
   final List<String> _sectionsName = [
-    "",
     "ABOUT",
     "PRACTICE AREAS",
     "OUR TEAM",
@@ -185,11 +184,11 @@ class _MainPageState extends State<MainPage> {
               height: 60.0,
               child: MaterialButton(
                 hoverColor: kPrimaryColor,
-                onPressed: () => _scroll(index),
+                onPressed: () => _scroll(index + 1),
                 child: Text(
                   childText,
                   style: GoogleFonts.montserrat(
-                    fontSize: MediaQuery.of(context).size.height * 0.013,
+                    fontSize: MediaQuery.of(context).size.width * 0.0070,
                     //fontWeight: FontWeight.w300,
                     color:
                         themeProvider.lightTheme ? Colors.white : Colors.white,
@@ -204,24 +203,31 @@ class _MainPageState extends State<MainPage> {
           )
         : Padding(
             padding: const EdgeInsets.all(8.0),
-            child: MaterialButton(
-              hoverColor: kPrimaryColor.withAlpha(70),
-              onPressed: () {
-                _scroll(index);
-                Navigator.pop(context);
-              },
-              child: ListTile(
-                leading: Icon(
-                  icon,
-                  color: kPrimaryColor,
-                ),
-                title: Text(childText,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                MaterialButton(
+                  hoverColor: mainColor.withAlpha(70),
+                  onPressed: () {
+                    _scroll(index + 1);
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    childText,
                     style: TextStyle(
                       color: themeProvider.lightTheme
                           ? Colors.black
                           : Colors.white,
-                    )),
-              ),
+                    ),
+                    //textAlign: TextAlign.start,
+                  ),
+                ),
+                Divider(
+                  color: themeProvider.lightTheme
+                      ? Colors.brown[200]
+                      : Colors.white,
+                )
+              ],
             ),
           );
   }
@@ -271,7 +277,7 @@ class _MainPageState extends State<MainPage> {
                     child: Text(
                       "ÇINAR ACADEMIA",
                       style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.height * 0.013,
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
                         color: _themeProv.lightTheme
                             ? mainColorWhite
@@ -307,7 +313,7 @@ class _MainPageState extends State<MainPage> {
                     title: Text(
                       "Çınar Academia",
                       style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.height * 0.013,
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
                         color:
                             _themeProv.lightTheme ? Colors.black : Colors.white,
@@ -335,7 +341,7 @@ class _MainPageState extends State<MainPage> {
                     child: Text(
                       "ÇINAR MUSEUM",
                       style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.height * 0.013,
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
                         color: _themeProv.lightTheme
                             ? mainColorWhite
@@ -371,7 +377,7 @@ class _MainPageState extends State<MainPage> {
                     title: Text(
                       "Çınar Museum",
                       style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.height * 0.013,
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
                         color:
                             _themeProv.lightTheme ? Colors.black : Colors.white,
@@ -398,13 +404,14 @@ class _MainPageState extends State<MainPage> {
                       icon: Icon(
                         AntDesign.instagram,
                         color: Colors.white,
+                        size: MediaQuery.of(context).size.width * 0.0095,
                       ),
                       //iconSize: height,
                       onPressed: () => launchURL('www'),
                       //hoverColor: kPrimaryColor,
                     )),
                 SizedBox(
-                  width: 12,
+                  width: 4,
                 ),
                 EntranceFader(
                     offset: Offset(0, -10),
@@ -414,13 +421,14 @@ class _MainPageState extends State<MainPage> {
                       icon: Icon(
                         AntDesign.twitter,
                         color: Colors.white,
+                        size: MediaQuery.of(context).size.width * 0.0095,
                       ),
                       //iconSize: height,
                       onPressed: () => launchURL('www'),
                       //hoverColor: kPrimaryColor,
                     )),
                 SizedBox(
-                  width: 12,
+                  width: 4,
                 ),
                 EntranceFader(
                   offset: Offset(0, -10),
@@ -430,6 +438,7 @@ class _MainPageState extends State<MainPage> {
                     icon: Icon(
                       AntDesign.facebook_square,
                       color: Colors.white,
+                      size: MediaQuery.of(context).size.width * 0.0095,
                     ),
                     //iconSize: height,
                     onPressed: () => launchURL('www'),
@@ -437,7 +446,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
                 SizedBox(
-                  width: 12,
+                  width: 4,
                 ),
                 EntranceFader(
                   offset: Offset(0, -10),
@@ -447,6 +456,7 @@ class _MainPageState extends State<MainPage> {
                     icon: Icon(
                       AntDesign.linkedin_square,
                       color: Colors.white,
+                      size: MediaQuery.of(context).size.width * 0.0095,
                     ),
                     //iconSize: height,
                     onPressed: () => launchURL('www'),
@@ -454,24 +464,10 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
                 SizedBox(
-                  width: 50,
+                  width: 10,
                 ),
               ],
             ))
-        //  Row(
-        //         mainAxisSize: MainAxisSize.min,
-        //         children: List.generate(
-        //           kSocialIcons.length,
-        //           (index) => WidgetAnimator(
-        //             child: SocialMediaIconBtn(
-        //               icon: kSocialIcons[index],
-        //               socialLink: kSocialLinks[index],
-        //               height: height * 0.035,
-        //               horizontalPadding: width * 0.005,
-        //             ),
-        //           ),
-        //         ),
-        //       ),
       ],
     );
   }
@@ -481,7 +477,7 @@ class _MainPageState extends State<MainPage> {
       child: Material(
         color: theme.lightTheme ? Colors.white : Colors.grey[900],
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 25.0, 0, 0),
+          padding: const EdgeInsets.fromLTRB(10, 25.0, 0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -496,12 +492,12 @@ class _MainPageState extends State<MainPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(150),
+                  hoverColor: mainColorWhite.withAlpha(70),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: kPrimaryColor)),
                   onPressed: () {
-                   Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
@@ -523,15 +519,15 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
               ),
-               Padding(
+              Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(150),
+                  hoverColor: mainColorWhite.withAlpha(70),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: kPrimaryColor)),
                   onPressed: () {
-                   Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MuseumListDesktop(),
