@@ -26,14 +26,15 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             : EdgeInsets.only(top: 16.0, bottom: 16),
         child: Center(
           child: Container(
-            width: width < 1200 ? width * 0.80 : width / 2,
-            height: width < 1200 ? height * 0.90 : height,
-            //decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+            width: width,
+            height: height,
+            decoration: BoxDecoration(border: Border.all(color: Colors.black)),
             child: Column(
               children: [
                 Container(
-                  width: width < 1200 ? width * 0.80 : width / 2,
+                  width: width < 1200 ? width * 0.80 : width * 0.60,
                   height: width < 1200 ? height * 0.10 : 100,
+                  //decoration: BoxDecoration(border: Border),
                   color: Colors.transparent,
                   child: Center(
                     child: AdaptiveText(
@@ -48,6 +49,35 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 ),
                 SizedBox(
                   height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        color: Colors.white,
+                        width: width < 1200 ? width * 0.80 : width * 0.18,
+                        height: width < 1200 ? height * 0.10 : 250,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        color: Colors.white,
+                        width: width < 1200 ? width * 0.80 : width * 0.18,
+                        height: width < 1200 ? height * 0.10 : 250,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        color: Colors.white,
+                        width: width < 1200 ? width * 0.80 : width * 0.18,
+                        height: width < 1200 ? height * 0.10 : 250,
+                      ),
+                    )
+                  ],
                 ),
                 Expanded(
                   child: ListView.builder(
