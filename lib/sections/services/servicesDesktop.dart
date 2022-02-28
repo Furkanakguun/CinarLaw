@@ -110,7 +110,8 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InkWell(
-                              onTap: () => {},
+                              onTap: () =>
+                                  {showOurAreasAlertDialog(context, index)},
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(
@@ -146,7 +147,8 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InkWell(
-                              onTap: () => {},
+                              onTap: () =>
+                                  {showOurAreasAlertDialog(context, index)},
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(
@@ -182,7 +184,8 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InkWell(
-                              onTap: () => {},
+                              onTap: () =>
+                                  {showOurAreasAlertDialog(context, index)},
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(
@@ -205,7 +208,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
             ],
           ),
           SizedBox(
-            height: 40,
+            height: 75,
           )
           //CustomSectionSubHeading(
           //text: "I may not be perfect, but I'm surely of some help :)\n\n"),
