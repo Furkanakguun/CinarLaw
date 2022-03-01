@@ -162,16 +162,16 @@ final kServicesLinks = [
 
 // Our Team
 final kOurTeamBanner = [
-  "assets/person.jpg",
-  "assets/person.jpg",
-  "assets/person.jpg",
-  "assets/person.jpg",
-  "assets/person.jpg",
-  "assets/person.jpg",
-  "assets/person.jpg",
-  "assets/person.jpg",
-  "assets/person.jpg",
-  "assets/person.jpg",
+  "assets/Emir_Cinar.png",
+  "assets/Hakan_Cinar.png",
+  "assets/Duygu_Akan.png",
+  "assets/Emir_Cinar.png",
+  "assets/Hakan_Cinar.png",
+  "assets/Duygu_Akan.png",
+  "assets/Emir_Cinar.png",
+  "assets/Hakan_Cinar.png",
+  "assets/Duygu_Akan.png",
+  "assets/Hakan_Cinar.png",
 ];
 
 final kOurTeamIcons = [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
@@ -61,38 +62,95 @@ showOurAreasAlertDialog(BuildContext context, int index) {
   AlertDialog alert = AlertDialog(
     contentPadding: EdgeInsets.only(left: 25, right: 25),
     title: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Center(child: Text(kServicesTitles[index])),
+      padding: const EdgeInsets.only(top: 8.0, bottom: 2, left: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            "OUR PRACTICE AREAS",
+            style: GoogleFonts.montserrat(
+                color: mainColorWhite.withOpacity(0.9),
+                fontSize: height * 0.018,
+                fontWeight: FontWeight.w200),
+          ),
+          SizedBox(
+            height: 60,
+          ),
+          Text(
+            kServicesTitles[index],
+            style: GoogleFonts.montserrat(
+                color: Colors.black,
+                fontSize: height * 0.035,
+                fontWeight: FontWeight.w500),
+          ),
+        ],
+      ),
     ),
     shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(20.0))),
     content: Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(top: 0.0, bottom: 8, left: 30),
       child: Container(
-        width: width < 1200 ? width * 0.23 : width * 0.28,
-        height: width < 1200 ? height * 0.35 : height * 0.48,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                kServicesLinks[index],
-                style: GoogleFonts.roboto(
-                  fontSize: height * 0.018,
-                  color: Colors.grey[500],
-                  height: 1.5,
+        width: width < 1200 ? width * 0.35 : width * 0.65,
+        height: width < 1200 ? height * 0.8 : height * 0.27,
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      kServicesLinks[index],
+                      style: GoogleFonts.roboto(
+                        fontSize: height * 0.018,
+                        color: Colors.grey[500],
+                        height: 1.5,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                    SizedBox(
+                      height: 60,
+                    ),
+                  ],
                 ),
-                textAlign: TextAlign.center,
               ),
-              SizedBox(
-                height: 40,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: 180,
+                height: 38,
+                child: MaterialButton(
+                  color: mainColorWhite,
+                  hoverColor: mainColorWhite.withAlpha(70),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    //side: BorderSide(color: kPrimaryColor),
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "GO BACK",
+                    style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     ),

@@ -20,24 +20,22 @@ class Footer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height: height * 0.25,
-            width: width / 2,
-            color: Colors.white60,
+            height: height * 0.30,
+            width: width / 5 * (2),
+            color: Colors.grey[600],
           ),
           Container(
-            height: height * 0.25,
-            width: width / 2,
-            color: Colors.white30,
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: AdaptiveText(
-                    "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 Oran/Çankaya / Ankara \n\n" +
-                        "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 Maslak / Sarıyer / İstanbul \n\n" +
-                        "Ankara: +90 312 426 90 22 \n\n" +
-                        "İstanbul: +90 212 963 02 29 \n\n" +
-                        "info@cinarlaw.com"),
-              ),
+            height: height * 0.30,
+            width: width / 5 * (3),
+            color: Colors.grey[300],
+            child: Padding(
+              padding: const EdgeInsets.only(left:28.0,top: 40,bottom: 18),
+              child: AdaptiveText(
+                  "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 Oran/Çankaya / Ankara \n\n" +
+                      "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 Maslak / Sarıyer / İstanbul \n\n" +
+                      "Ankara: +90 312 426 90 22 \n\n" +
+                      "İstanbul: +90 212 963 02 29 \n\n" +
+                      "info@cinarlaw.com"),
             ),
           ),
         ],

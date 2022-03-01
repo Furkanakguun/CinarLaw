@@ -63,31 +63,20 @@ class _ProjectCardState extends State<ProjectCard> {
         height: widget.cardHeight,
         padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
         decoration: BoxDecoration(
-          color: _themeProvider.lightTheme ? Colors.white : Colors.grey[900],
-          border: Border(
-            bottom: isHover
-                ? BorderSide(
-                    color: kPrimaryColor,
-                    width: 3.0,
-                  )
-                : BorderSide(
-                    color: _themeProvider.lightTheme
-                        ? Colors.white
-                        : Colors.grey[900],
-                  ),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(7)),
+          color:  Colors.grey[300],
           boxShadow: isHover
               ? [
                   BoxShadow(
                     color: kPrimaryColor.withAlpha(100),
-                    blurRadius: 12.0,
+                    blurRadius: 0.0,
                     offset: Offset(0.0, 0.0),
                   )
                 ]
               : [
                   BoxShadow(
                     color: Colors.black.withAlpha(100),
-                    blurRadius: 12.0,
+                    blurRadius: 0.0,
                     offset: Offset(0.0, 0.0),
                   )
                 ],
@@ -98,79 +87,17 @@ class _ProjectCardState extends State<ProjectCard> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                widget.projectIcon != null
-                    ? (width > 1135 || width < 950)
-                        ? Image.asset(
-                            widget.projectIcon,
-                            height: height * 0.05,
-                          )
-                        : Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Image.asset(
-                                widget.projectIcon,
-                                height: height * 0.03,
-                              ),
-                              SizedBox(
-                                width: width * 0.01,
-                              ),
-                              Text(
-                                widget.projectTitle,
-                                textAlign: TextAlign.center,
-                                overflow: TextOverflow.ellipsis,
-                                style: GoogleFonts.montserrat(
-                                  fontSize: height * 0.015,
-                                  letterSpacing: 1.5,
-                                  fontWeight: FontWeight.w400,
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.white,
-                                ),
-                              ),
-                            ],
-                          )
-                    : Container(),
-                widget.projectIconData != null
-                    ? Icon(
-                        widget.projectIconData,
-                        color: kPrimaryColor,
-                        size: height * 0.1,
-                      )
-                    : Container(),
-                (width > 1135 || width < 950)
-                    ? SizedBox(
-                        height: height * 0.01,
-                      )
-                    : SizedBox(),
-                (width > 1135 || width < 950)
-                    ? AdaptiveText(
-                        widget.projectTitle,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.montserrat(
-                          fontSize: height * 0.02,
-                          letterSpacing: 1.5,
-                          fontWeight: FontWeight.w400,
-                          color: _themeProvider.lightTheme
-                              ? Colors.white
-                              : Colors.grey[900],
-                        ),
-                      )
-                    : Container(),
-                // SizedBox(
-                //   height: height * 0.01,
-                // ),
                 AdaptiveText(
                   widget.projectDescription,
                   textAlign: TextAlign.center,
-
                   //overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.montserrat(
-                      fontSize: height * 0.012,
+                      fontSize: height * 0.015,
                       letterSpacing: 2.0,
                       color: _themeProvider.lightTheme
                           ? Colors.black
                           : Colors.white,
-                      fontWeight: FontWeight.w200,
+                      fontWeight: FontWeight.w400,
                       height: width >= 600 ? 2.0 : 1.2),
                 ),
                 SizedBox(
@@ -181,7 +108,7 @@ class _ProjectCardState extends State<ProjectCard> {
             ),
             AnimatedOpacity(
               duration: Duration(milliseconds: 400),
-              opacity: isHover ? 0.0 : 1.0,
+              opacity: isHover ? 0.2 : 1.0,
               child: FittedBox(
                 fit: BoxFit.fill,
                 child: widget.backImage != null

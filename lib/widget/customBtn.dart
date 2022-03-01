@@ -16,16 +16,17 @@ class OutlinedCustomBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);
     return MaterialButton(
-      hoverColor: kPrimaryColor.withAlpha(150),
+      color: mainColorWhite,
+      hoverColor: mainColorWhite.withAlpha(70),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
+          borderRadius: BorderRadius.circular(12.0),
           side: BorderSide(color: kPrimaryColor)),
       onPressed: onPressed,
       child: Text(
         btnText,
         style: GoogleFonts.montserrat(
-          fontWeight: FontWeight.w300,
-          color: _themeProvider.lightTheme ? Colors.black : Colors.white,
+          fontWeight: FontWeight.w400,
+          color: Colors.white,
         ),
       ),
     );
