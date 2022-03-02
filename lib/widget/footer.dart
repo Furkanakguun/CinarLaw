@@ -23,13 +23,36 @@ class Footer extends StatelessWidget {
             height: height * 0.30,
             width: width / 5 * (2),
             color: Colors.grey[600],
+            child: Center(
+              child: InkWell(
+                onTap: () => launchURL(
+                    "https://tourmake.it/en/tour/0d44de8dd624c3eb54adc876ab0468fe"),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.search,
+                      color: Colors.white,
+                      size: 32,
+                    ),SizedBox(width: 7,),
+                    Text(
+                      "ÇINAR 360 \n" + "OFFICE TOUR",
+                      style: GoogleFonts.montserrat(
+                          color: Colors.white,
+                          fontSize: height * 0.018,
+                          fontWeight: FontWeight.w200),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
           Container(
             height: height * 0.30,
             width: width / 5 * (3),
             color: Colors.grey[300],
             child: Padding(
-              padding: const EdgeInsets.only(left:28.0,top: 40,bottom: 18),
+              padding: const EdgeInsets.only(left: 28.0, top: 40, bottom: 18),
               child: AdaptiveText(
                   "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 Oran/Çankaya / Ankara \n\n" +
                       "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 Maslak / Sarıyer / İstanbul \n\n" +

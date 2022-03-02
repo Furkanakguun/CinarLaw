@@ -30,9 +30,42 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
       //padding: EdgeInsets.symmetric(horizontal: width * 0.02),
       child: Column(
         children: [
-          SizedBox(
-            height: height * 0.05,
-          ),
+          Stack(children: [
+            Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      top: BorderSide(width: 16.0, color: Colors.white),
+                    ),
+                    color: Colors.white,
+                  ),
+                  height: height * 0.15,
+                  width: width,
+                ),
+                Container(
+                    height: height * 0.15,
+                    width: width,
+                    color: mainColor.withOpacity(0.04)),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: (height * 0.050)  ),
+              child: Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/stack_foto.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  height: height * 0.20,
+                  width: width * 0.70,
+                  //color: Colors.yellow),
+                ),
+              ),
+            ),
+          ]),
           Align(
             alignment: Alignment.center,
             child: Text(
@@ -209,136 +242,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
           ),
           SizedBox(
             height: 75,
-          )
-          //CustomSectionSubHeading(
-          //text: "I may not be perfect, but I'm surely of some help :)\n\n"),
-          // Column(
-          //   children: [
-          //     Row(
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: List.generate(
-          //         5,
-          //         (index) => Padding(
-          //           padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          //           child: WidgetAnimator(
-          //             child: ServiceCard(
-          //               cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
-          //               cardHeight:
-          //                   width < 1200 ? height * 0.25 : height * 0.23,
-          //               serviceIcon: kServicesIcons[index],
-          //               serviceTitle: kServicesTitles[index],
-          //               serviceDescription: kServicesDescriptions[index],
-          //               serviceLink: kServicesLinks[index],
-          //               cardBack: ServiceCardBackWidget(
-          //                   serviceTitle: kServicesTitles[index],
-          //                   serviceDesc: kServicesDescriptions[index],
-          //                   themeProvider: _themeProvider,
-          //                   height: height,
-          //                   width: width,
-          //                   constantIndex: index),
-          //             ),
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //     SizedBox(
-          //       height: height * 0.04,
-          //     ),
-          //     Row(
-          //       mainAxisSize: MainAxisSize.min,
-          //       children: [
-          //         for (int index = 5; index < 10; index++)
-          //           Padding(
-          //             padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          //             child: WidgetAnimator(
-          //               child: ServiceCard(
-          //                 cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
-          //                 cardHeight:
-          //                     width < 1200 ? height * 0.25 : height * 0.23,
-          //                 serviceIcon: _themeProvider.lightTheme && index == 4
-          //                     ? "assets/services/open_b.png"
-          //                     : kServicesIcons[index],
-          //                 serviceTitle: kServicesTitles[index],
-          //                 serviceDescription: kServicesDescriptions[index],
-          //                 serviceLink: kServicesLinks[index],
-          //                 cardBack: ServiceCardBackWidget(
-          //                     serviceDesc: kServicesDescriptions[index],
-          //                     serviceTitle: kServicesTitles[index],
-          //                     themeProvider: _themeProvider,
-          //                     height: height,
-          //                     width: width,
-          //                     constantIndex: index),
-          //               ),
-          //             ),
-          //           ),
-          //       ],
-          //     ),
-          //     SizedBox(
-          //       height: height * 0.04,
-          //     ),
-          //     Row(
-          //       mainAxisSize: MainAxisSize.min,
-          //       children: [
-          //         for (int index = 10; index < 15; index++)
-          //           Padding(
-          //             padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          //             child: WidgetAnimator(
-          //               child: ServiceCard(
-          //                 cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
-          //                 cardHeight:
-          //                     width < 1200 ? height * 0.25 : height * 0.23,
-          //                 serviceIcon: _themeProvider.lightTheme && index == 4
-          //                     ? "assets/services/open_b.png"
-          //                     : kServicesIcons[index],
-          //                 serviceTitle: kServicesTitles[index],
-          //                 serviceDescription: kServicesDescriptions[index],
-          //                 serviceLink: kServicesLinks[index],
-          //                 cardBack: ServiceCardBackWidget(
-          //                     serviceDesc: kServicesDescriptions[index],
-          //                     serviceTitle: kServicesTitles[index],
-          //                     themeProvider: _themeProvider,
-          //                     height: height,
-          //                     width: width,
-          //                     constantIndex: index),
-          //               ),
-          //             ),
-          //           ),
-          //       ],
-          //     ),
-          //     SizedBox(
-          //       height: height * 0.04,
-          //     ),
-          //     Row(
-          //       mainAxisSize: MainAxisSize.min,
-          //       children: [
-          //         for (int index = 15; index < 20; index++)
-          //           Padding(
-          //             padding: const EdgeInsets.symmetric(horizontal: 15.0),
-          //             child: WidgetAnimator(
-          //               child: ServiceCard(
-          //                 cardWidth: width < 1200 ? width * 0.15 : width * 0.12,
-          //                 cardHeight:
-          //                     width < 1200 ? height * 0.25 : height * 0.23,
-          //                 serviceIcon: _themeProvider.lightTheme && index == 4
-          //                     ? "assets/services/open_b.png"
-          //                     : kServicesIcons[index],
-          //                 serviceTitle: kServicesTitles[index],
-          //                 serviceDescription: kServicesDescriptions[index],
-          //                 serviceLink: kServicesLinks[index],
-          //                 cardBack: ServiceCardBackWidget(
-          //                     serviceDesc: kServicesDescriptions[index],
-          //                     serviceTitle: kServicesTitles[index],
-          //                     themeProvider: _themeProvider,
-          //                     height: height,
-          //                     width: width,
-          //                     constantIndex: index),
-          //               ),
-          //             ),
-          //           ),
-          //       ],
-          //     ),
-          //   ],
-          // )
+          ),
         ],
       ),
     );
@@ -404,108 +308,7 @@ class ServiceCardBackWidget extends StatelessWidget {
               _themeProvider.lightTheme ? Colors.grey[400] : Colors.grey[100],
         ),
         const SizedBox(height: 10.0),
-        // SizedBox(
-        //   height: 40.0,
-        //   width: 150.0,
-        //   child: MaterialButton(
-        //     color: kPrimaryColor,
-        //     onPressed: () => showDialog(
-        //         context: context,
-        //         builder: (contecxt) => AlertDialog(
-        //               backgroundColor: _themeProvider.lightTheme
-        //                   ? Colors.white
-        //                   : Colors.grey[900],
-        //               title: AdaptiveText(
-        //                 "Hire Me!",
-        //                 style: TextStyle(
-        //                     fontSize: 32.0,
-        //                     color: _themeProvider.lightTheme
-        //                         ? Colors.black
-        //                         : Colors.white),
-        //               ),
-        //               actions: [
-        //                 TextButton(
-        //                     onPressed: () => Navigator.pop(context),
-        //                     child: Text("Back"))
-        //               ],
-        //               content: Column(
-        //                 mainAxisSize: MainAxisSize.min,
-        //                 mainAxisAlignment: MainAxisAlignment.center,
-        //                 children: [
-        //                   CustomFilledBtn(
-        //                     height: 40.0,
-        //                     onPressed: () =>
-        //                         launchURL("https://wa.me/?text=Hi Hamza!"),
-        //                     btnColor: Color(0xff34CB62),
-        //                     child: Row(
-        //                       mainAxisSize: MainAxisSize.min,
-        //                       children: [
-        //                         Icon(FontAwesomeIcons.whatsapp),
-        //                         const SizedBox(width: 8.0),
-        //                         Text("WhatsApp"),
-        //                       ],
-        //                     ),
-        //                   ),
-        //                   const SizedBox(height: 20.0),
-        //                   CustomFilledBtn(
-        //                     height: 40.0,
-        //                     onPressed: () => launchURL(
-        //                         "https://www.upwork.com/freelancers/~0197b0f6aaeba9675f"),
-        //                     btnColor: Color(0xff13A800),
-        //                     child: Row(
-        //                       mainAxisSize: MainAxisSize.min,
-        //                       children: [
-        //                         Image.network(
-        //                           "https://img.icons8.com/ios-filled/50/000000/upwork.png",
-        //                           height: 35.0,
-        //                           color: Colors.white,
-        //                         ),
-        //                         const SizedBox(width: 8.0),
-        //                         Text("Upwork"),
-        //                       ],
-        //                     ),
-        //                   ),
-        //                 ],
-        //               ),
-        //             )),
-        //     child: Text(
-        //       "HIRE ME!",
-        //       style: TextStyle(
-        //           color: Colors.white,
-        //           fontWeight: FontWeight.bold,
-        //           fontSize: 16.0),
-        //     ),
-        //   ),
-        // )
       ],
     );
   }
 }
-
-/*Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              InkWell(
-                                onTap: () => launchURL(kServicesLinks[0]),
-                                child: Image.asset(
-                                  'assets/services/fiverr.png',
-                                  height: 25.0,
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.green,
-                                ),
-                              ),
-                              const SizedBox(width: 30.0),
-                              InkWell(
-                                onTap: () => launchURL(
-                                    "https://www.upwork.com/freelancers/~0197b0f6aaeba9675f"),
-                                child: Image.network(
-                                  "https://img.icons8.com/ios-filled/50/000000/upwork.png",
-                                  height: 33.0,
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.black
-                                      : Colors.green,
-                                ),
-                              ),
-                            ],
-                          )*/
