@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cinarlaw/constants.dart';
 import 'package:cinarlaw/widget/customTextHeading.dart';
 import 'package:cinarlaw/widget/projectCard.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PortfolioMobileTab extends StatelessWidget {
   @override
@@ -12,7 +13,29 @@ class PortfolioMobileTab extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          CustomSectionHeading(text: "\nOur Team"),
+           SizedBox(
+              height: height * 0.05,
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                "ABOUT US",
+                style: GoogleFonts.montserrat(
+                    color: mainColorWhite,
+                    fontSize: height * 0.018,
+                    fontWeight: FontWeight.w200),
+              ),
+            ),
+           Align(
+              alignment: Alignment.center,
+              child: Text(
+                "Who are we?",
+                style: GoogleFonts.montserrat(
+                    color: kPrimaryColor,
+                    fontSize: height * 0.045,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
           // CustomSectionSubHeading(
           //     text: "Here are few samples of my previous work :)\n\n"),
           CarouselSlider.builder(
@@ -21,7 +44,8 @@ class PortfolioMobileTab extends StatelessWidget {
                 Padding(
               padding: const EdgeInsets.symmetric(vertical: 15.0),
               child: ProjectCard(
-                cardWidth: width < 650 ? width * 0.5 : width * 0.2,
+                cardHeight:  height * 0.3,
+                cardWidth:  width * 0.5 ,
                 //projectIcon: kProjectsIcons[i],
                 backImage: kOurTeamBanner[i],
                 projectTitle: kOurTeamTitles[i],
@@ -30,7 +54,7 @@ class PortfolioMobileTab extends StatelessWidget {
               ),
             ),
             options: CarouselOptions(
-                height: height * 0.5,
+                height: height * 0.3,
                 autoPlay: true,
                 autoPlayInterval: Duration(seconds: 4),
                 enlargeCenterPage: true,

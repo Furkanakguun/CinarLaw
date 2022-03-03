@@ -29,16 +29,10 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/cinar_law_museum_logo.png"),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
+                       Container(
                     height: 70,
                     width: width,
-                    //color: Colors.yellow),
+                    color: Colors.white
                   ),
                 ],
               ),
@@ -53,6 +47,33 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                   height: height * 0.20,
                   width: width,
                   //color: Colors.yellow),
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+                Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/cinar_law_museum_logo.png"),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                    height: 70,
+                    width: width,
+                    //color: Colors.yellow),
+                  ),
+                   SizedBox(
+                height: 7,
+              ),
+                    Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Our past is our future",
+                  style: GoogleFonts.montserrat(
+                      color: Colors.black,
+                      fontSize: height * 0.045,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
                SizedBox(

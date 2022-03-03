@@ -19,86 +19,334 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: mainColorWhite,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: width < 1200
-            ? EdgeInsets.only(top: 3.0, bottom: 3)
-            : EdgeInsets.only(top: 16.0, bottom: 16),
+            ? EdgeInsets.only(top: 0.0, bottom: 3)
+            : EdgeInsets.only(top: 0.0, bottom: 16),
         child: Center(
-          child: Container(
-            width: width,
-            height: height,
-            decoration: BoxDecoration(border: Border.all(color: Colors.black)),
-            child: Column(
-              children: [
-                Container(
-                  width: width < 1200 ? width * 0.80 : width * 0.60,
-                  height: width < 1200 ? height * 0.10 : 100,
-                  //decoration: BoxDecoration(border: Border),
-                  color: Colors.transparent,
-                  child: Center(
-                    child: AdaptiveText(
-                      "ÇINAR ACADEMIA ",
-                      style: GoogleFonts.brygada1918(
-                        fontSize: height * 0.04,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                      ),
+          child: ListView(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 70,
+                    width: width,
+                    //color: Colors.yellow),
+                  ),
+                ],
+              ),
+              Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/museum_stack.jpg"),
+                      fit: BoxFit.cover,
                     ),
                   ),
+                  height: height * 0.20,
+                  width: width,
+                  //color: Colors.yellow),
                 ),
-                SizedBox(
-                  height: 20,
+              ),
+              SizedBox(
+                height: height * 0.03,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/cinar_akademi_logo.png"),
+                    fit: BoxFit.contain,
+                  ),
+                  //color: Colors.yellow
                 ),
-                Row(
+                height: 70,
+                width: 150,
+                //color: Colors.yellow),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "We value the future",
+                  style: GoogleFonts.montserrat(
+                      color: Colors.black,
+                      fontSize: height * 0.050,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
+              SizedBox(
+                height: height * 0.03,
+              ),
+              IntrinsicHeight(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.white,
-                        width: width < 1200 ? width * 0.80 : width * 0.18,
-                        height: width < 1200 ? height * 0.10 : 250,
+                    Container(
+                      width: width * 0.32,
+                      height: 50,
+                      child: AdaptiveText(
+                        "",
+                        style: GoogleFonts.roboto(
+                          fontSize: height * 0.018,
+                          color: Colors.grey[500],
+                          height: 1.5,
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.white,
-                        width: width < 1200 ? width * 0.80 : width * 0.18,
-                        height: width < 1200 ? height * 0.10 : 250,
+                    VerticalDivider(
+                      color: Colors.grey[300],
+                      thickness: 3,
+                    ),
+                    Container(
+                      height: 50,
+                      width: width * 0.32,
+                      child: AdaptiveText(
+                        "",
+                        style: GoogleFonts.roboto(
+                          fontSize: height * 0.018,
+                          color: Colors.grey[500],
+                          height: 1.5,
+                        ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: Colors.white,
-                        width: width < 1200 ? width * 0.80 : width * 0.18,
-                        height: width < 1200 ? height * 0.10 : 250,
-                      ),
-                    )
                   ],
                 ),
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: kPublicsTitles.length,
-                    itemBuilder: (context, index) {
-                      return PublicationListCard(
-                        cardHeight: width < 1200 ? 200 : 250,
-                        cardWidth: width < 1200 ? 100 : 150,
-                        // cardWidth: width < 1200 ? width * 0.50 : width /3,
-                        // cardHeight: width < 1200 ? height * 0.50 : height / 10,
-                        //backImage: kPublicsBanner[index],
-                        // projectIcon: kProjectsIcons[index],
-                        title: kPublicsTitles[index],
-                        description: kPublicsDescriptions[index],
-                        //projectLink: kPublicsLinks[index],
-                      );
-                    },
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.35)),
+                child: Stack(children: [
+                  Card(
+                    child: Container(
+                      width: width < 1200 ? width * 0.60 : width * 0.40,
+                      height: height * 0.40,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        image: DecorationImage(
+                          image: AssetImage("assets/museum_1.jpg"),
+                          alignment: FractionalOffset.center,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ],
-            ),
+                  Padding(
+                    padding:  EdgeInsets.symmetric(vertical:28.0),
+                    child: Container(
+                        width: width < 1200 ? width * 0.60 : width * 0.40,
+                        color: Colors.black.withOpacity(0.3),
+                    height: 100,
+                      child: Text(
+                        'TEXT',
+                        style: TextStyle(fontSize: 20, color: Colors.black),
+                      ),
+                    ),
+                  ),
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.40)),
+                child: Stack(children: [
+                  Container(
+                    width: width < 1200 ? width * 0.60 : width * 0.20,
+                    height: height * 0.30,
+                    color: Colors.grey[200],
+                  ),
+                  Text('TEXT',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ))
+                ]),
+              ),
+            ],
           ),
         ),
       ),

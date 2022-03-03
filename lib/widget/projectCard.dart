@@ -113,7 +113,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 fit: BoxFit.fill,
                 child: widget.backImage != null
                     ? Image.asset(widget.backImage)
-                    : Container(),
+                    : Container(), 
               ),
             ),
           ],

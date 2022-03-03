@@ -24,11 +24,11 @@ class _HomeMobileState extends State<HomeMobile> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/CINAR.png"),
+          image: AssetImage("assets/cinar_kapak.jpg"),
           fit: BoxFit.cover,
         ),
       ),
-      height: height,
+      height: height - 150,
       width: width,
       child: Stack(
         children: [

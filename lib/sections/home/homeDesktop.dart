@@ -18,7 +18,7 @@ class HomeDesktop extends StatelessWidget {
 
     return Container(
       color: mainColor,
-      height: height - 50,
+      height: height - 150,
       width: width,
       child: Stack(
         children: [
@@ -26,7 +26,8 @@ class HomeDesktop extends StatelessWidget {
             //color: mainColor,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/CINAR.png"),
+                opacity: 0.5,
+                image: AssetImage("assets/cinar_kapak.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
