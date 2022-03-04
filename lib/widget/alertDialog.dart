@@ -31,29 +31,58 @@ showPublicationAlertDialog(BuildContext context) {
   );
 }
 
-showLoaderDialog(BuildContext context) {
+showImageDialog(BuildContext context, String image) {
+  double height = MediaQuery.of(context).size.height;
+  double width = MediaQuery.of(context).size.width;
   AlertDialog alert = AlertDialog(
-    backgroundColor: Colors.white70,
+    backgroundColor: Colors.transparent,
     content: Container(
-      height: 50,
-      width: 50,
-      child: Column(
-        children: [
-          // Center(
-          //     child: SpinKitCircle(
-          //   color: Theme.of(context).primaryColor,
-          // )),
-        ],
+      width: width < 1200 ? width * 0.60 : width * 0.60,
+      height: height * 0.80,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.fill,
+        ),
+        color: Colors.transparent,
+      ),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: Container(
+          width: 180,
+          height: 38,
+          child: MaterialButton(
+            color: mainColorWhite,
+            hoverColor: mainColorWhite.withAlpha(70),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+              //side: BorderSide(color: kPrimaryColor),
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              "GO BACK",
+              style: GoogleFonts.montserrat(
+                fontWeight: FontWeight.w300,
+                fontSize: 18,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
       ),
     ),
+    //  actions: [
+    //   okButton,
+    // ],
   );
   showDialog(
-    barrierDismissible: false,
     context: context,
     builder: (BuildContext context) {
       return alert;
     },
-  ).then((value) => Navigator.pop(context));
+  );
 }
 
 showOurAreasAlertDialog(BuildContext context, int index) {
@@ -124,32 +153,32 @@ showOurAreasAlertDialog(BuildContext context, int index) {
             SizedBox(
               height: 20,
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                width: 180,
-                height: 38,
-                child: MaterialButton(
-                  color: mainColorWhite,
-                  hoverColor: mainColorWhite.withAlpha(70),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    //side: BorderSide(color: kPrimaryColor),
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Text(
-                    "GO BACK",
-                    style: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 18,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // Align(
+            //   alignment: Alignment.bottomCenter,
+            //   child: Container(
+            //     width: 180,
+            //     height: 38,
+            //     child: MaterialButton(
+            //       color: mainColorWhite,
+            //       hoverColor: mainColorWhite.withAlpha(70),
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(20.0),
+            //         //side: BorderSide(color: kPrimaryColor),
+            //       ),
+            //       onPressed: () {
+            //         Navigator.pop(context);
+            //       },
+            //       child: Text(
+            //         "GO BACK",
+            //         style: GoogleFonts.montserrat(
+            //           fontWeight: FontWeight.w300,
+            //           fontSize: 18,
+            //           color: Colors.white,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -258,7 +287,7 @@ showOurAreasAlertDialogMobile(BuildContext context, int index) {
                 ),
               ),
             ),
-             SizedBox(
+            SizedBox(
               height: 7,
             ),
           ],

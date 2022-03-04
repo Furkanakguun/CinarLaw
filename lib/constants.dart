@@ -19,7 +19,7 @@ const kSocialLinks = [
   "https://facebook.com/mhmzdev",
   "https://instagram.com/mhmzdev",
   "https://twitter.com/mhmzdev",
-  "https://linkedin.com/in/mhmzdev",
+  "https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr",
   "https://github.com/mhmzdev",
   "https://mhamzadev.medium.com"
 ];
@@ -79,7 +79,7 @@ final kServicesIcons = [
 ];
 
 final kServicesTitles = [
-  "Construction and Infrastructure",
+  "lnternational Commercial Transactions and lnternational Contracts",
   "Corporate Services ",
   "Mergers & Acquisitions",
   "Banking & Finance",
@@ -172,19 +172,6 @@ final kOurTeamBanner = [
   "assets/Hakan_Cinar.png",
   "assets/Duygu_Akan.png",
   "assets/Hakan_Cinar.png",
-];
-
-final kOurTeamIcons = [
-  "assets/person.jpg",
-  "assets/projects/quran.png",
-  "assets/projects/hereiam.png",
-  "assets/projects/covid.png",
-  "assets/projects/messenger.png",
-  "assets/projects/flutter.png",
-  "assets/projects/earbender.png",
-  "assets/projects/java.png",
-  "assets/projects/android.png",
-  "assets/services/open.png",
 ];
 
 final kOurTeamTitles = [
@@ -297,4 +284,18 @@ final kContactDetails = [
       "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 Maslak / Sarıyer / İstanbul \n",
   "Ankara: +90 312 426 90 22 \n" + "İstanbul: +90 212 963 02 29",
   "info@cinarlaw.com"
+];
+
+
+final kMuseumImage = [
+
+  "assets/museum/museum_1.jpg",
+  "assets/museum/museum_2.jpg",
+  "assets/museum/museum_3.jpg",
+  "assets/museum/museum_4.jpg",
+  "assets/museum/museum_5.jpg",
+  "assets/museum/museum_6.jpg",
+  "assets/museum/museum_7.jpg",
+  "assets/museum/museum_8.jpg",
+
 ];

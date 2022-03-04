@@ -24,7 +24,7 @@ class _HomeMobileState extends State<HomeMobile> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/cinar_kapak.jpg"),
+          image: AssetImage("assets/CINAR_GIRIS.jpg"),
           fit: BoxFit.cover,
         ),
       ),
@@ -56,7 +56,9 @@ class _HomeMobileState extends State<HomeMobile> {
                           color: Colors.white,
                           fontWeight: FontWeight.w400),
                     ),
-                     SizedBox(height: 12,),
+                    SizedBox(
+                      height: 12,
+                    ),
                     Text(
                       "Solutions that will\n" + "change your life",
                       style: GoogleFonts.montserrat(
@@ -64,7 +66,9 @@ class _HomeMobileState extends State<HomeMobile> {
                           color: Colors.white,
                           fontWeight: FontWeight.w300),
                     ),
-                    SizedBox(height: 50,),
+                    SizedBox(
+                      height: 50,
+                    ),
                     EntranceFader(
                       offset: Offset(-10, 0),
                       delay: Duration(seconds: 1),
@@ -73,15 +77,14 @@ class _HomeMobileState extends State<HomeMobile> {
                         "In cinar&cinar we always estalish a close working\n" +
                             "relationships with our clients.  \n" +
                             "We are comitted to serving and \n"
-                            "protecting our Client's interests in today's ever-changing\n" +
+                                "protecting our Client's interests in today's ever-changing\n" +
                             "economical and legal environment",
                         style: GoogleFonts.montserrat(
                             fontSize: height * 0.020,
                             color: Colors.white,
                             fontWeight: FontWeight.w200),
-                            //textAlign: TextAlign.left,
+                        //textAlign: TextAlign.left,
                       ),
-                      
                     ),
                   ],
                 ),
@@ -94,13 +97,12 @@ class _HomeMobileState extends State<HomeMobile> {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    for (int i = 0; i < kSocialIcons.length; i++)
-                      SocialMediaIconBtn(
-                        icon: kSocialIcons[i],
-                        socialLink: kSocialLinks[i],
-                        height: height * 0.03,
-                        horizontalPadding: 2.0,
-                      )
+                    SocialMediaIconBtn(
+                      icon: kSocialIcons[3],
+                      socialLink: kSocialLinks[3],
+                      height: height * 0.03,
+                      horizontalPadding: 2.0,
+                    )
                   ],
                 )
               ],

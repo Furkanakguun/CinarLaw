@@ -1,8 +1,11 @@
 import 'package:cinarlaw/animations/bottomAnimation.dart';
+import 'package:cinarlaw/sections/Carrier/carrier.dart';
+import 'package:cinarlaw/sections/museum/museum_list.dart';
 import 'package:cinarlaw/sections/museum/museum_listMobile.dart';
 import 'package:cinarlaw/sections/publications/publication.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_list.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
+import 'package:cinarlaw/sections/publicationsList/publications_listMobile.dart';
 import 'package:cinarlaw/widget/socialMediaIcon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -80,8 +83,6 @@ class _MainPageState extends State<MainPage> {
       return Portfolio();
     } else if (i == 4) {
       return Footer();
-    } else if (i == 5) {
-      return Footer();
     } else {
       return Container();
     }
@@ -89,6 +90,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void initState() {
+   
     _scrollController = _themeProviders.scroll;
     _scrollController.addListener(() {
       if (_scrollController.position.userScrollDirection ==
@@ -271,7 +273,7 @@ class _MainPageState extends State<MainPage> {
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
+                        builder: (context) => PublicationList(),
                       ),
                     ),
                     child: Text(
@@ -300,7 +302,7 @@ class _MainPageState extends State<MainPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
+                        builder: (context) => PublicationList(),
                       ),
                     );
                     //Navigator.pop(context);
@@ -335,7 +337,7 @@ class _MainPageState extends State<MainPage> {
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MuseumListDesktop(),
+                        builder: (context) => MuseumList(),
                       ),
                     ),
                     child: Text(
@@ -364,7 +366,7 @@ class _MainPageState extends State<MainPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MuseumListDesktop(),
+                        builder: (context) => MuseumList(),
                       ),
                     );
                     //Navigator.pop(context);
@@ -388,66 +390,74 @@ class _MainPageState extends State<MainPage> {
               ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
+        MediaQuery.of(context).size.width > 760
+            ? EntranceFader(
+                offset: Offset(0, -10),
+                delay: Duration(milliseconds: 100),
+                duration: Duration(milliseconds: 250),
+                child: Container(
+                  color: mainColorWhite,
+                  padding: const EdgeInsets.all(8.0),
+                  height: 60.0,
+                  child: MaterialButton(
+                    hoverColor: kPrimaryColor,
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CarrierDesktop(),
+                      ),
+                    ),
+                    child: Text(
+                      "CAREER",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.white,
+                      ),
+                      // style: TextStyle(
+                      //   color:
+                      //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                      // ),
+                    ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PublicationList(),
+                      ),
+                    );
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CAREER",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color:
+                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
         Container(
             color: mainColorWhite,
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  width: 12,
-                ),
-                EntranceFader(
-                    offset: Offset(0, -10),
-                    delay: Duration(milliseconds: 100),
-                    duration: Duration(milliseconds: 250),
-                    child: IconButton(
-                      icon: Icon(
-                        AntDesign.instagram,
-                        color: Colors.white,
-                        size: MediaQuery.of(context).size.width * 0.0095,
-                      ),
-                      //iconSize: height,
-                      onPressed: () => launchURL('www'),
-                      //hoverColor: kPrimaryColor,
-                    )),
-                SizedBox(
-                  width: 4,
-                ),
-                EntranceFader(
-                    offset: Offset(0, -10),
-                    delay: Duration(milliseconds: 100),
-                    duration: Duration(milliseconds: 250),
-                    child: IconButton(
-                      icon: Icon(
-                        AntDesign.twitter,
-                        color: Colors.white,
-                        size: MediaQuery.of(context).size.width * 0.0095,
-                      ),
-                      //iconSize: height,
-                      onPressed: () => launchURL('www'),
-                      //hoverColor: kPrimaryColor,
-                    )),
-                SizedBox(
-                  width: 4,
-                ),
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      AntDesign.facebook_square,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () => launchURL('www'),
-                    //hoverColor: kPrimaryColor,
-                  ),
-                ),
-                SizedBox(
-                  width: 4,
-                ),
                 EntranceFader(
                   offset: Offset(0, -10),
                   delay: Duration(milliseconds: 100),
@@ -459,7 +469,8 @@ class _MainPageState extends State<MainPage> {
                       size: MediaQuery.of(context).size.width * 0.0095,
                     ),
                     //iconSize: height,
-                    onPressed: () => launchURL('www'),
+                    onPressed: () => launchURL(
+                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
                     //hoverColor: kPrimaryColor,
                   ),
                 ),
@@ -491,6 +502,32 @@ class _MainPageState extends State<MainPage> {
                 _appBarActions(_sectionsName[i], i, _sectionsIcons[i], theme),
               Padding(
                 padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MaterialButton(
+                      hoverColor: mainColor.withAlpha(70),
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => CarrierDesktop()),
+                          (Route<dynamic> route) => false,
+                        );
+                      },
+                      child: Text(
+                        "CAREER",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                        //textAlign: TextAlign.start,
+                      ),
+                    ),
+                    Divider(color: Colors.brown[200])
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
                   hoverColor: mainColorWhite.withAlpha(70),
                   shape: RoundedRectangleBorder(
@@ -500,7 +537,7 @@ class _MainPageState extends State<MainPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
+                        builder: (context) => PublicationsListMobile(),
                       ),
                     );
                   },

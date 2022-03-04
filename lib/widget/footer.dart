@@ -34,7 +34,10 @@ class Footer extends StatelessWidget {
                       Icons.search,
                       color: Colors.white,
                       size: 32,
-                    ),SizedBox(width: 7,),
+                    ),
+                    SizedBox(
+                      width: 7,
+                    ),
                     Text(
                       "ÇINAR 360 \n" + "OFFICE TOUR",
                       style: GoogleFonts.montserrat(
@@ -53,12 +56,20 @@ class Footer extends StatelessWidget {
             color: Colors.grey[300],
             child: Padding(
               padding: const EdgeInsets.only(left: 28.0, top: 40, bottom: 18),
-              child: AdaptiveText(
-                  "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 Oran/Çankaya / Ankara \n\n" +
-                      "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 Maslak / Sarıyer / İstanbul \n\n" +
-                      "Ankara: +90 312 426 90 22 \n\n" +
-                      "İstanbul: +90 212 963 02 29 \n\n" +
-                      "info@cinarlaw.com"),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  AdaptiveText(
+                      "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17\n\n" +
+                          "Oran/Çankaya / Ankara \n\n" +
+                          "Ankara: +90 312 426 90 22 \n\n\n"+
+                          "" ),
+                  AdaptiveText(
+                      "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5\n\n" +
+                          "Maslak / Sarıyer / İstanbul \n\n" +
+                          "İstanbul: +90 212 963 02 29 \n\n\n" +
+                          "info@cinarlaw.com"),
+                ],
+              ),
             ),
           ),
         ],

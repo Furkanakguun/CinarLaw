@@ -64,7 +64,7 @@ class _ProjectCardState extends State<ProjectCard> {
         padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(7)),
-          color:  Colors.grey[300],
+          color:  Colors.grey[200],
           boxShadow: isHover
               ? [
                   BoxShadow(

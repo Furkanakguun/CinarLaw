@@ -26,6 +26,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
+      //height: height - 50,
       color: mainColor.withOpacity(0.9),
       //padding: EdgeInsets.symmetric(horizontal: width * 0.02),
       child: Column(
@@ -66,23 +67,23 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               ),
             ),
           ]),
+          // Align(
+          //   alignment: Alignment.center,
+          //   child: Text(
+          //     "OUR PRACTICE AREAS",
+          //     style: GoogleFonts.montserrat(
+          //         color: mainColorWhite.withOpacity(0.9),
+          //         fontSize: height * 0.018,
+          //         fontWeight: FontWeight.w200),
+          //   ),
+          // ),
           Align(
             alignment: Alignment.center,
             child: Text(
               "OUR PRACTICE AREAS",
               style: GoogleFonts.montserrat(
-                  color: mainColorWhite.withOpacity(0.9),
-                  fontSize: height * 0.018,
-                  fontWeight: FontWeight.w200),
-            ),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              "Why  Çınar&Çınar",
-              style: GoogleFonts.montserrat(
                   color: Colors.white,
-                  fontSize: height * 0.045,
+                  fontSize: height * 0.040,
                   fontWeight: FontWeight.w500),
             ),
           ),

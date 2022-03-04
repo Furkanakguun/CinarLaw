@@ -1,5 +1,6 @@
 import 'package:cinarlaw/widget/alertDialog.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PublicationCard extends StatefulWidget {
@@ -7,9 +8,9 @@ class PublicationCard extends StatefulWidget {
   final String description;
   final double cardWidth;
   final double cardHeight;
-
+final Color color;
   const PublicationCard(
-      {Key key, this.title, this.description, this.cardWidth, this.cardHeight})
+      {Key key, this.title, this.description, this.cardWidth, this.cardHeight, this.color})
       : super(key: key);
 
   @override
@@ -20,6 +21,8 @@ class _PublicationCardState extends State<PublicationCard> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: () => showPublicationAlertDialog(context),
       onHover: (isHovering) {
@@ -36,27 +39,39 @@ class _PublicationCardState extends State<PublicationCard> {
       child: Container(
         width: widget.cardWidth,
         height: widget.cardHeight,
-        color: Colors.white,
-        child: Padding(
-          padding:
-              const EdgeInsets.only(top: 30.0, left: 12, right: 12, bottom: 30),
-          child: Column(
-            children: [
-              Text(
-                widget.title,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: Colors.black),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Text(
-                widget.description,
-                maxLines: 5,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: Colors.black),
-              )
-            ],
+        color: Colors.transparent,
+        child: Card(
+          color: widget.color,
+          shadowColor: Colors.grey[400],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          elevation: 10,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Text(
+                  widget.title,
+                  style: GoogleFonts.montserrat(
+                      fontSize: height * 0.015,
+                      color: Colors.black,
+                      height: 1.4,
+                      fontWeight: FontWeight.w500),
+                  textAlign: TextAlign.center,
+                ),
+                 Text(
+                  widget.description,
+                  style: GoogleFonts.montserrat(
+                      fontSize: height * 0.014,
+                      color: Colors.black,
+                      height: 1.4,
+                      fontWeight: FontWeight.w400),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -16,6 +16,7 @@ class AboutDesktop extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
+      height: height,
       padding: EdgeInsets.symmetric(
         horizontal: width * 0.018,
       ),
@@ -92,7 +93,8 @@ class AboutDesktop extends StatelessWidget {
             children: [
               Container(
                 width: width * 0.32,
-                child: AdaptiveText(
+                child: Text(
+                  "\n\n"
                   "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.\n\n" +
                       "We have a diverse range of Clients from individual entrepreneurs and local companies to leading domestic and international companies, fınancial institutions and governmental authorities. At çınar & çınar, in addition to representing our Clients in complex fınancial and corporate transactions and litigations, we collaborate with leading international law firms and provide cutting edge consultancy services to local and foreign investors on their projects in Turkey\n\n",
                   style: GoogleFonts.roboto(
@@ -107,10 +109,9 @@ class AboutDesktop extends StatelessWidget {
               ),
               Container(
                 width: width * 0.32,
-                child: AdaptiveText(
+                child: Text(
                   "Çınar&Çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law \n\n" +
-                      "Our Office, located at the heart of Turkey, in Ankara, has given us a competitive edge, enabling us to help manage and improve our Clients' business affairs with governmental and political authorities as well as administrative bodies. \n\n" +
-                      "In çınar & çınar we always establish a close working relationship with our Clients. We are committed to serving and protecting our Clients' interests in today's ever-changing economical and legal environment. ",
+                      "Our Office, located at the heart of Turkey, in Ankara, has given us a competitive edge, enabling us to help manage and improve our Clients' business affairs with governmental and political authorities as well as administrative bodies. \n\n",
                   style: GoogleFonts.roboto(
                     fontSize: height * 0.018,
                     color: Colors.grey[500],

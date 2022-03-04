@@ -1,4 +1,4 @@
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_corke.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/provider/themeProvider.dart';
 import 'package:cinarlaw/provider/themeStyles.dart';
@@ -7,7 +7,7 @@ import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/serviceDetails/serviceDetails.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,13 +31,13 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     getCurrentAppTheme();
-    getTestData();
+   // getTestData();
     super.initState();
   }
 
   getTestData() async {
-    DocumentSnapshot doc =   await FirebaseFirestore.instance.collection('message').doc('1').get();
-    print(doc.exists);
+    // DocumentSnapshot doc =   await FirebaseFirestore.instance.collection('message').doc('1').get();
+    // print(doc.exists);
   }
 
   @override
