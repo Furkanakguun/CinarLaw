@@ -1,3 +1,4 @@
+import 'package:cinarlaw/models/blog.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
 import 'package:cinarlaw/sections/home/home.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
@@ -7,6 +8,7 @@ import 'package:cinarlaw/sections/publicationsList/publications_listArticle.dart
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:cinarlaw/widget/publication_list_card.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,6 +25,8 @@ class PublicationsListDesktop extends StatefulWidget {
 }
 
 class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
+  List<BlogPost> starredBlogList;
+  bool starredBlogPostsLoading = true;
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
@@ -59,17 +63,15 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
           "Av. Ahmet Atakan GİDER\n" +
           "Stj. Av. Mehmet GÜRBÜZ";
 
-
-  String description3 =
-      "Cumhurbaşkanlığı, 02 Nisan 2020 tarihinde yayımlanan 2020/5 sayılı Genelgesi ile (“Genelge”) ile birlikte, Covid-19 salgını nedeniyle devamlılığı etkilenecek olan, Kamu İhale Kanunu kapsamında yapılan ihaleler sonucunda imzalanan sözleşmelere ilişkin başvuru yoluna açıklık getirmiştir. COVID-19 salgını nedeniyle tüm dünyada olduğu gibi Türkiye’de de çoğu sektörden küçük ve büyük işletmeler/şirketler ekonomik anlamda zorluluklar yaşamaktadırlar. Yaşanan bu zorluklar nedeniyle bahsi geçen işletmeler/şirketler altına girdikleri sözleşmesel yükümlülükleri yerine getirememektedirler. Bu durum Kamu İhale Kanunu kapsamında gerçekleştirilen ihaleler sonucunda imzalanan sözleşmelerde yüklenici sıfatını taşıyan özel hukuk kişileri bakımından da gözlenebilmektedir.\n" +
-          "Genelge’de, imzalanan sözleşmelerde yükümlülüklerini geçici veya sürekli olarak yerine getirmesi kısmen veya tamamen imkansız hale gelen yüklenicilerin başvuracağı yöntem belirtilmiştir. Buna göre yükleniciler bu durumu belgeleyerek sözleşmenin tarafı olan idareye başvurabileceklerdir. Kendisine başvuru yapılan idare ise Kamu İhale Sözleşmeleri Kanunu’nun “Mücbir Sebep” başlıklı 10. Maddesi ve ilgili diğer mevzuat hükümleri uyarınca inceleyecektir. Konu ile ilgili karar alınmadan önce ise Hazine ve Maliye Bakanlığı’nın değerlendirmesi alınacaktır.\n" +
-          "Genelge kapsamında yapılan değerlendirme sonucunda sözleşme ile ilgili süre uzatımı veya fesih kararı verilecektir. Bu iki karardan birinin gerçekleşebilmesi için aşağıdaki şartların bir arada bulunması gerekmektedir:\n" +
-          "• Ortaya çıkan durumun yükleniciden kaynaklanan bir kusurdan ileri gelmemiş olması,\n"+
-                 "• Yüklenicinin sözleşmeden doğan yükümlülüklerini yerine getirmesine engel nitelikte olması,\n"+
-                        "• Yüklenicinin bu engeli ortadan kaldırmaya gücünün yetmemesi şartlarının birlikte gerçekleştiğinin tespit edilmesi.\n"+
-          "COVID-19 salgını nedeniyle ortaya çıkan ekonomik durumun bütün sözleşmeleri etkileyeceği düşünülmekte ve bu etkiler şu an dahi gözlenebilmektedir. Kamu ihale sözleşmeleri bakımından Genelge ile bu etkinin sonucunda başvurulacak yöntem konusuna bir açıklık getirilmiş olup İdarenin süre uzatım veya fesih kararı verirken durumun koşullarını değerlendirmesi gerekmektedir.\n\n" +
-          "Saygılarımla\n\n" +
-          "Av. Onur Özkan";
+  String description3 = "Cumhurbaşkanlığı, 02 Nisan 2020 tarihinde yayımlanan 2020/5 sayılı Genelgesi ile (“Genelge”) ile birlikte, Covid-19 salgını nedeniyle devamlılığı etkilenecek olan, Kamu İhale Kanunu kapsamında yapılan ihaleler sonucunda imzalanan sözleşmelere ilişkin başvuru yoluna açıklık getirmiştir. COVID-19 salgını nedeniyle tüm dünyada olduğu gibi Türkiye’de de çoğu sektörden küçük ve büyük işletmeler/şirketler ekonomik anlamda zorluluklar yaşamaktadırlar. Yaşanan bu zorluklar nedeniyle bahsi geçen işletmeler/şirketler altına girdikleri sözleşmesel yükümlülükleri yerine getirememektedirler. Bu durum Kamu İhale Kanunu kapsamında gerçekleştirilen ihaleler sonucunda imzalanan sözleşmelerde yüklenici sıfatını taşıyan özel hukuk kişileri bakımından da gözlenebilmektedir.\n" +
+      "Genelge’de, imzalanan sözleşmelerde yükümlülüklerini geçici veya sürekli olarak yerine getirmesi kısmen veya tamamen imkansız hale gelen yüklenicilerin başvuracağı yöntem belirtilmiştir. Buna göre yükleniciler bu durumu belgeleyerek sözleşmenin tarafı olan idareye başvurabileceklerdir. Kendisine başvuru yapılan idare ise Kamu İhale Sözleşmeleri Kanunu’nun “Mücbir Sebep” başlıklı 10. Maddesi ve ilgili diğer mevzuat hükümleri uyarınca inceleyecektir. Konu ile ilgili karar alınmadan önce ise Hazine ve Maliye Bakanlığı’nın değerlendirmesi alınacaktır.\n" +
+      "Genelge kapsamında yapılan değerlendirme sonucunda sözleşme ile ilgili süre uzatımı veya fesih kararı verilecektir. Bu iki karardan birinin gerçekleşebilmesi için aşağıdaki şartların bir arada bulunması gerekmektedir:\n" +
+      "• Ortaya çıkan durumun yükleniciden kaynaklanan bir kusurdan ileri gelmemiş olması,\n" +
+      "• Yüklenicinin sözleşmeden doğan yükümlülüklerini yerine getirmesine engel nitelikte olması,\n" +
+      "• Yüklenicinin bu engeli ortadan kaldırmaya gücünün yetmemesi şartlarının birlikte gerçekleştiğinin tespit edilmesi.\n" +
+      "COVID-19 salgını nedeniyle ortaya çıkan ekonomik durumun bütün sözleşmeleri etkileyeceği düşünülmekte ve bu etkiler şu an dahi gözlenebilmektedir. Kamu ihale sözleşmeleri bakımından Genelge ile bu etkinin sonucunda başvurulacak yöntem konusuna bir açıklık getirilmiş olup İdarenin süre uzatım veya fesih kararı verirken durumun koşullarını değerlendirmesi gerekmektedir.\n\n" +
+      "Saygılarımla\n\n" +
+      "Av. Onur Özkan";
 
   final List<IconData> _sectionsIcons = [
     Icons.home,
@@ -78,6 +80,39 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     Icons.article,
     Icons.phone,
   ];
+
+  getStarredBlogPost() async {
+    // FirebaseFirestore.instance.collection('blogPosts').get().then((value) {
+    //   // store collection state to set where to start next
+    //   value.docs.forEach((element) {
+    //     //print('getDocuments ${element.data()}');
+    //     if (mounted) {
+    //       setState(() {
+    //         starredBlogList.add(BlogPost.fromDocument(element));
+    //       });
+    //     }
+    //   });
+    // });
+    List<BlogPost> feedItems = [];
+    QuerySnapshot snapshot = await FirebaseFirestore.instance
+        .collection('blogPosts')
+        .doc('1')
+        .collection('items').where("star",isEqualTo: true)
+        .get();
+    print(snapshot.docs.isEmpty);
+    for (var item in snapshot.docs) {
+      feedItems.add(BlogPost.fromDocument(item));
+    }
+    return feedItems;
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getStarredBlogPost();
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -91,46 +126,12 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         child: Center(
           child: ListView(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 55,
-                    width: width,
-                    color: Colors.white,
-                    child: _appBarTabDesktop(),
-                  ),
-                ],
-              ),
-              Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.3),
-                    image: DecorationImage(
-                      image: AssetImage("assets/akademi.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  height: height * 0.20,
-                  width: width,
-                  //color: Colors.yellow),
-                ),
-              ),
+              appBarSection(width),
+              upBannerSection(height, width),
               SizedBox(
                 height: height * 0.03,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/cinar_akademi_logo.png"),
-                    fit: BoxFit.contain,
-                  ),
-                  //color: Colors.yellow
-                ),
-                height: 70,
-                width: 150,
-                //color: Colors.yellow),
-              ),
+              cinarAkademiLetterSection(),
               Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -182,38 +183,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
               SizedBox(
                 height: 12,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: width < 1200 ? width * 0.80 : width * 0.45,
-                    child: AdaptiveText(
-                      "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
-                      style: GoogleFonts.montserrat(
-                        fontSize: height * 0.013,
-                        color: Colors.grey[500],
-                        height: 1.5,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  SizedBox(
-                    width: width * 0.012,
-                  ),
-                  Container(
-                    width: width < 1200 ? width * 0.80 : width * 0.45,
-                    child: AdaptiveText(
-                      "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
-                      style: GoogleFonts.montserrat(
-                        fontSize: height * 0.013,
-                        color: Colors.grey[500],
-                        height: 1.5,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
+              cinarAkademiDescription(width, height),
               Padding(
                 padding: const EdgeInsets.only(top: 28.0, bottom: 28.0),
                 child: Column(
@@ -247,233 +217,21 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PublicationsListArticle(
-                                title:
-                                    "YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU",
-                                description: description),
-                          ),
-                        );
-                      },
-                      child: Stack(children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            //border: Border.all(color: Colors.grey),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 25.0,
-                                offset: Offset(2.0, 2.0),
-                              ),
-                            ],
-                            color: Colors.white70,
-                            borderRadius: BorderRadius.circular(12),
-                            // image: DecorationImage(
-                            //     image: AssetImage('assets/adakemi.jpg'),
-                            //     fit: BoxFit.cover)
-                          ),
-                          width: width < 1200 ? width * 0.60 : width * 0.20,
-                          height: height * 0.30,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: width * 0.08, left: 7, right: 7),
-                          child: Center(
-                            child: Container(
-                              color: Colors.transparent,
-                              width: width < 1200 ? width * 0.60 : width * 0.19,
-                              child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    '4/5/2020',
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: height * 0.015,
-                                        color: Colors.black,
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text(
-                                    'YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU ',
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: height * 0.015,
-                                        color: Colors.black,
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Divider(
-                                    color: Colors.black,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                      ]),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PublicationsListArticle(
-                                title:
-                                    "COVID-19 SALGINININ KAMU İHALE SÖZLEŞMELERİNE ETKİSİNE İLİŞKİN GENELGE",
-                                description: description3),
-                          ),
-                        );
-                      },
-                      child: Stack(children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            //border: Border.all(color: Colors.grey),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 25.0,
-                                offset: Offset(2.0, 2.0),
-                              ),
-                            ],
-                            color: Colors.white70,
-                            borderRadius: BorderRadius.circular(12),
-                            // image: DecorationImage(
-                            //     image: AssetImage('assets/adakemi.jpg'),
-                            //     fit: BoxFit.cover)
-                          ),
-                          width: width < 1200 ? width * 0.60 : width * 0.20,
-                          height: height * 0.30,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: width * 0.08, left: 7, right: 7),
-                          child: Center(
-                            child: Container(
-                              color: Colors.transparent,
-                              width: width < 1200 ? width * 0.60 : width * 0.19,
-                              child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    '20/4/2020',
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: height * 0.015,
-                                        color: Colors.black,
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text(
-                                    'COVID-19 SALGINININ KAMU İHALE SÖZLEŞMELERİNE ETKİSİNE İLİŞKİN GENELGE ',
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: height * 0.015,
-                                        color: Colors.black,
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Divider(
-                                    color: Colors.black,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                      ]),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PublicationsListArticle(
-                                title:
-                                    "KVKK KAPSAMINDA KONUM VERİSİNİN İŞLENMESİ",
-                                description: description2),
-                          ),
-                        );
-                      },
-                      child: Stack(children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            //border: Border.all(color: Colors.grey),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 25.0,
-                                offset: Offset(2.0, 2.0),
-                              ),
-                            ],
-                            color: Colors.white70,
-                            borderRadius: BorderRadius.circular(12),
-                            // image: DecorationImage(
-                            //     image: AssetImage('assets/adakemi.jpg'),
-                            //     fit: BoxFit.cover)
-                          ),
-                          width: width < 1200 ? width * 0.60 : width * 0.20,
-                          height: height * 0.30,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: width * 0.08, left: 7, right: 7),
-                          child: Center(
-                            child: Container(
-                              color: Colors.transparent,
-                              width: width < 1200 ? width * 0.60 : width * 0.19,
-                              child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Text(
-                                    '13/4/2020',
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: height * 0.015,
-                                        color: Colors.black,
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  SizedBox(
-                                    height: 15,
-                                  ),
-                                  Text(
-                                    'KVKK KAPSAMINDA KONUM VERİSİNİN İŞLENMESİ ',
-                                    style: GoogleFonts.montserrat(
-                                        fontSize: height * 0.015,
-                                        color: Colors.black,
-                                        height: 1.4,
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Divider(
-                                    color: Colors.black,
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                      ]),
-                    ),
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.symmetric(
+                      horizontal:
+                          width < 1200 ? width * (0.20) : width * (0.15)),
+                  child: FutureBuilder(
+                    future: getStarredBlogPost(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return Container();
+                      }
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: snapshot.data,
+                      );
+                    },
+                  )),
               SizedBox(
                 width: width * 0.012,
               ),
@@ -663,6 +421,166 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
           ),
         ),
       ),
+    );
+  }
+
+  InkWell starredBlogPostCard(BuildContext context, double width, double height,
+      String date, String title) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PublicationsListArticle(
+                title:
+                    //"YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU",
+                    title,
+                description: description),
+          ),
+        );
+      },
+      child: Stack(children: [
+        Container(
+          decoration: BoxDecoration(
+            //border: Border.all(color: Colors.grey),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.2),
+                blurRadius: 25.0,
+                offset: Offset(2.0, 2.0),
+              ),
+            ],
+            color: Colors.white70,
+            borderRadius: BorderRadius.circular(12),
+            // image: DecorationImage(
+            //     image: AssetImage('assets/adakemi.jpg'),
+            //     fit: BoxFit.cover)
+          ),
+          width: width < 1200 ? width * 0.60 : width * 0.20,
+          height: height * 0.30,
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: width * 0.08, left: 7, right: 7),
+          child: Center(
+            child: Container(
+              color: Colors.transparent,
+              width: width < 1200 ? width * 0.60 : width * 0.19,
+              child: Column(
+                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    //'4/5/2020',
+                    date,
+                    style: GoogleFonts.montserrat(
+                        fontSize: height * 0.015,
+                        color: Colors.black,
+                        height: 1.4,
+                        fontWeight: FontWeight.w400),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    //'YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU ',
+                    title,
+                    style: GoogleFonts.montserrat(
+                        fontSize: height * 0.015,
+                        color: Colors.black,
+                        height: 1.4,
+                        fontWeight: FontWeight.w400),
+                    textAlign: TextAlign.center,
+                  ),
+                  Divider(
+                    color: Colors.black,
+                  )
+                ],
+              ),
+            ),
+          ),
+        )
+      ]),
+    );
+  }
+
+  Column cinarAkademiDescription(double width, double height) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: width < 1200 ? width * 0.80 : width * 0.45,
+          child: AdaptiveText(
+            "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
+            style: GoogleFonts.montserrat(
+              fontSize: height * 0.013,
+              color: Colors.grey[500],
+              height: 1.5,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        SizedBox(
+          width: width * 0.012,
+        ),
+        Container(
+          width: width < 1200 ? width * 0.80 : width * 0.45,
+          child: AdaptiveText(
+            "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
+            style: GoogleFonts.montserrat(
+              fontSize: height * 0.013,
+              color: Colors.grey[500],
+              height: 1.5,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Container cinarAkademiLetterSection() {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/cinar_akademi_logo.png"),
+          fit: BoxFit.contain,
+        ),
+        //color: Colors.yellow
+      ),
+      height: 70,
+      width: 150,
+      //color: Colors.yellow),
+    );
+  }
+
+  Center upBannerSection(double height, double width) {
+    return Center(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.3),
+          image: DecorationImage(
+            image: AssetImage("assets/akademi.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        height: height * 0.20,
+        width: width,
+        //color: Colors.yellow),
+      ),
+    );
+  }
+
+  Row appBarSection(double width) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Container(
+          height: 55,
+          width: width,
+          color: Colors.white,
+          child: _appBarTabDesktop(),
+        ),
+      ],
     );
   }
 
