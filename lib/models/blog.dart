@@ -33,14 +33,14 @@ class BlogPost extends StatefulWidget {
 }
 
 class _BlogPostState extends State<BlogPost> {
-  
   @override
   Widget build(BuildContext context) {
-     double height = MediaQuery.of(context).size.height;
+    double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return starredBlogPostCard(context,width,height,widget.date,widget.title);
+    return starredBlogPostCard(
+        context, width, height, widget.date, widget.title);
   }
-  
+
   InkWell starredBlogPostCard(BuildContext context, double width, double height,
       String date, String title) {
     return InkWell(
@@ -49,10 +49,7 @@ class _BlogPostState extends State<BlogPost> {
           context,
           MaterialPageRoute(
             builder: (context) => PublicationsListArticle(
-                title:
-                    //"YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU",
-                    title,
-                description: widget.content),
+                title: title, description: widget.content),
           ),
         );
       },
@@ -86,7 +83,6 @@ class _BlogPostState extends State<BlogPost> {
                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    //'4/5/2020',
                     date,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
@@ -99,7 +95,6 @@ class _BlogPostState extends State<BlogPost> {
                     height: 15,
                   ),
                   Text(
-                    //'YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU ',
                     title,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
@@ -119,6 +114,4 @@ class _BlogPostState extends State<BlogPost> {
       ]),
     );
   }
-
-
 }

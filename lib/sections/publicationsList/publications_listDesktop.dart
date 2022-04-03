@@ -5,6 +5,7 @@ import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listArticle.dart';
+import 'package:cinarlaw/sections/publicationsList/publications_listList.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:cinarlaw/widget/publication_list_card.dart';
@@ -97,7 +98,8 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     QuerySnapshot snapshot = await FirebaseFirestore.instance
         .collection('blogPosts')
         .doc('1')
-        .collection('items').where("star",isEqualTo: true)
+        .collection('items')
+        .where("star", isEqualTo: true)
         .get();
     print(snapshot.docs.isEmpty);
     for (var item in snapshot.docs) {
@@ -110,7 +112,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getStarredBlogPost();
+    //getStarredBlogPost();
   }
 
   @override
@@ -121,8 +123,8 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: width < 1200
-            ? EdgeInsets.only(top: 0.0, bottom: 3)
-            : EdgeInsets.only(top: 0.0, bottom: 16),
+            ? EdgeInsets.only(top: 0.0, bottom: 0)
+            : EdgeInsets.only(top: 0.0, bottom: 0),
         child: Center(
           child: ListView(
             children: [
@@ -232,6 +234,38 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                       );
                     },
                   )),
+              SizedBox(
+                height: 15,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
+                child: TextButton.icon(
+                  style: TextButton.styleFrom(
+                    textStyle: TextStyle(color: Colors.blue),
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24.0),
+                    ),
+                  ),
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PublicationsListList(),
+                      ),
+                    )
+                  },
+                  icon: Icon(
+                    Icons.arrow_forward_outlined,
+                    color: mainColorWhite,
+                  ),
+                  label: Text(
+                    'See more',
+                    style: TextStyle(color: mainColor),
+                  ),
+                ),
+              ),
               SizedBox(
                 width: width * 0.012,
               ),
@@ -416,6 +450,36 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
               SizedBox(
                 height: 62,
               ),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.end,
+                 children: [
+                   TextButton.icon(
+                     style: TextButton.styleFrom(
+                       textStyle: TextStyle(color: Colors.blue),
+                       backgroundColor: Colors.white,
+                       shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(24.0),
+                       ),
+                     ),
+                     onPressed: () => {
+                       Navigator.push(
+                         context,
+                         MaterialPageRoute(
+                           builder: (context) => PublicationsListList(),
+                         ),
+                       )
+                     },
+                     icon: Icon(
+                       Icons.exit_to_app,
+                       color: mainColorWhite,
+                     ),
+                     label: Text(
+                       '',
+                       style: TextStyle(color: mainColor),
+                     ),
+                   ),
+                 ],
+               ),
               Footer()
             ],
           ),
@@ -431,18 +495,14 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => PublicationsListArticle(
-                title:
-                    //"YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU",
-                    title,
-                description: description),
+            builder: (context) =>
+                PublicationsListArticle(title: title, description: description),
           ),
         );
       },
       child: Stack(children: [
         Container(
           decoration: BoxDecoration(
-            //border: Border.all(color: Colors.grey),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.2),
@@ -452,9 +512,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             ],
             color: Colors.white70,
             borderRadius: BorderRadius.circular(12),
-            // image: DecorationImage(
-            //     image: AssetImage('assets/adakemi.jpg'),
-            //     fit: BoxFit.cover)
           ),
           width: width < 1200 ? width * 0.60 : width * 0.20,
           height: height * 0.30,
@@ -466,10 +523,8 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
               color: Colors.transparent,
               width: width < 1200 ? width * 0.60 : width * 0.19,
               child: Column(
-                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    //'4/5/2020',
                     date,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
@@ -482,7 +537,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                     height: 15,
                   ),
                   Text(
-                    //'YARGI ALANINDAKİ HAK KAYIPLARININ ÖNLENMESİ AMACIYLA GETİRİLEN DURMA SÜRELERİNİN UZATILMASINA DAİR BİLGİ NOTU ',
                     title,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
