@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,6 +11,7 @@ class BlogPost extends StatefulWidget {
   final String title;
   final String content;
   final String author;
+  final String image;
 
   BlogPost(
       {Key key,
@@ -17,16 +19,19 @@ class BlogPost extends StatefulWidget {
       this.date,
       this.title,
       this.content,
-      this.author})
+      this.author,
+      this.image})
       : super(key: key);
 
   factory BlogPost.fromDocument(DocumentSnapshot doc) {
     return BlogPost(
-        blogPostId: doc['blogPostId'],
-        date: doc['date'],
-        title: doc['title'],
-        content: doc['content'],
-        author: doc['author']);
+      blogPostId: doc['blogPostId'],
+      date: doc['date'],
+      title: doc['title'],
+      content: doc['content'],
+      author: doc['author'],
+      image: doc['image'],
+    );
   }
   @override
   State<BlogPost> createState() => _BlogPostState();
@@ -38,25 +43,40 @@ class _BlogPostState extends State<BlogPost> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return starredBlogPostCard(
-        context, width, height, widget.date, widget.title);
+        context, width, height, widget.date, widget.title, widget.image);
+  }
+
+  Card blogPostCard() {
+    return Card(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/adakemi.jpg"),
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.topCenter,
+          ),
+        ),
+        child: Text("YOUR TEXT"),
+      ),
+    );
   }
 
   InkWell starredBlogPostCard(BuildContext context, double width, double height,
-      String date, String title) {
+      String date, String title, String imageUrl) {
     return InkWell(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => PublicationsListArticle(
-                title: title, description: widget.content),
+                title: title, description: widget.content, author: widget.author,),
           ),
         );
       },
       child: Stack(children: [
         Container(
           decoration: BoxDecoration(
-            //border: Border.all(color: Colors.grey),
+            // //border: Border.all(color: Colors.grey),
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.2),
@@ -64,11 +84,13 @@ class _BlogPostState extends State<BlogPost> {
                 offset: Offset(2.0, 2.0),
               ),
             ],
-            color: Colors.white70,
+            color: Colors.black54,
             borderRadius: BorderRadius.circular(12),
-            // image: DecorationImage(
-            //     image: AssetImage('assets/adakemi.jpg'),
-            //     fit: BoxFit.cover)
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: CachedNetworkImageProvider(imageUrl),
+              opacity: 0.5
+            ),
           ),
           width: width < 1200 ? width * 0.60 : width * 0.20,
           height: height * 0.30,
@@ -86,7 +108,7 @@ class _BlogPostState extends State<BlogPost> {
                     date,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
-                        color: Colors.black,
+                        color: Colors.white,
                         height: 1.4,
                         fontWeight: FontWeight.w400),
                     textAlign: TextAlign.center,
@@ -98,7 +120,7 @@ class _BlogPostState extends State<BlogPost> {
                     title,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
-                        color: Colors.black,
+                        color: Colors.white,
                         height: 1.4,
                         fontWeight: FontWeight.w400),
                     textAlign: TextAlign.center,

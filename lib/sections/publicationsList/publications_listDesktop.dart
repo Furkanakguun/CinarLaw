@@ -854,6 +854,32 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                   width: 10,
                 ),
               ],
+            )),
+                Container(
+            color: mainColorWhite,
+            child: Row(
+              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                EntranceFader(
+                  offset: Offset(0, -10),
+                  delay: Duration(milliseconds: 100),
+                  duration: Duration(milliseconds: 250),
+                  child: IconButton(
+                    icon: Icon(
+                      Ionicons.md_exit,
+                      color: Colors.white,
+                      size: MediaQuery.of(context).size.width * 0.0095,
+                    ),
+                    //iconSize: height,
+                    onPressed: () => launchURL(
+                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                    //hoverColor: kPrimaryColor,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+              ],
             ))
       ],
     );

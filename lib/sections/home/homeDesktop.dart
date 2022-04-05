@@ -29,6 +29,7 @@ class HomeDesktop extends StatelessWidget {
                 opacity: 0.5,
                 image: AssetImage("assets/CINAR_GIRIS.jpg"),
                 fit: BoxFit.cover,
+                
               ),
             ),
           ),

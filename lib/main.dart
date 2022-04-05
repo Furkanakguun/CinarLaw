@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/provider/themeProvider.dart';
 import 'package:cinarlaw/provider/themeStyles.dart';
-import 'package:cinarlaw/sections/getInTouch/getInTouch.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/serviceDetails/serviceDetails.dart';
 import 'package:provider/provider.dart';
@@ -53,7 +52,6 @@ class _MyAppState extends State<MyApp> {
         initialRoute: "/",
         routes: {
           "/": (context) => MainPage(),
-          "/workTogether": (context) => GetInTouch(),
           "/details": (context) => ServiceDetails()
         },
       ),

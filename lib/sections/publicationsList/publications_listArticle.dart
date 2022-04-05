@@ -16,7 +16,8 @@ import '../../constants.dart';
 class PublicationsListArticle extends StatefulWidget {
   final String title;
   final String description;
-  const PublicationsListArticle({Key key, this.title, this.description})
+  final String author;
+  const PublicationsListArticle({Key key, this.title, this.description, this.author})
       : super(key: key);
 
   @override
@@ -47,8 +48,8 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
       backgroundColor: Colors.white,
       body: Padding(
         padding: width < 1200
-            ? EdgeInsets.only(top: 0.0, bottom: 3)
-            : EdgeInsets.only(top: 0.0, bottom: 16),
+            ? EdgeInsets.only(top: 0.0, bottom: 0)
+            : EdgeInsets.only(top: 0.0, bottom: 0),
         child: Center(
           child: ListView(
             children: [
@@ -166,8 +167,23 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                   SizedBox(
                     width: width * 0.012,
                   ),
+                     Container(
+                    width: width * 0.55,
+                    child: AdaptiveText(
+                      widget.author,
+                      style: GoogleFonts.montserrat(
+                        fontSize: height * 0.016,
+                        color: Colors.grey[500],
+                        height: 1.8,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
                 ],
               ),
+              SizedBox(
+                    width: height * 0.050,
+                  ),
               Footer()
             ],
           ),

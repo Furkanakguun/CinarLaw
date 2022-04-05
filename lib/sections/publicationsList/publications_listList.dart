@@ -1,17 +1,13 @@
 import 'package:cinarlaw/models/blog.dart';
-import 'package:cinarlaw/sections/home/home.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
-import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/footer.dart';
-import 'package:cinarlaw/widget/publication_list_card.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
 
@@ -187,11 +183,9 @@ class _PublicationsListListState extends State<PublicationsListList> {
                       if (!snapshot.hasData) {
                         return Container();
                       }
-                      return Expanded(
-                        child: ListView(
-                          shrinkWrap: true,
-                          children: snapshot.data,
-                        ),
+                      return Column(
+                        ///shrinkWrap: true,
+                        children: snapshot.data,
                       );
                     },
                   )),
