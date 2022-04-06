@@ -27,8 +27,9 @@ import 'package:cinarlaw/sections/services/services.dart';
 import 'package:cinarlaw/widget/arrowOnTop.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'museum/museum_listDesktop.dart';
+
+bool isTr = false;
 
 class MainPage extends StatefulWidget {
   @override
@@ -90,7 +91,6 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void initState() {
-   
     _scrollController = _themeProviders.scroll;
     _scrollController.addListener(() {
       if (_scrollController.position.userScrollDirection ==
@@ -250,13 +250,23 @@ class _MainPageState extends State<MainPage> {
               child: NavBarLogo(
                 height: 20.0,
               ))
-          : Padding(
-              padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
-              child: Image.asset(
-                'assets/cinar_Logo.png',
-                fit: BoxFit.fitWidth,
-                height: 120,
-                width: 200,
+          : MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                    builder: (BuildContext context) => MainPage()));
+              },
+              hoverColor: Colors.white,
+              focusColor: Colors.white,
+              highlightColor: Colors.white,
+              splashColor: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
+                child: Image.asset(
+                  'assets/cinar_Logo.png',
+                  fit: BoxFit.fitWidth,
+                  height: 120,
+                  width: 200,
+                ),
               ),
             ),
       actions: [
@@ -270,12 +280,10 @@ class _MainPageState extends State<MainPage> {
                   height: 60.0,
                   child: MaterialButton(
                     hoverColor: kPrimaryColor,
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationList(),
-                      ),
-                    ),
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                        new MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                PublicationList())),
                     child: Text(
                       "ÇINAR ACADEMIA",
                       style: GoogleFonts.montserrat(
@@ -334,12 +342,10 @@ class _MainPageState extends State<MainPage> {
                   height: 60.0,
                   child: MaterialButton(
                     hoverColor: kPrimaryColor,
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MuseumList(),
-                      ),
-                    ),
+                    onPressed: () =>  Navigator.of(context).pushReplacement(
+                        new MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                MuseumList())),
                     child: Text(
                       "ÇINAR MUSEUM",
                       style: GoogleFonts.montserrat(
@@ -510,7 +516,8 @@ class _MainPageState extends State<MainPage> {
                       onPressed: () {
                         Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => CarrierDesktop()),
+                          MaterialPageRoute(
+                              builder: (context) => CarrierDesktop()),
                           (Route<dynamic> route) => false,
                         );
                       },

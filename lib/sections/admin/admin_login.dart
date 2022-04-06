@@ -1,3 +1,4 @@
+import 'package:cinarlaw/sections/admin/admin_dashboard.dart';
 import 'package:cinarlaw/sections/home/home.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
@@ -13,19 +14,21 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
 
-class PublicationsListArticle extends StatefulWidget {
+class AdminLogin extends StatefulWidget {
   final String title;
   final String description;
   final String author;
-  const PublicationsListArticle({Key key, this.title, this.description, this.author})
+  const AdminLogin({Key key, this.title, this.description, this.author})
       : super(key: key);
 
   @override
-  _PublicationsListArticleState createState() =>
-      _PublicationsListArticleState();
+  _AdminLoginState createState() => _AdminLoginState();
 }
 
-class _PublicationsListArticleState extends State<PublicationsListArticle> {
+class _AdminLoginState extends State<AdminLogin> {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  bool isValidate = false;
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
@@ -53,142 +56,210 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
         child: Center(
           child: ListView(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 55,
-                    width: width,
-                    color: Colors.white,
-                    child: _appBarTabDesktop(),
-                  ),
-                ],
+              //appBarSection(width),
+              //introBannerSection(height, width),
+               SizedBox(
+                height: height * 0.15,
               ),
-              Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/museum_stack.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  height: height * 0.20,
-                  width: width,
-                  //color: Colors.yellow),
-                ),
-              ),
+              titleSection(height),
               SizedBox(
                 height: height * 0.03,
               ),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "BLOG",
-                  style: GoogleFonts.montserrat(
-                      color: mainColorWhite,
-                      fontSize: height * 0.018,
-                      fontWeight: FontWeight.w200),
-                ),
-              ),
+              username(height, width),
+              password(height, width),
               SizedBox(
-                height: height * 0.03,
+                height:20
               ),
-              Column(
-                children: [
-                  Container(
-                    width: width * 0.55,
-                    child: Text(
-                      widget.title,
-                      style: GoogleFonts.montserrat(
-                          color: Colors.black,
-                          fontSize: height * 0.030,
-                          fontWeight: FontWeight.w500),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: height * 0.03,
-              ),
-              IntrinsicHeight(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: width * 0.32,
-                      height: 50,
-                      child: AdaptiveText(
-                        "",
-                        style: GoogleFonts.roboto(
-                          fontSize: height * 0.018,
-                          color: Colors.grey[500],
-                          height: 1.5,
-                        ),
-                      ),
-                    ),
-                    VerticalDivider(
-                      color: mainColorWhite,
-                      thickness: 3,
-                    ),
-                    Container(
-                      height: 50,
-                      width: width * 0.32,
-                      child: AdaptiveText(
-                        "",
-                        style: GoogleFonts.roboto(
-                          fontSize: height * 0.018,
-                          color: Colors.grey[500],
-                          height: 1.5,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 12,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: width * 0.55,
-                    child: Text(
-                      widget.description,
-                      style: GoogleFonts.montserrat(
-                        fontSize: height * 0.016,
-                        color: Colors.grey[500],
-                        height: 1.8,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                  SizedBox(
-                    width: width * 0.012,
-                  ),
-                     Container(
-                    width: width * 0.55,
-                    child: Text(
-                      widget.author,
-                      style: GoogleFonts.montserrat(
-                        fontSize: height * 0.016,
-                        color: Colors.grey[500],
-                        height: 1.8,
-                      ),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                    width: height * 0.050,
-                  ),
-              Footer()
+              loginButton(width)
+              //Footer()
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Center loginButton(double width) {
+    return Center(
+              child: Container(
+                  width: width < 1200 ? width * 0.60 : width * 0.20,
+                  height: 50,
+                child: TextButton(
+                      style: ButtonStyle(
+                          backgroundColor: isValidate
+                              ? MaterialStateProperty.all<Color>(
+                                  mainColor)
+                              : MaterialStateProperty.all<Color>(
+                                  mainColor.withOpacity(0.4)),
+                          foregroundColor: MaterialStateProperty.all<Color>(
+                              mainColor.withOpacity(0.4)),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(15)),
+                                  side: BorderSide(color: Colors.transparent)))
+                          // overlayColor: MaterialStateProperty.resolveWith<Color>(
+                          //   (Set<MaterialState> states) {
+                          //     if (states.contains(MaterialState.hovered))
+                          //       return Colors.blue.withOpacity(0.04);
+                          //     if (states.contains(MaterialState.focused) ||
+                          //         states.contains(MaterialState.pressed))
+                          //       return Colors.blue.withOpacity(0.12);
+                          //     return null; // Defer to the widget's default.
+                          //   },
+                          // ),
+                          ),
+                      onPressed: () {
+                        //goToThirdPage();
+                        _login();
+                      },
+                      child: Text(
+                        'Login',
+                        style: TextStyle(color: Colors.white),
+                      )),
+              ),
+            );
+  }
+
+  Widget username(double height , double width) {
+    return Center(
+      child: Container(
+        width: width < 1200 ? width * 0.60 : width * 0.20,
+            //height: height * 0.30,
+          child: Padding(
+        padding: const EdgeInsets.all(4),
+        child: TextFormField(
+          controller: usernameController,
+          onChanged: checkIsValidate(),
+          validator: (val) {
+            if (val.isEmpty) {
+              return "Required";
+            } else {
+              return "";
+            }
+          },
+          maxLines: 1,
+          cursorColor: Colors.black,
+          style: TextStyle(color: Colors.black),
+          decoration: InputDecoration(
+            hintText: "Username",
+            hintStyle: TextStyle(color: Colors.grey),
+
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15.0),
+              borderSide: BorderSide(color: Colors.black, width: 0.8),
+
+            ),
+          ),
+        ),
+      )),
+    );
+  }
+
+    Widget password(double height , double width) {
+    return Center(
+      child: Container(
+        width: width < 1200 ? width * 0.60 : width * 0.20,
+            //height: height * 0.30,
+          child: Padding(
+        padding: const EdgeInsets.all(4),
+        child: TextFormField(
+          controller: passwordController,
+          onChanged: checkIsValidate(),
+          validator: (val) {
+            if (val.isEmpty) {
+              return "Required";
+            } else {
+              return "";
+            }
+          },
+          obscureText: true,
+          maxLines: 1,
+          cursorColor: Colors.black,
+          style: TextStyle(color: Colors.black),
+          decoration: InputDecoration(
+            hintText: "Password",
+            hintStyle: TextStyle(color: Colors.grey),
+            
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15.0),
+              borderSide: BorderSide(color: Colors.black, width: 0.8),
+
+            ),
+          ),
+        ),
+      )),
+    );
+  }
+
+    void _login() {
+    if (this.usernameController.text != "" &&
+        this.passwordController.text != "") {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                AdminDashboard(),
+          ),
+        );
+    } else {
+      //formGlobalKey.currentState.validate();
+    }
+  }
+
+  checkIsValidate() {
+    if (this.usernameController.text != "" &&
+        this.passwordController.text != "") {
+      setState(() {
+        isValidate = true;
+      });
+    } else {
+      setState(() {
+        isValidate = false;
+      });
+    }
+  }
+
+  Align titleSection(double height) {
+    return Align(
+      alignment: Alignment.center,
+      child: Text(
+        "ADMIN LOGIN",
+        style: GoogleFonts.montserrat(
+            color: mainColorWhite,
+            fontSize: height * 0.028,
+            fontWeight: FontWeight.w300),
+      ),
+    );
+  }
+
+  Center introBannerSection(double height, double width) {
+    return Center(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/museum_stack.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        height: height * 0.20,
+        width: width,
+        //color: Colors.yellow),
+      ),
+    );
+  }
+
+  Row appBarSection(double width) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Container(
+          height: 55,
+          width: width,
+          color: Colors.white,
+          child: _appBarTabDesktop(),
+        ),
+      ],
     );
   }
 
@@ -348,7 +419,8 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                       size: MediaQuery.of(context).size.width * 0.0095,
                     ),
                     //iconSize: height,
-                    onPressed: () => launchURL('https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                    onPressed: () => launchURL(
+                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
                     //hoverColor: kPrimaryColor,
                   ),
                 ),

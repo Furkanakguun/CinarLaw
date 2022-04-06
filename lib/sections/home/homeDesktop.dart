@@ -9,7 +9,14 @@ import 'package:cinarlaw/widget/socialMediaIcon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class HomeDesktop extends StatelessWidget {
+import '../mainSection.dart';
+
+class HomeDesktop extends StatefulWidget {
+  @override
+  State<HomeDesktop> createState() => _HomeDesktopState();
+}
+
+class _HomeDesktopState extends State<HomeDesktop> {
   @override
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);
@@ -18,7 +25,7 @@ class HomeDesktop extends StatelessWidget {
 
     return Container(
       color: mainColor,
-      height: height -50 ,
+      height: height - 50,
       width: width,
       child: Stack(
         children: [
@@ -29,7 +36,6 @@ class HomeDesktop extends StatelessWidget {
                 opacity: 0.5,
                 image: AssetImage("assets/CINAR_GIRIS.jpg"),
                 fit: BoxFit.cover,
-                
               ),
             ),
           ),
@@ -130,8 +136,96 @@ class HomeDesktop extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: height * 0.05,
+                  height: height * 0.30,
                 ),
+                Row(
+                  children: [
+                    !isTr
+                        ? TextButton(
+                            child: Text(
+                              'EN ',
+                              style: GoogleFonts.montserrat(
+                                  color: _themeProvider.lightTheme
+                                      ? Colors.white
+                                      : Colors.white,
+                                  fontSize: width < 1200
+                                      ? height * 0.010
+                                      : height * 0.020,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0.0),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                isTr = true;
+                              });
+                            })
+                        : TextButton(
+                            child: Text(
+                              'EN ',
+                              style: GoogleFonts.montserrat(
+                                  color: _themeProvider.lightTheme
+                                      ? Colors.white
+                                      : Colors.white,
+                                  fontSize: width < 1200
+                                      ? height * 0.010
+                                      : height * 0.020,
+                                  fontWeight: FontWeight.w300,
+                                  letterSpacing: 0.0),
+                            ),
+                            onPressed: () {
+                                setState(() {
+                                isTr = false;
+                              });
+                            }),
+                    Text("|",
+                        style: GoogleFonts.montserrat(
+                            color: _themeProvider.lightTheme
+                                ? Colors.white
+                                : Colors.white,
+                            fontSize:
+                                width < 1200 ? height * 0.010 : height * 0.020,
+                            fontWeight: FontWeight.w300,
+                            letterSpacing: 0.0)),
+                    isTr
+                        ? TextButton(
+                            child: Text(
+                              'TR',
+                              style: GoogleFonts.montserrat(
+                                  color: _themeProvider.lightTheme
+                                      ? Colors.white
+                                      : Colors.white,
+                                  fontSize: width < 1200
+                                      ? height * 0.010
+                                      : height * 0.020,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0.0),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                isTr = false;
+                              });
+                            })
+                        : TextButton(
+                            child: Text(
+                              'TR',
+                              style: GoogleFonts.montserrat(
+                                  color: _themeProvider.lightTheme
+                                      ? Colors.white
+                                      : Colors.white,
+                                  fontSize: width < 1200
+                                      ? height * 0.010
+                                      : height * 0.020,
+                                  fontWeight: FontWeight.w300,
+                                  letterSpacing: 0.0),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                isTr = true;
+                              });
+                            }),
+                  ],
+                )
+
                 // Row(
                 //   mainAxisSize: MainAxisSize.min,
                 //   children: List.generate(

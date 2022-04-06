@@ -1,5 +1,6 @@
 import 'package:cinarlaw/models/blog.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
+import 'package:cinarlaw/sections/admin/admin_login.dart';
 import 'package:cinarlaw/sections/home/home.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
@@ -450,36 +451,36 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
               SizedBox(
                 height: 62,
               ),
-               Row(
-                 mainAxisAlignment: MainAxisAlignment.end,
-                 children: [
-                   TextButton.icon(
-                     style: TextButton.styleFrom(
-                       textStyle: TextStyle(color: Colors.blue),
-                       backgroundColor: Colors.white,
-                       shape: RoundedRectangleBorder(
-                         borderRadius: BorderRadius.circular(24.0),
-                       ),
-                     ),
-                     onPressed: () => {
-                       Navigator.push(
-                         context,
-                         MaterialPageRoute(
-                           builder: (context) => PublicationsListList(),
-                         ),
-                       )
-                     },
-                     icon: Icon(
-                       Icons.exit_to_app,
-                       color: mainColorWhite,
-                     ),
-                     label: Text(
-                       '',
-                       style: TextStyle(color: mainColor),
-                     ),
-                   ),
-                 ],
-               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton.icon(
+                    style: TextButton.styleFrom(
+                      textStyle: TextStyle(color: Colors.blue),
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                    ),
+                    onPressed: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PublicationsListList(),
+                        ),
+                      )
+                    },
+                    icon: Icon(
+                      Icons.exit_to_app,
+                      color: mainColorWhite,
+                    ),
+                    label: Text(
+                      '',
+                      style: TextStyle(color: mainColor),
+                    ),
+                  ),
+                ],
+              ),
               Footer()
             ],
           ),
@@ -650,15 +651,15 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
           ? NavBarLogo(
               height: 20.0,
             )
-          : InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainPage(),
-                  ),
-                );
+          : MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                    builder: (BuildContext context) => MainPage()));
               },
+              hoverColor: Colors.white,
+              focusColor: Colors.white,
+              highlightColor: Colors.white,
+              splashColor: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
                 child: Image.asset(
@@ -726,12 +727,10 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 height: 60.0,
                 child: MaterialButton(
                   hoverColor: kPrimaryColor,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MuseumListDesktop(),
-                    ),
-                  ),
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              MuseumListDesktop())),
                   child: Text(
                     "ÇINAR MUSEUM",
                     style: GoogleFonts.montserrat(
@@ -751,12 +750,9 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MuseumListDesktop(),
-                      ),
-                    );
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            MuseumListDesktop()));
                     //Navigator.pop(context);
                   },
                   child: ListTile(
@@ -805,12 +801,8 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CarrierDesktop(),
-                      ),
-                    );
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()));
                     //Navigator.pop(context);
                   },
                   child: ListTile(
@@ -855,7 +847,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 ),
               ],
             )),
-                Container(
+        Container(
             color: mainColorWhite,
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -871,8 +863,14 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                       size: MediaQuery.of(context).size.width * 0.0095,
                     ),
                     //iconSize: height,
-                    onPressed: () => launchURL(
-                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AdminLogin(),
+                        ),
+                      );
+                    },
                     //hoverColor: kPrimaryColor,
                   ),
                 ),
@@ -898,12 +896,8 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             child: MaterialButton(
               hoverColor: kPrimaryColor,
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainPage(),
-                  ),
-                );
+                Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                    builder: (BuildContext context) => MainPage()));
               },
               child: Text(
                 childText,

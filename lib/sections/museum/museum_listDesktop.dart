@@ -784,12 +784,8 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                 child: MaterialButton(
                   hoverColor: kPrimaryColor,
                   onPressed: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CarrierDesktop(),
-                      ),
-                    )
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
                     "CAREER",
@@ -811,12 +807,8 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CarrierDesktop(),
-                      ),
-                    );
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()));
                     //Navigator.pop(context);
                   },
                   child: ListTile(

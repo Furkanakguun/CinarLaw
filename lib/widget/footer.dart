@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cinarlaw/constants.dart';
 import 'package:cinarlaw/provider/themeProvider.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -22,31 +23,67 @@ class Footer extends StatelessWidget {
           Container(
             height: height * 0.30,
             width: width / 5 * (2),
-            color: Colors.grey[600],
+            color: mainColorWhite,
             child: Center(
-              child: InkWell(
-                onTap: () => launchURL(
-                    "https://tourmake.it/en/tour/0d44de8dd624c3eb54adc876ab0468fe"),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.search,
-                      color: Colors.white,
-                      size: 32,
-                    ),
-                    SizedBox(
-                      width: 7,
-                    ),
-                    Text(
-                      "ÇINAR 360 \n" + "OFFICE TOUR",
-                      style: GoogleFonts.montserrat(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                //crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "CARRERS",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: height * 0.020,
+                        fontWeight: FontWeight.w200),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    "Interested in what life at Çınar&Çınar is like ?",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: height * 0.022,
+                        fontWeight: FontWeight.w300),
+                  ),
+                  SizedBox(
+                    height: 7,
+                  ),
+                  Text(
+                    "Follow us and say hello and ask",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: height * 0.022,
+                        fontWeight: FontWeight.w300),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  InkWell(
+                    onTap: () => launchURL(
+                        "https://tourmake.it/en/tour/0d44de8dd624c3eb54adc876ab0468fe"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.search,
                           color: Colors.white,
-                          fontSize: height * 0.018,
-                          fontWeight: FontWeight.w200),
+                          size: 32,
+                        ),
+                        SizedBox(
+                          width: 7,
+                        ),
+                        Text(
+                          "ÇINAR 360 \n" + "OFFICE TOUR",
+                          style: GoogleFonts.montserrat(
+                              color: Colors.white,
+                              fontSize: height * 0.018,
+                              fontWeight: FontWeight.w200),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -55,19 +92,42 @@ class Footer extends StatelessWidget {
             width: width / 5 * (3),
             color: Colors.grey[300],
             child: Padding(
-              padding: const EdgeInsets.only(left: 28.0, top: 40, bottom: 18),
-              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              padding: const EdgeInsets.only(left: 50, top: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  AdaptiveText(
-                      "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17\n\n" +
-                          "Oran/Çankaya / Ankara \n\n" +
-                          "Ankara: +90 312 426 90 22 \n\n\n"+
-                          "" ),
-                  AdaptiveText(
-                      "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5\n\n" +
-                          "Maslak / Sarıyer / İstanbul \n\n" +
-                          "İstanbul: +90 212 963 02 29 \n\n\n" +
-                          "info@cinarlaw.com"),
+                  AdaptiveText("İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17\n" +
+                      "Oran/Çankaya / Ankara \n\n" +
+                      "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5\n" +
+                      "Maslak / Sarıyer / İstanbul \n\n" +
+                      "Ankara: +90 312 426 90 22 | İstanbul: +90 212 963 02 29 \n\n" +
+                      "info@cinarlaw.com \n\n\n" +
+                      "", style: GoogleFonts.montserrat(
+                        color: _themeProvider.lightTheme
+                            ? Colors.black
+                            : Colors.black,
+                        fontSize:
+                            width < 1200 ? height * 0.010 : height * 0.015,
+                        fontWeight: FontWeight.w300,
+                        letterSpacing: 0.0)),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Icon(
+                        AntDesign.linkedin_square,
+                        color: mainColor,
+                        size: MediaQuery.of(context).size.width * 0.0115,
+                      ),
+                      SizedBox(width: 7,),
+                      Icon(
+                        AntDesign.facebook_square,
+                        color: mainColor,
+                        size: MediaQuery.of(context).size.width * 0.0115,
+                      ),
+                      // Icon(Icons.facebook, color: mainColor,),
+                      //  Icon(Icons.facebook, color: mainColor,),
+                    ],
+                  )
                 ],
               ),
             ),

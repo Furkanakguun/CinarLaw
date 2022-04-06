@@ -64,22 +64,22 @@ class _ProjectCardState extends State<ProjectCard> {
         padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(7)),
-          color:  Colors.grey[200],
-          boxShadow: isHover
-              ? [
-                  BoxShadow(
-                    color: kPrimaryColor.withAlpha(100),
-                    blurRadius: 0.0,
-                    offset: Offset(0.0, 0.0),
-                  )
-                ]
-              : [
-                  BoxShadow(
-                    color: Colors.black.withAlpha(100),
-                    blurRadius: 0.0,
-                    offset: Offset(0.0, 0.0),
-                  )
-                ],
+           //color:  isHover ? Colors.grey : Colors.transparent,
+          // boxShadow: isHover
+          //     ? [
+          //         BoxShadow(
+          //           color: kPrimaryColor.withAlpha(100),
+          //           blurRadius: 0.0,
+          //           offset: Offset(0.0, 0.0),
+          //         )
+          //       ]
+          //     : [
+          //         BoxShadow(
+          //           color: Colors.black.withAlpha(100),
+          //           blurRadius: 0.0,
+          //           offset: Offset(0.0, 0.0),
+          //         )
+          //       ],
         ),
         child: Stack(
           fit: StackFit.expand,
@@ -92,6 +92,22 @@ class _ProjectCardState extends State<ProjectCard> {
                   textAlign: TextAlign.center,
                   //overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.montserrat(
+                      fontSize: height * 0.018,
+                      letterSpacing: 2.0,
+                      color: _themeProvider.lightTheme
+                          ? Colors.black
+                          : Colors.white,
+                      fontWeight: FontWeight.w500,
+                      height: width >= 600 ? 2.0 : 1.2),
+                ),
+                SizedBox(
+                  height: height * 0.01,
+                ),
+               AdaptiveText(
+                 "Avukat",
+                  textAlign: TextAlign.center,
+                  //overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.montserrat(
                       fontSize: height * 0.015,
                       letterSpacing: 2.0,
                       color: _themeProvider.lightTheme
@@ -100,10 +116,6 @@ class _ProjectCardState extends State<ProjectCard> {
                       fontWeight: FontWeight.w400,
                       height: width >= 600 ? 2.0 : 1.2),
                 ),
-                SizedBox(
-                  height: height * 0.01,
-                ),
-                widget.bottomWidget ?? Container(),
               ],
             ),
             AnimatedOpacity(
