@@ -3,7 +3,7 @@ import 'package:cinarlaw/provider/themePreference.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemePreference darkThemePref = ThemePreference();
-  ScrollController scrollController = ScrollController();
+  ScrollController scrollController = ScrollController(initialScrollOffset: 160);
 
   get scroll => scrollController;
 

@@ -4,6 +4,32 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
 
+showLoaderDialog(BuildContext context) {
+    AlertDialog alert = AlertDialog(
+      backgroundColor: Colors.white70,
+      content: Container(
+        height: 50,
+        width: 50,
+        child: Column(
+          children: [
+            Center(
+                child: CircularProgressIndicator(
+              color: Theme.of(context).primaryColor,
+            )),
+          ],
+        ),
+      ),
+    );
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    ).then((value) => Navigator.pop(context));
+  }
+
+
 showPublicationAlertDialog(BuildContext context) {
   // set up the button
   Widget okButton = FlatButton(

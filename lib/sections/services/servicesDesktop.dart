@@ -56,7 +56,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/stack_foto.jpg"),
+                      image: AssetImage("assets/practice_areas.jpg"),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -240,9 +240,6 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 ),
               ),
             ],
-          ),
-          SizedBox(
-            height: 75,
           ),
         ],
       ),

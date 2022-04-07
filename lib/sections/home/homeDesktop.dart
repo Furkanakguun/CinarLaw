@@ -33,8 +33,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
             //color: mainColor,
             decoration: BoxDecoration(
               image: DecorationImage(
-                opacity: 0.5,
-                image: AssetImage("assets/CINAR_GIRIS.jpg"),
+                //opacity: 0.5,
+                image: AssetImage("assets/CINAR.png"),
                 fit: BoxFit.cover,
               ),
             ),

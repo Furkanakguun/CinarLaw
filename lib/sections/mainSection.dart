@@ -27,6 +27,7 @@ import 'package:cinarlaw/sections/services/services.dart';
 import 'package:cinarlaw/widget/arrowOnTop.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../widget/adaptiveText.dart';
 import 'museum/museum_listDesktop.dart';
 
 bool isTr = false;
@@ -40,12 +41,13 @@ class _MainPageState extends State<MainPage> {
   ThemeProvider _themeProviders = ThemeProvider();
   bool isPressed = false;
   bool _isScrollingDown = false;
-  ScrollController _scrollController = ScrollController();
+  bool _navbarWhite = false;
+  ScrollController _scrollController =
+      ScrollController(initialScrollOffset: 260);
 
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "OUR TEAM",
     "CONTACT",
   ];
 
@@ -81,8 +83,6 @@ class _MainPageState extends State<MainPage> {
     } else if (i == 2) {
       return Services();
     } else if (i == 3) {
-      return Portfolio();
-    } else if (i == 4) {
       return Footer();
     } else {
       return Container();
@@ -93,6 +93,24 @@ class _MainPageState extends State<MainPage> {
   void initState() {
     _scrollController = _themeProviders.scroll;
     _scrollController.addListener(() {
+      
+      if (_scrollController.position.pixels < 100) {
+        print('topp');
+      _scroll(0);
+      }
+      if (_scrollController.position.pixels <
+          MediaQuery.of(context).size.height * 1.05) {
+            //print('topp2');
+        setState(() {
+          _navbarWhite = false;
+        });
+      } else if (_scrollController.position.pixels >
+          MediaQuery.of(context).size.height * 1.05) {
+        setState(() {
+          _navbarWhite = true;
+        });
+      }
+
       if (_scrollController.position.userScrollDirection ==
           ScrollDirection.reverse) {
         if (!_isScrollingDown) {
@@ -136,7 +154,7 @@ class _MainPageState extends State<MainPage> {
                   padding:
                       const EdgeInsets.only(left: 18.0, top: 10, bottom: 10),
                   child: Image.asset(
-                    'assets/cinar_Logo.png',
+                    'assets/cinar_beyaz-01.png',
                     fit: BoxFit.cover,
                     height: 100,
                     width: 180,
@@ -181,11 +199,11 @@ class _MainPageState extends State<MainPage> {
             delay: Duration(milliseconds: 100),
             duration: Duration(milliseconds: 250),
             child: Container(
-              color: mainColorWhite,
+              color: _navbarWhite ? mainColorWhite : Colors.transparent,
               padding: const EdgeInsets.all(8.0),
               height: 60.0,
               child: MaterialButton(
-                hoverColor: kPrimaryColor,
+                hoverColor: Colors.black.withOpacity(0.5),
                 onPressed: () => _scroll(index + 1),
                 child: Text(
                   childText,
@@ -237,7 +255,7 @@ class _MainPageState extends State<MainPage> {
   Widget _appBarTabDesktop(ThemeProvider _themeProv) {
     return AppBar(
       elevation: 0.0,
-      backgroundColor: _themeProv.lightTheme ? Colors.white : Colors.black,
+      backgroundColor: _navbarWhite ? mainColorWhite : Colors.transparent,
       // flexibleSpace: Image(
       //   image: AssetImage('assets/navbar.png'),
       //   fit: BoxFit.cover,
@@ -250,53 +268,60 @@ class _MainPageState extends State<MainPage> {
               child: NavBarLogo(
                 height: 20.0,
               ))
-          : MaterialButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                    builder: (BuildContext context) => MainPage()));
-              },
-              hoverColor: Colors.white,
-              focusColor: Colors.white,
-              highlightColor: Colors.white,
-              splashColor: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
-                child: Image.asset(
-                  'assets/cinar_Logo.png',
-                  fit: BoxFit.fitWidth,
-                  height: 120,
-                  width: 200,
+          : Padding(
+              padding: const EdgeInsets.only(left: 28.0, top: 10),
+              child: MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                      builder: (BuildContext context) => MainPage()));
+                },
+                hoverColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
+                  child: Image.asset(
+                    'assets/cinar_beyaz-01.png',
+                    fit: BoxFit.fitWidth,
+                    height: 120,
+                    width: 200,
+                  ),
                 ),
               ),
             ),
       actions: [
         MediaQuery.of(context).size.width > 760
-            ? EntranceFader(
-                offset: Offset(0, -10),
-                delay: Duration(milliseconds: 100),
-                duration: Duration(milliseconds: 250),
-                child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  height: 60.0,
-                  child: MaterialButton(
-                    hoverColor: kPrimaryColor,
-                    onPressed: () => Navigator.of(context).pushReplacement(
-                        new MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                PublicationList())),
-                    child: Text(
-                      "ÇINAR ACADEMIA",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color: _themeProv.lightTheme
-                            ? mainColorWhite
-                            : Colors.white,
+            ? Padding(
+                padding: const EdgeInsets.only(right: 15.0),
+                child: EntranceFader(
+                  offset: Offset(0, -10),
+                  delay: Duration(milliseconds: 100),
+                  duration: Duration(milliseconds: 250),
+                  child: Container(
+                    padding: const EdgeInsets.all(8.0),
+                    height: 60.0,
+                    child: MaterialButton(
+                      hoverColor: Colors.black.withOpacity(0.5),
+                      onPressed: () => Navigator.of(context).pushReplacement(
+                          new MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  PublicationList())),
+                      child: Text(
+                        "ÇINAR ACADEMIA",
+                        style: GoogleFonts.montserrat(
+                          fontSize: MediaQuery.of(context).size.width * 0.0070,
+                          // fontWeight: FontWeight.w300,
+                          color: _themeProv.lightTheme
+                              ? Colors.white
+                              : Colors.white,
+                        ),
+                        // style: TextStyle(
+                        //   color:
+                        //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                        // ),
                       ),
-                      // style: TextStyle(
-                      //   color:
-                      //       themeProvider.lightTheme ? Colors.black : Colors.white,
-                      // ),
                     ),
                   ),
                 ),
@@ -341,19 +366,17 @@ class _MainPageState extends State<MainPage> {
                   padding: const EdgeInsets.all(8.0),
                   height: 60.0,
                   child: MaterialButton(
-                    hoverColor: kPrimaryColor,
-                    onPressed: () =>  Navigator.of(context).pushReplacement(
+                    hoverColor: Colors.black.withOpacity(0.5),
+                    onPressed: () => Navigator.of(context).pushReplacement(
                         new MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                MuseumList())),
+                            builder: (BuildContext context) => MuseumList())),
                     child: Text(
                       "ÇINAR MUSEUM",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color: _themeProv.lightTheme
-                            ? mainColorWhite
-                            : Colors.white,
+                        color:
+                            _themeProv.lightTheme ? Colors.white : Colors.white,
                       ),
                       // style: TextStyle(
                       //   color:
@@ -394,6 +417,12 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
               ),
+        VerticalDivider(
+          color: Colors.grey[300],
+          thickness: 3,
+          indent: 15,
+          endIndent: 15,
+        ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
         MediaQuery.of(context).size.width > 760
@@ -402,11 +431,11 @@ class _MainPageState extends State<MainPage> {
                 delay: Duration(milliseconds: 100),
                 duration: Duration(milliseconds: 250),
                 child: Container(
-                  color: mainColorWhite,
+                  color: _navbarWhite ? mainColorWhite : Colors.transparent,
                   padding: const EdgeInsets.all(8.0),
                   height: 60.0,
                   child: MaterialButton(
-                    hoverColor: kPrimaryColor,
+                    hoverColor: Colors.black.withOpacity(0.5),
                     onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -460,7 +489,7 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
         Container(
-            color: mainColorWhite,
+            color: Colors.transparent,
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

@@ -5,6 +5,9 @@ import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
+import 'package:cinarlaw/widget/BottomNotification.dart';
+import 'package:cinarlaw/widget/alertDialog.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart' as Path;
@@ -30,6 +33,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
   TextEditingController contentController = TextEditingController();
   bool isValidate = false;
   File file;
+  PickedFile pFile;
   String uploadedPhotoUrl;
   String downloadPath;
   String imageName = "Choose Image";
@@ -77,7 +81,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
                 height: height * 0.03,
               ),
               titleField(height, width),
-               SizedBox(
+              SizedBox(
                 height: height * 0.01,
               ),
               authorField(height, width),
@@ -85,7 +89,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
                 height: height * 0.03,
               ),
               descriptionField(queryData),
-             SizedBox(
+              SizedBox(
                 height: height * 0.04,
               ),
               createBlogPost(width, height),
@@ -103,10 +107,10 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
   Widget descriptionField(MediaQueryData queryData) {
     return Center(
       child: Container(
-          width: queryData.size.width < 1200
-                  ? queryData.size.width * 0.60
-                  : queryData.size.width * 0.40,
-                  height: queryData.size.height -500,
+        width: queryData.size.width < 1200
+            ? queryData.size.width * 0.60
+            : queryData.size.width * 0.40,
+        height: queryData.size.height - 500,
         child: Padding(
           padding: const EdgeInsets.all(4),
           child: TextFormField(
@@ -185,6 +189,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
       source: ImageSource.gallery,
     );
     setState(() {
+      this.pFile = pickedFile;
       this.imageName = pickedFile.path;
     });
   }
@@ -202,6 +207,20 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
           .whenComplete(() async {
         await _reference.getDownloadURL().then((value) {
           uploadedPhotoUrl = value;
+          FirebaseFirestore.instance
+              .collection('blogPosts')
+              .doc('1')
+              .collection('items')
+              .doc()
+              .set({
+            "blogPostId": "123",
+            "content": contentController.text,
+            "date": DateTime.now().toString(),
+            "image": uploadedPhotoUrl,
+            "author": authorController.text,
+            "start": false,
+            "title": usernameController.text
+          }).then((value) => showSubmitRequestSnackBar(context));
           setState(() {
             // pickedimage = CachedNetworkImageProvider(uploadedPhotoUrl);
             downloadPath = uploadedPhotoUrl;
@@ -211,6 +230,63 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
     } else {
 //write a code for android or ios
     }
+  }
+
+  showSubmitRequestSnackBar(BuildContext context) async {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    Navigator.pop(context);
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      backgroundColor: Colors.white,
+      content: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color: Colors.green[400],
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          // border: Border.all(
+          //   width: 0.1,
+          //   color: Colors.black,
+          // ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Icon(Icons.done),
+              SizedBox(
+                width: 7,
+              ),
+              Expanded(
+                child: Text(
+                  "Blog Post Uploaded",
+                  style: GoogleFonts.montserrat(
+                      color: Colors.white,
+                      fontSize: height * 0.022,
+                      fontWeight: FontWeight.w300),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      duration: Duration(seconds: 3),
+    ));
+    // bottomNotificaton(
+    //   context,
+    //   "Party Successfully Created",
+    //   Icon(
+    //     MaterialIcons.done_all,
+    //     color: Colors.green,
+    //     size: 32,
+    //   ),
+    // );
+  }
+
+  handleUploadPost() {
+    showLoaderDialog(context);
+    uploadImageToStorage(pFile);
   }
 
   Center createBlogPost(double width, double height) {
@@ -242,6 +318,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
                 // ),
                 ),
             onPressed: () {
+              handleUploadPost();
               //goToThirdPage();
             },
             child: Text(

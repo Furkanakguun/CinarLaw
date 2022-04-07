@@ -22,7 +22,7 @@ class Footer extends StatelessWidget {
         children: [
           Container(
             height: height * 0.30,
-            width: width / 5 * (2),
+            width: width / 2 * (1),
             color: mainColorWhite,
             child: Center(
               child: Column(
@@ -89,7 +89,7 @@ class Footer extends StatelessWidget {
           ),
           Container(
             height: height * 0.30,
-            width: width / 5 * (3),
+            width: width / 2 * (1),
             color: Colors.grey[300],
             child: Padding(
               padding: const EdgeInsets.only(left: 50, top: 40),

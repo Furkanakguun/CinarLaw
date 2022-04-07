@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cinarlaw/models/blog.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
 import 'package:cinarlaw/sections/admin/admin_login.dart';
@@ -9,7 +10,7 @@ import 'package:cinarlaw/sections/publicationsList/publications_listArticle.dart
 import 'package:cinarlaw/sections/publicationsList/publications_listList.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/footer.dart';
-import 'package:cinarlaw/widget/publication_list_card.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -129,7 +130,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         child: Center(
           child: ListView(
             children: [
-              appBarSection(width),
               upBannerSection(height, width),
               SizedBox(
                 height: height * 0.03,
@@ -451,36 +451,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
               SizedBox(
                 height: 62,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton.icon(
-                    style: TextButton.styleFrom(
-                      textStyle: TextStyle(color: Colors.blue),
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24.0),
-                      ),
-                    ),
-                    onPressed: () => {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => PublicationsListList(),
-                        ),
-                      )
-                    },
-                    icon: Icon(
-                      Icons.exit_to_app,
-                      color: mainColorWhite,
-                    ),
-                    label: Text(
-                      '',
-                      style: TextStyle(color: mainColor),
-                    ),
-                  ),
-                ],
-              ),
               Footer()
             ],
           ),
@@ -608,9 +578,10 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     );
   }
 
-  Center upBannerSection(double height, double width) {
-    return Center(
-      child: Container(
+  List<dynamic> showcourselImagesList() {
+    List<dynamic> imageList = List<dynamic>();
+    imageList.add(
+      Container(
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.3),
           image: DecorationImage(
@@ -618,10 +589,68 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             fit: BoxFit.cover,
           ),
         ),
-        height: height * 0.20,
-        width: width,
+
         //color: Colors.yellow),
       ),
+    );
+    imageList.add(
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.3),
+          image: DecorationImage(
+            image: AssetImage("assets/akademi.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+
+        //color: Colors.yellow),
+      ),
+    );
+    imageList.add(
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.3),
+          image: DecorationImage(
+            image: AssetImage("assets/akademi.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+
+        //color: Colors.yellow),
+      ),
+    );
+    return imageList;
+  }
+
+  Widget upBannerSection(double height, double width) {
+    return Stack(
+      children: [
+        Container(
+            height: height * 0.50,
+            width: width,
+            child: Carousel(
+                radius: Radius.circular(35),
+                // onImageTap: (int a) {
+                //   print('ovye');
+                // },
+                borderRadius: true,
+                //radius: Radius.circular(35),
+                boxFit: BoxFit.cover,
+                autoplay: true,
+                //animationCurve: Curves.,
+                animationDuration: Duration(milliseconds: 2000),
+                autoplayDuration: Duration(milliseconds: 10000),
+                dotSize: 7.0,
+                dotIncreasedColor: mainColor,
+                dotBgColor: Colors.transparent,
+                dotPosition: DotPosition.bottomCenter,
+                dotVerticalPadding: 15.0,
+                showIndicator: true,
+                indicatorBgPadding: 3.0,
+                //moveIndicatorFromBottom: ,
+                images: showcourselImagesList())),
+        appBarSection(width),
+      ],
     );
   }
 
@@ -632,7 +661,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         Container(
           height: 55,
           width: width,
-          color: Colors.white,
+          color: Colors.transparent,
           child: _appBarTabDesktop(),
         ),
       ],
@@ -642,7 +671,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   Widget _appBarTabDesktop() {
     return AppBar(
       elevation: 0.0,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       // flexibleSpace: Image(
       //   image: AssetImage('assets/navbar.png'),
       //   fit: BoxFit.cover,
@@ -656,14 +685,14 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 Navigator.of(context).pushReplacement(new MaterialPageRoute(
                     builder: (BuildContext context) => MainPage()));
               },
-              hoverColor: Colors.white,
-              focusColor: Colors.white,
-              highlightColor: Colors.white,
-              splashColor: Colors.white,
+              hoverColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
               child: Padding(
                 padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
                 child: Image.asset(
-                  'assets/cinar_Logo.png',
+                  'assets/cinar_beyaz-01.png',
                   fit: BoxFit.fitWidth,
                   height: 120,
                   width: 200,
@@ -676,14 +705,14 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {},
                   child: Text(
                     "ÇINAR ACADEMIA",
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color: mainColorWhite),
+                        color: Colors.white),
                     // style: TextStyle(
                     //   color:
                     //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -726,7 +755,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () => Navigator.of(context).pushReplacement(
                       new MaterialPageRoute(
                           builder: (BuildContext context) =>
@@ -736,7 +765,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color: mainColorWhite),
+                        color: Colors.white),
                     // style: TextStyle(
                     //   color:
                     //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -771,16 +800,25 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                   ),
                 ),
               ),
+        VerticalDivider(
+          color: Colors.grey[300],
+          thickness: 3,
+          indent: 15,
+          endIndent: 15,
+        ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
         MediaQuery.of(context).size.width > 760
             ? Container(
-                color: mainColorWhite,
+                color: Colors.transparent,
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
-                  onPressed: () => {},
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => {
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()))
+                  },
                   child: Text(
                     "CAREER",
                     style: GoogleFonts.montserrat(
@@ -822,7 +860,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 ),
               ),
         Container(
-            color: mainColorWhite,
+            color: Colors.transparent,
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -848,7 +886,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
               ],
             )),
         Container(
-            color: mainColorWhite,
+            color: Colors.transparent,
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -890,11 +928,11 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   ) {
     return MediaQuery.of(context).size.width > 760
         ? Container(
-            color: mainColorWhite,
+            color: Colors.transparent,
             padding: const EdgeInsets.all(8.0),
             height: 60.0,
             child: MaterialButton(
-              hoverColor: kPrimaryColor,
+              hoverColor: Colors.black.withOpacity(0.5),
               onPressed: () {
                 Navigator.of(context).pushReplacement(new MaterialPageRoute(
                     builder: (BuildContext context) => MainPage()));

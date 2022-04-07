@@ -46,20 +46,7 @@ class _BlogPostState extends State<BlogPost> {
         context, width, height, widget.date, widget.title, widget.image);
   }
 
-  Card blogPostCard() {
-    return Card(
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/adakemi.jpg"),
-            fit: BoxFit.fitWidth,
-            alignment: Alignment.topCenter,
-          ),
-        ),
-        child: Text("YOUR TEXT"),
-      ),
-    );
-  }
+
 
   InkWell starredBlogPostCard(BuildContext context, double width, double height,
       String date, String title, String imageUrl) {

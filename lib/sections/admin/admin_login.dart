@@ -193,8 +193,8 @@ class _AdminLoginState extends State<AdminLogin> {
   }
 
     void _login() {
-    if (this.usernameController.text != "" &&
-        this.passwordController.text != "") {
+    if (this.usernameController.text == "admincinar" &&
+        this.passwordController.text == "Cc147258*") {
         Navigator.push(
           context,
           MaterialPageRoute(

@@ -46,6 +46,7 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
       ],
       child: MaterialApp(
+        
         debugShowCheckedModeBanner: false,
         title: 'Cinar Law',
         theme: ThemeStyles.themeData(_themeProvider.lightTheme, context),

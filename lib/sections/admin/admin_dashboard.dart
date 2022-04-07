@@ -72,7 +72,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               SizedBox(
                 height: 20,
               ),
-              createMuseumPost(width, height)
+              //createMuseumPost(width, height)
               //Footer()
             ],
           ),

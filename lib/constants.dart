@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 const Color kPrimaryColor = Color(0xFF3A2E1E);
 const Color mainColor = Color(0xFF3A2E1E);
 const Color mainColorWhite = Color(0xFF86754D);
+//const Color mainColorWhite = Color(0xFF86754D);
 // Social Media
 const kSocialIcons = [
   "https://img.icons8.com/metro/208/ffffff/facebook-new--v2.png",
