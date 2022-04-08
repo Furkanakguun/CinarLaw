@@ -25,7 +25,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
 
     return Container(
       color: mainColor,
-      height: height - 50,
+      height: height+100,
       width: width,
       child: Stack(
         children: [

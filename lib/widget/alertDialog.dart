@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,30 +6,29 @@ import 'package:google_fonts/google_fonts.dart';
 import '../constants.dart';
 
 showLoaderDialog(BuildContext context) {
-    AlertDialog alert = AlertDialog(
-      backgroundColor: Colors.white70,
-      content: Container(
-        height: 50,
-        width: 50,
-        child: Column(
-          children: [
-            Center(
-                child: CircularProgressIndicator(
-              color: Theme.of(context).primaryColor,
-            )),
-          ],
-        ),
+  AlertDialog alert = AlertDialog(
+    backgroundColor: Colors.white70,
+    content: Container(
+      height: 50,
+      width: 50,
+      child: Column(
+        children: [
+          Center(
+              child: CircularProgressIndicator(
+            color: Theme.of(context).primaryColor,
+          )),
+        ],
       ),
-    );
-    showDialog(
-      barrierDismissible: false,
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    ).then((value) => Navigator.pop(context));
-  }
-
+    ),
+  );
+  showDialog(
+    barrierDismissible: false,
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  ).then((value) => Navigator.pop(context));
+}
 
 showPublicationAlertDialog(BuildContext context) {
   // set up the button
@@ -57,7 +57,7 @@ showPublicationAlertDialog(BuildContext context) {
   );
 }
 
-showImageDialog(BuildContext context, String image) {
+showImageDialog(BuildContext context, String image, String description) {
   double height = MediaQuery.of(context).size.height;
   double width = MediaQuery.of(context).size.width;
   AlertDialog alert = AlertDialog(
@@ -67,31 +67,23 @@ showImageDialog(BuildContext context, String image) {
       height: height * 0.80,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(image),
+          image: CachedNetworkImageProvider(image),
           fit: BoxFit.fill,
         ),
         color: Colors.transparent,
       ),
       child: Align(
         alignment: Alignment.bottomCenter,
-        child: Container(
-          width: 180,
-          height: 38,
-          child: MaterialButton(
-            color: mainColorWhite,
-            hoverColor: mainColorWhite.withAlpha(70),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-              //side: BorderSide(color: kPrimaryColor),
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: width < 1200 ? width * 0.60 : width * 0.40,
+            height: 100,
             child: Text(
-              "GO BACK",
+              description,
               style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w300,
-                fontSize: 18,
+                fontWeight: FontWeight.w400,
+                fontSize: 24,
                 color: Colors.white,
               ),
             ),

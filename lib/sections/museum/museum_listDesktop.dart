@@ -1,9 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cinarlaw/animations/entranceFader.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
-import 'package:cinarlaw/sections/publicationsList/publications_list.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/alertDialog.dart';
@@ -36,6 +34,11 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
     Icons.article,
     Icons.phone,
   ];
+
+  void priiint() {
+    print('asddsa');
+    //return true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +124,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                   padding: EdgeInsets.symmetric(horizontal: width * 0.15),
                   child: Container(
                       width: width < 1200 ? width * 0.60 : width * 0.20,
-                      height: height,
+                      height: height + 500,
                       child: GridView(
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
@@ -129,117 +132,179 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                                   crossAxisSpacing: 3,
                                   mainAxisSpacing: 3,
                                   //mainAxisExtent: 120,
-
                                   childAspectRatio: 1),
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_1.jpg")),
+                            InkWell(
+                              // onHover: (value) {
+                              //   print('yess');
+                              //    setState(() {
+                              //      sideLength = value?150 :50;
+                              //    });
+                              // },
+                              //onHover: () => priiint(),
+                              //color: Colors.black.withOpacity(0.7),
+                              onTap: () => showImageDialog(context,
+                                  'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_1.jpg?alt=media&token=9c54d68b-cc2c-46d1-b55b-788536406c0f', "1920Jupiter Büro Kalemtraşı Guhl & Hardbeck Hamburg Alman Yapımı Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış Mekanik Makine"),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  //borderRadius: BorderRadius.circular(12),
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: CachedNetworkImageProvider(
+                                        "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_1.jpg?alt=media&token=9c54d68b-cc2c-46d1-b55b-788536406c0f",
+                                      )),
+                                ),
+                                width:
+                                    width < 1200 ? width * 0.60 : width * 0.20,
+                                height: height * 0.30,
                               ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_2.jpg")),
+                            InkWell(
+                              //color: Colors.black.withOpacity(0.7),
+                              onTap: () => showImageDialog(context,
+                                  'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_2.jpg?alt=media&token=ba382388-eb8a-4e11-91c4-0659cd4066e6' ,"1950, Brunsviga Hesap Makinesi Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış Çok Fonksiyonlu Alman Yapımı"),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  //borderRadius: BorderRadius.circular(12),
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: CachedNetworkImageProvider(
+                                          "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_2.jpg?alt=media&token=ba382388-eb8a-4e11-91c4-0659cd4066e6")),
+                                ),
+                                width:
+                                    width < 1200 ? width * 0.60 : width * 0.20,
+                                height: height * 0.30,
                               ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_3.jpg")),
-                              ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_4.jpg")),
-                              ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_5.jpg")),
-                              ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_6.jpg")),
-                              ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_7.jpg")),
-                              ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_8.jpg")),
-                              ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.black,
-                                //borderRadius: BorderRadius.circular(12),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(
-                                        "assets/museum/museum_9.jpg")),
-                              ),
-                              width: width < 1200 ? width * 0.60 : width * 0.20,
-                              height: height * 0.30,
-                            )
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7),
+                                onTap: () => showImageDialog(context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_3.jpg?alt=media&token=2bfc9db5-adc5-44a4-93c6-2ab5fab801ff', "Kitap Cildi Pres Makinesi H. Korassandjian Constantinople Plaketli Ünlü Demir Sanayi Eşya Fabrikasında İmal Edilmiş"),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    //borderRadius: BorderRadius.circular(12),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: CachedNetworkImageProvider(
+                                            'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_3.jpg?alt=media&token=2bfc9db5-adc5-44a4-93c6-2ab5fab801ff')),
+                                  ),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7),
+                                onTap: () => showImageDialog(context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_4.jpg?alt=media&token=5aa187fc-1ec9-4d6e-b116-87344a5b7e11', "1920, Telefon Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış  İngiliz Yapımı Dahili Telefon Cihazı"),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    //borderRadius: BorderRadius.circular(12),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: CachedNetworkImageProvider(
+                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_4.jpg?alt=media&token=5aa187fc-1ec9-4d6e-b116-87344a5b7e11")),
+                                  ),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7),
+                                onTap: () => showImageDialog(context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_5.jpg?alt=media&token=236527af-21f7-4856-ac96-fa4316582e67' , "1926, Türkiye Cumhuriyeti Adliye Vekaleti, İstanbul Barosu Avukatlık Ruhsatnamesi, Avukat Pertani Efendi'ye 152 Kayıt Numarası ile Verilmiş,  Adliye Vekili Mahmut Esat Bozkurt İmzalı"),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    //borderRadius: BorderRadius.circular(12),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: CachedNetworkImageProvider(
+                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_5.jpg?alt=media&token=236527af-21f7-4856-ac96-fa4316582e67")),
+                                  ),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7),
+                                onTap: () => showImageDialog(context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_6.jpg?alt=media&token=442b4fc5-148b-48a8-8b5a-e29adba24422' , "1958, Avukatlık Ruhsatnamesi, Adliye Vekili Esad Budakoğlu ve Hukuk Müdürü Şevket Mühtügil İmzalı, Osmanlı Yaprak Deseni Tezyinatlı "),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    //borderRadius: BorderRadius.circular(12),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: CachedNetworkImageProvider(
+                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_6.jpg?alt=media&token=442b4fc5-148b-48a8-8b5a-e29adba24422")),
+                                  ),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7),
+                                onTap: () => showImageDialog(context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_7.jpg?alt=media&token=c921d1eb-18ec-4f83-a840-57cbe5bd154d' , "1912, İstanbul Hukuk Mektebi Diploması, 1878 Doğumlu Dimitri Kandıralı Efendi'ye Okulu Aleyul Al ( Pek İyi ) Derece İle Bitirmiş Olduğu İçin Adliye Nezareti Damgası  İle Verilmiş Diploma"),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    //borderRadius: BorderRadius.circular(12),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: CachedNetworkImageProvider(
+                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_7.jpg?alt=media&token=c921d1eb-18ec-4f83-a840-57cbe5bd154d")),
+                                  ),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7),
+                                onTap: () => showImageDialog(context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_8.jpg?alt=media&token=042ba9fc-fa40-4dab-9a00-316abe59a180' , "1930, Mercedes Daktilo Büromaschinen - Werge A.G, Zella - Mehlis İn Thringen Türkiye Cumhuriyeti Zonguldak Vilayeti Kamu Bürosunda Kullanılmış "),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    //borderRadius: BorderRadius.circular(12),
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: CachedNetworkImageProvider(
+                                          "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_8.jpg?alt=media&token=042ba9fc-fa40-4dab-9a00-316abe59a180",
+                                        )),
+                                  ),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7),
+                                onTap: () => showImageDialog(context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_9.jpg?alt=media&token=839249bf-fcea-4aa0-ab5d-d705d00704fb' , ""),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black,
+                                    //borderRadius: BorderRadius.circular(12),
+                                    image: DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: CachedNetworkImageProvider(
+                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_9.jpg?alt=media&token=839249bf-fcea-4aa0-ab5d-d705d00704fb")),
+                                  ),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                ))
                           ],
                           padding: EdgeInsets.all(10),
                           shrinkWrap: true)),
@@ -323,7 +388,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
-                       Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
@@ -487,21 +552,16 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      AntDesign.linkedin_square,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () => launchURL(
-                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
-                    //hoverColor: kPrimaryColor,
+                IconButton(
+                  icon: Icon(
+                    AntDesign.linkedin_square,
+                    color: Colors.white,
+                    size: MediaQuery.of(context).size.width * 0.0095,
                   ),
+                  //iconSize: height,
+                  onPressed: () => launchURL(
+                      'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                  //hoverColor: kPrimaryColor,
                 ),
                 SizedBox(
                   width: 10,

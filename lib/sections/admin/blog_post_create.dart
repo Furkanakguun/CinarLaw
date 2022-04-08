@@ -94,8 +94,9 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
               ),
               createBlogPost(width, height),
               SizedBox(
-                height: height * 0.04,
+                height: 20,
               ),
+              homeButton(width, height)
               //Footer()
             ],
           ),
@@ -230,6 +231,31 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
     } else {
 //write a code for android or ios
     }
+  }
+
+   
+  Center homeButton(double width, double height) {
+    return Center(
+      child: Container(
+        height: 50,
+        width: width < 1200 ? width * 0.60 : width * 0.20,
+        child: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: mainColor,
+            size: 32,
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainPage(),
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 
   showSubmitRequestSnackBar(BuildContext context) async {

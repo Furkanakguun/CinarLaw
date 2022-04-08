@@ -1,3 +1,4 @@
+import 'package:cinarlaw/sections/publicationsList/publications_listArticle.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/animations/bottomAnimation.dart';
@@ -26,7 +27,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
-      //height: height - 50,
+      height: height,
       color: mainColor.withOpacity(0.9),
       //padding: EdgeInsets.symmetric(horizontal: width * 0.02),
       child: Column(
@@ -51,7 +52,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(top: (height * 0.050)  ),
+              padding: EdgeInsets.only(top: (height * 0.050)),
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
@@ -144,8 +145,20 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InkWell(
-                              onTap: () =>
-                                  {showOurAreasAlertDialog(context, index)},
+                              onTap: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        PublicationsListArticle(
+                                      title: kServicesTitles[index],
+                                      description: kServicesLinks[index],
+                                      author: "",
+                                    ),
+                                  ),
+                                )
+                                //showOurAreasAlertDialog(context, index)
+                              },
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(
@@ -181,8 +194,20 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InkWell(
-                              onTap: () =>
-                                  {showOurAreasAlertDialog(context, index)},
+                              onTap: () => {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        PublicationsListArticle(
+                                      title: kServicesTitles[index],
+                                      description: kServicesLinks[index],
+                                      author: "",
+                                    ),
+                                  ),
+                                )
+                                //showOurAreasAlertDialog(context, index)
+                              },
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(
@@ -219,7 +244,20 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           children: [
                             InkWell(
                               onTap: () =>
-                                  {showOurAreasAlertDialog(context, index)},
+                                  {
+                                      Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        PublicationsListArticle(
+                                      title: kServicesTitles[index],
+                                      description: kServicesLinks[index],
+                                      author: "",
+                                    ),
+                                  ),
+                                )
+                                    //showOurAreasAlertDialog(context, index)
+                                    },
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(

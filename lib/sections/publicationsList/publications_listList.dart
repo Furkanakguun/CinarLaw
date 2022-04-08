@@ -1,4 +1,5 @@
 import 'package:cinarlaw/models/blog.dart';
+import 'package:cinarlaw/sections/Carrier/carrier.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
+import '../admin/admin_login.dart';
 
 class PublicationsListList extends StatefulWidget {
   const PublicationsListList({
@@ -63,34 +65,11 @@ class _PublicationsListListState extends State<PublicationsListList> {
         child: Center(
           child: ListView(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 55,
-                    width: width,
-                    color: Colors.white,
-                    child: _appBarTabDesktop(),
-                  ),
-                ],
-              ),
-              Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/museum_stack.jpg"),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  height: height * 0.20,
-                  width: width,
-                  //color: Colors.yellow),
-                ),
-              ),
+              upBannerSection(height, width),
               SizedBox(
                 height: height * 0.03,
               ),
-             cinarAkademiLetterSection(),
+              cinarAkademiLetterSection(),
               Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -139,7 +118,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
               //     ],
               //   ),
               // ),
-                Padding(
+              Padding(
                 padding: const EdgeInsets.only(top: 28.0, bottom: 28.0),
                 child: Column(
                   children: [
@@ -217,7 +196,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
     );
   }
 
-    Container cinarAkademiLetterSection() {
+  Container cinarAkademiLetterSection() {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -232,13 +211,43 @@ class _PublicationsListListState extends State<PublicationsListList> {
     );
   }
 
+  Widget upBannerSection(double height, double width) {
+    return Stack(children: [
+      Center(
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/akademi.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          height: height * 0.45,
+          width: width,
+          //color: Colors.yellow),
+        ),
+      ),
+      appBarSection(width)
+    ]);
+  }
+
+  Row appBarSection(double width) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Container(
+          height: 55,
+          width: width,
+          color: Colors.transparent,
+          child: _appBarTabDesktop(),
+        ),
+      ],
+    );
+  }
+
   Widget _appBarTabDesktop() {
     return AppBar(
-      iconTheme: IconThemeData(
-        color: Colors.black, //change your color here
-      ),
       elevation: 0.0,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       // flexibleSpace: Image(
       //   image: AssetImage('assets/navbar.png'),
       //   fit: BoxFit.cover,
@@ -247,13 +256,23 @@ class _PublicationsListListState extends State<PublicationsListList> {
           ? NavBarLogo(
               height: 20.0,
             )
-          : Padding(
-              padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
-              child: Image.asset(
-                'assets/cinar_Logo.png',
-                fit: BoxFit.fitWidth,
-                height: 120,
-                width: 200,
+          : MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                    builder: (BuildContext context) => MainPage()));
+              },
+              hoverColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
+                child: Image.asset(
+                  'assets/cinar_beyaz-01.png',
+                  fit: BoxFit.fitWidth,
+                  height: 120,
+                  width: 200,
+                ),
               ),
             ),
       actions: [
@@ -262,19 +281,21 @@ class _PublicationsListListState extends State<PublicationsListList> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PublicationsListDesktop(),
-                    ),
-                  ),
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () {
+                     Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PublicationsListDesktop(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "ÇINAR ACADEMIA",
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color: mainColorWhite),
+                        color: Colors.white),
                     // style: TextStyle(
                     //   color:
                     //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -317,19 +338,17 @@ class _PublicationsListListState extends State<PublicationsListList> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MuseumListDesktop(),
-                    ),
-                  ),
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              MuseumListDesktop())),
                   child: Text(
                     "ÇINAR MUSEUM",
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color: mainColorWhite),
+                        color: Colors.white),
                     // style: TextStyle(
                     //   color:
                     //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -343,12 +362,9 @@ class _PublicationsListListState extends State<PublicationsListList> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MuseumListDesktop(),
-                      ),
-                    );
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            MuseumListDesktop()));
                     //Navigator.pop(context);
                   },
                   child: ListTile(
@@ -367,16 +383,70 @@ class _PublicationsListListState extends State<PublicationsListList> {
                   ),
                 ),
               ),
+        VerticalDivider(
+          color: Colors.grey[300],
+          thickness: 3,
+          indent: 15,
+          endIndent: 15,
+        ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
+        MediaQuery.of(context).size.width > 760
+            ? Container(
+                color: Colors.transparent,
+                padding: const EdgeInsets.all(8.0),
+                height: 60.0,
+                child: MaterialButton(
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => {
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()))
+                  },
+                  child: Text(
+                    "CAREER",
+                    style: GoogleFonts.montserrat(
+                      fontSize: MediaQuery.of(context).size.width * 0.0070,
+                      // fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),
+                    // style: TextStyle(
+                    //   color:
+                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                    // ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()));
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CAREER",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
         Container(
-            color: mainColorWhite,
+            color: Colors.transparent,
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  width: 12,
-                ),
                 EntranceFader(
                   offset: Offset(0, -10),
                   delay: Duration(milliseconds: 100),
@@ -397,6 +467,38 @@ class _PublicationsListListState extends State<PublicationsListList> {
                   width: 10,
                 ),
               ],
+            )),
+        Container(
+            color: Colors.transparent,
+            child: Row(
+              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                EntranceFader(
+                  offset: Offset(0, -10),
+                  delay: Duration(milliseconds: 100),
+                  duration: Duration(milliseconds: 250),
+                  child: IconButton(
+                    icon: Icon(
+                      Ionicons.md_exit,
+                      color: Colors.white,
+                      size: MediaQuery.of(context).size.width * 0.0095,
+                    ),
+                    //iconSize: height,
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AdminLogin(),
+                        ),
+                      );
+                    },
+                    //hoverColor: kPrimaryColor,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+              ],
             ))
       ],
     );
@@ -409,18 +511,14 @@ class _PublicationsListListState extends State<PublicationsListList> {
   ) {
     return MediaQuery.of(context).size.width > 760
         ? Container(
-            color: mainColorWhite,
+            color: Colors.transparent,
             padding: const EdgeInsets.all(8.0),
             height: 60.0,
             child: MaterialButton(
-              hoverColor: kPrimaryColor,
+              hoverColor: Colors.black.withOpacity(0.5),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainPage(),
-                  ),
-                );
+                Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                    builder: (BuildContext context) => MainPage()));
               },
               child: Text(
                 childText,

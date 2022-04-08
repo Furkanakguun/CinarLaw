@@ -58,7 +58,7 @@ class _AdminLoginState extends State<AdminLogin> {
             children: [
               //appBarSection(width),
               //introBannerSection(height, width),
-               SizedBox(
+              SizedBox(
                 height: height * 0.15,
               ),
               titleSection(height),
@@ -67,10 +67,10 @@ class _AdminLoginState extends State<AdminLogin> {
               ),
               username(height, width),
               password(height, width),
-              SizedBox(
-                height:20
-              ),
-              loginButton(width)
+              SizedBox(height: 20),
+              loginButton(width),
+              SizedBox(height: 20),
+              homeButton(height, width)
               //Footer()
             ],
           ),
@@ -81,127 +81,120 @@ class _AdminLoginState extends State<AdminLogin> {
 
   Center loginButton(double width) {
     return Center(
-              child: Container(
-                  width: width < 1200 ? width * 0.60 : width * 0.20,
-                  height: 50,
-                child: TextButton(
-                      style: ButtonStyle(
-                          backgroundColor: isValidate
-                              ? MaterialStateProperty.all<Color>(
-                                  mainColor)
-                              : MaterialStateProperty.all<Color>(
-                                  mainColor.withOpacity(0.4)),
-                          foregroundColor: MaterialStateProperty.all<Color>(
-                              mainColor.withOpacity(0.4)),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15)),
-                                  side: BorderSide(color: Colors.transparent)))
-                          // overlayColor: MaterialStateProperty.resolveWith<Color>(
-                          //   (Set<MaterialState> states) {
-                          //     if (states.contains(MaterialState.hovered))
-                          //       return Colors.blue.withOpacity(0.04);
-                          //     if (states.contains(MaterialState.focused) ||
-                          //         states.contains(MaterialState.pressed))
-                          //       return Colors.blue.withOpacity(0.12);
-                          //     return null; // Defer to the widget's default.
-                          //   },
-                          // ),
-                          ),
-                      onPressed: () {
-                        //goToThirdPage();
-                        _login();
-                      },
-                      child: Text(
-                        'Login',
-                        style: TextStyle(color: Colors.white),
-                      )),
+      child: Container(
+        width: width < 1200 ? width * 0.60 : width * 0.20,
+        height: 50,
+        child: TextButton(
+            style: ButtonStyle(
+                backgroundColor: isValidate
+                    ? MaterialStateProperty.all<Color>(mainColor)
+                    : MaterialStateProperty.all<Color>(
+                        mainColor.withOpacity(0.4)),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                    mainColor.withOpacity(0.4)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        side: BorderSide(color: Colors.transparent)))
+                // overlayColor: MaterialStateProperty.resolveWith<Color>(
+                //   (Set<MaterialState> states) {
+                //     if (states.contains(MaterialState.hovered))
+                //       return Colors.blue.withOpacity(0.04);
+                //     if (states.contains(MaterialState.focused) ||
+                //         states.contains(MaterialState.pressed))
+                //       return Colors.blue.withOpacity(0.12);
+                //     return null; // Defer to the widget's default.
+                //   },
+                // ),
+                ),
+            onPressed: () {
+              //goToThirdPage();
+              _login();
+            },
+            child: Text(
+              'Login',
+              style: TextStyle(color: Colors.white),
+            )),
+      ),
+    );
+  }
+
+  Widget username(double height, double width) {
+    return Center(
+      child: Container(
+          width: width < 1200 ? width * 0.60 : width * 0.20,
+          //height: height * 0.30,
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: TextFormField(
+              controller: usernameController,
+              onChanged: checkIsValidate(),
+              validator: (val) {
+                if (val.isEmpty) {
+                  return "Required";
+                } else {
+                  return "";
+                }
+              },
+              maxLines: 1,
+              cursorColor: Colors.black,
+              style: TextStyle(color: Colors.black),
+              decoration: InputDecoration(
+                hintText: "Username",
+                hintStyle: TextStyle(color: Colors.grey),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                  borderSide: BorderSide(color: Colors.black, width: 0.8),
+                ),
               ),
-            );
-  }
-
-  Widget username(double height , double width) {
-    return Center(
-      child: Container(
-        width: width < 1200 ? width * 0.60 : width * 0.20,
-            //height: height * 0.30,
-          child: Padding(
-        padding: const EdgeInsets.all(4),
-        child: TextFormField(
-          controller: usernameController,
-          onChanged: checkIsValidate(),
-          validator: (val) {
-            if (val.isEmpty) {
-              return "Required";
-            } else {
-              return "";
-            }
-          },
-          maxLines: 1,
-          cursorColor: Colors.black,
-          style: TextStyle(color: Colors.black),
-          decoration: InputDecoration(
-            hintText: "Username",
-            hintStyle: TextStyle(color: Colors.grey),
-
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.0),
-              borderSide: BorderSide(color: Colors.black, width: 0.8),
-
             ),
-          ),
-        ),
-      )),
+          )),
     );
   }
 
-    Widget password(double height , double width) {
+  Widget password(double height, double width) {
     return Center(
       child: Container(
-        width: width < 1200 ? width * 0.60 : width * 0.20,
-            //height: height * 0.30,
+          width: width < 1200 ? width * 0.60 : width * 0.20,
+          //height: height * 0.30,
           child: Padding(
-        padding: const EdgeInsets.all(4),
-        child: TextFormField(
-          controller: passwordController,
-          onChanged: checkIsValidate(),
-          validator: (val) {
-            if (val.isEmpty) {
-              return "Required";
-            } else {
-              return "";
-            }
-          },
-          obscureText: true,
-          maxLines: 1,
-          cursorColor: Colors.black,
-          style: TextStyle(color: Colors.black),
-          decoration: InputDecoration(
-            hintText: "Password",
-            hintStyle: TextStyle(color: Colors.grey),
-            
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15.0),
-              borderSide: BorderSide(color: Colors.black, width: 0.8),
-
+            padding: const EdgeInsets.all(4),
+            child: TextFormField(
+              controller: passwordController,
+              onChanged: checkIsValidate(),
+              validator: (val) {
+                if (val.isEmpty) {
+                  return "Required";
+                } else {
+                  return "";
+                }
+              },
+              obscureText: true,
+              maxLines: 1,
+              cursorColor: Colors.black,
+              style: TextStyle(color: Colors.black),
+              decoration: InputDecoration(
+                hintText: "Password",
+                hintStyle: TextStyle(color: Colors.grey),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                  borderSide: BorderSide(color: Colors.black, width: 0.8),
+                ),
+              ),
             ),
-          ),
-        ),
-      )),
+          )),
     );
   }
 
-    void _login() {
+  void _login() {
     if (this.usernameController.text == "admincinar" &&
         this.passwordController.text == "Cc147258*") {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                AdminDashboard(),
-          ),
-        );
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => AdminDashboard(),
+        ),
+      );
     } else {
       //formGlobalKey.currentState.validate();
     }
@@ -229,6 +222,30 @@ class _AdminLoginState extends State<AdminLogin> {
             color: mainColorWhite,
             fontSize: height * 0.028,
             fontWeight: FontWeight.w300),
+      ),
+    );
+  }
+
+  Center homeButton(double width, double height) {
+    return Center(
+      child: Container(
+        height: 50,
+        width: width < 1200 ? width * 0.60 : width * 0.20,
+        child: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: mainColor,
+            size: 32,
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainPage(),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

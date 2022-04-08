@@ -70,13 +70,61 @@ class _AdminDashboardState extends State<AdminDashboard> {
               ),
               createBlogPost(width, height),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
+              homeButton(width, height)
               //createMuseumPost(width, height)
               //Footer()
             ],
           ),
         ),
+      ),
+    );
+  }
+
+   Center homeButton(double width, double height) {
+    return Center(
+      child: Container(
+        height: 50,
+        width: width < 1200 ? width * 0.60 : width * 0.20,
+        child: TextButton(
+            style: ButtonStyle(
+                backgroundColor: isValidate
+                    ? MaterialStateProperty.all<Color>(mainColor)
+                    : MaterialStateProperty.all<Color>(
+                        mainColor.withOpacity(0.4)),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                    mainColor.withOpacity(0.4)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        side: BorderSide(color: Colors.transparent)))
+                // overlayColor: MaterialStateProperty.resolveWith<Color>(
+                //   (Set<MaterialState> states) {
+                //     if (states.contains(MaterialState.hovered))
+                //       return Colors.blue.withOpacity(0.04);
+                //     if (states.contains(MaterialState.focused) ||
+                //         states.contains(MaterialState.pressed))
+                //       return Colors.blue.withOpacity(0.12);
+                //     return null; // Defer to the widget's default.
+                //   },
+                // ),
+                ),
+            onPressed: () {
+               Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MainPage(),
+                ),
+              );
+            },
+            child: Text(
+              'Home',
+              style: GoogleFonts.montserrat(
+                  color: Colors.white,
+                  fontSize: height * 0.018,
+                  fontWeight: FontWeight.w300),
+            )),
       ),
     );
   }

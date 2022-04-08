@@ -13,7 +13,7 @@ class Footer extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.fromLTRB(0, height * 0.05, 0, 0),
+      margin: EdgeInsets.fromLTRB(0, height * 0.09, 0, 0),
       height: height * 0.25,
       width: width,
       color: _themeProvider.lightTheme ? Colors.white : Colors.grey[900],

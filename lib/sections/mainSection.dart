@@ -48,7 +48,6 @@ class _MainPageState extends State<MainPage> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "CONTACT",
   ];
 
   final List<IconData> _sectionsIcons = [
@@ -425,6 +424,69 @@ class _MainPageState extends State<MainPage> {
         ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
+           MediaQuery.of(context).size.width > 760
+            ? EntranceFader(
+                offset: Offset(0, -10),
+                delay: Duration(milliseconds: 100),
+                duration: Duration(milliseconds: 250),
+                child: Container(
+                  color: _navbarWhite ? mainColorWhite : Colors.transparent,
+                  padding: const EdgeInsets.all(8.0),
+                  height: 60.0,
+                  child: MaterialButton(
+                    hoverColor: Colors.black.withOpacity(0.5),
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Contact(),
+                      ),
+                    ),
+                    child: Text(
+                      "CONTACT",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.white,
+                      ),
+                      // style: TextStyle(
+                      //   color:
+                      //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                      // ),
+                    ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Contact(),
+                      ),
+                    );
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CONTACT",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color:
+                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
         MediaQuery.of(context).size.width > 760
             ? EntranceFader(
                 offset: Offset(0, -10),
