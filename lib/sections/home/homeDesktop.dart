@@ -8,6 +8,7 @@ import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/socialMediaIcon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
 
 import '../mainSection.dart';
 
@@ -120,19 +121,21 @@ class _HomeDesktopState extends State<HomeDesktop> {
                   offset: Offset(-10, 0),
                   delay: Duration(seconds: 1),
                   duration: Duration(milliseconds: 800),
-                  child: AdaptiveText(
-                    "In cinar&cinar we always estalish a close working\n" +
-                        "relationships with our clients. We are comitted to serving and \n" +
-                        "protecting our Client's interests in today's ever-changing\n" +
-                        "economical and legal environment",
-                    style: GoogleFonts.montserrat(
-                        color: _themeProvider.lightTheme
-                            ? Colors.white
-                            : Colors.white,
-                        fontSize:
-                            width < 1200 ? height * 0.010 : height * 0.020,
-                        fontWeight: FontWeight.w300,
-                        letterSpacing: 0.0),
+                  child: TextRenderer(
+                    child: AdaptiveText(
+                      "In cinar&cinar we always establish a close working\n" +
+                          "relationships with our clients. We are comitted to serving and \n" +
+                          "protecting our Client's interests in today's ever-changing\n" +
+                          "economical and legal environment",
+                      style: GoogleFonts.montserrat(
+                          color: _themeProvider.lightTheme
+                              ? Colors.white
+                              : Colors.white,
+                          fontSize:
+                              width < 1200 ? height * 0.010 : height * 0.020,
+                          fontWeight: FontWeight.w300,
+                          letterSpacing: 0.0),
+                    ),
                   ),
                 ),
                 SizedBox(

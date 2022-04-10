@@ -5,6 +5,7 @@ import 'package:cinarlaw/provider/themeProvider.dart';
 import 'package:cinarlaw/widget/socialMediaIcon.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
 
 import '../../animations/entranceFader.dart';
 
@@ -63,17 +64,19 @@ class HomeTab extends StatelessWidget {
                       offset: Offset(-10, 0),
                       delay: Duration(seconds: 1),
                       duration: Duration(milliseconds: 800),
-                      child: Text(
-                        "In cinar&cinar we always estalish a close working\n" +
-                            "relationships with our clients.  \n" +
-                            "We are comitted to serving and \n"
-                            "protecting our Client's interests in today's ever-changing\n" +
-                            "economical and legal environment",
-                        style: GoogleFonts.montserrat(
-                            fontSize: height * 0.020,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w200),
-                            //textAlign: TextAlign.left,
+                      child: TextRenderer(
+                        child: Text(
+                          "In cinar&cinar we always estalish a close working\n" +
+                              "relationships with our clients.  \n" +
+                              "We are comitted to serving and \n"
+                              "protecting our Client's interests in today's ever-changing\n" +
+                              "economical and legal environment",
+                          style: GoogleFonts.montserrat(
+                              fontSize: height * 0.020,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w200),
+                              //textAlign: TextAlign.left,
+                        ),
                       ),
                       
                     ),

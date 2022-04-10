@@ -265,11 +265,12 @@ class _ServiceMobileState extends State<ServiceMobile> {
           !more1 || !more2 ? Container(
             height: 40,
             decoration: new BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(15)),
               color: mainColor.withOpacity(0.05), //background color of box
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black,
-                  blurRadius: 25.0, // soften the shadow
+                  color: Colors.white60,
+                  blurRadius: 15.0, // soften the shadow
                   spreadRadius: 5.0, //extend the shadow
                   offset: Offset(
                     0.0, // Move to right 10  horizontally

@@ -35,11 +35,6 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
     Icons.phone,
   ];
 
-  void priiint() {
-    print('asddsa');
-    //return true;
-  }
-
   @override
   Widget build(BuildContext context) {
     final orientation = MediaQuery.of(context).orientation;

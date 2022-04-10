@@ -15,6 +15,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
 
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
@@ -534,14 +535,17 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
       children: [
         Container(
           width: width < 1200 ? width * 0.80 : width * 0.45,
-          child: AdaptiveText(
-            "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
-            style: GoogleFonts.montserrat(
-              fontSize: height * 0.013,
-              color: Colors.grey[500],
-              height: 1.5,
+          child: TextRenderer(
+            text:   "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
+            child: AdaptiveText(
+              "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
+              style: GoogleFonts.montserrat(
+                fontSize: height * 0.013,
+                color: Colors.grey[500],
+                height: 1.5,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
         ),
         SizedBox(
@@ -549,14 +553,17 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         ),
         Container(
           width: width < 1200 ? width * 0.80 : width * 0.45,
-          child: AdaptiveText(
-            "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
-            style: GoogleFonts.montserrat(
-              fontSize: height * 0.013,
-              color: Colors.grey[500],
-              height: 1.5,
+          child: TextRenderer(
+            text:  "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
+            child: AdaptiveText(
+              "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
+              style: GoogleFonts.montserrat(
+                fontSize: height * 0.013,
+                color: Colors.grey[500],
+                height: 1.5,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
         ),
       ],

@@ -9,6 +9,7 @@ import 'package:cinarlaw/widget/publication_list_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
 
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
@@ -173,14 +174,17 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                 children: [
                   Container(
                     width: width < 1200 ? width * 0.80 : width * 0.45,
-                    child: AdaptiveText(
-                      "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.\n\n",
-                      style: GoogleFonts.montserrat(
-                        fontSize: height * 0.013,
-                        color: Colors.grey[500],
-                        height: 1.5,
+                    child: TextRenderer(
+                      text:  "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.\n\n",
+                      child: AdaptiveText(
+                        "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.\n\n",
+                        style: GoogleFonts.montserrat(
+                          fontSize: height * 0.013,
+                          color: Colors.grey[500],
+                          height: 1.5,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                   SizedBox(
@@ -188,14 +192,17 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                   ),
                   Container(
                     width: width < 1200 ? width * 0.80 : width * 0.45,
-                    child: AdaptiveText(
-                      "Çınar&Çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law \n\n",
-                      style: GoogleFonts.montserrat(
-                        fontSize: height * 0.013,
-                        color: Colors.grey[500],
-                        height: 1.5,
+                    child: TextRenderer(
+                      text:  "Çınar&Çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law \n\n",
+                      child: AdaptiveText(
+                        "Çınar&Çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law \n\n",
+                        style: GoogleFonts.montserrat(
+                          fontSize: height * 0.013,
+                          color: Colors.grey[500],
+                          height: 1.5,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                 ],
