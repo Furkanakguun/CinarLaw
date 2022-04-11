@@ -92,14 +92,13 @@ class _MainPageState extends State<MainPage> {
   void initState() {
     _scrollController = _themeProviders.scroll;
     _scrollController.addListener(() {
-      
       if (_scrollController.position.pixels < 100) {
         print('topp');
-      _scroll(0);
+        _scroll(0);
       }
       if (_scrollController.position.pixels <
           MediaQuery.of(context).size.height * 1.05) {
-            //print('topp2');
+        //print('topp2');
         setState(() {
           _navbarWhite = false;
         });
@@ -424,7 +423,7 @@ class _MainPageState extends State<MainPage> {
         ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
-           MediaQuery.of(context).size.width > 760
+        MediaQuery.of(context).size.width > 760
             ? EntranceFader(
                 offset: Offset(0, -10),
                 delay: Duration(milliseconds: 100),
@@ -605,15 +604,42 @@ class _MainPageState extends State<MainPage> {
                     MaterialButton(
                       hoverColor: mainColor.withAlpha(70),
                       onPressed: () {
-                        Navigator.pushAndRemoveUntil(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CarrierDesktop()),
-                          (Route<dynamic> route) => false,
+                            builder: (context) => CarrierDesktop(),
+                          ),
                         );
                       },
                       child: Text(
                         "CAREER",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                        //textAlign: TextAlign.start,
+                      ),
+                    ),
+                    Divider(color: Colors.brown[200])
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MaterialButton(
+                      hoverColor: mainColor.withAlpha(70),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Contact(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "CONTACT",
                         style: TextStyle(
                           color: Colors.black,
                         ),

@@ -3,6 +3,7 @@ import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listArticle.dart';
+import 'package:cinarlaw/sections/publicationsList/publications_listList.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:cinarlaw/widget/publication_list_card.dart';
@@ -263,6 +264,39 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                     autoPlayCurve: Curves.fastOutSlowIn,
                     autoPlayAnimationDuration: Duration(milliseconds: 800),
                     enableInfiniteScroll: false),
+              ),
+              
+              SizedBox(
+                width: width * 0.012,
+              ),
+               Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
+                child: TextButton.icon(
+                  style: TextButton.styleFrom(
+                    textStyle: TextStyle(color: Colors.blue),
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24.0),
+                    ),
+                  ),
+                  onPressed: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PublicationsListList(),
+                      ),
+                    )
+                  },
+                  icon: Icon(
+                    Icons.arrow_forward_outlined,
+                    color: mainColorWhite,
+                  ),
+                  label: Text(
+                    'See more',
+                    style: TextStyle(color: mainColor),
+                  ),
+                ),
               ),
               SizedBox(
                 width: width * 0.012,

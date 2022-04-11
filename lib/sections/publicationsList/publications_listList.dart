@@ -1,4 +1,5 @@
 import 'package:cinarlaw/models/blog.dart';
+import 'package:cinarlaw/models/blog_big.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
@@ -47,7 +48,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
     print(snapshot.docs.isEmpty);
     for (var item in snapshot.docs) {
       feedItems.add(Padding(
-          padding: EdgeInsets.all(8), child: BlogPost.fromDocument(item)));
+          padding: EdgeInsets.all(8), child: BlogPostBig.fromDocument(item)));
     }
     return feedItems;
   }
@@ -70,14 +71,19 @@ class _PublicationsListListState extends State<PublicationsListList> {
                 height: height * 0.03,
               ),
               cinarAkademiLetterSection(),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Çınar Academia Publications",
-                  style: GoogleFonts.montserrat(
-                      color: Colors.black,
-                      fontSize: height * 0.050,
-                      fontWeight: FontWeight.w500),
+              Padding(
+                padding: width < 1200
+                    ? EdgeInsets.only(left: 40.0, bottom: 0)
+                    : EdgeInsets.only(top: 0.0, bottom: 0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Çınar Academia Publications",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.black,
+                        fontSize: height * 0.050,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               ),
               SizedBox(
@@ -155,7 +161,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
               Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal:
-                          width < 1200 ? width * (0.30) : width * (0.40)),
+                          width < 1200 ? width * (0.20) : width * (0.30)),
                   child: FutureBuilder(
                     future: getStarredBlogPost(),
                     builder: (context, snapshot) {
@@ -283,7 +289,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
-                     Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
