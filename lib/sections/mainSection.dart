@@ -93,7 +93,7 @@ class _MainPageState extends State<MainPage> {
     _scrollController = _themeProviders.scroll;
     _scrollController.addListener(() {
       if (_scrollController.position.pixels < 100) {
-        print('topp');
+        //print('topp');
         _scroll(0);
       }
       if (_scrollController.position.pixels <

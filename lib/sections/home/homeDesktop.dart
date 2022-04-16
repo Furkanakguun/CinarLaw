@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/animations/bottomAnimation.dart';
 import 'package:cinarlaw/animations/entranceFader.dart';
@@ -18,6 +19,52 @@ class HomeDesktop extends StatefulWidget {
 }
 
 class _HomeDesktopState extends State<HomeDesktop> {
+
+    List<dynamic> showcourselImagesList() {
+    List<dynamic> imageList = List<dynamic>();
+    imageList.add(
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.3),
+          image: DecorationImage(
+            image: AssetImage("assets/CINAR.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+
+        //color: Colors.yellow),
+      ),
+    );
+    imageList.add(
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.3),
+          image: DecorationImage(
+            image: AssetImage("assets/CINAR.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+
+        //color: Colors.yellow),
+      ),
+    );
+    imageList.add(
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.3),
+          image: DecorationImage(
+            image: AssetImage("assets/CINAR.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+
+        //color: Colors.yellow),
+      ),
+    );
+    return imageList;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);
@@ -32,13 +79,34 @@ class _HomeDesktopState extends State<HomeDesktop> {
         children: [
           Container(
             //color: mainColor,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                //opacity: 0.5,
-                image: AssetImage("assets/CINAR.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
+            // decoration: BoxDecoration(
+            //   image: DecorationImage(
+            //     //opacity: 0.5,
+            //     image: AssetImage("assets/CINAR.png"),
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
+            child:Carousel(
+                radius: Radius.circular(35),
+                // onImageTap: (int a) {
+                //   print('ovye');
+                // },
+                borderRadius: true,
+                //radius: Radius.circular(35),
+                boxFit: BoxFit.cover,
+                autoplay: true,
+                //animationCurve: Curves.,
+                animationDuration: Duration(milliseconds: 2000),
+                autoplayDuration: Duration(milliseconds: 10000),
+                dotSize: 7.0,
+                dotIncreasedColor: mainColor,
+                dotBgColor: Colors.transparent,
+                dotPosition: DotPosition.bottomCenter,
+                dotVerticalPadding: 15.0,
+                showIndicator: true,
+                indicatorBgPadding: 3.0,
+                //moveIndicatorFromBottom: ,
+                images: showcourselImagesList())
           ),
           // Positioned(
           //   top: width < 1200 ? height * 0.15 : height * 0.1,

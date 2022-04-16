@@ -1,4 +1,5 @@
 import 'package:cinarlaw/sections/publicationsList/publications_listArticle.dart';
+import 'package:cinarlaw/sections/services/service_article.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/animations/bottomAnimation.dart';
@@ -150,7 +151,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        PublicationsListArticle(
+                                        ServiceArticle(
                                       title: kServicesTitles[index],
                                       description: kServicesLinks[index],
                                       author: "",
@@ -199,7 +200,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        PublicationsListArticle(
+                                        ServiceArticle(
                                       title: kServicesTitles[index],
                                       description: kServicesLinks[index],
                                       author: "",
@@ -249,7 +250,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
-                                        PublicationsListArticle(
+                                        ServiceArticle(
                                       title: kServicesTitles[index],
                                       description: kServicesLinks[index],
                                       author: "",
