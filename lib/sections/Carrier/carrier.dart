@@ -66,23 +66,302 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
       body: Padding(
         padding: width < 1200
             ? EdgeInsets.only(top: 0.0, bottom: 3)
-            : EdgeInsets.only(top: 0.0, bottom: 16),
+            : EdgeInsets.only(top: 0.0, bottom: 0),
         child: Center(
           child: ListView(
             children: [
               upBannerSection(height, width),
-              SizedBox(
-                height: height * 0.03,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "CAREER",
-                  style: GoogleFonts.montserrat(
-                      color: mainColorWhite,
-                      fontSize: height * 0.018,
-                      fontWeight: FontWeight.w200),
+              // SizedBox(
+              //   height: 150,
+              // ),
+              // Align(
+              //   alignment: Alignment.center,
+              //   child: Text(
+              //     "CAREER",
+              //     style: GoogleFonts.montserrat(
+              //         color: mainColorWhite,
+              //         fontSize: height * 0.018,
+              //         fontWeight: FontWeight.w200),
+              //   ),
+              // ),
+              Padding(
+                  padding: EdgeInsets.symmetric(horizontal: width * 0.00),
+                  child: Container(
+                    color: Colors.white,
+                    width: width < 1200 ? width * 0.40 : width * 0.35,
+                    height: width < 1200 ? height + 100 : height / 2,
+                    child: width < 1200
+                        ? mobileSection(width, height)
+                        : desktopSection(width, height),
+                  )),
+              // Align(
+              //   alignment: Alignment.center,
+              //   child: Text(
+              //     "Attorneyship Application",
+              //     style: GoogleFonts.montserrat(
+              //         color: Colors.black,
+              //         fontSize: height * 0.030,
+              //         fontWeight: FontWeight.w500),
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: height * 0.03,
+              // ),
+              // IntrinsicHeight(
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     children: [
+              //       Container(
+              //         width: width * 0.32,
+              //         height: 50,
+              //         child: AdaptiveText(
+              //           "",
+              //           style: GoogleFonts.roboto(
+              //             fontSize: height * 0.018,
+              //             color: Colors.grey[500],
+              //             height: 1.5,
+              //           ),
+              //         ),
+              //       ),
+              //       VerticalDivider(
+              //         color: mainColorWhite,
+              //         thickness: 3,
+              //       ),
+              //       Container(
+              //         height: 50,
+              //         width: width * 0.32,
+              //         child: AdaptiveText(
+              //           "",
+              //           style: GoogleFonts.roboto(
+              //             fontSize: height * 0.018,
+              //             color: Colors.grey[500],
+              //             height: 1.5,
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
+              // SizedBox(
+              //   height: 12,
+              // ),
+              // Column(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Container(
+              //       width: width < 1200 ? width * 0.80 : width * 0.45,
+              //       child: AdaptiveText(
+              //         "çınar&çınar law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies. This also enables çınar&çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. relative dressing code and behavioural requirements arisen from the necessities of their professions. You can send your cv to info@cinarlaw.com for attorneyship application.",
+              //         style: GoogleFonts.montserrat(
+              //           fontSize: height * 0.013,
+              //           color: Colors.grey[500],
+              //           height: 1.5,
+              //         ),
+              //         textAlign: TextAlign.center,
+              //       ),
+              //     ),
+              //     SizedBox(
+              //       width: width * 0.012,
+              //     ),
+              //     Container(
+              //       width: width < 1200 ? width * 0.80 : width * 0.45,
+              //       child: AdaptiveText(
+              //         "Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the \n\n",
+              //         style: GoogleFonts.montserrat(
+              //           fontSize: height * 0.013,
+              //           color: Colors.grey[500],
+              //           height: 1.5,
+              //         ),
+              //         textAlign: TextAlign.center,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // Container(
+              //   width: width < 1200 ? width * 0.80 : width * 0.45,
+              //   height: 240,
+              //   color: Colors.black,
+              //   child: Column(
+              //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //       children: [
+              //         Align(
+              //           alignment: Alignment.center,
+              //           child: Text(
+              //             "Legal Internship Application",
+              //             style: GoogleFonts.montserrat(
+              //                 color: Colors.white,
+              //                 fontSize: height * 0.030,
+              //                 fontWeight: FontWeight.w500),
+              //           ),
+              //         ),
+              //         IntrinsicHeight(
+              //           child: Row(
+              //             mainAxisAlignment: MainAxisAlignment.center,
+              //             children: [
+              //               Container(
+              //                 width: width * 0.32,
+              //                 height: 50,
+              //                 child: AdaptiveText(
+              //                   "",
+              //                   style: GoogleFonts.roboto(
+              //                     fontSize: height * 0.018,
+              //                     color: Colors.grey[500],
+              //                     height: 1.5,
+              //                   ),
+              //                 ),
+              //               ),
+              //               VerticalDivider(
+              //                 color: mainColorWhite,
+              //                 thickness: 3,
+              //               ),
+              //               Container(
+              //                 height: 50,
+              //                 width: width * 0.32,
+              //                 child: AdaptiveText(
+              //                   "",
+              //                   style: GoogleFonts.roboto(
+              //                     fontSize: height * 0.018,
+              //                     color: Colors.grey[500],
+              //                     height: 1.5,
+              //                   ),
+              //                 ),
+              //               ),
+              //             ],
+              //           ),
+              //         ),
+              //         Align(
+              //           alignment: Alignment.center,
+              //           child: Text(
+              //             "The application shall send their applications to info@cinarlaw.com",
+              //             style: GoogleFonts.montserrat(
+              //               color: Colors.white,
+              //               fontSize: height * 0.013,
+              //               height: 1.5,
+              //             ),
+              //           ),
+              //         )
+              //       ]),
+              // ),
+              // SizedBox(
+              //   height: height * 0.05,
+              // ),
+              // Container(
+              //   width: width < 1200 ? width * 0.80 : width * 0.45,
+              //   child: Column(children: [
+              //     Align(
+              //       alignment: Alignment.center,
+              //       child: Text(
+              //         "Summer Internship Application",
+              //         style: GoogleFonts.montserrat(
+              //             color: Colors.black,
+              //             fontSize: height * 0.030,
+              //             fontWeight: FontWeight.w500),
+              //       ),
+              //     ),
+              //     SizedBox(
+              //       height: height * 0.03,
+              //     ),
+              //     IntrinsicHeight(
+              //       child: Row(
+              //         mainAxisAlignment: MainAxisAlignment.center,
+              //         children: [
+              //           Container(
+              //             width: width * 0.32,
+              //             height: 50,
+              //             child: AdaptiveText(
+              //               "",
+              //               style: GoogleFonts.roboto(
+              //                 fontSize: height * 0.018,
+              //                 color: Colors.grey[500],
+              //                 height: 1.5,
+              //               ),
+              //             ),
+              //           ),
+              //           VerticalDivider(
+              //             color: mainColorWhite,
+              //             thickness: 3,
+              //           ),
+              //           Container(
+              //             height: 50,
+              //             width: width * 0.32,
+              //             child: AdaptiveText(
+              //               "",
+              //               style: GoogleFonts.roboto(
+              //                 fontSize: height * 0.018,
+              //                 color: Colors.grey[500],
+              //                 height: 1.5,
+              //               ),
+              //             ),
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //     SizedBox(
+              //       height: 12,
+              //     ),
+              //     Column(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: [
+              //         Container(
+              //           width: width < 1200 ? width * 0.80 : width * 0.45,
+              //           child: AdaptiveText(
+              //             "Our firm offers summer internship opportunities to the apprentice attorneys at Law. Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the relative dressing code and behavioural requirements arisen from the necessities of their professions.",
+              //             style: GoogleFonts.montserrat(
+              //               fontSize: height * 0.013,
+              //               color: Colors.grey[500],
+              //               height: 1.5,
+              //             ),
+              //             textAlign: TextAlign.center,
+              //           ),
+              //         ),
+              //         SizedBox(
+              //           width: width * 0.012,
+              //         ),
+              //         Container(
+              //           width: width < 1200 ? width * 0.80 : width * 0.45,
+              //           child: AdaptiveText(
+              //             "If you possess the required specifications and talents or if you are enthusiastic and determined to gain these qualifications while working with us. You can send your cv to info@cinarlaw.com for summer internship application.  \n\n",
+              //             style: GoogleFonts.montserrat(
+              //               fontSize: height * 0.013,
+              //               color: Colors.grey[500],
+              //               height: 1.5,
+              //             ),
+              //             textAlign: TextAlign.center,
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ]),
+              // ),
+              Footer()
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Row desktopSection(double width, double height) {
+    return Row(
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 25.0,
+                  offset: Offset(2.0, 2.0),
                 ),
+              ],
+              color: Colors.white,
+              //borderRadius: BorderRadius.circular(12),
+            ),
+            width: width < 1200 ? width * 0.40 : width * 0.33,
+            height: height / 2,
+            child: ListView(children: [
+              SizedBox(
+                height: 50,
               ),
               Align(
                 alignment: Alignment.center,
@@ -90,245 +369,444 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                   "Attorneyship Application",
                   style: GoogleFonts.montserrat(
                       color: Colors.black,
-                      fontSize: height * 0.030,
+                      fontSize: height * 0.025,
                       fontWeight: FontWeight.w500),
                 ),
               ),
               SizedBox(
-                height: height * 0.03,
+                height: 30,
               ),
-              IntrinsicHeight(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: width * 0.32,
-                      height: 50,
-                      child: AdaptiveText(
-                        "",
-                        style: GoogleFonts.roboto(
-                          fontSize: height * 0.018,
-                          color: Colors.grey[500],
-                          height: 1.5,
-                        ),
-                      ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Align(
+                  //width: width < 1200 ? width * 0.80 : width * 0.45,
+                  child: AdaptiveText(
+                    "çınar&çınar law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies. This also enables çınar&çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. relative dressing code and behavioural requirements arisen from the necessities of their professions. You can send your cv to info@cinarlaw.com for attorneyship application.",
+                    style: GoogleFonts.montserrat(
+                      fontSize: height * 0.013,
+                      color: Colors.grey[500],
+                      height: 1.5,
                     ),
-                    VerticalDivider(
-                      color: mainColorWhite,
-                      thickness: 3,
-                    ),
-                    Container(
-                      height: 50,
-                      width: width * 0.32,
-                      child: AdaptiveText(
-                        "",
-                        style: GoogleFonts.roboto(
-                          fontSize: height * 0.018,
-                          color: Colors.grey[500],
-                          height: 1.5,
-                        ),
-                      ),
-                    ),
-                  ],
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
               SizedBox(
-                height: 12,
+                height: 10,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: width < 1200 ? width * 0.80 : width * 0.45,
-                    child: AdaptiveText(
-                      "çınar&çınar law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies. This also enables çınar&çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. relative dressing code and behavioural requirements arisen from the necessities of their professions. You can send your cv to info@cinarlaw.com for attorneyship application.",
-                      style: GoogleFonts.montserrat(
-                        fontSize: height * 0.013,
-                        color: Colors.grey[500],
-                        height: 1.5,
-                      ),
-                      textAlign: TextAlign.center,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: AdaptiveText(
+                    "Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the \n\n",
+                    style: GoogleFonts.montserrat(
+                      fontSize: height * 0.013,
+                      color: Colors.grey[500],
+                      height: 1.5,
                     ),
+                    textAlign: TextAlign.center,
                   ),
-                  SizedBox(
-                    width: width * 0.012,
-                  ),
-                  Container(
-                    width: width < 1200 ? width * 0.80 : width * 0.45,
-                    child: AdaptiveText(
-                      "Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the \n\n",
-                      style: GoogleFonts.montserrat(
-                        fontSize: height * 0.013,
-                        color: Colors.grey[500],
-                        height: 1.5,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                width: width < 1200 ? width * 0.80 : width * 0.45,
-                height: 240,
-                color: Colors.black,
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "Legal Internship Application",
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontSize: height * 0.030,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      IntrinsicHeight(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: width * 0.32,
-                              height: 50,
-                              child: AdaptiveText(
-                                "",
-                                style: GoogleFonts.roboto(
-                                  fontSize: height * 0.018,
-                                  color: Colors.grey[500],
-                                  height: 1.5,
-                                ),
-                              ),
-                            ),
-                            VerticalDivider(
-                              color: mainColorWhite,
-                              thickness: 3,
-                            ),
-                            Container(
-                              height: 50,
-                              width: width * 0.32,
-                              child: AdaptiveText(
-                                "",
-                                style: GoogleFonts.roboto(
-                                  fontSize: height * 0.018,
-                                  color: Colors.grey[500],
-                                  height: 1.5,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "The application shall send their applications to info@cinarlaw.com",
-                          style: GoogleFonts.montserrat(
-                            color: Colors.white,
-                            fontSize: height * 0.013,
-                            height: 1.5,
-                          ),
-                        ),
-                      )
-                    ]),
+                ),
               ),
               SizedBox(
-                height: height * 0.05,
+                height: 10,
               ),
-              Container(
-                width: width < 1200 ? width * 0.80 : width * 0.45,
-                child: Column(children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Summer Internship Application",
-                      style: GoogleFonts.montserrat(
-                          color: Colors.black,
-                          fontSize: height * 0.030,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  SizedBox(
-                    height: height * 0.03,
-                  ),
-                  IntrinsicHeight(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: width * 0.32,
-                          height: 50,
-                          child: AdaptiveText(
-                            "",
-                            style: GoogleFonts.roboto(
-                              fontSize: height * 0.018,
-                              color: Colors.grey[500],
-                              height: 1.5,
-                            ),
-                          ),
-                        ),
-                        VerticalDivider(
-                          color: mainColorWhite,
-                          thickness: 3,
-                        ),
-                        Container(
-                          height: 50,
-                          width: width * 0.32,
-                          child: AdaptiveText(
-                            "",
-                            style: GoogleFonts.roboto(
-                              fontSize: height * 0.018,
-                              color: Colors.grey[500],
-                              height: 1.5,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: width < 1200 ? width * 0.80 : width * 0.45,
-                        child: AdaptiveText(
-                          "Our firm offers summer internship opportunities to the apprentice attorneys at Law. Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the relative dressing code and behavioural requirements arisen from the necessities of their professions.",
-                          style: GoogleFonts.montserrat(
-                            fontSize: height * 0.013,
-                            color: Colors.grey[500],
-                            height: 1.5,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(
-                        width: width * 0.012,
-                      ),
-                      Container(
-                        width: width < 1200 ? width * 0.80 : width * 0.45,
-                        child: AdaptiveText(
-                          "If you possess the required specifications and talents or if you are enthusiastic and determined to gain these qualifications while working with us. You can send your cv to info@cinarlaw.com for summer internship application.  \n\n",
-                          style: GoogleFonts.montserrat(
-                            fontSize: height * 0.013,
-                            color: Colors.grey[500],
-                            height: 1.5,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                ]),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Align(
+              //     alignment: Alignment.center,
+              //     child: AdaptiveText(
+              //       "info@cinarlaw.com ",
+              //       style: GoogleFonts.montserrat(
+              //           color: Colors.black,
+              //           fontSize: height * 0.015,
+              //           fontWeight: FontWeight.w300),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(
+                height: 10,
               ),
-              Footer()
-            ],
+            ]),
           ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.black,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 25.0,
+                  offset: Offset(2.0, 2.0),
+                ),
+              ],
+              //borderRadius: BorderRadius.circular(12),
+            ),
+            width: width < 1200 ? width * 0.40 : width * 0.33,
+            height: height / 2,
+            child: ListView(children: [
+              SizedBox(
+                height: 50,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Legal Internship Application",
+                  style: GoogleFonts.montserrat(
+                      color: Colors.white,
+                      fontSize: height * 0.025,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 58.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: AdaptiveText(
+                    "The Application shall send their applications to info@cinarlaw.com",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: height * 0.015,
+                        fontWeight: FontWeight.w300),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Align(
+              //     alignment: Alignment.center,
+              //     child: AdaptiveText(
+              //       "İstanbul: +90 212 963 02 29  ",
+              //       style: GoogleFonts.montserrat(
+              //           color: Colors.white,
+              //           fontSize: height * 0.015,
+              //           fontWeight: FontWeight.w300),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: AdaptiveText(
+                    "info@cinarlaw.com ",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.black,
+                        fontSize: height * 0.015,
+                        fontWeight: FontWeight.w300),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+            ]),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 25.0,
+                  offset: Offset(2.0, 2.0),
+                ),
+              ],
+              //borderRadius: BorderRadius.circular(12),
+            ),
+            width: width < 1200 ? width * 0.40 : width * 0.34,
+            height: height / 2,
+            child: ListView(children: [
+              SizedBox(
+                height: 50,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Summer Internship Application",
+                  style: GoogleFonts.montserrat(
+                      color: Colors.black,
+                      fontSize: height * 0.025,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: AdaptiveText(
+                    "Our firm offers summer internship opportunities to the apprentice attorneys at Law. Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the relative dressing code and behavioural requirements arisen from the necessities of their professions.",
+                    style: GoogleFonts.montserrat(
+                      fontSize: height * 0.013,
+                      color: Colors.grey[500],
+                      height: 1.5,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: AdaptiveText(
+                    "If you possess the required specifications and talents or if you are enthusiastic and determined to gain these qualifications while working with us. You can send your cv to info@cinarlaw.com for summer internship application.  \n\n",
+                    style: GoogleFonts.montserrat(
+                      fontSize: height * 0.013,
+                      color: Colors.grey[500],
+                      height: 1.5,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(8.0),
+              //   child: Align(
+              //     alignment: Alignment.center,
+              //     child: AdaptiveText(
+              //       "info@cinarlaw.com ",
+              //       style: GoogleFonts.montserrat(
+              //           color: Colors.black,
+              //           fontSize: height * 0.015,
+              //           fontWeight: FontWeight.w300),
+              //     ),
+              //   ),
+              // ),
+              SizedBox(
+                height: 10,
+              ),
+            ]),
+          ),
+        ]);
+  }
+
+  Column mobileSection(double width, double height) {
+    return Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+      Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 25.0,
+              offset: Offset(2.0, 2.0),
+            ),
+          ],
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
         ),
+        width: width < 1200 ? width * 0.80 : width * 0.25,
+        height: height / 2,
+        child: ListView(children: [
+          SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Ankara Office",
+              style: GoogleFonts.montserrat(
+                  color: Colors.black,
+                  fontSize: height * 0.025,
+                  fontWeight: FontWeight.w300),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 \n" +
+                    "Oran/Çankaya / Ankara ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "Ankara: +90 312 426 90 22 ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "info@cinarlaw.com ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: height / 5,
+              //width: 60,
+              decoration: BoxDecoration(
+                //color: Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("cinar_ankara.PNG"),
+                ),
+              ),
+              // width: width < 1200
+              //     ? width * 0.60
+              //     : width * 0.20,
+              //height: height * 0.30,
+            ),
+          ),
+        ]),
       ),
-    );
+      SizedBox(
+        height: 12,
+      ),
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 25.0,
+              offset: Offset(2.0, 2.0),
+            ),
+          ],
+          borderRadius: BorderRadius.circular(12),
+        ),
+        width: width < 1200 ? width * 0.80 : width * 0.25,
+        height: height / 2,
+        child: ListView(children: [
+          SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "İstanbul Office",
+              style: GoogleFonts.montserrat(
+                  color: Colors.black,
+                  fontSize: height * 0.025,
+                  fontWeight: FontWeight.w300),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 \n" +
+                    "Maslak / Sarıyer / İstanbul  ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "İstanbul: +90 212 963 02 29  ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "info@cinarlaw.com ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: height / 5,
+              //width: 60,
+              decoration: BoxDecoration(
+                //color: Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("cinar_ist.PNG"),
+                ),
+              ),
+              // width: width < 1200
+              //     ? width * 0.60
+              //     : width * 0.20,
+              //height: height * 0.30,
+            ),
+          ),
+        ]),
+      ),
+    ]);
   }
 
   Widget upBannerSection(double height, double width) {
@@ -403,7 +881,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 child: MaterialButton(
                   hoverColor: kPrimaryColor,
                   onPressed: () {
-                       Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
