@@ -60,7 +60,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "",
+                  "Practical Areas",
                   style: GoogleFonts.montserrat(
                       color: mainColorWhite,
                       fontSize: height * 0.018,
@@ -68,7 +68,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 ),
               ),
               SizedBox(
-                height: height * 0.03,
+                height: height * 0.01,
               ),
               titleSection(width, height),
               SizedBox(
@@ -110,7 +110,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 ),
               ),
               SizedBox(
-                height: 35,
+                height: 5,
               ),
               Row(
                 //crossAxisAlignment: CrossAxisAlignment.,
@@ -202,8 +202,30 @@ class _ServiceArticleState extends State<ServiceArticle> {
 
   Column contentSection(double width, double height) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        Container(
+          width: width * 0.55,
+          height: 300,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/CINAR_GIRIS_K.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
+          // child: Text(
+          //   widget.description + "1",
+          //   style: GoogleFonts.montserrat(
+          //     fontSize: height * 0.016,
+          //     color: Colors.grey[500],
+          //     height: 1.8,
+          //   ),
+          //   textAlign: TextAlign.left,
+          // ),
+        ),
+        SizedBox(
+          width: width * 0.012,
+        ),
         Container(
           width: width * 0.55,
           child: Text(
