@@ -193,11 +193,11 @@ class Footer extends StatelessWidget {
                             SizedBox(
                               width: 7,
                             ),
-                            Icon(
-                              AntDesign.facebook_square,
-                              color: mainColor,
-                              size: MediaQuery.of(context).size.width * 0.0115,
-                            ),
+                            // Icon(
+                            //   AntDesign.facebook_square,
+                            //   color: mainColor,
+                            //   size: MediaQuery.of(context).size.width * 0.0115,
+                            // ),
                             // Icon(Icons.facebook, color: mainColor,),
                             //  Icon(Icons.facebook, color: mainColor,),
                           ],

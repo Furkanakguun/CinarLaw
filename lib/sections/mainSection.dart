@@ -251,7 +251,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget _appBarTabDesktop(ThemeProvider _themeProv) {
-    return AppBar(
+    return  _navbarWhite ? AppBar(elevation: 0.0,backgroundColor: Colors.transparent,) : AppBar(
       elevation: 0.0,
       backgroundColor: _navbarWhite ? mainColorWhite : Colors.transparent,
       // flexibleSpace: Image(

@@ -53,7 +53,7 @@ class _ContactDektopState extends State<ContactDektop> {
               children: [
                 upBannerSection(height, width),
                 SizedBox(
-                  height: 12,
+                  height: 24,
                 ),
                 Align(
                   alignment: Alignment.center,
@@ -221,7 +221,7 @@ class _ContactDektopState extends State<ContactDektop> {
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image: AssetImage(
-                                                  "cinar_ankara.PNG"),
+                                                  "assets/cinar_ankara.PNG"),
                                             ),
                                           ),
                                           // width: width < 1200
@@ -328,7 +328,7 @@ class _ContactDektopState extends State<ContactDektop> {
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image:
-                                                  AssetImage("cinar_ist.PNG"),
+                                                  AssetImage("assets/cinar_ist.PNG"),
                                             ),
                                           ),
                                           // width: width < 1200
@@ -438,7 +438,7 @@ class _ContactDektopState extends State<ContactDektop> {
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image: AssetImage(
-                                                  "cinar_ankara.PNG"),
+                                                  "assets/cinar_ankara.PNG"),
                                             ),
                                           ),
                                           // width: width < 1200
@@ -544,7 +544,7 @@ class _ContactDektopState extends State<ContactDektop> {
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image:
-                                                  AssetImage("cinar_ist.PNG"),
+                                                  AssetImage("assets/cinar_ist.PNG"),
                                             ),
                                           ),
                                           // width: width < 1200
@@ -571,7 +571,7 @@ class _ContactDektopState extends State<ContactDektop> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("cinar_kapak.jpg"),
+              image: AssetImage("assets/cinar_kapak.jpg"),
               fit: BoxFit.cover,
             ),
           ),
