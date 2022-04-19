@@ -31,6 +31,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
   TextEditingController usernameController = TextEditingController();
   TextEditingController authorController = TextEditingController();
   TextEditingController contentController = TextEditingController();
+  TextEditingController dateController = TextEditingController();
   bool isValidate = false;
   File file;
   PickedFile pFile;
@@ -85,6 +86,10 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
                 height: height * 0.01,
               ),
               authorField(height, width),
+              SizedBox(
+                height: height * 0.01,
+              ),
+              dateField(height, width),
               SizedBox(
                 height: height * 0.03,
               ),
@@ -196,7 +201,8 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
   }
 
   uploadImageToStorage(PickedFile pickedFile) async {
-    if (true) {
+    if (pickedFile != null) {
+      showLoaderDialog(context);
       Reference _reference = FirebaseStorage.instance
           .ref('gs://cinar-law.appspot.com')
           .child('images/${Path.basename(pickedFile.path)}');
@@ -216,7 +222,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
               .set({
             "blogPostId": "123",
             "content": contentController.text,
-            "date": DateTime.now().toString(),
+            "date": dateController.text,
             "image": uploadedPhotoUrl,
             "author": authorController.text,
             "start": false,
@@ -229,11 +235,11 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
         });
       });
     } else {
+      showErrortRequestSnackBar(context, "Please pick image");
 //write a code for android or ios
     }
   }
 
-   
   Center homeButton(double width, double height) {
     return Center(
       child: Container(
@@ -310,8 +316,62 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
     // );
   }
 
+  showErrortRequestSnackBar(BuildContext context, String text) async {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    //Navigator.pop(context);
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      backgroundColor: Colors.white,
+      content: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color: Colors.grey[400],
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          // border: Border.all(
+          //   width: 0.1,
+          //   color: Colors.black,
+          // ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Icon(
+                Icons.error,
+                color: Colors.red,
+              ),
+              SizedBox(
+                width: 7,
+              ),
+              Expanded(
+                child: Text(
+                  text,
+                  style: GoogleFonts.montserrat(
+                      color: Colors.white,
+                      fontSize: height * 0.022,
+                      fontWeight: FontWeight.w300),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      duration: Duration(seconds: 3),
+    ));
+    // bottomNotificaton(
+    //   context,
+    //   "Party Successfully Created",
+    //   Icon(
+    //     MaterialIcons.done_all,
+    //     color: Colors.green,
+    //     size: 32,
+    //   ),
+    // );
+  }
+
   handleUploadPost() {
-    showLoaderDialog(context);
     uploadImageToStorage(pFile);
   }
 
@@ -425,6 +485,40 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
     );
   }
 
+  Widget dateField(double height, double width) {
+    return Center(
+      child: Container(
+          width: width < 1200 ? width * 0.60 : width * 0.30,
+          //height: height * 0.30,
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: TextFormField(
+              controller: dateController,
+              onChanged: checkIsValidate(),
+              validator: (val) {
+                if (val.isEmpty) {
+                  return "Required";
+                } else {
+                  return "";
+                }
+              },
+              //obscureText: true,
+              maxLines: 1,
+              cursorColor: Colors.black,
+              style: TextStyle(color: Colors.black),
+              decoration: InputDecoration(
+                hintText: "Date",
+                hintStyle: TextStyle(color: Colors.grey),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                  borderSide: BorderSide(color: Colors.black, width: 0.8),
+                ),
+              ),
+            ),
+          )),
+    );
+  }
+
   void _login() {
     if (this.usernameController.text != "" &&
         this.authorController.text != "") {
@@ -442,7 +536,8 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
 
   checkIsValidate() {
     if (this.usernameController.text != "" &&
-        this.authorController.text != "") {
+        this.authorController.text != "" &&
+        this.dateController != "") {
       setState(() {
         isValidate = true;
       });
