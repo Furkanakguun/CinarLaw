@@ -73,41 +73,44 @@ class _HomeDesktopState extends State<HomeDesktop> {
 
     return Container(
       color: mainColor,
-      height: height+100,
+      height: height+135,
       width: width,
       child: Stack(
         children: [
           Container(
-            //color: mainColor,
+            color: mainColor,
+            height: height+135,
             // decoration: BoxDecoration(
             //   image: DecorationImage(
             //     //opacity: 0.5,
             //     image: AssetImage("assets/CINAR.png"),
             //     fit: BoxFit.cover,
             //   ),
-            // ),
-            child:Carousel(
-                radius: Radius.circular(35),
-                // onImageTap: (int a) {
-                //   print('ovye');
-                // },
-                borderRadius: true,
-                //radius: Radius.circular(35),
-                boxFit: BoxFit.cover,
-                autoplay: true,
-                //animationCurve: Curves.,
-                animationDuration: Duration(milliseconds: 2000),
-                autoplayDuration: Duration(milliseconds: 10000),
-                dotSize: 7.0,
-                dotIncreasedColor: mainColor,
-                dotBgColor: Colors.transparent,
-                dotPosition: DotPosition.bottomCenter,
-                dotVerticalPadding: 15.0,
-                showIndicator: true,
-                indicatorBgPadding: 3.0,
-                //moveIndicatorFromBottom: ,
-                images: showcourselImagesList())
-          ),
+            child: Image.asset("assets/CINAR.png",fit: BoxFit.fill,),
+            ),
+            // child:Carousel(
+            //     radius: Radius.circular(35),
+            //     // onImageTap: (int a) {
+            //     //   print('ovye');
+            //     // },
+            //     borderRadius: true,
+            //     //radius: Radius.circular(35),
+            //     boxFit: BoxFit.cover,
+            //     autoplay: true,
+            //     //animationCurve: Curves.,
+            //     animationDuration: Duration(milliseconds: 2000),
+            //     autoplayDuration: Duration(milliseconds: 10000),
+            //     dotSize: 7.0,
+            //     dotIncreasedColor: mainColor,
+            //     dotBgColor: Colors.transparent,
+            //     dotPosition: DotPosition.bottomCenter,
+            //     dotVerticalPadding: 15.0,
+            //     showIndicator: true,
+            //     indicatorBgPadding: 3.0,
+            //     //moveIndicatorFromBottom: ,
+            //     images: showcourselImagesList())
+      
+  
           // Positioned(
           //   top: width < 1200 ? height * 0.15 : height * 0.1,
           //   right: width * 0.01,
@@ -131,6 +134,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 30,),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [

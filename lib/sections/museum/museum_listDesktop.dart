@@ -54,11 +54,15 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                   height: 12,
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/cinar_law_museum_logo.png"),
-                      fit: BoxFit.contain,
-                    ),
+                  // decoration: BoxDecoration(
+                  //   image: DecorationImage(
+                  //     image: AssetImage("assets/cinar_law_museum_logo.png"),
+                  //     fit: BoxFit.contain,
+                  //   ),
+                  // ),
+                  child: Image.asset(
+                    "assets/cinar_law_museum_logo.png",
+                    //fit: BoxFit.cover,
                   ),
                   height: 70,
                   width: width,
@@ -130,7 +134,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                                   childAspectRatio: 1),
                           children: [
                             InkWell(
-                              // onHover: (value) {
+                              // onHover: (value) {  1
                               //   print('yess');
                               //    setState(() {
                               //      sideLength = value?150 :50;
@@ -138,54 +142,139 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                               // },
                               //onHover: () => priiint(),
                               //color: Colors.black.withOpacity(0.7),
-                              onTap: () => showImageDialog(context,
-                                  'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_1.jpg?alt=media&token=9c54d68b-cc2c-46d1-b55b-788536406c0f', "1920Jupiter Büro Kalemtraşı Guhl & Hardbeck Hamburg Alman Yapımı Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış Mekanik Makine"),
+                              onTap: () => showImageDialog(
+                                  context,
+                                  'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_1.jpg?alt=media&token=9c54d68b-cc2c-46d1-b55b-788536406c0f',
+                                  "1920Jupiter Büro Kalemtraşı Guhl & Hardbeck Hamburg Alman Yapımı Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış Mekanik Makine"),
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: Colors.black,
                                   //borderRadius: BorderRadius.circular(12),
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: CachedNetworkImageProvider(
-                                        "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_1.jpg?alt=media&token=9c54d68b-cc2c-46d1-b55b-788536406c0f",
-                                      )),
+                                  // image: DecorationImage(
+                                  //     fit: BoxFit.cover,
+                                  //     image: Image.network(
+                                  //       image:
+                                  //           "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_1.jpg?alt=media&token=9c54d68b-cc2c-46d1-b55b-788536406c0f",
+                                  //     )),
                                 ),
+                                child: Image.network(
+                                    "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_1.jpg?alt=media&token=9c54d68b-cc2c-46d1-b55b-788536406c0f",
+                                    fit: BoxFit.cover),
                                 width:
                                     width < 1200 ? width * 0.60 : width * 0.20,
                                 height: height * 0.30,
                               ),
                             ),
                             InkWell(
-                              //color: Colors.black.withOpacity(0.7),
-                              onTap: () => showImageDialog(context,
-                                  'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_2.jpg?alt=media&token=ba382388-eb8a-4e11-91c4-0659cd4066e6' ,"1950, Brunsviga Hesap Makinesi Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış Çok Fonksiyonlu Alman Yapımı"),
+                              //color: Colors.black.withOpacity(0.7),  2
+                              onTap: () => showImageDialog(
+                                  context,
+                                  'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_2.jpg?alt=media&token=ba382388-eb8a-4e11-91c4-0659cd4066e6',
+                                  "1950, Brunsviga Hesap Makinesi Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış Çok Fonksiyonlu Alman Yapımı"),
                               child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  //borderRadius: BorderRadius.circular(12),
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: CachedNetworkImageProvider(
-                                          "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_2.jpg?alt=media&token=ba382388-eb8a-4e11-91c4-0659cd4066e6")),
-                                ),
+                                // decoration: BoxDecoration(
+                                //   color: Colors.black,
+                                //   //borderRadius: BorderRadius.circular(12),
+                                //   image: DecorationImage(
+                                //       fit: BoxFit.cover,
+                                //       image: CachedNetworkImageProvider(
+                                //           "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_2.jpg?alt=media&token=ba382388-eb8a-4e11-91c4-0659cd4066e6")),
+                                // ),
+                                child: Image.network(
+                                    "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_2.jpg?alt=media&token=ba382388-eb8a-4e11-91c4-0659cd4066e6",
+                                    fit: BoxFit.cover),
                                 width:
                                     width < 1200 ? width * 0.60 : width * 0.20,
                                 height: height * 0.30,
                               ),
                             ),
                             InkWell(
-                                //color: Colors.black.withOpacity(0.7),
-                                onTap: () => showImageDialog(context,
-                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_3.jpg?alt=media&token=2bfc9db5-adc5-44a4-93c6-2ab5fab801ff', "Kitap Cildi Pres Makinesi H. Korassandjian Constantinople Plaketli Ünlü Demir Sanayi Eşya Fabrikasında İmal Edilmiş"),
+                                //color: Colors.black.withOpacity(0.7), 3
+                                onTap: () => showImageDialog(
+                                    context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_3.jpg?alt=media&token=2bfc9db5-adc5-44a4-93c6-2ab5fab801ff',
+                                    "Kitap Cildi Pres Makinesi H. Korassandjian Constantinople Plaketli Ünlü Demir Sanayi Eşya Fabrikasında İmal Edilmiş"),
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    //borderRadius: BorderRadius.circular(12),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: CachedNetworkImageProvider(
-                                            'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_3.jpg?alt=media&token=2bfc9db5-adc5-44a4-93c6-2ab5fab801ff')),
-                                  ),
+                                  // decoration: BoxDecoration(
+                                  //   color: Colors.black,
+                                  //   //borderRadius: BorderRadius.circular(12),
+                                  //   image: DecorationImage(
+                                  //       fit: BoxFit.cover,
+                                  //       image: CachedNetworkImageProvider(
+                                  //           'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_3.jpg?alt=media&token=2bfc9db5-adc5-44a4-93c6-2ab5fab801ff')),
+                                  // ),
+                                  child: Image.network(
+                                      "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_3.jpg?alt=media&token=2bfc9db5-adc5-44a4-93c6-2ab5fab801ff",
+                                      fit: BoxFit.cover),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7), 4
+                                onTap: () => showImageDialog(
+                                    context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_4.jpg?alt=media&token=5aa187fc-1ec9-4d6e-b116-87344a5b7e11',
+                                    "1920, Telefon Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış  İngiliz Yapımı Dahili Telefon Cihazı"),
+                                child: Container(
+                                  // decoration: BoxDecoration(
+                                  //   color: Colors.black,
+                                  //   //borderRadius: BorderRadius.circular(12),
+                                  //   image: DecorationImage(
+                                  //       fit: BoxFit.cover,
+                                  //       image: CachedNetworkImageProvider(
+                                  //           "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_4.jpg?alt=media&token=5aa187fc-1ec9-4d6e-b116-87344a5b7e11")),
+                                  // ),
+                                  child: Image.network(
+                                      "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_4.jpg?alt=media&token=5aa187fc-1ec9-4d6e-b116-87344a5b7e11",
+                                      fit: BoxFit.cover),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7), 5
+                                onTap: () => showImageDialog(
+                                    context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_5.jpg?alt=media&token=236527af-21f7-4856-ac96-fa4316582e67',
+                                    "1926, Türkiye Cumhuriyeti Adliye Vekaleti, İstanbul Barosu Avukatlık Ruhsatnamesi, Avukat Pertani Efendi'ye 152 Kayıt Numarası ile Verilmiş,  Adliye Vekili Mahmut Esat Bozkurt İmzalı"),
+                                child: Container(
+                                  // decoration: BoxDecoration(
+                                  //   color: Colors.black,
+                                  //   //borderRadius: BorderRadius.circular(12),
+                                  //   image: DecorationImage(
+                                  //       fit: BoxFit.cover,
+                                  //       image: CachedNetworkImageProvider(
+                                  //           "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_5.jpg?alt=media&token=236527af-21f7-4856-ac96-fa4316582e67")),
+                                  // ),
+                                  child: Image.network(
+                                      "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_5.jpg?alt=media&token=236527af-21f7-4856-ac96-fa4316582e67",
+                                      fit: BoxFit.cover),
+                                  width: width < 1200
+                                      ? width * 0.60
+                                      : width * 0.20,
+                                  height: height * 0.30,
+                                )),
+                            InkWell(
+                                //color: Colors.black.withOpacity(0.7), 6
+                                onTap: () => showImageDialog(
+                                    context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_6.jpg?alt=media&token=442b4fc5-148b-48a8-8b5a-e29adba24422',
+                                    "1958, Avukatlık Ruhsatnamesi, Adliye Vekili Esad Budakoğlu ve Hukuk Müdürü Şevket Mühtügil İmzalı, Osmanlı Yaprak Deseni Tezyinatlı "),
+                                child: Container(
+                                  // decoration: BoxDecoration(
+                                  //   color: Colors.black,
+                                  //   //borderRadius: BorderRadius.circular(12),
+                                  //   image: DecorationImage(
+                                  //       fit: BoxFit.cover,
+                                  //       image: CachedNetworkImageProvider(
+                                  //           "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_6.jpg?alt=media&token=442b4fc5-148b-48a8-8b5a-e29adba24422")),
+                                  // ),
+                                  child: Image.network(
+                                      "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_6.jpg?alt=media&token=442b4fc5-148b-48a8-8b5a-e29adba24422",
+                                      fit: BoxFit.cover),
                                   width: width < 1200
                                       ? width * 0.60
                                       : width * 0.20,
@@ -193,108 +282,69 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                                 )),
                             InkWell(
                                 //color: Colors.black.withOpacity(0.7),
-                                onTap: () => showImageDialog(context,
-                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_4.jpg?alt=media&token=5aa187fc-1ec9-4d6e-b116-87344a5b7e11', "1920, Telefon Türkiye Cumhuriyeti Kamu ve Özel Bürolarında Kullanılmış  İngiliz Yapımı Dahili Telefon Cihazı"),
+                                onTap: () => showImageDialog(
+                                    context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_7.jpg?alt=media&token=c921d1eb-18ec-4f83-a840-57cbe5bd154d',
+                                    "1912, İstanbul Hukuk Mektebi Diploması, 1878 Doğumlu Dimitri Kandıralı Efendi'ye Okulu Aleyul Al ( Pek İyi ) Derece İle Bitirmiş Olduğu İçin Adliye Nezareti Damgası  İle Verilmiş Diploma"),
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    //borderRadius: BorderRadius.circular(12),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: CachedNetworkImageProvider(
-                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_4.jpg?alt=media&token=5aa187fc-1ec9-4d6e-b116-87344a5b7e11")),
-                                  ),
+                                  // decoration: BoxDecoration( 7
+                                  //   color: Colors.black,
+                                  //   //borderRadius: BorderRadius.circular(12),
+                                  //   image: DecorationImage(
+                                  //       fit: BoxFit.cover,
+                                  //       image: CachedNetworkImageProvider(
+                                  //           "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_7.jpg?alt=media&token=c921d1eb-18ec-4f83-a840-57cbe5bd154d")),
+                                  // ),
+                                  child: Image.network(
+                                      "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_7.jpg?alt=media&token=c921d1eb-18ec-4f83-a840-57cbe5bd154d",
+                                      fit: BoxFit.cover),
                                   width: width < 1200
                                       ? width * 0.60
                                       : width * 0.20,
                                   height: height * 0.30,
                                 )),
                             InkWell(
-                                //color: Colors.black.withOpacity(0.7),
-                                onTap: () => showImageDialog(context,
-                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_5.jpg?alt=media&token=236527af-21f7-4856-ac96-fa4316582e67' , "1926, Türkiye Cumhuriyeti Adliye Vekaleti, İstanbul Barosu Avukatlık Ruhsatnamesi, Avukat Pertani Efendi'ye 152 Kayıt Numarası ile Verilmiş,  Adliye Vekili Mahmut Esat Bozkurt İmzalı"),
+                                //color: Colors.black.withOpacity(0.7), 8
+                                onTap: () => showImageDialog(
+                                    context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_8.jpg?alt=media&token=042ba9fc-fa40-4dab-9a00-316abe59a180',
+                                    "1930, Mercedes Daktilo Büromaschinen - Werge A.G, Zella - Mehlis İn Thringen Türkiye Cumhuriyeti Zonguldak Vilayeti Kamu Bürosunda Kullanılmış "),
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    //borderRadius: BorderRadius.circular(12),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: CachedNetworkImageProvider(
-                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_5.jpg?alt=media&token=236527af-21f7-4856-ac96-fa4316582e67")),
-                                  ),
+                                  // decoration: BoxDecoration(
+                                  //   color: Colors.black,
+                                  //   //borderRadius: BorderRadius.circular(12),
+                                  //   image: DecorationImage(
+                                  //       fit: BoxFit.cover,
+                                  //       image: CachedNetworkImageProvider(
+                                  //         "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_8.jpg?alt=media&token=042ba9fc-fa40-4dab-9a00-316abe59a180",
+                                  //       )),
+                                  // ),
+                                  child: Image.network(
+                                      "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_8.jpg?alt=media&token=042ba9fc-fa40-4dab-9a00-316abe59a180",
+                                      fit: BoxFit.cover),
                                   width: width < 1200
                                       ? width * 0.60
                                       : width * 0.20,
                                   height: height * 0.30,
                                 )),
                             InkWell(
-                                //color: Colors.black.withOpacity(0.7),
-                                onTap: () => showImageDialog(context,
-                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_6.jpg?alt=media&token=442b4fc5-148b-48a8-8b5a-e29adba24422' , "1958, Avukatlık Ruhsatnamesi, Adliye Vekili Esad Budakoğlu ve Hukuk Müdürü Şevket Mühtügil İmzalı, Osmanlı Yaprak Deseni Tezyinatlı "),
+                                //color: Colors.black.withOpacity(0.7), 9
+                                onTap: () => showImageDialog(
+                                    context,
+                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_9.jpg?alt=media&token=839249bf-fcea-4aa0-ab5d-d705d00704fb',
+                                    ""),
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    //borderRadius: BorderRadius.circular(12),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: CachedNetworkImageProvider(
-                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_6.jpg?alt=media&token=442b4fc5-148b-48a8-8b5a-e29adba24422")),
-                                  ),
-                                  width: width < 1200
-                                      ? width * 0.60
-                                      : width * 0.20,
-                                  height: height * 0.30,
-                                )),
-                            InkWell(
-                                //color: Colors.black.withOpacity(0.7),
-                                onTap: () => showImageDialog(context,
-                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_7.jpg?alt=media&token=c921d1eb-18ec-4f83-a840-57cbe5bd154d' , "1912, İstanbul Hukuk Mektebi Diploması, 1878 Doğumlu Dimitri Kandıralı Efendi'ye Okulu Aleyul Al ( Pek İyi ) Derece İle Bitirmiş Olduğu İçin Adliye Nezareti Damgası  İle Verilmiş Diploma"),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    //borderRadius: BorderRadius.circular(12),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: CachedNetworkImageProvider(
-                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_7.jpg?alt=media&token=c921d1eb-18ec-4f83-a840-57cbe5bd154d")),
-                                  ),
-                                  width: width < 1200
-                                      ? width * 0.60
-                                      : width * 0.20,
-                                  height: height * 0.30,
-                                )),
-                            InkWell(
-                                //color: Colors.black.withOpacity(0.7),
-                                onTap: () => showImageDialog(context,
-                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_8.jpg?alt=media&token=042ba9fc-fa40-4dab-9a00-316abe59a180' , "1930, Mercedes Daktilo Büromaschinen - Werge A.G, Zella - Mehlis İn Thringen Türkiye Cumhuriyeti Zonguldak Vilayeti Kamu Bürosunda Kullanılmış "),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    //borderRadius: BorderRadius.circular(12),
-                                    image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: CachedNetworkImageProvider(
-                                          "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_8.jpg?alt=media&token=042ba9fc-fa40-4dab-9a00-316abe59a180",
-                                        )),
-                                  ),
-                                  width: width < 1200
-                                      ? width * 0.60
-                                      : width * 0.20,
-                                  height: height * 0.30,
-                                )),
-                            InkWell(
-                                //color: Colors.black.withOpacity(0.7),
-                                onTap: () => showImageDialog(context,
-                                    'https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_9.jpg?alt=media&token=839249bf-fcea-4aa0-ab5d-d705d00704fb' , ""),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    //borderRadius: BorderRadius.circular(12),
-                                    image: DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: CachedNetworkImageProvider(
-                                            "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_9.jpg?alt=media&token=839249bf-fcea-4aa0-ab5d-d705d00704fb")),
-                                  ),
+                                  // decoration: BoxDecoration(
+                                  //   color: Colors.black,
+                                  //   //borderRadius: BorderRadius.circular(12),
+                                  //   image: DecorationImage(
+                                  //       fit: BoxFit.fill,
+                                  //       image: CachedNetworkImageProvider(
+                                  //           "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_9.jpg?alt=media&token=839249bf-fcea-4aa0-ab5d-d705d00704fb")),
+                                  // ),
+                                  child: Image.network(
+                                      "https://firebasestorage.googleapis.com/v0/b/cinar-law.appspot.com/o/museum%2Fmuseum_9.jpg?alt=media&token=839249bf-fcea-4aa0-ab5d-d705d00704fb",
+                                      fit: BoxFit.cover),
                                   width: width < 1200
                                       ? width * 0.60
                                       : width * 0.20,
@@ -315,12 +365,13 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
     return Stack(children: [
       Center(
         child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/museum_stack.jpg"),
-              fit: BoxFit.cover,
-            ),
-          ),
+          // decoration: BoxDecoration(
+          //   image: DecorationImage(
+          //     image: AssetImage("assets/museum_stack.jpg"),
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
+          child: Image.asset("assets/museum_stack.jpg",fit: BoxFit.cover,),
           height: height * 0.45,
           width: width,
           //color: Colors.yellow),
