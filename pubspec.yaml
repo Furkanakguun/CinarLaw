@@ -48,6 +48,8 @@ dependencies:
   carousel_pro: ^1.0.0
   overlay_support: ^1.2.1
   seo_renderer: ^0.6.0
+  get: ^4.6.1
+  get_storage: ^2.0.3
 
 dev_dependencies:
   flutter_test:

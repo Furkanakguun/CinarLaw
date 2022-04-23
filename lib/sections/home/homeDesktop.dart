@@ -1,5 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:cinarlaw/translation/storage.dart';
+import 'package:cinarlaw/translation/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:cinarlaw/animations/bottomAnimation.dart';
 import 'package:cinarlaw/animations/entranceFader.dart';
@@ -7,6 +9,7 @@ import 'package:cinarlaw/constants.dart';
 import 'package:cinarlaw/provider/themeProvider.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/socialMediaIcon.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
@@ -19,52 +22,6 @@ class HomeDesktop extends StatefulWidget {
 }
 
 class _HomeDesktopState extends State<HomeDesktop> {
-
-    List<dynamic> showcourselImagesList() {
-    List<dynamic> imageList = List<dynamic>();
-    imageList.add(
-      Container(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.3),
-          image: DecorationImage(
-            image: AssetImage("assets/CINAR.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-
-        //color: Colors.yellow),
-      ),
-    );
-    imageList.add(
-      Container(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.3),
-          image: DecorationImage(
-            image: AssetImage("assets/CINAR.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-
-        //color: Colors.yellow),
-      ),
-    );
-    imageList.add(
-      Container(
-        decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.3),
-          image: DecorationImage(
-            image: AssetImage("assets/CINAR.png"),
-            fit: BoxFit.cover,
-          ),
-        ),
-
-        //color: Colors.yellow),
-      ),
-    );
-    return imageList;
-  }
-
-
   @override
   Widget build(BuildContext context) {
     final _themeProvider = Provider.of<ThemeProvider>(context);
@@ -73,44 +30,46 @@ class _HomeDesktopState extends State<HomeDesktop> {
 
     return Container(
       color: mainColor,
-      height: height+135,
+      height: height + 135,
       width: width,
       child: Stack(
         children: [
           Container(
             color: mainColor,
-            height: height+135,
+            height: height + 135,
             // decoration: BoxDecoration(
             //   image: DecorationImage(
             //     //opacity: 0.5,
             //     image: AssetImage("assets/CINAR.png"),
             //     fit: BoxFit.cover,
             //   ),
-            child: Image.asset("assets/CINAR.png",fit: BoxFit.fill,),
+            child: Image.asset(
+              "assets/CINAR.jpg",
+              fit: BoxFit.fill,
             ),
-            // child:Carousel(
-            //     radius: Radius.circular(35),
-            //     // onImageTap: (int a) {
-            //     //   print('ovye');
-            //     // },
-            //     borderRadius: true,
-            //     //radius: Radius.circular(35),
-            //     boxFit: BoxFit.cover,
-            //     autoplay: true,
-            //     //animationCurve: Curves.,
-            //     animationDuration: Duration(milliseconds: 2000),
-            //     autoplayDuration: Duration(milliseconds: 10000),
-            //     dotSize: 7.0,
-            //     dotIncreasedColor: mainColor,
-            //     dotBgColor: Colors.transparent,
-            //     dotPosition: DotPosition.bottomCenter,
-            //     dotVerticalPadding: 15.0,
-            //     showIndicator: true,
-            //     indicatorBgPadding: 3.0,
-            //     //moveIndicatorFromBottom: ,
-            //     images: showcourselImagesList())
-      
-  
+          ),
+          // child:Carousel(
+          //     radius: Radius.circular(35),
+          //     // onImageTap: (int a) {
+          //     //   print('ovye');
+          //     // },
+          //     borderRadius: true,
+          //     //radius: Radius.circular(35),
+          //     boxFit: BoxFit.cover,
+          //     autoplay: true,
+          //     //animationCurve: Curves.,
+          //     animationDuration: Duration(milliseconds: 2000),
+          //     autoplayDuration: Duration(milliseconds: 10000),
+          //     dotSize: 7.0,
+          //     dotIncreasedColor: mainColor,
+          //     dotBgColor: Colors.transparent,
+          //     dotPosition: DotPosition.bottomCenter,
+          //     dotVerticalPadding: 15.0,
+          //     showIndicator: true,
+          //     indicatorBgPadding: 3.0,
+          //     //moveIndicatorFromBottom: ,
+          //     images: showcourselImagesList())
+
           // Positioned(
           //   top: width < 1200 ? height * 0.15 : height * 0.1,
           //   right: width * 0.01,
@@ -134,7 +93,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 30,),
+                SizedBox(
+                  height: 30,
+                ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -167,7 +128,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                   height: height * 0.04,
                 ),
                 AdaptiveText(
-                  "We are always here for",
+                  CinarTranslations.giris1.tr,
                   style: GoogleFonts.montserrat(
                       fontSize: width < 1200 ? height * 0.045 : height * 0.055,
                       fontWeight: FontWeight.w300,
@@ -213,93 +174,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                 SizedBox(
                   height: height * 0.30,
                 ),
-                Row(
-                  children: [
-                    !isTr
-                        ? TextButton(
-                            child: Text(
-                              'EN ',
-                              style: GoogleFonts.montserrat(
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.white
-                                      : Colors.white,
-                                  fontSize: width < 1200
-                                      ? height * 0.010
-                                      : height * 0.020,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0.0),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                isTr = true;
-                              });
-                            })
-                        : TextButton(
-                            child: Text(
-                              'EN ',
-                              style: GoogleFonts.montserrat(
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.white
-                                      : Colors.white,
-                                  fontSize: width < 1200
-                                      ? height * 0.010
-                                      : height * 0.020,
-                                  fontWeight: FontWeight.w300,
-                                  letterSpacing: 0.0),
-                            ),
-                            onPressed: () {
-                                setState(() {
-                                isTr = false;
-                              });
-                            }),
-                    Text("|",
-                        style: GoogleFonts.montserrat(
-                            color: _themeProvider.lightTheme
-                                ? Colors.white
-                                : Colors.white,
-                            fontSize:
-                                width < 1200 ? height * 0.010 : height * 0.020,
-                            fontWeight: FontWeight.w300,
-                            letterSpacing: 0.0)),
-                    isTr
-                        ? TextButton(
-                            child: Text(
-                              'TR',
-                              style: GoogleFonts.montserrat(
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.white
-                                      : Colors.white,
-                                  fontSize: width < 1200
-                                      ? height * 0.010
-                                      : height * 0.020,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0.0),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                isTr = false;
-                              });
-                            })
-                        : TextButton(
-                            child: Text(
-                              'TR',
-                              style: GoogleFonts.montserrat(
-                                  color: _themeProvider.lightTheme
-                                      ? Colors.white
-                                      : Colors.white,
-                                  fontSize: width < 1200
-                                      ? height * 0.010
-                                      : height * 0.020,
-                                  fontWeight: FontWeight.w300,
-                                  letterSpacing: 0.0),
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                isTr = true;
-                              });
-                            }),
-                  ],
-                )
+                translateButton(_themeProvider, width, height)
 
                 // Row(
                 //   mainAxisSize: MainAxisSize.min,
@@ -320,6 +195,99 @@ class _HomeDesktopState extends State<HomeDesktop> {
           ),
         ],
       ),
+    );
+  }
+
+  updateLanguage(Locale locale) {
+    Storage box = Storage();
+    box.setLocale(locale);
+  }
+
+  Row translateButton(
+      ThemeProvider _themeProvider, double width, double height) {
+    return Row(
+      children: [
+        !isTr
+            ? TextButton(
+                child: Text(
+                  'EN ',
+                  style: GoogleFonts.montserrat(
+                      color: _themeProvider.lightTheme
+                          ? Colors.white
+                          : Colors.white,
+                      fontSize: width < 1200 ? height * 0.010 : height * 0.020,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.0),
+                ),
+                onPressed: () {
+                  Locale localeTr = Locale('tr', 'TR');
+                  updateLanguage(localeTr);
+                  setState(() {
+                    isTr = true;
+                  });
+                })
+            : TextButton(
+                child: Text(
+                  'EN ',
+                  style: GoogleFonts.montserrat(
+                      color: _themeProvider.lightTheme
+                          ? Colors.white
+                          : Colors.white,
+                      fontSize: width < 1200 ? height * 0.010 : height * 0.020,
+                      fontWeight: FontWeight.w300,
+                      letterSpacing: 0.0),
+                ),
+                onPressed: () {
+                  Locale localeTr = Locale('en', 'US');
+                  updateLanguage(localeTr);
+                  setState(() {
+                    isTr = false;
+                  });
+                }),
+        Text("|",
+            style: GoogleFonts.montserrat(
+                color: _themeProvider.lightTheme ? Colors.white : Colors.white,
+                fontSize: width < 1200 ? height * 0.010 : height * 0.020,
+                fontWeight: FontWeight.w300,
+                letterSpacing: 0.0)),
+        isTr
+            ? TextButton(
+                child: Text(
+                  'TR',
+                  style: GoogleFonts.montserrat(
+                      color: _themeProvider.lightTheme
+                          ? Colors.white
+                          : Colors.white,
+                      fontSize: width < 1200 ? height * 0.010 : height * 0.020,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.0),
+                ),
+                onPressed: () {
+                  Locale localeTr = Locale('en', 'US');
+                  updateLanguage(localeTr);
+                  setState(() {
+                    isTr = false;
+                  });
+                })
+            : TextButton(
+                child: Text(
+                  'TR',
+                  style: GoogleFonts.montserrat(
+                      color: _themeProvider.lightTheme
+                          ? Colors.white
+                          : Colors.white,
+                      fontSize: width < 1200 ? height * 0.010 : height * 0.020,
+                      fontWeight: FontWeight.w300,
+                      letterSpacing: 0.0),
+                ),
+                onPressed: () {
+                  Locale localeTr = Locale('tr', 'TR');
+                  updateLanguage(localeTr);
+                  setState(() {
+                    isTr = true;
+                  });
+                }),
+      ],
     );
   }
 }

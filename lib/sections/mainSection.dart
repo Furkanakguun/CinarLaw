@@ -63,7 +63,7 @@ class _MainPageState extends State<MainPage> {
       i == 0
           ? 0.0
           : i == 1
-              ? MediaQuery.of(context).size.height * 1.05
+              ? MediaQuery.of(context).size.height * 1.20
               : i == 2
                   ? MediaQuery.of(context).size.height * 1.98
                   : i == 3
@@ -94,7 +94,12 @@ class _MainPageState extends State<MainPage> {
     _scrollController.addListener(() {
       if (_scrollController.position.pixels < 100) {
         //print('topp');
-        _scroll(0);
+         _scrollController.jumpTo(160);
+        setState(() {
+         
+          //_scroll(1);
+        });
+        
       }
       if (_scrollController.position.pixels <
           MediaQuery.of(context).size.height * 1.05) {

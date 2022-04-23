@@ -7,7 +7,7 @@ class ThemeStyles {
         ?
         // Light Theme
         ThemeData(
-            primarySwatch: Colors.red,
+            primarySwatch: Colors.grey,
             primaryColorLight: kPrimaryColor,
             brightness: Brightness.light,
             primaryColor: kPrimaryColor,
@@ -18,7 +18,7 @@ class ThemeStyles {
         // Dark Theme
         : ThemeData(
             brightness: Brightness.dark,
-            primarySwatch: Colors.red,
+            primarySwatch: Colors.grey,
             primaryColorDark: kPrimaryColor,
             primaryColor: kPrimaryColor,
             accentColor: kPrimaryColor,
