@@ -23,7 +23,6 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "OUR TEAM",
     "CONTACT",
   ];
 
@@ -31,7 +30,6 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
     Icons.home,
     Icons.person,
     Icons.settings,
-    Icons.article,
     Icons.phone,
   ];
 

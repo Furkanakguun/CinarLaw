@@ -14,16 +14,16 @@ import '../../animations/entranceFader.dart';
 import '../../constants.dart';
 import '../admin/admin_login.dart';
 
-class PublicationsListList extends StatefulWidget {
-  const PublicationsListList({
+class EventsList extends StatefulWidget {
+  const EventsList({
     Key key,
   }) : super(key: key);
 
   @override
-  _PublicationsListListState createState() => _PublicationsListListState();
+  _EventsListState createState() => _EventsListState();
 }
 
-class _PublicationsListListState extends State<PublicationsListList> {
+class _EventsListState extends State<EventsList> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
@@ -76,7 +76,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "Çınar Academia Publications",
+                    "Çınar Academia Events",
                     style: GoogleFonts.montserrat(
                         color: Colors.black,
                         fontSize: height * 0.050,
@@ -136,7 +136,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
                         )),
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                          child: Text("All Blogs",
+                          child: Text("All Events",
                               style: GoogleFonts.montserrat(
                                   fontSize: height * 0.020,
                                   color: Colors.black,

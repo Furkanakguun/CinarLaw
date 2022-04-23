@@ -14,7 +14,6 @@ Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();
   await Firebase.initializeApp();
- 
   runApp(MyApp());
 }
 
@@ -53,7 +52,7 @@ class _MyAppState extends State<MyApp> {
         builder: (contextt) {
           return GetMaterialApp(
             translations: CinarTranslations(),
-            locale: deviceInfoController.locale,
+            locale: Locale('en','US'),
             //navigatorObservers: <NavigatorObserver>[observer],
             debugShowCheckedModeBanner: false,
             title: 'Cinar Law',

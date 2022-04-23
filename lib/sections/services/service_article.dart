@@ -142,7 +142,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
         color: Colors.white,
         child: ListView(
           children: [
-            for (int index = 0; index < 21; index++)
+            for (int index = 0; index < 18; index++)
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(

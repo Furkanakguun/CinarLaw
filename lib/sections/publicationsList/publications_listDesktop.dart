@@ -6,6 +6,7 @@ import 'package:cinarlaw/sections/home/home.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
+import 'package:cinarlaw/sections/publicationsList/events_list.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listArticle.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listList.dart';
 import 'package:cinarlaw/sections/services/service_article.dart';
@@ -35,7 +36,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "OUR TEAM",
     "CONTACT",
   ];
 
@@ -43,7 +43,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     Icons.home,
     Icons.person,
     Icons.settings,
-    Icons.article,
     Icons.phone,
   ];
 
@@ -201,35 +200,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
               SizedBox(
                 height: 15,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
-                child: TextButton.icon(
-                  style: TextButton.styleFrom(
-                    textStyle: TextStyle(color: Colors.blue),
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(24.0),
-                    ),
-                  ),
-                  onPressed: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationsListList(),
-                      ),
-                    )
-                  },
-                  icon: Icon(
-                    Icons.arrow_forward_outlined,
-                    color: mainColorWhite,
-                  ),
-                  label: Text(
-                    'See more',
-                    style: TextStyle(color: mainColor),
-                  ),
-                ),
-              ),
+              seeMorePublication(width, context),
               SizedBox(
                 width: width * 0.012,
               ),
@@ -412,11 +383,79 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 ),
               ),
               SizedBox(
-                height: 62,
+                height: 15,
               ),
-              Footer()
+              seeMoreEvent(width, context), 
+              SizedBox(
+                height: 150,
+              ),
+              FooterBlack()
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Padding seeMorePublication(double width, BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
+      child: TextButton.icon(
+        style: TextButton.styleFrom(
+          textStyle: TextStyle(color: Colors.blue),
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24.0),
+          ),
+        ),
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PublicationsListList(),
+            ),
+          )
+        },
+        icon: Icon(
+          Icons.arrow_forward_outlined,
+          color: mainColorWhite,
+        ),
+        label: Text(
+          'See more',
+          style: TextStyle(color: mainColor),
+        ),
+      ),
+    );
+  }
+
+  Padding seeMoreEvent(double width, BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
+      child: TextButton.icon(
+        style: TextButton.styleFrom(
+          textStyle: TextStyle(color: Colors.blue),
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24.0),
+          ),
+        ),
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EventsList(),
+            ),
+          )
+        },
+        icon: Icon(
+          Icons.arrow_forward_outlined,
+          color: mainColorWhite,
+        ),
+        label: Text(
+          'See more',
+          style: TextStyle(color: mainColor),
         ),
       ),
     );
@@ -498,7 +537,8 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         Container(
           width: width < 1200 ? width * 0.80 : width * 0.45,
           child: TextRenderer(
-            text:   "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
+            text:
+                "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
             child: AdaptiveText(
               "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
               style: GoogleFonts.montserrat(
@@ -516,7 +556,8 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         Container(
           width: width < 1200 ? width * 0.80 : width * 0.45,
           child: TextRenderer(
-            text:  "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
+            text:
+                "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
             child: AdaptiveText(
               "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
               style: GoogleFonts.montserrat(
