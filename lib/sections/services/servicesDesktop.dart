@@ -139,7 +139,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 width: width * 0.30,
                 child: Column(
                   children: [
-                    for (int index = 0; index < 7; index++)
+                    for (int index = 0; index < 4; index++)
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -188,7 +188,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 width: width * 0.30,
                 child: Column(
                   children: [
-                    for (int index = 7; index < 14; index++)
+                    for (int index = 4; index < 8; index++)
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -237,7 +237,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 width: width * 0.30,
                 child: Column(
                   children: [
-                    for (int index = 14; index < 18; index++)
+                    for (int index = 8; index < 11; index++)
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(

@@ -558,7 +558,7 @@ class _ContactDektopState extends State<ContactDektop> {
                                 ]),
                     )),
                 SizedBox(height: 15,),
-                Footer()
+                FooterBlack()
               ],
             ),
           ),

@@ -2,14 +2,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cinarlaw/models/blog.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
 import 'package:cinarlaw/sections/admin/admin_login.dart';
-import 'package:cinarlaw/sections/home/home.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
 import 'package:cinarlaw/sections/publicationsList/events_list.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listArticle.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listList.dart';
-import 'package:cinarlaw/sections/services/service_article.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:carousel_pro/carousel_pro.dart';
@@ -18,8 +16,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
-
-import '../../animations/entranceFader.dart';
 import '../../constants.dart';
 
 class PublicationsListDesktop extends StatefulWidget {
@@ -47,23 +43,29 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   ];
 
   getStarredBlogPost() async {
-    // FirebaseFirestore.instance.collection('blogPosts').get().then((value) {
-    //   // store collection state to set where to start next
-    //   value.docs.forEach((element) {
-    //     //print('getDocuments ${element.data()}');
-    //     if (mounted) {
-    //       setState(() {
-    //         starredBlogList.add(BlogPost.fromDocument(element));
-    //       });
-    //     }
-    //   });
-    // });
     List<BlogPost> feedItems = [];
     QuerySnapshot snapshot = await FirebaseFirestore.instance
         .collection('blogPosts')
         .doc('1')
         .collection('items')
         .where("star", isEqualTo: true)
+        .limit(3)
+        .get();
+    print(snapshot.docs.isEmpty);
+    for (var item in snapshot.docs) {
+      feedItems.add(BlogPost.fromDocument(item));
+    }
+    return feedItems;
+  }
+
+  getStarredEventPost() async {
+    List<BlogPost> feedItems = [];
+    QuerySnapshot snapshot = await FirebaseFirestore.instance
+        .collection('eventPosts')
+        .doc('1')
+        .collection('items')
+        .where("star", isEqualTo: true)
+        .limit(3)
         .get();
     print(snapshot.docs.isEmpty);
     for (var item in snapshot.docs) {
@@ -239,153 +241,169 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 width: width * 0.012,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Stack(children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          //border: Border.all(color: Colors.grey),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
-                              blurRadius: 25.0,
-                              offset: Offset(2.0, 2.0),
-                            ),
-                          ],
-                          color: Color(0xff959190),
-                          borderRadius: BorderRadius.circular(12),
-                          // image: DecorationImage(
-                          //     image: AssetImage('assets/adakemi.jpg'),
-                          //     fit: BoxFit.cover)
-                        ),
-                        width: width < 1200 ? width * 0.60 : width * 0.20,
-                        height: height * 0.30,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: width * 0.10, left: 12, right: 12),
-                        child: Center(
-                          child: Container(
-                            color: Colors.transparent,
-                            width: width < 1200 ? width * 0.60 : width * 0.17,
-                            child: Column(
-                              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(
-                                  'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
-                                  style: GoogleFonts.montserrat(
-                                      fontSize: height * 0.017,
-                                      color: Colors.white,
-                                      height: 1.5,
-                                      fontWeight: FontWeight.w400),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      )
-                    ]),
-                    Stack(children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          //border: Border.all(color: Colors.grey),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
-                              blurRadius: 25.0,
-                              offset: Offset(2.0, 2.0),
-                            ),
-                          ],
-                          color: Color(0xff9b8c9f),
-                          borderRadius: BorderRadius.circular(12),
-                          // image: DecorationImage(
-                          //     image: AssetImage('assets/adakemi.jpg'),
-                          //     fit: BoxFit.cover)
-                        ),
-                        width: width < 1200 ? width * 0.60 : width * 0.20,
-                        height: height * 0.30,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: width * 0.10, left: 12, right: 12),
-                        child: Center(
-                          child: Container(
-                            color: Colors.transparent,
-                            width: width < 1200 ? width * 0.60 : width * 0.17,
-                            child: Column(
-                              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(
-                                  'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
-                                  style: GoogleFonts.montserrat(
-                                      fontSize: height * 0.017,
-                                      color: Colors.white,
-                                      height: 1.5,
-                                      fontWeight: FontWeight.w400),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      )
-                    ]),
-                    Stack(children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          //border: Border.all(color: Colors.grey),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
-                              blurRadius: 25.0,
-                              offset: Offset(2.0, 2.0),
-                            ),
-                          ],
-                          color: Color(0xffcdb68c),
-                          borderRadius: BorderRadius.circular(12),
-                          // image: DecorationImage(
-                          //     image: AssetImage('assets/adakemi.jpg'),
-                          //     fit: BoxFit.cover)
-                        ),
-                        width: width < 1200 ? width * 0.60 : width * 0.20,
-                        height: height * 0.30,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: width * 0.10, left: 12, right: 12),
-                        child: Center(
-                          child: Container(
-                            color: Colors.transparent,
-                            width: width < 1200 ? width * 0.60 : width * 0.17,
-                            child: Column(
-                              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(
-                                  'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
-                                  style: GoogleFonts.montserrat(
-                                      fontSize: height * 0.017,
-                                      color: Colors.white,
-                                      height: 1.5,
-                                      fontWeight: FontWeight.w400),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      )
-                    ]),
-                  ],
-                ),
-              ),
+                  padding: EdgeInsets.symmetric(
+                      horizontal:
+                          width < 1200 ? width * (0.20) : width * (0.15)),
+                  child: FutureBuilder(
+                    future: getStarredEventPost(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return Container();
+                      }
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: snapshot.data,
+                      );
+                    },
+                  )),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //       horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+              //     children: [
+              //       Stack(children: [
+              //         Container(
+              //           decoration: BoxDecoration(
+              //             //border: Border.all(color: Colors.grey),
+              //             boxShadow: [
+              //               BoxShadow(
+              //                 color: Colors.black.withOpacity(0.2),
+              //                 blurRadius: 25.0,
+              //                 offset: Offset(2.0, 2.0),
+              //               ),
+              //             ],
+              //             color: Color(0xff959190),
+              //             borderRadius: BorderRadius.circular(12),
+              //             // image: DecorationImage(
+              //             //     image: AssetImage('assets/adakemi.jpg'),
+              //             //     fit: BoxFit.cover)
+              //           ),
+              //           width: width < 1200 ? width * 0.60 : width * 0.20,
+              //           height: height * 0.30,
+              //         ),
+              //         Padding(
+              //           padding: EdgeInsets.only(
+              //               top: width * 0.10, left: 12, right: 12),
+              //           child: Center(
+              //             child: Container(
+              //               color: Colors.transparent,
+              //               width: width < 1200 ? width * 0.60 : width * 0.17,
+              //               child: Column(
+              //                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //                 children: [
+              //                   Text(
+              //                     'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
+              //                     style: GoogleFonts.montserrat(
+              //                         fontSize: height * 0.017,
+              //                         color: Colors.white,
+              //                         height: 1.5,
+              //                         fontWeight: FontWeight.w400),
+              //                     textAlign: TextAlign.center,
+              //                   ),
+              //                 ],
+              //               ),
+              //             ),
+              //           ),
+              //         )
+              //       ]),
+              //       Stack(children: [
+              //         Container(
+              //           decoration: BoxDecoration(
+              //             //border: Border.all(color: Colors.grey),
+              //             boxShadow: [
+              //               BoxShadow(
+              //                 color: Colors.black.withOpacity(0.2),
+              //                 blurRadius: 25.0,
+              //                 offset: Offset(2.0, 2.0),
+              //               ),
+              //             ],
+              //             color: Color(0xff9b8c9f),
+              //             borderRadius: BorderRadius.circular(12),
+              //             // image: DecorationImage(
+              //             //     image: AssetImage('assets/adakemi.jpg'),
+              //             //     fit: BoxFit.cover)
+              //           ),
+              //           width: width < 1200 ? width * 0.60 : width * 0.20,
+              //           height: height * 0.30,
+              //         ),
+              //         Padding(
+              //           padding: EdgeInsets.only(
+              //               top: width * 0.10, left: 12, right: 12),
+              //           child: Center(
+              //             child: Container(
+              //               color: Colors.transparent,
+              //               width: width < 1200 ? width * 0.60 : width * 0.17,
+              //               child: Column(
+              //                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //                 children: [
+              //                   Text(
+              //                     'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
+              //                     style: GoogleFonts.montserrat(
+              //                         fontSize: height * 0.017,
+              //                         color: Colors.white,
+              //                         height: 1.5,
+              //                         fontWeight: FontWeight.w400),
+              //                     textAlign: TextAlign.center,
+              //                   ),
+              //                 ],
+              //               ),
+              //             ),
+              //           ),
+              //         )
+              //       ]),
+              //       Stack(children: [
+              //         Container(
+              //           decoration: BoxDecoration(
+              //             //border: Border.all(color: Colors.grey),
+              //             boxShadow: [
+              //               BoxShadow(
+              //                 color: Colors.black.withOpacity(0.2),
+              //                 blurRadius: 25.0,
+              //                 offset: Offset(2.0, 2.0),
+              //               ),
+              //             ],
+              //             color: Color(0xffcdb68c),
+              //             borderRadius: BorderRadius.circular(12),
+              //             // image: DecorationImage(
+              //             //     image: AssetImage('assets/adakemi.jpg'),
+              //             //     fit: BoxFit.cover)
+              //           ),
+              //           width: width < 1200 ? width * 0.60 : width * 0.20,
+              //           height: height * 0.30,
+              //         ),
+              //         Padding(
+              //           padding: EdgeInsets.only(
+              //               top: width * 0.10, left: 12, right: 12),
+              //           child: Center(
+              //             child: Container(
+              //               color: Colors.transparent,
+              //               width: width < 1200 ? width * 0.60 : width * 0.17,
+              //               child: Column(
+              //                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //                 children: [
+              //                   Text(
+              //                     'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
+              //                     style: GoogleFonts.montserrat(
+              //                         fontSize: height * 0.017,
+              //                         color: Colors.white,
+              //                         height: 1.5,
+              //                         fontWeight: FontWeight.w400),
+              //                     textAlign: TextAlign.center,
+              //                   ),
+              //                 ],
+              //               ),
+              //             ),
+              //           ),
+              //         )
+              //       ]),
+              //     ],
+              //   ),
+              // ),
               SizedBox(
                 height: 15,
               ),
-              seeMoreEvent(width, context), 
+              seeMoreEvent(width, context),
               SizedBox(
                 height: 150,
               ),
@@ -595,7 +613,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.3),
           image: DecorationImage(
-            image: AssetImage("assets/akademi.jpg"),
+            image: AssetImage("assets/akademi_1.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -608,7 +626,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.3),
           image: DecorationImage(
-            image: AssetImage("assets/akademi.jpg"),
+            image: AssetImage("assets/akademi_2.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -621,7 +639,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         decoration: BoxDecoration(
           color: Colors.black.withOpacity(0.3),
           image: DecorationImage(
-            image: AssetImage("assets/akademi.jpg"),
+            image: AssetImage("assets/akademi_3.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -874,21 +892,16 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      AntDesign.linkedin_square,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () => launchURL(
-                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
-                    //hoverColor: kPrimaryColor,
+                IconButton(
+                  icon: Icon(
+                    AntDesign.linkedin_square,
+                    color: Colors.white,
+                    size: MediaQuery.of(context).size.width * 0.0095,
                   ),
+                  //iconSize: height,
+                  onPressed: () => launchURL(
+                      'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                  //hoverColor: kPrimaryColor,
                 ),
                 SizedBox(
                   width: 10,
@@ -900,27 +913,22 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      Ionicons.md_exit,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AdminLogin(),
-                        ),
-                      );
-                    },
-                    //hoverColor: kPrimaryColor,
+                IconButton(
+                  icon: Icon(
+                    Ionicons.md_exit,
+                    color: Colors.white,
+                    size: MediaQuery.of(context).size.width * 0.0095,
                   ),
+                  //iconSize: height,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AdminLogin(),
+                      ),
+                    );
+                  },
+                  //hoverColor: kPrimaryColor,
                 ),
                 SizedBox(
                   width: 10,

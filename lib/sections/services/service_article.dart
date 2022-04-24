@@ -1,16 +1,13 @@
-import 'package:cinarlaw/sections/home/home.dart';
+
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/footer.dart';
-import 'package:cinarlaw/widget/publication_list_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../animations/entranceFader.dart';
 import '../../constants.dart';
 
 class ServiceArticle extends StatefulWidget {
@@ -28,7 +25,6 @@ class _ServiceArticleState extends State<ServiceArticle> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "OUR TEAM",
     "CONTACT",
   ];
 
@@ -36,7 +32,6 @@ class _ServiceArticleState extends State<ServiceArticle> {
     Icons.home,
     Icons.person,
     Icons.settings,
-    Icons.article,
     Icons.phone,
   ];
   @override
@@ -128,7 +123,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
               SizedBox(
                 width: height * 0.050,
               ),
-              Footer()
+              FooterBlack()
             ],
           ),
         ),
@@ -142,7 +137,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
         color: Colors.white,
         child: ListView(
           children: [
-            for (int index = 0; index < 18; index++)
+            for (int index = 0; index < 11; index++)
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
@@ -442,21 +437,16 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 SizedBox(
                   width: 12,
                 ),
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      AntDesign.linkedin_square,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () => launchURL(
-                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
-                    //hoverColor: kPrimaryColor,
+                IconButton(
+                  icon: Icon(
+                    AntDesign.linkedin_square,
+                    color: Colors.white,
+                    size: MediaQuery.of(context).size.width * 0.0095,
                   ),
+                  //iconSize: height,
+                  onPressed: () => launchURL(
+                      'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                  //hoverColor: kPrimaryColor,
                 ),
                 SizedBox(
                   width: 10,

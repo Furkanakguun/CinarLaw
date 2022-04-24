@@ -36,10 +36,10 @@ class _EventsListState extends State<EventsList> {
     Icons.settings,
     Icons.phone,
   ];
-  getStarredBlogPost() async {
+  getStarredEventPost() async {
     List<Padding> feedItems = [];
     QuerySnapshot snapshot = await FirebaseFirestore.instance
-        .collection('blogPosts')
+        .collection('eventPosts')
         .doc('1')
         .collection('items')
         .get();
@@ -161,7 +161,7 @@ class _EventsListState extends State<EventsList> {
                       horizontal:
                           width < 1200 ? width * (0.20) : width * (0.30)),
                   child: FutureBuilder(
-                    future: getStarredBlogPost(),
+                    future: getStarredEventPost(),
                     builder: (context, snapshot) {
                       if (!snapshot.hasData) {
                         return Container();
@@ -192,7 +192,7 @@ class _EventsListState extends State<EventsList> {
               //     ),
               //   ],
               // ),
-              Footer()
+              FooterBlack()
             ],
           ),
         ),

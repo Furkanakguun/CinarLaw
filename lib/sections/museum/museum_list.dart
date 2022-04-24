@@ -11,8 +11,8 @@ class MuseumList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: MuseumListMobile(),
-      tablet: MuseumListTab(),
+      mobile: MuseumListDesktop(),
+      tablet: MuseumListDesktop(),
       desktop: MuseumListDesktop(),
     );
   }

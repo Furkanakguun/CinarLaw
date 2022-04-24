@@ -1,4 +1,5 @@
 import 'package:cinarlaw/sections/admin/blog_post_create.dart';
+import 'package:cinarlaw/sections/admin/edit_event_list.dart';
 import 'package:cinarlaw/sections/home/home.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
@@ -13,6 +14,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
+import '../publicationsList/events_list.dart';
 import 'event_post_create.dart';
 
 class AdminDashboard extends StatefulWidget {
@@ -74,11 +76,18 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 height: 30,
               ),
               createEventPost(width, height),
-                SizedBox(
+              SizedBox(
+                height: 30,
+              ),
+              editPost(width, height),
+              SizedBox(
+                height: 30,
+              ),
+              editEvent(width, height),
+              SizedBox(
                 height: 30,
               ),
               homeButton(width, height)
-            
               //Footer()
             ],
           ),
@@ -87,7 +96,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
     );
   }
 
-   Center homeButton(double width, double height) {
+  Center homeButton(double width, double height) {
     return Center(
       child: Container(
         height: 50,
@@ -116,7 +125,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 // ),
                 ),
             onPressed: () {
-               Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => MainPage(),
@@ -163,7 +172,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 // ),
                 ),
             onPressed: () {
-               Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => BlogPostCreate(),
@@ -228,99 +237,98 @@ class _AdminDashboardState extends State<AdminDashboard> {
     );
   }
 
-  Widget username(double height, double width) {
+  Center editPost(double width, double height) {
     return Center(
       child: Container(
-          width: width < 1200 ? width * 0.60 : width * 0.20,
-          //height: height * 0.30,
-          child: Padding(
-            padding: const EdgeInsets.all(4),
-            child: TextFormField(
-              controller: usernameController,
-              onChanged: checkIsValidate(),
-              validator: (val) {
-                if (val.isEmpty) {
-                  return "Required";
-                } else {
-                  return "";
-                }
-              },
-              maxLines: 1,
-              cursorColor: Colors.black,
-              style: TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                hintText: "Username",
-                hintStyle: TextStyle(color: Colors.grey),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                  borderSide: BorderSide(color: Colors.black, width: 0.8),
+        height: 50,
+        width: width < 1200 ? width * 0.60 : width * 0.20,
+        child: TextButton(
+            style: ButtonStyle(
+                backgroundColor: isValidate
+                    ? MaterialStateProperty.all<Color>(mainColor)
+                    : MaterialStateProperty.all<Color>(
+                        mainColor.withOpacity(0.4)),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                    mainColor.withOpacity(0.4)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        side: BorderSide(color: Colors.transparent)))
+                // overlayColor: MaterialStateProperty.resolveWith<Color>(
+                //   (Set<MaterialState> states) {
+                //     if (states.contains(MaterialState.hovered))
+                //       return Colors.blue.withOpacity(0.04);
+                //     if (states.contains(MaterialState.focused) ||
+                //         states.contains(MaterialState.pressed))
+                //       return Colors.blue.withOpacity(0.12);
+                //     return null; // Defer to the widget's default.
+                //   },
+                // ),
                 ),
-              ),
-            ),
-          )),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EventPostCreate(),
+                ),
+              );
+            },
+            child: Text(
+              'Edit Blogs',
+              style: GoogleFonts.montserrat(
+                  color: Colors.white,
+                  fontSize: height * 0.018,
+                  fontWeight: FontWeight.w300),
+            )),
+      ),
     );
   }
 
-  Widget password(double height, double width) {
+  Center editEvent(double width, double height) {
     return Center(
       child: Container(
-          width: width < 1200 ? width * 0.60 : width * 0.20,
-          //height: height * 0.30,
-          child: Padding(
-            padding: const EdgeInsets.all(4),
-            child: TextFormField(
-              controller: passwordController,
-              onChanged: checkIsValidate(),
-              validator: (val) {
-                if (val.isEmpty) {
-                  return "Required";
-                } else {
-                  return "";
-                }
-              },
-              obscureText: true,
-              maxLines: 1,
-              cursorColor: Colors.black,
-              style: TextStyle(color: Colors.black),
-              decoration: InputDecoration(
-                hintText: "Password",
-                hintStyle: TextStyle(color: Colors.grey),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                  borderSide: BorderSide(color: Colors.black, width: 0.8),
+        height: 50,
+        width: width < 1200 ? width * 0.60 : width * 0.20,
+        child: TextButton(
+            style: ButtonStyle(
+                backgroundColor: isValidate
+                    ? MaterialStateProperty.all<Color>(mainColor)
+                    : MaterialStateProperty.all<Color>(
+                        mainColor.withOpacity(0.4)),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                    mainColor.withOpacity(0.4)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        side: BorderSide(color: Colors.transparent)))
+                // overlayColor: MaterialStateProperty.resolveWith<Color>(
+                //   (Set<MaterialState> states) {
+                //     if (states.contains(MaterialState.hovered))
+                //       return Colors.blue.withOpacity(0.04);
+                //     if (states.contains(MaterialState.focused) ||
+                //         states.contains(MaterialState.pressed))
+                //       return Colors.blue.withOpacity(0.12);
+                //     return null; // Defer to the widget's default.
+                //   },
+                // ),
                 ),
-              ),
-            ),
-          )),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditEventsList(),
+                ),
+              );
+            },
+            child: Text(
+              'Edit Events',
+              style: GoogleFonts.montserrat(
+                  color: Colors.white,
+                  fontSize: height * 0.018,
+                  fontWeight: FontWeight.w300),
+            )),
+      ),
     );
-  }
-
-  void _login() {
-    if (this.usernameController.text != "" &&
-        this.passwordController.text != "") {
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(
-      //     builder: (context) =>
-      //         PublicationsListArticle(title: title, description: description),
-      //   ),
-      // );
-    } else {
-      //formGlobalKey.currentState.validate();
-    }
-  }
-
-  checkIsValidate() {
-    if (this.usernameController.text != "" &&
-        this.passwordController.text != "") {
-      setState(() {
-        isValidate = true;
-      });
-    } else {
-      setState(() {
-        isValidate = false;
-      });
-    }
   }
 
   Align titleSection(double height) {

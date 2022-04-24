@@ -475,7 +475,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
           //   ),
           // ),
           child: Image.asset(
-            "assets/museum_stack.jpg",
+            "assets/akademi.jpg",
             fit: BoxFit.cover,
           ),
           height: height * 0.45,

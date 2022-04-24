@@ -38,6 +38,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
   String uploadedPhotoUrl;
   String downloadPath;
   String imageName = "Choose Image";
+  bool star = false;
   CachedNetworkImageProvider pickedimage;
   final List<String> _sectionsName = [
     "ABOUT",
@@ -90,6 +91,10 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
                 height: height * 0.01,
               ),
               dateField(height, width),
+              SizedBox(
+                height: height * 0.03,
+              ),
+              starField(height, width),
               SizedBox(
                 height: height * 0.03,
               ),
@@ -225,7 +230,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
             "date": dateController.text,
             "image": uploadedPhotoUrl,
             "author": authorController.text,
-            "start": false,
+            "star": star,
             "title": usernameController.text
           }).then((value) => showSubmitRequestSnackBar(context));
           setState(() {
@@ -446,6 +451,28 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
                   borderSide: BorderSide(color: Colors.black, width: 0.8),
                 ),
               ),
+            ),
+          )),
+    );
+  }
+
+  Widget starField(double height, double width) {
+    return Center(
+      child: Container(
+          width: width < 1200 ? width * 0.60 : width * 0.30,
+          //height: height * 0.30,
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: CheckboxListTile(
+              secondary: const Icon(Icons.star),
+              title: const Text('Featured on Academia Page'),
+              //subtitle: Text('Ringing after 12 hours'),
+              value: star,
+              onChanged: (bool value) {
+                setState(() {
+                  this.star = value;
+                });
+              },
             ),
           )),
     );

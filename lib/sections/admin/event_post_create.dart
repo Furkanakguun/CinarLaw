@@ -36,6 +36,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
   String uploadedPhotoUrl;
   String downloadPath;
   String imageName = "Choose Image";
+  bool star = false;
   CachedNetworkImageProvider pickedimage;
   final List<String> _sectionsName = [
     "ABOUT",
@@ -88,6 +89,10 @@ class _EventPostCreateState extends State<EventPostCreate> {
               dateField(height, width),
               SizedBox(
                 height: height * 0.03,
+              ),
+              starField(width, height),
+              SizedBox(
+                height: height * 0.04,
               ),
               descriptionField(queryData),
               SizedBox(
@@ -220,8 +225,8 @@ class _EventPostCreateState extends State<EventPostCreate> {
             "content": contentController.text,
             "date": dateController.text,
             "image": uploadedPhotoUrl,
-            //"author": authorController.text,
-            "start": false,
+            "author": "",
+            "star": star,
             "title": usernameController.text
           }).then((value) => showSubmitRequestSnackBar(context));
           setState(() {
@@ -234,6 +239,28 @@ class _EventPostCreateState extends State<EventPostCreate> {
       showErrortRequestSnackBar(context, "Please pick image");
 //write a code for android or ios
     }
+  }
+
+  Widget starField(double height, double width) {
+    return Center(
+      child: Container(
+          width: width < 1200 ? width * 0.60 : width * 0.30,
+          //height: height * 0.30,
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: CheckboxListTile(
+              secondary: const Icon(Icons.star),
+              title: const Text('Featured on Academia Page'),
+              //subtitle: Text('Ringing after 12 hours'),
+              value: star,
+              onChanged: (bool value) {
+                setState(() {
+                  this.star = value;
+                });
+              },
+            ),
+          )),
+    );
   }
 
   Center homeButton(double width, double height) {
@@ -286,7 +313,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
               ),
               Expanded(
                 child: Text(
-                  "Blog Post Uploaded",
+                  "Event Post Uploaded",
                   style: GoogleFonts.montserrat(
                       color: Colors.white,
                       fontSize: height * 0.022,

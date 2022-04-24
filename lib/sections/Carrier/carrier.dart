@@ -26,7 +26,6 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "OUR TEAM",
     "CONTACT",
   ];
 
@@ -34,7 +33,6 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
     Icons.home,
     Icons.person,
     Icons.settings,
-    Icons.article,
     Icons.phone,
   ];
   @override
@@ -333,7 +331,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               //     ),
               //   ]),
               // ),
-              Footer()
+              FooterBlack()
             ],
           ),
         ),

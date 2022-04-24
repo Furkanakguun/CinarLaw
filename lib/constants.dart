@@ -90,14 +90,6 @@ final kServicesTitles = [
   "Data Protection Law",
   "Construction and Infrastructure",
   "Energy, Natural Resources and Mining",
-  "Insurance Law",
-  "Tax Law",
-  "Real Estate",
-  "Tourism Law",
-  "Environmental Law",
-  "Inheritance and Family Law",
-  "Criminal Law",
-  "Sports Law",
 ];
 
 // final kServicesDescriptions = [
@@ -145,14 +137,6 @@ final kServicesLinks = [
   "Data protection law will play a very important role in Turkish Business Life and change almost everything that the companies have been used to. Furthermore, there is no doubt that the process of complying with the Data Protection Law in Turkey will cause a significant challenge for the firms. In accordance with latest regulations on Data Protection Law in Turkey (KVKK) and GDPR çınar&çınar Data Protection team provides high-level consultansy services for its clients. We represent our clients in the registration process for data controller system (VERBIS), we give seminars and conferences in order to increase awareness about Personal Data Protection of out clients. Our team has also been experienced in fields of drafting Data Protection Policy - Clarifacition Text, creating a Data Protection know-how and train the employees with a regular plan",
   "Since the inception of our law firm, Construction Agreements and any sort of construction related transactions have been deemed one of the most important areas of law for us. The Firm has been proudly involved in a wide variety of large construction and infrastructure projects and concluded ali of them in a timely and efficient manner. In addition to our specialized and well-qualified team members, our firm also employs construction experts and consultants to minimize risks, which may arise during construction projects. Our attorneys and outsource counsels in different countries have considerable knowledge and experience in drafting construction contracts and dealing with dispute resolutions in accordance with FIDIC as well as domestic regulations in foreign States. ",
   "In the emerging Turkish Energy market with ever changing regulations, çınar & çınar has an excellent reputation in completing complex regulatory transactions and contracts in energy and power projects. We provide a wide range of legal Services for energy matters such as project fınance and development, drafting and fınalizing contracts (Concession Agreements, B.O.T and B.0.O Agreements, Take-or-Pay Contracts, 1NG Contracts). We also represent our Clients in administrative and fıscal transactions. Our partners have extensive knowledge in electricity market  regulations, having involved in drafting the Turkish Electricity Law No 4628. Our team has also been involved in numerous mining projects such as gold mining. At çınar & çınar, we also assist our Clients with regards to administrative and legal transactions for mining projects which includes financing prospective operations, prospective license transactions, drafting and negotiating agreements, mining lease,  renunciation of mines and other related issues. We also provide consultancy Services to companies for future  partnership opportunities.",
-  "We assist our Clients with regards to many areas of insurance issues such as corporate and  regulatory risks, construction and engineering risks, financial institutions, credit risks, clinical negligence, personal accident and life, health. We alsa have extensive experience in litigation matters related to Insurance Law ",
-  "With our business-minded approach supported by wide knowledge of Turkish Tax Law, our attorneys  advise on all kinds of tax issues from complex matters to day-to-day operation matters in order to solve our Clients' concerns in a cost effective manner.  ",
-  "We assist our Clients in regards to commercial land transactions, Lease Agreements, Constructions Agreements, mortgages and cancellation of deeds. Our team members handle small portfolio purchases as well  as complex transactions. Our team fıgures aut innovative solutions to our Clients concerning their commercial and  individual needs both far litigation Services and consultancy Services.",
-  "çınar & çınar not only assist its clients in regards to agreements and documents such as Operation Agreements and Articles of Associations but alsa represents them before the administrative authorities to obtain necessary permits and licenses. Our team alsa assists companies with acquisitions of hotels.",
-  "We regularly advise on administrative and regulatory matters with regards to protection of the environment. We represent our Clients before administrative and civil courts and governmental authorities to   obtain necessary permissions and licenses. ",
-  "We represent our private Clients before civil courts at both first instance and appellate levels. ",
-  "We represent our private clients before criminal courts at both first instance and appellate levels",
-  "With its experience in the area, çınar & çınar is able to assist its Clients resolve their legal issues and  achieve their goals concerning Sports Law. in this regard, we not only provide legal consultancy to sport clubs and  players, but alsa prepare and review player and agent agreements. "
 ];
 
 // Our Team
