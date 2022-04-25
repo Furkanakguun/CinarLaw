@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cinarlaw/models/blog.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
 import 'package:cinarlaw/sections/admin/admin_login.dart';
+import 'package:cinarlaw/sections/contact/contactDesktop.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
@@ -32,7 +33,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "CONTACT",
   ];
 
   final List<IconData> _sectionsIcons = [
@@ -560,7 +560,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             child: AdaptiveText(
               "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
               style: GoogleFonts.montserrat(
-                fontSize: height * 0.013,
+                fontSize: height * 0.016,
                 color: Colors.grey[500],
                 height: 1.5,
               ),
@@ -579,7 +579,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             child: AdaptiveText(
               "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
               style: GoogleFonts.montserrat(
-                fontSize: height * 0.013,
+                fontSize: height * 0.016,
                 color: Colors.grey[500],
                 height: 1.5,
               ),
@@ -611,7 +611,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     imageList.add(
       Container(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.3),
           image: DecorationImage(
             image: AssetImage("assets/akademi_1.jpg"),
             fit: BoxFit.cover,
@@ -624,7 +623,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     imageList.add(
       Container(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.3),
           image: DecorationImage(
             image: AssetImage("assets/akademi_2.jpg"),
             fit: BoxFit.cover,
@@ -637,7 +635,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     imageList.add(
       Container(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.3),
           image: DecorationImage(
             image: AssetImage("assets/akademi_3.jpg"),
             fit: BoxFit.cover,
@@ -664,7 +661,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 borderRadius: true,
                 //radius: Radius.circular(35),
                 boxFit: BoxFit.cover,
-                autoplay: true,
+                autoplay: false,
                 //animationCurve: Curves.,
                 animationDuration: Duration(milliseconds: 2000),
                 autoplayDuration: Duration(milliseconds: 10000),
@@ -878,6 +875,57 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                     ),
                     title: Text(
                       "CAREER",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+        MediaQuery.of(context).size.width > 760
+            ? Container(
+                color: Colors.transparent,
+                padding: const EdgeInsets.all(8.0),
+                height: 60.0,
+                child: MaterialButton(
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => {
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => ContactDektop()))
+                  },
+                  child: Text(
+                    "CONTACT",
+                    style: GoogleFonts.montserrat(
+                      fontSize: MediaQuery.of(context).size.width * 0.0070,
+                      // fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),
+                    // style: TextStyle(
+                    //   color:
+                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                    // ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => ContactDektop()));
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CONTACT",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,

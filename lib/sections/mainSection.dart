@@ -65,7 +65,7 @@ class _MainPageState extends State<MainPage> {
           : i == 1
               ? MediaQuery.of(context).size.height * 1.20
               : i == 2
-                  ? MediaQuery.of(context).size.height * 2.10
+                  ? MediaQuery.of(context).size.height * 2.30
                   : i == 3
                       ? MediaQuery.of(context).size.height * 2.9
                       : MediaQuery.of(context).size.height * 4,
@@ -94,12 +94,10 @@ class _MainPageState extends State<MainPage> {
     _scrollController.addListener(() {
       if (_scrollController.position.pixels < 100) {
         //print('topp');
-         _scrollController.jumpTo(160);
+        _scrollController.jumpTo(160);
         setState(() {
-         
           //_scroll(1);
         });
-        
       }
       if (_scrollController.position.pixels <
           MediaQuery.of(context).size.height * 1.05) {
@@ -256,332 +254,355 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget _appBarTabDesktop(ThemeProvider _themeProv) {
-    return  _navbarWhite ? AppBar(elevation: 0.0,backgroundColor: Colors.transparent,) : AppBar(
-      elevation: 0.0,
-      backgroundColor: _navbarWhite ? mainColorWhite : Colors.transparent,
-      // flexibleSpace: Image(
-      //   image: AssetImage('assets/navbar.png'),
-      //   fit: BoxFit.cover,
-      // ),
-      title: MediaQuery.of(context).size.width < 780
-          ? EntranceFader(
-              duration: Duration(milliseconds: 250),
-              offset: Offset(0, -10),
-              delay: Duration(seconds: 3),
-              child: NavBarLogo(
-                height: 20.0,
-              ))
-          : Padding(
-              padding: const EdgeInsets.only(left: 28.0, top: 10),
-              child: MaterialButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                      builder: (BuildContext context) => MainPage()));
-                },
-                hoverColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                splashColor: Colors.transparent,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
-                  child: Image.asset(
-                    'assets/cinar_beyaz-01.png',
-                    fit: BoxFit.fitWidth,
-                    height: 120,
-                    width: 200,
-                  ),
-                ),
-              ),
-            ),
-      actions: [
-        MediaQuery.of(context).size.width > 760
-            ? Padding(
-                padding: const EdgeInsets.only(right: 15.0),
-                child: EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    height: 60.0,
+    return _navbarWhite
+        ? AppBar(
+            elevation: 0.0,
+            backgroundColor: Colors.transparent,
+          )
+        : AppBar(
+            elevation: 0.0,
+            backgroundColor: _navbarWhite ? mainColorWhite : Colors.transparent,
+            // flexibleSpace: Image(
+            //   image: AssetImage('assets/navbar.png'),
+            //   fit: BoxFit.cover,
+            // ),
+            title: MediaQuery.of(context).size.width < 780
+                ? EntranceFader(
+                    duration: Duration(milliseconds: 250),
+                    offset: Offset(0, -10),
+                    delay: Duration(seconds: 3),
+                    child: NavBarLogo(
+                      height: 20.0,
+                    ))
+                : Padding(
+                    padding: const EdgeInsets.only(left: 28.0, top: 10),
                     child: MaterialButton(
-                      hoverColor: Colors.black.withOpacity(0.5),
-                      onPressed: () => Navigator.of(context).pushReplacement(
-                          new MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  PublicationList())),
-                      child: Text(
-                        "ÇINAR ACADEMIA",
-                        style: GoogleFonts.montserrat(
-                          fontSize: MediaQuery.of(context).size.width * 0.0070,
-                          // fontWeight: FontWeight.w300,
-                          color: _themeProv.lightTheme
-                              ? Colors.white
-                              : Colors.white,
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(
+                            new MaterialPageRoute(
+                                builder: (BuildContext context) => MainPage()));
+                      },
+                      hoverColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      splashColor: Colors.transparent,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            left: 18.0, top: 10, bottom: 18),
+                        child: Image.asset(
+                          'assets/cinar_beyaz-01.png',
+                          fit: BoxFit.fitWidth,
+                          height: 120,
+                          width: 200,
                         ),
-                        // style: TextStyle(
-                        //   color:
-                        //       themeProvider.lightTheme ? Colors.black : Colors.white,
-                        // ),
                       ),
                     ),
                   ),
-                ),
-              )
-            : Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationList(),
+            actions: [
+              MediaQuery.of(context).size.width > 760
+                  ? Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: EntranceFader(
+                        offset: Offset(0, -10),
+                        delay: Duration(milliseconds: 100),
+                        duration: Duration(milliseconds: 250),
+                        child: Container(
+                          padding: const EdgeInsets.all(8.0),
+                          height: 60.0,
+                          child: MaterialButton(
+                            hoverColor: Colors.black.withOpacity(0.5),
+                            onPressed: () => Navigator.of(context)
+                                .pushReplacement(new MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        PublicationList())),
+                            child: Text(
+                              "ÇINAR ACADEMIA",
+                              style: GoogleFonts.montserrat(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.0070,
+                                // fontWeight: FontWeight.w300,
+                                color: _themeProv.lightTheme
+                                    ? Colors.white
+                                    : Colors.white,
+                              ),
+                              // style: TextStyle(
+                              //   color:
+                              //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                              // ),
+                            ),
+                          ),
+                        ),
                       ),
-                    );
-                    //Navigator.pop(context);
-                  },
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: kPrimaryColor,
-                    ),
-                    title: Text(
-                      "Çınar Academia",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color:
-                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: MaterialButton(
+                        hoverColor: kPrimaryColor.withAlpha(70),
+                        onPressed: () {
+                          //_scroll(index);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PublicationList(),
+                            ),
+                          );
+                          //Navigator.pop(context);
+                        },
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.book,
+                            color: kPrimaryColor,
+                          ),
+                          title: Text(
+                            "Çınar Academia",
+                            style: GoogleFonts.montserrat(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.0070,
+                              // fontWeight: FontWeight.w300,
+                              color: _themeProv.lightTheme
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
+              MediaQuery.of(context).size.width > 760
+                  ? EntranceFader(
+                      offset: Offset(0, -10),
+                      delay: Duration(milliseconds: 100),
+                      duration: Duration(milliseconds: 250),
+                      child: Container(
+                        padding: const EdgeInsets.all(8.0),
+                        height: 60.0,
+                        child: MaterialButton(
+                          hoverColor: Colors.black.withOpacity(0.5),
+                          onPressed: () => Navigator.of(context)
+                              .pushReplacement(new MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      MuseumList())),
+                          child: Text(
+                            "ÇINAR MUSEUM",
+                            style: GoogleFonts.montserrat(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.0070,
+                              // fontWeight: FontWeight.w300,
+                              color: _themeProv.lightTheme
+                                  ? Colors.white
+                                  : Colors.white,
+                            ),
+                            // style: TextStyle(
+                            //   color:
+                            //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                            // ),
+                          ),
+                        ),
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: MaterialButton(
+                        hoverColor: kPrimaryColor.withAlpha(70),
+                        onPressed: () {
+                          //_scroll(index);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MuseumList(),
+                            ),
+                          );
+                          //Navigator.pop(context);
+                        },
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.book,
+                            color: kPrimaryColor,
+                          ),
+                          title: Text(
+                            "Çınar Museum",
+                            style: GoogleFonts.montserrat(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.0070,
+                              // fontWeight: FontWeight.w300,
+                              color: _themeProv.lightTheme
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+              VerticalDivider(
+                color: Colors.grey[300],
+                thickness: 3,
+                indent: 15,
+                endIndent: 15,
               ),
-        MediaQuery.of(context).size.width > 760
-            ? EntranceFader(
-                offset: Offset(0, -10),
-                delay: Duration(milliseconds: 100),
-                duration: Duration(milliseconds: 250),
-                child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  height: 60.0,
-                  child: MaterialButton(
-                    hoverColor: Colors.black.withOpacity(0.5),
-                    onPressed: () => Navigator.of(context).pushReplacement(
-                        new MaterialPageRoute(
-                            builder: (BuildContext context) => MuseumList())),
-                    child: Text(
-                      "ÇINAR MUSEUM",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
+              for (int i = 0; i < _sectionsName.length; i++)
+                _appBarActions(
+                    _sectionsName[i], i, _sectionsIcons[i], _themeProv),
+              MediaQuery.of(context).size.width > 760
+                  ? EntranceFader(
+                      offset: Offset(0, -10),
+                      delay: Duration(milliseconds: 100),
+                      duration: Duration(milliseconds: 250),
+                      child: Container(
                         color:
-                            _themeProv.lightTheme ? Colors.white : Colors.white,
+                            _navbarWhite ? mainColorWhite : Colors.transparent,
+                        padding: const EdgeInsets.all(8.0),
+                        height: 60.0,
+                        child: MaterialButton(
+                          hoverColor: Colors.black.withOpacity(0.5),
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CarrierDesktop(),
+                            ),
+                          ),
+                          child: Text(
+                            "CAREER",
+                            style: GoogleFonts.montserrat(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.0070,
+                              // fontWeight: FontWeight.w300,
+                              color: Colors.white,
+                            ),
+                            // style: TextStyle(
+                            //   color:
+                            //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                            // ),
+                          ),
+                        ),
                       ),
-                      // style: TextStyle(
-                      //   color:
-                      //       themeProvider.lightTheme ? Colors.black : Colors.white,
-                      // ),
-                    ),
-                  ),
-                ),
-              )
-            : Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MuseumList(),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: MaterialButton(
+                        hoverColor: kPrimaryColor.withAlpha(70),
+                        onPressed: () {
+                          //_scroll(index);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PublicationList(),
+                            ),
+                          );
+                          //Navigator.pop(context);
+                        },
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.book,
+                            color: kPrimaryColor,
+                          ),
+                          title: Text(
+                            "CAREER",
+                            style: GoogleFonts.montserrat(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.0070,
+                              // fontWeight: FontWeight.w300,
+                              color: _themeProv.lightTheme
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                    );
-                    //Navigator.pop(context);
-                  },
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: kPrimaryColor,
                     ),
-                    title: Text(
-                      "Çınar Museum",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
+              MediaQuery.of(context).size.width > 760
+                  ? EntranceFader(
+                      offset: Offset(0, -10),
+                      delay: Duration(milliseconds: 100),
+                      duration: Duration(milliseconds: 250),
+                      child: Container(
                         color:
-                            _themeProv.lightTheme ? Colors.black : Colors.white,
+                            _navbarWhite ? mainColorWhite : Colors.transparent,
+                        padding: const EdgeInsets.all(8.0),
+                        height: 60.0,
+                        child: MaterialButton(
+                          hoverColor: Colors.black.withOpacity(0.5),
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Contact(),
+                            ),
+                          ),
+                          child: Text(
+                            "CONTACT",
+                            style: GoogleFonts.montserrat(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.0070,
+                              // fontWeight: FontWeight.w300,
+                              color: Colors.white,
+                            ),
+                            // style: TextStyle(
+                            //   color:
+                            //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                            // ),
+                          ),
+                        ),
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: MaterialButton(
+                        hoverColor: kPrimaryColor.withAlpha(70),
+                        onPressed: () {
+                          //_scroll(index);
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Contact(),
+                            ),
+                          );
+                          //Navigator.pop(context);
+                        },
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.book,
+                            color: kPrimaryColor,
+                          ),
+                          title: Text(
+                            "CONTACT",
+                            style: GoogleFonts.montserrat(
+                              fontSize:
+                                  MediaQuery.of(context).size.width * 0.0070,
+                              // fontWeight: FontWeight.w300,
+                              color: _themeProv.lightTheme
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ),
-        VerticalDivider(
-          color: Colors.grey[300],
-          thickness: 3,
-          indent: 15,
-          endIndent: 15,
-        ),
-        for (int i = 0; i < _sectionsName.length; i++)
-          _appBarActions(_sectionsName[i], i, _sectionsIcons[i], _themeProv),
-        MediaQuery.of(context).size.width > 760
-            ? EntranceFader(
-                offset: Offset(0, -10),
-                delay: Duration(milliseconds: 100),
-                duration: Duration(milliseconds: 250),
-                child: Container(
-                  color: _navbarWhite ? mainColorWhite : Colors.transparent,
-                  padding: const EdgeInsets.all(8.0),
-                  height: 60.0,
-                  child: MaterialButton(
-                    hoverColor: Colors.black.withOpacity(0.5),
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Contact(),
+              Container(
+                  color: Colors.transparent,
+                  child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      EntranceFader(
+                        offset: Offset(0, -10),
+                        delay: Duration(milliseconds: 100),
+                        duration: Duration(milliseconds: 250),
+                        child: IconButton(
+                          icon: Icon(
+                            AntDesign.linkedin_square,
+                            color: Colors.white,
+                            size: MediaQuery.of(context).size.width * 0.0095,
+                          ),
+                          //iconSize: height,
+                          onPressed: () => launchURL(
+                              'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                          //hoverColor: kPrimaryColor,
+                        ),
                       ),
-                    ),
-                    child: Text(
-                      "CONTACT",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color: Colors.white,
+                      SizedBox(
+                        width: 10,
                       ),
-                      // style: TextStyle(
-                      //   color:
-                      //       themeProvider.lightTheme ? Colors.black : Colors.white,
-                      // ),
-                    ),
-                  ),
-                ),
-              )
-            : Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Contact(),
-                      ),
-                    );
-                    //Navigator.pop(context);
-                  },
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: kPrimaryColor,
-                    ),
-                    title: Text(
-                      "CONTACT",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color:
-                            _themeProv.lightTheme ? Colors.black : Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-        MediaQuery.of(context).size.width > 760
-            ? EntranceFader(
-                offset: Offset(0, -10),
-                delay: Duration(milliseconds: 100),
-                duration: Duration(milliseconds: 250),
-                child: Container(
-                  color: _navbarWhite ? mainColorWhite : Colors.transparent,
-                  padding: const EdgeInsets.all(8.0),
-                  height: 60.0,
-                  child: MaterialButton(
-                    hoverColor: Colors.black.withOpacity(0.5),
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CarrierDesktop(),
-                      ),
-                    ),
-                    child: Text(
-                      "CAREER",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                      ),
-                      // style: TextStyle(
-                      //   color:
-                      //       themeProvider.lightTheme ? Colors.black : Colors.white,
-                      // ),
-                    ),
-                  ),
-                ),
-              )
-            : Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationList(),
-                      ),
-                    );
-                    //Navigator.pop(context);
-                  },
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: kPrimaryColor,
-                    ),
-                    title: Text(
-                      "CAREER",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color:
-                            _themeProv.lightTheme ? Colors.black : Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-        Container(
-            color: Colors.transparent,
-            child: Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      AntDesign.linkedin_square,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () => launchURL(
-                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
-                    //hoverColor: kPrimaryColor,
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-              ],
-            ))
-      ],
-    );
+                    ],
+                  ))
+            ],
+          );
   }
 
   Widget _appBarMobile(ThemeProvider theme) {

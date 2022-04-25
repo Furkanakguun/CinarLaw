@@ -58,11 +58,11 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/practice_areas.jpg"),
+                      image: AssetImage("assets/CINAR_GIRIS.jpg"),
                       fit: BoxFit.cover,
                     ),
                   ),
-                  height: height * 0.20,
+                  height: height * 0.25,
                   width: width * 0.70,
                   //color: Colors.yellow),
                 ),

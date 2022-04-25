@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cinarlaw/sections/admin/admin_dashboard.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
@@ -66,9 +67,13 @@ class _EventPostCreateState extends State<EventPostCreate> {
           child: ListView(
             children: [
               //appBarSection(width),
-              //introBannerSection(height, width),
+              //introBannerSection(height, width)
               SizedBox(
                 height: height * 0.15,
+              ),
+              homeButton(width, height),
+              SizedBox(
+                height: 20,
               ),
               titleSection(height),
               SizedBox(
@@ -102,7 +107,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
               SizedBox(
                 height: 20,
               ),
-              homeButton(width, height)
+
               //Footer()
             ],
           ),
@@ -269,20 +274,19 @@ class _EventPostCreateState extends State<EventPostCreate> {
         height: 50,
         width: width < 1200 ? width * 0.60 : width * 0.20,
         child: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: mainColor,
-            size: 32,
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => MainPage(),
-              ),
-            );
-          },
-        ),
+            icon: Icon(
+              Icons.arrow_back,
+              color: mainColor,
+              size: 32,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AdminDashboard(),
+                ),
+              );
+            }),
       ),
     );
   }

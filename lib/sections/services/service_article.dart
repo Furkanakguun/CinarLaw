@@ -121,7 +121,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 ],
               ),
               SizedBox(
-                width: height * 0.050,
+                width: 100,
               ),
               FooterBlack()
             ],
@@ -133,7 +133,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
 
   Container practiceAreasListSection(double width, double height) => Container(
         width: width * 0.25,
-        height: height / 2 + 100,
+        height: height / 2 + 150,
         color: Colors.white,
         child: ListView(
           children: [

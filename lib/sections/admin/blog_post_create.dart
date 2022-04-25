@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cinarlaw/sections/admin/admin_dashboard.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
@@ -260,7 +261,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => MainPage(),
+                builder: (context) => AdminDashboard(),
               ),
             );
           },

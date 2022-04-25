@@ -87,41 +87,6 @@ class _EventsListState extends State<EventsList> {
               SizedBox(
                 height: height * 0.03,
               ),
-              // IntrinsicHeight(
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.center,
-              //     children: [
-              //       Container(
-              //         width: width * 0.32,
-              //         height: 50,
-              //         child: AdaptiveText(
-              //           "",
-              //           style: GoogleFonts.roboto(
-              //             fontSize: height * 0.018,
-              //             color: Colors.grey[500],
-              //             height: 1.5,
-              //           ),
-              //         ),
-              //       ),
-              //       VerticalDivider(
-              //         color: mainColor,
-              //         thickness: 3,
-              //       ),
-              //       Container(
-              //         height: 50,
-              //         width: width * 0.32,
-              //         child: AdaptiveText(
-              //           "",
-              //           style: GoogleFonts.roboto(
-              //             fontSize: height * 0.018,
-              //             color: Colors.grey[500],
-              //             height: 1.5,
-              //           ),
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
               Padding(
                 padding: const EdgeInsets.only(top: 28.0, bottom: 28.0),
                 child: Column(
@@ -172,26 +137,9 @@ class _EventsListState extends State<EventsList> {
                       );
                     },
                   )),
-              // Column(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Container(
-              //       width: width * 0.55,
-              //       child: AdaptiveText(
-              //         "",
-              //         style: GoogleFonts.montserrat(
-              //           fontSize: height * 0.016,
-              //           color: Colors.grey[500],
-              //           height: 1.8,
-              //         ),
-              //         textAlign: TextAlign.left,
-              //       ),
-              //     ),
-              //     SizedBox(
-              //       width: width * 0.012,
-              //     ),
-              //   ],
-              // ),
+              SizedBox(
+                height: 80,
+              ),
               FooterBlack()
             ],
           ),

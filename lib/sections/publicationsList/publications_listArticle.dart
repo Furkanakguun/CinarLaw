@@ -12,6 +12,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
+import '../Carrier/carrier.dart';
+import '../contact/contactDesktop.dart';
 
 class PublicationsListArticle extends StatefulWidget {
   final String title;
@@ -29,15 +31,11 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "OUR TEAM",
-    "CONTACT",
   ];
 
   final List<IconData> _sectionsIcons = [
     Icons.home,
     Icons.person,
-    Icons.settings,
-    Icons.article,
     Icons.phone,
   ];
   @override
@@ -329,6 +327,108 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
               ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
+          MediaQuery.of(context).size.width > 760
+            ? Container(
+                color: Colors.transparent,
+                padding: const EdgeInsets.all(8.0),
+                height: 60.0,
+                child: MaterialButton(
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => {
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()))
+                  },
+                  child: Text(
+                    "CAREER",
+                    style: GoogleFonts.montserrat(
+                      fontSize: MediaQuery.of(context).size.width * 0.0070,
+                      // fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),
+                    // style: TextStyle(
+                    //   color:
+                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                    // ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()));
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CAREER",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+           MediaQuery.of(context).size.width > 760
+            ? Container(
+                color: Colors.transparent,
+                padding: const EdgeInsets.all(8.0),
+                height: 60.0,
+                child: MaterialButton(
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => {
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => ContactDektop()))
+                  },
+                  child: Text(
+                    "CONTACT",
+                    style: GoogleFonts.montserrat(
+                      fontSize: MediaQuery.of(context).size.width * 0.0070,
+                      // fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),
+                    // style: TextStyle(
+                    //   color:
+                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                    // ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => ContactDektop()));
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CONTACT",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
         Container(
             color: mainColorWhite,
             child: Row(

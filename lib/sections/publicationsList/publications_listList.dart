@@ -1,6 +1,7 @@
 import 'package:cinarlaw/models/blog.dart';
 import 'package:cinarlaw/models/blog_big.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
+import 'package:cinarlaw/sections/contact/contactDesktop.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
@@ -27,7 +28,6 @@ class _PublicationsListListState extends State<PublicationsListList> {
   final List<String> _sectionsName = [
     "ABOUT",
     "PRACTICE AREAS",
-    "CONTACT",
   ];
 
   final List<IconData> _sectionsIcons = [
@@ -437,6 +437,57 @@ class _PublicationsListListState extends State<PublicationsListList> {
                     ),
                     title: Text(
                       "CAREER",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+        MediaQuery.of(context).size.width > 760
+            ? Container(
+                color: Colors.transparent,
+                padding: const EdgeInsets.all(8.0),
+                height: 60.0,
+                child: MaterialButton(
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => {
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => ContactDektop()))
+                  },
+                  child: Text(
+                    "CONTACT",
+                    style: GoogleFonts.montserrat(
+                      fontSize: MediaQuery.of(context).size.width * 0.0070,
+                      // fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),
+                    // style: TextStyle(
+                    //   color:
+                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                    // ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => ContactDektop()));
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CONTACT",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
