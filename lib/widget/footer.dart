@@ -20,7 +20,9 @@ class Footer extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(width: width / 4,),
+            SizedBox(
+              width: width / 4,
+            ),
             AdaptiveText(
               "ANKARA  ",
               style: GoogleFonts.montserrat(
@@ -47,7 +49,9 @@ class Footer extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-             SizedBox(width: width / 4,),
+            SizedBox(
+              width: width / 4,
+            ),
             AdaptiveText(
               "İSTANBUL",
               style: GoogleFonts.montserrat(
@@ -296,7 +300,10 @@ class FooterBlack extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(width: width / 4,),
+            SizedBox(
+              width: width / 4,
+            ),
+            tour(height),
             AdaptiveText(
               "ANKARA  ",
               style: GoogleFonts.montserrat(
@@ -323,7 +330,9 @@ class FooterBlack extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-             SizedBox(width: width / 4,),
+            SizedBox(
+              width: width / 4,
+            ),
             AdaptiveText(
               "İSTANBUL",
               style: GoogleFonts.montserrat(
@@ -360,5 +369,34 @@ class FooterBlack extends StatelessWidget {
         ),
       ]),
     );
+  }
+
+  InkWell tour(double height) {
+    return InkWell(
+            onTap: () => launchURL(
+                "https://tourmake.it/en/tour/0d44de8dd624c3eb54adc876ab0468fe"),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.search,
+                  color: Colors.white,
+                  size: 32,
+                ),
+                SizedBox(
+                  width: 7,
+                ),
+                TextRenderer(
+                  child: Text(
+                    "ÇINAR 360 \n" + "OFFICE TOUR",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: height * 0.018,
+                        fontWeight: FontWeight.w200),
+                  ),
+                ),
+              ],
+            ),
+          );
   }
 }

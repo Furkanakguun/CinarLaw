@@ -73,7 +73,11 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
               //appBarSection(width),
               //introBannerSection(height, width),
               SizedBox(
-                height: height * 0.15,
+                height: 50,
+              ),
+              homeButton(width, height),
+              SizedBox(
+                height: 20,
               ),
               titleSection(height),
               SizedBox(

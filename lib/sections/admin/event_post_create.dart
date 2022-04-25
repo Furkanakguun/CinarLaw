@@ -69,7 +69,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
               //appBarSection(width),
               //introBannerSection(height, width)
               SizedBox(
-                height: height * 0.15,
+                height: 50,
               ),
               homeButton(width, height),
               SizedBox(

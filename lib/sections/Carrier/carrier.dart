@@ -792,7 +792,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                   ),
                 ),
               ),
-              MediaQuery.of(context).size.width > 760
+        MediaQuery.of(context).size.width > 760
             ? Container(
                 color: Colors.transparent,
                 padding: const EdgeInsets.all(8.0),

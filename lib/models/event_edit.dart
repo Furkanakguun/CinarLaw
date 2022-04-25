@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../constants.dart';
 import '../sections/publicationsList/publications_listArticle.dart';
 
 class EventEdit extends StatefulWidget {
@@ -12,6 +13,7 @@ class EventEdit extends StatefulWidget {
   final String content;
   final String author;
   final String image;
+  final bool star;
 
   EventEdit(
       {Key key,
@@ -20,7 +22,8 @@ class EventEdit extends StatefulWidget {
       this.title,
       this.content,
       this.author,
-      this.image})
+      this.image,
+      this.star})
       : super(key: key);
 
   factory EventEdit.fromDocument(DocumentSnapshot doc) {
@@ -31,6 +34,7 @@ class EventEdit extends StatefulWidget {
       content: doc['content'],
       author: doc['author'],
       image: doc['image'],
+      star: doc['star'],
     );
   }
   @override
@@ -46,17 +50,95 @@ class _EventEditState extends State<EventEdit> {
         context, width, height, widget.date, widget.title, widget.image);
   }
 
+  showAlertDialog(BuildContext context, String message, String heading,
+      String buttonAcceptTitle, String buttonCancelTitle) {
+    // set up the buttons
+    Widget cancelButton = FlatButton(
+      child: Text(buttonCancelTitle,style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Colors.black,
+                        height: 1.4,
+                        fontWeight: FontWeight.w400)),
+      onPressed: () {},
+    );
+    Widget continueButton = FlatButton(
+      child: Text(buttonAcceptTitle,style: GoogleFonts.montserrat(
+                        fontSize: 14,
+                        color: Colors.red,
+                        height: 1.4,
+                        fontWeight: FontWeight.w400)),
+      onPressed: () {},
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text(heading,style: GoogleFonts.montserrat(
+                        fontSize: 20,
+                        color: Colors.black,
+                        height: 1.4,
+                        fontWeight: FontWeight.w400)),
+      content: Text(message,style: GoogleFonts.montserrat(
+                        fontSize: 16,
+                        color: Colors.black,
+                        height: 1.4,
+                        fontWeight: FontWeight.w400)),
+      actions: [
+        cancelButton,
+        continueButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
+  Widget starField(double height, double width) {
+    return Center(
+      child: Container(
+          width: 80,
+          height: 120,
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: CheckboxListTile(
+              secondary: const Icon(Icons.star),
+              title: const Text('Featured on Academia Page'),
+              //subtitle: Text('Ringing after 12 hours'),
+              value: widget.star,
+              onChanged: (bool value) {
+                // setState(() {
+                //   this.star = value;
+                // });
+              },
+            ),
+          )),
+    );
+  }
+
   Widget EventPostCard(BuildContext context, double width, double height,
       String date, String title, String imageUrl) {
     return ListTile(
-      trailing: ElevatedButton.icon(
-        icon: const Icon(
-          Icons.delete,
-          size: 22,
-          color: Colors.red,
-        ),
-        label: Text("Delete"),
-        onPressed: () {},
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.star,
+                color: widget.star ? Colors.yellow : Colors.grey,
+              )),
+          IconButton(
+              onPressed: () {
+               
+              },
+              icon: Icon(Icons.edit)),
+          IconButton(onPressed: () { showAlertDialog(context, 'Are you sure you want to delete?',
+                    "Delete Event?", "Delete", "Cancel");}, icon: Icon(Icons.delete)),
+        ],
       ),
       title: Stack(children: [
         Container(

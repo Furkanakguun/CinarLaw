@@ -41,11 +41,14 @@ class _EditEventsListState extends State<EditEventsList> {
     return feedItems;
   }
 
+ 
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      //appBar: AppBar(backgroundColor: Colors.white,shadowColor: Colors.white,),
       backgroundColor: Colors.white,
       body: Padding(
         padding: width < 1200
@@ -63,7 +66,7 @@ class _EditEventsListState extends State<EditEventsList> {
                     : EdgeInsets.only(top: 0.0, bottom: 0),
                 child: Align(
                   alignment: Alignment.center,
-                  child: Row(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
@@ -83,7 +86,7 @@ class _EditEventsListState extends State<EditEventsList> {
                         },
                       ),
                       SizedBox(
-                        width: 15,
+                        height: 20,
                       ),
                       Text(
                         "Çınar Academia Events",
