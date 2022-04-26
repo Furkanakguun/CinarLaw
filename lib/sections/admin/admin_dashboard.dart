@@ -1,4 +1,5 @@
 import 'package:cinarlaw/sections/admin/blog_post_create.dart';
+import 'package:cinarlaw/sections/admin/edit_blog_list.dart';
 import 'package:cinarlaw/sections/admin/edit_event_list.dart';
 import 'package:cinarlaw/sections/home/home.dart';
 import 'package:cinarlaw/sections/mainSection.dart';
@@ -269,7 +270,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => EventPostCreate(),
+                  builder: (context) => EditBlogsList(),
                 ),
               );
             },

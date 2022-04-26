@@ -15,7 +15,7 @@ import 'package:path/path.dart' as Path;
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:uuid/uuid.dart';
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
 
@@ -39,22 +39,10 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
   String uploadedPhotoUrl;
   String downloadPath;
   String imageName = "Choose Image";
+    String postId = Uuid().v4();
   bool star = false;
   CachedNetworkImageProvider pickedimage;
-  final List<String> _sectionsName = [
-    "ABOUT",
-    "PRACTICE AREAS",
-    "OUR TEAM",
-    "CONTACT",
-  ];
-
-  final List<IconData> _sectionsIcons = [
-    Icons.home,
-    Icons.person,
-    Icons.settings,
-    Icons.article,
-    Icons.phone,
-  ];
+  
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData;
@@ -215,7 +203,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
       showLoaderDialog(context);
       Reference _reference = FirebaseStorage.instance
           .ref('gs://cinar-law.appspot.com')
-          .child('images/${Path.basename(pickedFile.path)}');
+          .child('images/blogs/$postId');
       await _reference
           .putData(
         await pickedFile.readAsBytes(),
@@ -228,9 +216,9 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
               .collection('blogPosts')
               .doc('1')
               .collection('items')
-              .doc()
+              .doc(postId)
               .set({
-            "blogPostId": "123",
+            "blogPostId": postId,
             "content": contentController.text,
             "date": dateController.text,
             "image": uploadedPhotoUrl,
@@ -609,251 +597,5 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
     );
   }
 
-  Row appBarSection(double width) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Container(
-          height: 55,
-          width: width,
-          color: Colors.white,
-          child: _appBarTabDesktop(),
-        ),
-      ],
-    );
-  }
-
-  Widget _appBarTabDesktop() {
-    return AppBar(
-      iconTheme: IconThemeData(
-        color: Colors.black, //change your color here
-      ),
-      elevation: 0.0,
-      backgroundColor: Colors.white,
-      // flexibleSpace: Image(
-      //   image: AssetImage('assets/navbar.png'),
-      //   fit: BoxFit.cover,
-      // ),
-      title: MediaQuery.of(context).size.width < 780
-          ? NavBarLogo(
-              height: 20.0,
-            )
-          : Padding(
-              padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
-              child: Image.asset(
-                'assets/cinar_Logo.png',
-                fit: BoxFit.fitWidth,
-                height: 120,
-                width: 200,
-              ),
-            ),
-      actions: [
-        MediaQuery.of(context).size.width > 760
-            ? Container(
-                padding: const EdgeInsets.all(8.0),
-                height: 60.0,
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PublicationsListDesktop(),
-                    ),
-                  ),
-                  child: Text(
-                    "ÇINAR ACADEMIA",
-                    style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color: mainColorWhite),
-                    // style: TextStyle(
-                    //   color:
-                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
-                    // ),
-                  ),
-                ),
-              )
-            : Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
-                      ),
-                    );
-                    //Navigator.pop(context);
-                  },
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: kPrimaryColor,
-                    ),
-                    title: Text(
-                      "Çınar Academia",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-        MediaQuery.of(context).size.width > 760
-            ? Container(
-                padding: const EdgeInsets.all(8.0),
-                height: 60.0,
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MuseumListDesktop(),
-                    ),
-                  ),
-                  child: Text(
-                    "ÇINAR MUSEUM",
-                    style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color: mainColorWhite),
-                    // style: TextStyle(
-                    //   color:
-                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
-                    // ),
-                  ),
-                ),
-              )
-            : Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MuseumListDesktop(),
-                      ),
-                    );
-                    //Navigator.pop(context);
-                  },
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: kPrimaryColor,
-                    ),
-                    title: Text(
-                      "Çınar Museum",
-                      style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-        for (int i = 0; i < _sectionsName.length; i++)
-          _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
-        Container(
-            color: mainColorWhite,
-            child: Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                  width: 12,
-                ),
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      AntDesign.linkedin_square,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () => launchURL(
-                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
-                    //hoverColor: kPrimaryColor,
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-              ],
-            ))
-      ],
-    );
-  }
-
-  Widget _appBarActions(
-    String childText,
-    int index,
-    IconData icon,
-  ) {
-    return MediaQuery.of(context).size.width > 760
-        ? Container(
-            color: mainColorWhite,
-            padding: const EdgeInsets.all(8.0),
-            height: 60.0,
-            child: MaterialButton(
-              hoverColor: kPrimaryColor,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainPage(),
-                  ),
-                );
-              },
-              child: Text(
-                childText,
-                style: GoogleFonts.montserrat(
-                  fontSize: MediaQuery.of(context).size.width * 0.0070,
-                  //fontWeight: FontWeight.w300,
-                  color: Colors.white,
-                ),
-                // style: TextStyle(
-                //   color:
-                //       themeProvider.lightTheme ? Colors.black : Colors.white,
-                // ),
-              ),
-            ),
-          )
-        : Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MaterialButton(
-                  hoverColor: mainColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index + 1);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MainPage(),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    childText,
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
-                    //textAlign: TextAlign.start,
-                  ),
-                ),
-                Divider(color: Colors.brown[200])
-              ],
-            ),
-          );
-  }
+  
 }

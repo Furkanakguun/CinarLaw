@@ -6,9 +6,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
 import '../sections/admin/admin_dashboard.dart';
+import '../sections/admin/blog_post_edit.dart';
 import '../sections/publicationsList/publications_listArticle.dart';
 
-class EventEdit extends StatefulWidget {
+class BlogEdit extends StatefulWidget {
   final String blogPostId;
   final String date;
   final String title;
@@ -17,7 +18,7 @@ class EventEdit extends StatefulWidget {
   final String image;
   final bool star;
 
-  EventEdit(
+  BlogEdit(
       {Key key,
       this.blogPostId,
       this.date,
@@ -28,8 +29,8 @@ class EventEdit extends StatefulWidget {
       this.star})
       : super(key: key);
 
-  factory EventEdit.fromDocument(DocumentSnapshot doc) {
-    return EventEdit(
+  factory BlogEdit.fromDocument(DocumentSnapshot doc) {
+    return BlogEdit(
       blogPostId: doc['blogPostId'],
       date: doc['date'],
       title: doc['title'],
@@ -40,10 +41,10 @@ class EventEdit extends StatefulWidget {
     );
   }
   @override
-  State<EventEdit> createState() => _EventEditState();
+  State<BlogEdit> createState() => _BlogEditState();
 }
 
-class _EventEditState extends State<EventEdit> {
+class _BlogEditState extends State<BlogEdit> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -109,7 +110,7 @@ class _EventEditState extends State<EventEdit> {
     Navigator.pop(context);
     Future.delayed(const Duration(milliseconds: 1), () {
       FirebaseFirestore.instance
-          .collection('eventPosts')
+          .collection('blogPosts')
           .doc('1')
           .collection('items')
           .doc(widget.blogPostId)
@@ -148,7 +149,7 @@ class _EventEditState extends State<EventEdit> {
               ),
               Expanded(
                 child: Text(
-                  "Event Post Deleted",
+                  "Blog Post Deleted",
                   style: GoogleFonts.montserrat(
                       color: Colors.white,
                       fontSize: height * 0.022,
@@ -182,7 +183,7 @@ class _EventEditState extends State<EventEdit> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => EventPostEdit(
+                    builder: (context) => BlogPostEdit(
                       blogPostId: widget.blogPostId,
                       title: widget.title,
                       content: widget.content,
@@ -197,7 +198,7 @@ class _EventEditState extends State<EventEdit> {
           IconButton(
               onPressed: () {
                 showAlertDialog(context, 'Are you sure you want to delete?',
-                    "Delete Event?", "Delete", "Cancel");
+                    "Delete Blog?", "Delete", "Cancel");
               },
               icon: Icon(Icons.delete)),
         ],

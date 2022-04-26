@@ -13,33 +13,55 @@ import 'package:path/path.dart' as Path;
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:uuid/uuid.dart';
+
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
 
-class EventPostCreate extends StatefulWidget {
-  const EventPostCreate({
+class EventPostEdit extends StatefulWidget {
+  final String blogPostId;
+  final String imagePath;
+  final String date;
+  final String title;
+  final String content;
+  final bool star;
+  const EventPostEdit({
     Key key,
+    this.imagePath,
+    this.date,
+    this.title,
+    this.content,
+    this.star,
+    this.blogPostId,
   }) : super(key: key);
 
   @override
-  _EventPostCreateState createState() => _EventPostCreateState();
+  _EventPostEditState createState() => _EventPostEditState();
 }
 
-class _EventPostCreateState extends State<EventPostCreate> {
-  TextEditingController usernameController = TextEditingController();
+class _EventPostEditState extends State<EventPostEdit> {
+  TextEditingController titleController = TextEditingController();
   TextEditingController authorController = TextEditingController();
   TextEditingController contentController = TextEditingController();
   TextEditingController dateController = TextEditingController();
+
   bool isValidate = false;
   File file;
   PickedFile pFile;
   String uploadedPhotoUrl;
   String downloadPath;
-  String imageName = "Choose Image";
+  String imageName = "Change Image";
   bool star = false;
-  String postId = Uuid().v4();
   CachedNetworkImageProvider pickedimage;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    dateController.text = widget.date;
+    titleController.text = widget.title;
+    contentController.text = widget.content;
+    star = widget.star;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -214,15 +236,15 @@ class _EventPostCreateState extends State<EventPostCreate> {
               .collection('eventPosts')
               .doc('1')
               .collection('items')
-              .doc(postId)
-              .set({
-            "blogPostId": postId,
+              .doc(widget.blogPostId)
+              .update({
+            "blogPostId": widget.blogPostId,
             "content": contentController.text,
             "date": dateController.text,
             "image": uploadedPhotoUrl,
             "author": "",
             "star": star,
-            "title": usernameController.text
+            "title": titleController.text
           }).then((value) => showSubmitRequestSnackBar(context));
           setState(() {
             // pickedimage = CachedNetworkImageProvider(uploadedPhotoUrl);
@@ -231,8 +253,20 @@ class _EventPostCreateState extends State<EventPostCreate> {
         });
       });
     } else {
-      showErrortRequestSnackBar(context, "Please pick image");
-//write a code for android or ios
+      //showErrortRequestSnackBar(context, "Please pick image");
+      FirebaseFirestore.instance
+          .collection('eventPosts')
+          .doc('1')
+          .collection('items')
+          .doc(widget.blogPostId)
+          .update({
+        "blogPostId": widget.blogPostId,
+        "content": contentController.text,
+        "date": dateController.text,
+        "author": "",
+        "star": star,
+        "title": titleController.text
+      }).then((value) => showSubmitRequestSnackBar(context));
     }
   }
 
@@ -284,7 +318,11 @@ class _EventPostCreateState extends State<EventPostCreate> {
   showSubmitRequestSnackBar(BuildContext context) async {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    Navigator.pop(context);
+    //Navigator.pop(context);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AdminDashboard()),
+    );
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       backgroundColor: Colors.white,
       content: Container(
@@ -307,7 +345,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
               ),
               Expanded(
                 child: Text(
-                  "Event Post Uploaded",
+                  "Event Post Updated",
                   style: GoogleFonts.montserrat(
                       color: Colors.white,
                       fontSize: height * 0.022,
@@ -322,15 +360,6 @@ class _EventPostCreateState extends State<EventPostCreate> {
       ),
       duration: Duration(seconds: 3),
     ));
-    // bottomNotificaton(
-    //   context,
-    //   "Party Successfully Created",
-    //   Icon(
-    //     MaterialIcons.done_all,
-    //     color: Colors.green,
-    //     size: 32,
-    //   ),
-    // );
   }
 
   showErrortRequestSnackBar(BuildContext context, String text) async {
@@ -425,7 +454,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
               //goToThirdPage();
             },
             child: Text(
-              'Upload',
+              'Update',
               style: GoogleFonts.montserrat(
                   color: Colors.black,
                   fontSize: height * 0.018,
@@ -443,7 +472,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
           child: Padding(
             padding: const EdgeInsets.all(4),
             child: TextFormField(
-              controller: usernameController,
+              controller: titleController,
               onChanged: checkIsValidate(),
               validator: (val) {
                 if (val.isEmpty) {
@@ -537,8 +566,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
   }
 
   void _login() {
-    if (this.usernameController.text != "" &&
-        this.authorController.text != "") {
+    if (this.titleController.text != "" && this.authorController.text != "") {
       // Navigator.push(
       //   context,
       //   MaterialPageRoute(
@@ -552,7 +580,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
   }
 
   checkIsValidate() {
-    if (this.usernameController.text != "" &&
+    if (this.titleController.text != "" &&
         this.authorController.text != "" &&
         this.dateController != "") {
       setState(() {
@@ -569,7 +597,7 @@ class _EventPostCreateState extends State<EventPostCreate> {
     return Align(
       alignment: Alignment.center,
       child: Text(
-        "CREATE EVENT POST",
+        "EDIT EVENT POST",
         style: GoogleFonts.montserrat(
             color: mainColorWhite,
             fontSize: height * 0.028,
@@ -593,5 +621,4 @@ class _EventPostCreateState extends State<EventPostCreate> {
       ),
     );
   }
-
 }
