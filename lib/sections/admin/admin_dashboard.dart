@@ -65,7 +65,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
               ),
               titleSection(height),
               SizedBox(
-                height: height * 0.03,
+                height: height * 0.05,
               ),
               // username(height, width),
               // password(height, width),

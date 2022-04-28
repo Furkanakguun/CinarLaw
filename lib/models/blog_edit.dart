@@ -119,6 +119,19 @@ class _BlogEditState extends State<BlogEdit> {
     });
   }
 
+  handleUpdateStar() {
+    Navigator.pop(context);
+    Future.delayed(const Duration(milliseconds: 1), () {
+      FirebaseFirestore.instance
+          .collection('blogPosts')
+          .doc('1')
+          .collection('items')
+          .doc(widget.blogPostId)
+          .update({"star": !widget.star})
+          .then((value) => showSubmitRequestSnackBarNoPop(context));
+    });
+  }
+
   showSubmitRequestSnackBar(BuildContext context) async {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
@@ -149,7 +162,54 @@ class _BlogEditState extends State<BlogEdit> {
               ),
               Expanded(
                 child: Text(
-                  "Blog Post Deleted",
+                  "Blog Deleted",
+                  style: GoogleFonts.montserrat(
+                      color: Colors.white,
+                      fontSize: height * 0.022,
+                      fontWeight: FontWeight.w300),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      duration: Duration(seconds: 3),
+    ));
+  }
+
+  showSubmitRequestSnackBarNoPop(BuildContext context) async {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    //Navigator.pop(context);
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => AdminDashboard()),
+    // );
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      backgroundColor: Colors.white,
+      content: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color: Colors.green[400],
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          // border: Border.all(
+          //   width: 0.1,
+          //   color: Colors.black,
+          // ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Icon(Icons.done),
+              SizedBox(
+                width: 7,
+              ),
+              Expanded(
+                child: Text(
+                  "Blog Updated",
                   style: GoogleFonts.montserrat(
                       color: Colors.white,
                       fontSize: height * 0.022,
@@ -173,7 +233,9 @@ class _BlogEditState extends State<BlogEdit> {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                handleUpdateStar();
+              },
               icon: Icon(
                 Icons.star,
                 color: widget.star ? Colors.yellow : Colors.grey,

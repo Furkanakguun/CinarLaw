@@ -99,7 +99,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
               SizedBox(
                 height: 20,
               ),
-              homeButton(width, height)
+              //homeButton(width, height)
               //Footer()
             ],
           ),
