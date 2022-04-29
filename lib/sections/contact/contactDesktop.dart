@@ -712,7 +712,7 @@ class _ContactDektopState extends State<ContactDektop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -753,10 +753,10 @@ class _ContactDektopState extends State<ContactDektop> {
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () => {
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                        builder: (BuildContext context) => ContactDektop()))
+                        builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CONTACT",
+                    "CARREER",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -772,11 +772,11 @@ class _ContactDektopState extends State<ContactDektop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                        builder: (BuildContext context) => ContactDektop()));
+                        builder: (BuildContext context) => CarrierDesktop()));
                     //Navigator.pop(context);
                   },
                   child: ListTile(
@@ -785,7 +785,7 @@ class _ContactDektopState extends State<ContactDektop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CONTACT",
+                      "CARREER",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -823,7 +823,7 @@ class _ContactDektopState extends State<ContactDektop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -944,7 +944,7 @@ class _ContactDektopState extends State<ContactDektop> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MaterialButton(
-                  hoverColor: mainColor.withAlpha(70),
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index + 1);
                     Navigator.push(

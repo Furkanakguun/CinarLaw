@@ -28,6 +28,7 @@ import 'package:cinarlaw/widget/arrowOnTop.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widget/adaptiveText.dart';
+import 'admin/admin_login.dart';
 import 'museum/museum_listDesktop.dart';
 
 bool isTr = false;
@@ -82,7 +83,7 @@ class _MainPageState extends State<MainPage> {
     } else if (i == 2) {
       return Services();
     } else if (i == 3) {
-      return Footer();
+      return FooterBrown();
     } else {
       return Container();
     }
@@ -595,6 +596,33 @@ class _MainPageState extends State<MainPage> {
                               'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
                           //hoverColor: kPrimaryColor,
                         ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  )),
+              Container(
+                  color: Colors.transparent,
+                  child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      IconButton(
+                        icon: Icon(
+                          Ionicons.md_exit,
+                          color: Colors.white,
+                          size: MediaQuery.of(context).size.width * 0.0095,
+                        ),
+                        //iconSize: height,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AdminLogin(),
+                            ),
+                          );
+                        },
+                        //hoverColor: kPrimaryColor,
                       ),
                       SizedBox(
                         width: 10,

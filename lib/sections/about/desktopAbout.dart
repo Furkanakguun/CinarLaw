@@ -17,7 +17,7 @@ class AboutDesktop extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Container(
-      height: height + 300,
+      height: height + 130,
       padding: EdgeInsets.symmetric(
         horizontal: width * 0.018,
       ),
@@ -107,7 +107,7 @@ class AboutDesktop extends StatelessWidget {
                   ),
                   Container(
                     width: width * 0.32,
-                    height: height / 3,
+                    height: height / 2,
                     child: TextRenderer(
                       child: Text(
                         "\n\n"
@@ -141,7 +141,7 @@ class AboutDesktop extends StatelessWidget {
                   ),
                   Container(
                     width: width * 0.32,
-                     height: height / 3,
+                     height: height / 2,
                     child: TextRenderer(
                       child: Text(
                         "\n\n"+

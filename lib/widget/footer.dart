@@ -303,7 +303,122 @@ class FooterBlack extends StatelessWidget {
             SizedBox(
               width: width / 4,
             ),
-            tour(height),
+            //tour(height),
+            AdaptiveText(
+              "ANKARA  ",
+              style: GoogleFonts.montserrat(
+                  fontSize: width < 1200 ? height * 0.045 : height * 0.035,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white,
+                  letterSpacing: 0.0),
+            ),
+            TextRenderer(
+              child: AdaptiveText(
+                "  İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 " +
+                    "Oran/Çankaya " +
+                    "Tel: +90 312 426 90 22 ",
+                style: GoogleFonts.montserrat(
+                  color: Colors.white,
+                  fontSize: width < 1200 ? height * 0.013 : height * 0.015,
+                  fontWeight: FontWeight.w300,
+                  letterSpacing: 0.0,
+                ),
+              ),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: width / 4,
+            ),
+            AdaptiveText(
+              "İSTANBUL",
+              style: GoogleFonts.montserrat(
+                  fontSize: width < 1200 ? height * 0.045 : height * 0.035,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white,
+                  letterSpacing: 0.0),
+            ),
+            TextRenderer(
+              child: AdaptiveText(
+                "  Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5  " +
+                    "Maslak / Sarıyer " +
+                    "Tel: +90 212 963 02 29 ",
+                style: GoogleFonts.montserrat(
+                  color: Colors.white,
+                  fontSize: width < 1200 ? height * 0.013 : height * 0.015,
+                  fontWeight: FontWeight.w300,
+                  letterSpacing: 0.0,
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 25,
+        ),
+        AdaptiveText(
+          "info@cinarlaw.com",
+          style: GoogleFonts.montserrat(
+              fontSize: width < 1200 ? height * 0.045 : height * 0.018,
+              fontWeight: FontWeight.w300,
+              color: Colors.white,
+              letterSpacing: 0.0),
+        ),
+      ]),
+    );
+  }
+
+  InkWell tour(double height) {
+    return InkWell(
+            onTap: () => launchURL(
+                "https://tourmake.it/en/tour/0d44de8dd624c3eb54adc876ab0468fe"),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.search,
+                  color: Colors.white,
+                  size: 32,
+                ),
+                SizedBox(
+                  width: 7,
+                ),
+                TextRenderer(
+                  child: Text(
+                    "ÇINAR 360 \n" + "OFFICE TOUR",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: height * 0.018,
+                        fontWeight: FontWeight.w200),
+                  ),
+                ),
+              ],
+            ),
+          );
+  }
+}
+
+
+class FooterBrown extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    return Container(
+      color: mainColor,
+      height: height * 0.25,
+      width: width,
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: width / 4,
+            ),
+            //tour(height),
             AdaptiveText(
               "ANKARA  ",
               style: GoogleFonts.montserrat(

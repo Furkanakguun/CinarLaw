@@ -651,29 +651,78 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
     return Stack(
       children: [
         Container(
-            height: height * 0.50,
-            width: width,
-            child: Carousel(
-                radius: Radius.circular(35),
-                // onImageTap: (int a) {
-                //   print('ovye');
-                // },
-                borderRadius: true,
-                //radius: Radius.circular(35),
-                boxFit: BoxFit.cover,
-                autoplay: false,
-                //animationCurve: Curves.,
-                animationDuration: Duration(milliseconds: 2000),
-                autoplayDuration: Duration(milliseconds: 10000),
-                dotSize: 7.0,
-                dotIncreasedColor: mainColor,
-                dotBgColor: Colors.transparent,
-                dotPosition: DotPosition.bottomCenter,
-                dotVerticalPadding: 15.0,
-                showIndicator: true,
-                indicatorBgPadding: 3.0,
-                //moveIndicatorFromBottom: ,
-                images: showcourselImagesList())),
+          height: height * 0.50,
+          width: width,
+          // child: Carousel(
+          //   radius: Radius.circular(35),
+          //   // onImageTap: (int a) {
+          //   //   print('ovye');
+          //   // },
+          //   borderRadius: true,
+          //   //radius: Radius.circular(35),
+          //   boxFit: BoxFit.cover,
+          //   autoplay: false,
+          //   //animationCurve: Curves.,
+          //   animationDuration: Duration(milliseconds: 2000),
+          //   autoplayDuration: Duration(milliseconds: 10000),
+          //   dotSize: 7.0,
+          //   dotIncreasedColor: mainColor,
+          //   dotBgColor: Colors.transparent,
+          //   dotPosition: DotPosition.bottomCenter,
+          //   dotVerticalPadding: 15.0,
+          //   showIndicator: true,
+          //   indicatorBgPadding: 3.0,
+          //   //moveIndicatorFromBottom: ,
+          //   images: showcourselImagesList(),
+          // ),
+          child: CarouselSlider(
+              options: CarouselOptions(
+                height: height * 0.50,
+                viewportFraction: 1,
+                enlargeCenterPage: false,
+                //autoPlayCurve: Curves.fastOutSlowIn,
+                enableInfiniteScroll: true,
+                autoPlayAnimationDuration: Duration(seconds: 4),
+                autoPlay: true,
+              ),
+              items: [
+                //1st Image of Slider
+                Container(
+                  margin: EdgeInsets.all(6.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: DecorationImage(
+                      image: AssetImage("assets/akademi_1.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+
+                //2nd Image of Slider
+                Container(
+                  margin: EdgeInsets.all(6.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: DecorationImage(
+                      image: AssetImage("assets/akademi_2.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+
+                //3rd Image of Slider
+                Container(
+                  margin: EdgeInsets.all(6.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8.0),
+                    image: DecorationImage(
+                      image: AssetImage("assets/akademi_3.jpg"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ]),
+        ),
         appBarSection(width),
       ],
     );

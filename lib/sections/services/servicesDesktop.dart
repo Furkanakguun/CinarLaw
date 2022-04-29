@@ -29,7 +29,8 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
 
     return Container(
       height: height,
-      color: mainColor.withOpacity(0.9),
+      //color: mainColor.withOpacity(0.9),
+      color: Colors.white,
       //padding: EdgeInsets.symmetric(horizontal: width * 0.02),
       child: Column(
         children: [
@@ -47,9 +48,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                   width: width,
                 ),
                 Container(
-                    height: height * 0.15,
-                    width: width,
-                    color: mainColor.withOpacity(0.04)),
+                    height: height * 0.15, width: width, color: Colors.white),
               ],
             ),
             Padding(
@@ -57,8 +56,9 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
+                    color: Colors.white,
                     image: DecorationImage(
-                      image: AssetImage("assets/CINAR_GIRIS.jpg"),
+                      image: AssetImage("assets/masa_crop.jpg"),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -69,22 +69,15 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               ),
             ),
           ]),
-          // Align(
-          //   alignment: Alignment.center,
-          //   child: Text(
-          //     "OUR PRACTICE AREAS",
-          //     style: GoogleFonts.montserrat(
-          //         color: mainColorWhite.withOpacity(0.9),
-          //         fontSize: height * 0.018,
-          //         fontWeight: FontWeight.w200),
-          //   ),
-          // ),
+          SizedBox(
+            height: height * 0.03,
+          ),
           Align(
             alignment: Alignment.center,
             child: Text(
               "OUR PRACTICE AREAS",
               style: GoogleFonts.montserrat(
-                  color: Colors.white,
+                  color: mainColor.withOpacity(0.9),
                   fontSize: height * 0.040,
                   fontWeight: FontWeight.w500),
             ),
@@ -150,8 +143,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        ServiceArticle(
+                                    builder: (context) => ServiceArticle(
                                       title: kServicesTitles[index],
                                       description: kServicesLinks[index],
                                       author: "",
@@ -163,9 +155,9 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(
-                                    color: Colors.white.withOpacity(0.9),
+                                    color: mainColor.withOpacity(0.9),
                                     fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w200),
+                                    fontWeight: FontWeight.w400),
                                 textAlign: TextAlign.start,
                               ),
                             ),
@@ -199,8 +191,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        ServiceArticle(
+                                    builder: (context) => ServiceArticle(
                                       title: kServicesTitles[index],
                                       description: kServicesLinks[index],
                                       author: "",
@@ -212,9 +203,9 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(
-                                    color: Colors.white.withOpacity(0.9),
+                                    color: mainColor.withOpacity(0.9),
                                     fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w200),
+                                    fontWeight: FontWeight.w400),
                                 textAlign: TextAlign.start,
                               ),
                             ),
@@ -244,27 +235,25 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InkWell(
-                              onTap: () =>
-                                  {
-                                      Navigator.push(
+                              onTap: () => {
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        ServiceArticle(
+                                    builder: (context) => ServiceArticle(
                                       title: kServicesTitles[index],
                                       description: kServicesLinks[index],
                                       author: "",
                                     ),
                                   ),
                                 )
-                                    //showOurAreasAlertDialog(context, index)
-                                    },
+                                //showOurAreasAlertDialog(context, index)
+                              },
                               child: Text(
                                 kServicesTitles[index],
                                 style: GoogleFonts.montserrat(
-                                    color: Colors.white.withOpacity(0.9),
+                                    color: mainColor.withOpacity(0.9),
                                     fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w200),
+                                    fontWeight: FontWeight.w400),
                                 textAlign: TextAlign.start,
                               ),
                             ),

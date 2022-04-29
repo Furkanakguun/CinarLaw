@@ -85,7 +85,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               SizedBox(
                 height: 80,
               ),
-              FooterBlack()
+              FooterBrown()
             ],
           ),
         ),
@@ -182,7 +182,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
       ),
       Container(
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.white,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.2),
@@ -203,7 +203,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             child: Text(
               "Legal Internship Application",
               style: GoogleFonts.montserrat(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: height * 0.025,
                   fontWeight: FontWeight.w500),
             ),
@@ -218,7 +218,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               child: AdaptiveText(
                 "The Application shall send their applications to info@cinarlaw.com",
                 style: GoogleFonts.montserrat(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: height * 0.015,
                     height: 1.8,
                     fontWeight: FontWeight.w400),
@@ -567,7 +567,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/museum_stack.jpg"),
+              image: AssetImage("assets/carrier.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -631,7 +631,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -656,7 +656,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index);
                     // Navigator.push(
@@ -688,7 +688,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () => Navigator.of(context).pushReplacement(
                       new MaterialPageRoute(
                           builder: (BuildContext context) =>
@@ -709,7 +709,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -747,13 +747,13 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () => {
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                        builder: (BuildContext context) => ContactDektop()))
+                        builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CONTACT",
+                    "CARREER",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -769,11 +769,11 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
+                  hoverColor:Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                        builder: (BuildContext context) => ContactDektop()));
+                        builder: (BuildContext context) => CarrierDesktop()));
                     //Navigator.pop(context);
                   },
                   child: ListTile(
@@ -782,7 +782,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CONTACT",
+                      "CARREER",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -798,7 +798,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () => {
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
                         builder: (BuildContext context) => ContactDektop()))
@@ -820,7 +820,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor.withAlpha(70),
+                  hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -884,7 +884,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             padding: const EdgeInsets.all(8.0),
             height: 60.0,
             child: MaterialButton(
-              hoverColor: kPrimaryColor,
+              hoverColor: Colors.black.withOpacity(0.5),
               onPressed: () {
                 Navigator.of(context).pushReplacement(new MaterialPageRoute(
                     builder: (BuildContext context) => MainPage()));
@@ -909,7 +909,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MaterialButton(
-                  hoverColor: mainColor.withAlpha(70),
+                  hoverColor:Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index + 1);
                     Navigator.push(
