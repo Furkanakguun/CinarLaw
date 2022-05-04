@@ -196,14 +196,70 @@ class _AdminLoginState extends State<AdminLogin> {
         ),
       );
     } else {
-       Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => AdminDashboard(),
-        ),
-      );
+      showErrortRequestSnackBar(context, "Username or password invalid");
+      //  Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => AdminDashboard(),
+      //   ),
+      // );
       //formGlobalKey.currentState.validate();
     }
+  }
+
+  showErrortRequestSnackBar(BuildContext context, String text) async {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    //Navigator.pop(context);
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      backgroundColor: Colors.white,
+      content: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color: Colors.grey[400],
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+          // border: Border.all(
+          //   width: 0.1,
+          //   color: Colors.black,
+          // ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Row(
+            children: [
+              Icon(
+                Icons.error,
+                color: Colors.red,
+              ),
+              SizedBox(
+                width: 7,
+              ),
+              Expanded(
+                child: Text(
+                  text,
+                  style: GoogleFonts.montserrat(
+                      color: Colors.white,
+                      fontSize: height * 0.022,
+                      fontWeight: FontWeight.w300),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      duration: Duration(seconds: 3),
+    ));
+    // bottomNotificaton(
+    //   context,
+    //   "Party Successfully Created",
+    //   Icon(
+    //     MaterialIcons.done_all,
+    //     color: Colors.green,
+    //     size: 32,
+    //   ),
+    // );
   }
 
   checkIsValidate() {
