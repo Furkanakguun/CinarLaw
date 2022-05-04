@@ -19,7 +19,7 @@ class PortfolioMobileTab extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Text(
-                "ABOUT US",
+                "ABOUT US US",
                 style: GoogleFonts.montserrat(
                     color: mainColorWhite,
                     fontSize: height * 0.018,

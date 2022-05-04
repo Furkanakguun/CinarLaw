@@ -25,7 +25,7 @@ class EventsList extends StatefulWidget {
 
 class _EventsListState extends State<EventsList> {
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
     "CONTACT",
   ];
@@ -355,7 +355,7 @@ class _EventsListState extends State<EventsList> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREER",
+                    "CAREERS",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -384,7 +384,7 @@ class _EventsListState extends State<EventsList> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREER",
+                      "CAREERS",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,

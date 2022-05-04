@@ -19,7 +19,7 @@ class HomeTab extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/CINAR.png"),
+          image: AssetImage("assets/tree.jpg"),
           fit: BoxFit.cover,
         ),
       ),

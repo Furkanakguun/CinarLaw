@@ -47,7 +47,7 @@ class _MainPageState extends State<MainPage> {
       ScrollController(initialScrollOffset: 260);
 
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
   ];
 
@@ -95,7 +95,7 @@ class _MainPageState extends State<MainPage> {
     _scrollController.addListener(() {
       if (_scrollController.position.pixels < 100) {
         //print('topp');
-        _scrollController.jumpTo(160);
+        _scrollController.jumpTo(145);
         setState(() {
           //_scroll(1);
         });
@@ -461,7 +461,7 @@ class _MainPageState extends State<MainPage> {
                             ),
                           ),
                           child: Text(
-                            "CAREER",
+                            "CAREERS",
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -496,7 +496,7 @@ class _MainPageState extends State<MainPage> {
                             color: kPrimaryColor,
                           ),
                           title: Text(
-                            "CAREER",
+                            "CAREERS",
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -666,7 +666,7 @@ class _MainPageState extends State<MainPage> {
                         );
                       },
                       child: Text(
-                        "CAREER",
+                        "CAREERS",
                         style: TextStyle(
                           color: Colors.black,
                         ),

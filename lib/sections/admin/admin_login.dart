@@ -30,7 +30,7 @@ class _AdminLoginState extends State<AdminLogin> {
   TextEditingController passwordController = TextEditingController();
   bool isValidate = false;
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
     "OUR TEAM",
     "CONTACT",

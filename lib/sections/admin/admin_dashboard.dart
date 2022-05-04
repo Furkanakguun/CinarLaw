@@ -32,7 +32,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
   TextEditingController passwordController = TextEditingController();
   bool isValidate = false;
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
     "OUR TEAM",
     "CONTACT",

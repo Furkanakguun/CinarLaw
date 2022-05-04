@@ -22,7 +22,7 @@ class MuseumListDesktop extends StatefulWidget {
 
 class _MuseumListDesktopState extends State<MuseumListDesktop> {
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
     "CONTACT",
   ];
@@ -696,7 +696,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREER",
+                    "CAREERS",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -725,7 +725,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREER",
+                      "CAREERS",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,

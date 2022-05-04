@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cinarlaw/main.dart';
 import 'package:cinarlaw/widget/alertDialog.dart';
 import 'package:cinarlaw/widget/customBtn.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class _ServiceMobileState extends State<ServiceMobile> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Container(
-      color: mainColor.withOpacity(0.9),
+      color: Colors.white,
       child: Column(
         children: [
           SizedBox(
@@ -43,7 +44,7 @@ class _ServiceMobileState extends State<ServiceMobile> {
             child: Text(
               "Why  Çınar&Çınar",
               style: GoogleFonts.montserrat(
-                  color: Colors.white,
+                  color: mainColor,
                   fontSize: height * 0.035,
                   fontWeight: FontWeight.w500),
             ),
@@ -62,13 +63,13 @@ class _ServiceMobileState extends State<ServiceMobile> {
                     "",
                     style: GoogleFonts.roboto(
                       fontSize: height * 0.018,
-                      color: Colors.grey[500],
+                      color: mainColor,
                       height: 1.5,
                     ),
                   ),
                 ),
                 VerticalDivider(
-                  color: Colors.grey[300],
+                  color: mainColor,
                   thickness: 3,
                 ),
                 Container(
@@ -86,20 +87,24 @@ class _ServiceMobileState extends State<ServiceMobile> {
               ],
             ),
           ),
-          for (int index = 0; index < 7; index++)
+          SizedBox(
+            height: height * 0.03,
+          ),
+          for (int index = 0; index < 4; index++)
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(18.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   InkWell(
-                    onTap: () => {showOurAreasAlertDialogMobile(context, index)},
+                    onTap: () =>
+                        {showOurAreasAlertDialogMobile(context, index)},
                     child: Text(
                       kServicesTitles[index],
                       style: GoogleFonts.montserrat(
-                          color: Colors.white.withOpacity(0.9),
+                          color: mainColor.withOpacity(0.9),
                           fontSize: height * 0.018,
-                          fontWeight: FontWeight.w200),
+                          fontWeight: FontWeight.w400),
                       textAlign: TextAlign.start,
                     ),
                   ),
@@ -111,10 +116,10 @@ class _ServiceMobileState extends State<ServiceMobile> {
               ),
             ),
 
-          for (int index = 7; index < 14; index++)
+          for (int index = 4; index < 8; index++)
             more1
                 ? Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(18.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -124,9 +129,9 @@ class _ServiceMobileState extends State<ServiceMobile> {
                           child: Text(
                             kServicesTitles[index],
                             style: GoogleFonts.montserrat(
-                                color: Colors.white.withOpacity(0.9),
+                                color: mainColor.withOpacity(0.9),
                                 fontSize: height * 0.018,
-                                fontWeight: FontWeight.w200),
+                                fontWeight: FontWeight.w400),
                             textAlign: TextAlign.start,
                           ),
                         ),
@@ -139,10 +144,10 @@ class _ServiceMobileState extends State<ServiceMobile> {
                   )
                 : Container(),
 
-          for (int index = 14; index < 21; index++)
+          for (int index = 8; index < 11; index++)
             more2
                 ? Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(18.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -152,9 +157,9 @@ class _ServiceMobileState extends State<ServiceMobile> {
                           child: Text(
                             kServicesTitles[index],
                             style: GoogleFonts.montserrat(
-                                color: Colors.white.withOpacity(0.9),
+                                color: mainColor.withOpacity(0.9),
                                 fontSize: height * 0.018,
-                                fontWeight: FontWeight.w200),
+                                fontWeight: FontWeight.w400),
                             textAlign: TextAlign.start,
                           ),
                         ),
@@ -262,24 +267,27 @@ class _ServiceMobileState extends State<ServiceMobile> {
           //       autoPlayAnimationDuration: Duration(milliseconds: 800),
           //       enableInfiniteScroll: false),
           // ),
-          !more1 || !more2 ? Container(
-            height: 40,
-            decoration: new BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(15)),
-              color: mainColor.withOpacity(0.05), //background color of box
-              // boxShadow: [
-              //   BoxShadow(
-              //     color: Colors.white60,
-              //     blurRadius: 15.0, // soften the shadow
-              //     spreadRadius: 5.0, //extend the shadow
-              //     offset: Offset(
-              //       0.0, // Move to right 10  horizontally
-              //       0.0, // Move to bottom 10 Vertically
-              //     ),
-              //   )
-              // ],
-            ),
-          ): Container()
+          !more1 || !more2
+              ? Container(
+                  height: 40,
+                  decoration: new BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    color:
+                        mainColor.withOpacity(0.05), //background color of box
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     color: Colors.white60,
+                    //     blurRadius: 15.0, // soften the shadow
+                    //     spreadRadius: 5.0, //extend the shadow
+                    //     offset: Offset(
+                    //       0.0, // Move to right 10  horizontally
+                    //       0.0, // Move to bottom 10 Vertically
+                    //     ),
+                    //   )
+                    // ],
+                  ),
+                )
+              : Container()
           // Divider(
           //   color: Colors.grey[300],
           //   thickness: 1,

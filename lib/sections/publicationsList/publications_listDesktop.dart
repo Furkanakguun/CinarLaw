@@ -31,7 +31,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   List<BlogPost> starredBlogList;
   bool starredBlogPostsLoading = true;
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
   ];
 
@@ -678,12 +678,12 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
           child: CarouselSlider(
               options: CarouselOptions(
                 height: height * 0.50,
-                viewportFraction: 1,
+                viewportFraction: 1.1,
                 enlargeCenterPage: false,
                 //autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
                 autoPlayAnimationDuration: Duration(seconds: 4),
-                autoPlay: true,
+                autoPlay: false,
               ),
               items: [
                 //1st Image of Slider
@@ -894,7 +894,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREER",
+                    "CAREERS",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -923,7 +923,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREER",
+                      "CAREERS",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,

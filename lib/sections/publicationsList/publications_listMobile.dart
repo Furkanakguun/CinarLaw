@@ -26,7 +26,7 @@ class PublicationsListMobile extends StatefulWidget {
 
 class _PublicationsListMobileState extends State<PublicationsListMobile> {
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
     "OUR TEAM",
     "CONTACT",

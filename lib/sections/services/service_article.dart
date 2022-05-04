@@ -23,7 +23,7 @@ class ServiceArticle extends StatefulWidget {
 
 class _ServiceArticleState extends State<ServiceArticle> {
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
     "CONTACT",
   ];

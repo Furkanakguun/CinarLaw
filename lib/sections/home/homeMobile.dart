@@ -26,7 +26,7 @@ class _HomeMobileState extends State<HomeMobile> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/CINAR.png"),
+          image: AssetImage("assets/tree.jpg"),
           fit: BoxFit.cover,
         ),
       ),
@@ -50,7 +50,11 @@ class _HomeMobileState extends State<HomeMobile> {
               children: [
                 Column(
                   //mainAxisSize: MainAxisSize.min,
+
                   children: [
+                    SizedBox(
+                      height: 25,
+                    ),
                     Container(
                       width: 200,
                       height: 100,
@@ -156,7 +160,7 @@ class _HomeMobileState extends State<HomeMobile> {
                                   letterSpacing: 0.0),
                             ),
                             onPressed: () {
-                                setState(() {
+                              setState(() {
                                 isTr = false;
                               });
                             }),
@@ -208,7 +212,6 @@ class _HomeMobileState extends State<HomeMobile> {
                             }),
                   ],
                 )
-
               ],
             ),
           ),

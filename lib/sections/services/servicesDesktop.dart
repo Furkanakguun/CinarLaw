@@ -75,7 +75,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "OUR PRACTICE AREAS",
+              "Our Practice Areas",
               style: GoogleFonts.montserrat(
                   color: mainColor.withOpacity(0.9),
                   fontSize: height * 0.040,

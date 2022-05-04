@@ -19,7 +19,7 @@ class MuseumListTab extends StatefulWidget {
 
 class _MuseumListTabState extends State<MuseumListTab> {
     final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
     "OUR TEAM",
     "CONTACT",

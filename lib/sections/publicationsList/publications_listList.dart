@@ -26,7 +26,7 @@ class PublicationsListList extends StatefulWidget {
 
 class _PublicationsListListState extends State<PublicationsListList> {
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
   ];
 
@@ -407,7 +407,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREER",
+                    "CAREERS",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -436,7 +436,7 @@ class _PublicationsListListState extends State<PublicationsListList> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREER",
+                      "CAREERS",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,

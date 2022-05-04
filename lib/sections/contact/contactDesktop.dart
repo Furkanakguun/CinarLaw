@@ -24,7 +24,7 @@ class ContactDektop extends StatefulWidget {
 
 class _ContactDektopState extends State<ContactDektop> {
   final List<String> _sectionsName = [
-    "ABOUT",
+    "ABOUT US",
     "PRACTICE AREAS",
   ];
 
@@ -120,7 +120,7 @@ class _ContactDektopState extends State<ContactDektop> {
                     child: Container(
                       color: Colors.white,
                       width: width < 1200 ? width * 0.40 : width * 0.20,
-                      height:  width < 1200 ? height + 100 : height / 2 ,
+                      height: width < 1200 ? height + 100 : height / 2,
                       child: width < 1200
                           ? Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -231,7 +231,9 @@ class _ContactDektopState extends State<ContactDektop> {
                                       ),
                                     ]),
                                   ),
-                                  SizedBox(height: 12,),
+                                  SizedBox(
+                                    height: 12,
+                                  ),
                                   Container(
                                     decoration: BoxDecoration(
                                       color: Colors.white,
@@ -326,8 +328,8 @@ class _ContactDektopState extends State<ContactDektop> {
                                                 BorderRadius.circular(12),
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
-                                              image:
-                                                  AssetImage("assets/cinar_ist.PNG"),
+                                              image: AssetImage(
+                                                  "assets/cinar_ist.PNG"),
                                             ),
                                           ),
                                           // width: width < 1200
@@ -425,25 +427,31 @@ class _ContactDektopState extends State<ContactDektop> {
                                       SizedBox(
                                         height: 10,
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          height: height / 5,
-                                          //width: 60,
-                                          decoration: BoxDecoration(
-                                            //color: Colors.transparent,
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                  "assets/cinar_ankara.PNG"),
+                                      InkWell(
+                                        onTap: () {
+                                          launchURL(
+                                              "https://www.google.com/maps?z=16&daddr=39.8518066,32.8571376");
+                                        },
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Container(
+                                            height: height / 5,
+                                            //width: 60,
+                                            decoration: BoxDecoration(
+                                              //color: Colors.transparent,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              image: DecorationImage(
+                                                fit: BoxFit.cover,
+                                                image: AssetImage(
+                                                    "assets/cinar_ankara.PNG"),
+                                              ),
                                             ),
+                                            // width: width < 1200
+                                            //     ? width * 0.60
+                                            //     : width * 0.20,
+                                            //height: height * 0.30,
                                           ),
-                                          // width: width < 1200
-                                          //     ? width * 0.60
-                                          //     : width * 0.20,
-                                          //height: height * 0.30,
                                         ),
                                       ),
                                     ]),
@@ -531,33 +539,39 @@ class _ContactDektopState extends State<ContactDektop> {
                                       SizedBox(
                                         height: 10,
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          height: height / 5,
-                                          //width: 60,
-                                          decoration: BoxDecoration(
-                                            //color: Colors.transparent,
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image:
-                                                  AssetImage("assets/cinar_ist.PNG"),
+                                      InkWell(
+                                        onTap: () => launchURL(
+                                            "https://www.google.com/maps/dir//41.11755,29.015142/@41.1175068,28.9451,12z"),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Container(
+                                            height: height / 5,
+                                            //width: 60,
+                                            decoration: BoxDecoration(
+                                              //color: Colors.transparent,
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              image: DecorationImage(
+                                                fit: BoxFit.cover,
+                                                image: AssetImage(
+                                                    "assets/cinar_ist.PNG"),
+                                              ),
                                             ),
+                                            // width: width < 1200
+                                            //     ? width * 0.60
+                                            //     : width * 0.20,
+                                            //height: height * 0.30,
                                           ),
-                                          // width: width < 1200
-                                          //     ? width * 0.60
-                                          //     : width * 0.20,
-                                          //height: height * 0.30,
                                         ),
                                       ),
                                     ]),
                                   ),
                                 ]),
                     )),
-                SizedBox(height: 15,),
-                FooterBlack()
+                SizedBox(
+                  height: 15,
+                ),
+                //FooterBlack()
               ],
             ),
           ),
@@ -795,7 +809,7 @@ class _ContactDektopState extends State<ContactDektop> {
                   ),
                 ),
               ),
-               MediaQuery.of(context).size.width > 760
+        MediaQuery.of(context).size.width > 760
             ? Container(
                 color: Colors.transparent,
                 padding: const EdgeInsets.all(8.0),
