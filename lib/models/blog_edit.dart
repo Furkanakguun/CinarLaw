@@ -127,8 +127,8 @@ class _BlogEditState extends State<BlogEdit> {
           .doc('1')
           .collection('items')
           .doc(widget.blogPostId)
-          .update({"star": !widget.star})
-          .then((value) => showSubmitRequestSnackBarNoPop(context));
+          .update({"star": !widget.star}).then(
+              (value) => showSubmitRequestSnackBarNoPop(context));
     });
   }
 
@@ -242,18 +242,18 @@ class _BlogEditState extends State<BlogEdit> {
               )),
           IconButton(
               onPressed: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BlogPostEdit(
-                      blogPostId: widget.blogPostId,
-                      title: widget.title,
-                      content: widget.content,
-                      date: widget.date,
-                      imagePath: widget.image,
-                      star: widget.star,
-                    ),
-                  ),
+                      builder: (context) => BlogPostEdit(
+                            blogPostId: widget.blogPostId,
+                            title: widget.title,
+                            content: widget.content,
+                            date: widget.date,
+                            imagePath: widget.image,
+                            star: widget.star,
+                          )),
+                  (Route<dynamic> route) => false,
                 );
               },
               icon: Icon(Icons.edit)),

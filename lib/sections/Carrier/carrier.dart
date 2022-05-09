@@ -70,9 +70,10 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             children: [
               upBannerSection(height, width),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: width < 1200 ? width / 12 : width / 4),
+                padding: EdgeInsets.symmetric(
+                    horizontal: width < 1200 ? width / 12 : width / 4),
                 child: Container(
-                  width:  300,
+                  width: 300,
                   height: height / 5,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -85,7 +86,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                       child: AdaptiveText(
                         "Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the relative dressing code and behavioural requirements arisen from the necessities of their professions.",
                         style: GoogleFonts.montserrat(
-                            fontSize: height * 0.015,
+                            fontSize: height * 0.021,
                             color: Colors.grey[500],
                             height: 1.8,
                             fontWeight: FontWeight.w400),
@@ -100,7 +101,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                   child: Container(
                     color: Colors.white,
                     width: width < 1200 ? width * 0.40 : width * 0.35,
-                    height: width < 1200 ? height + 100 : height / 2,
+                    height: width < 1200 ? height + 100 : height / 2 + 120,
                     child: width < 1200
                         ? mobileSection(width, height)
                         : desktopSection(width, height),
@@ -131,7 +132,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
           borderRadius: BorderRadius.circular(12),
         ),
         width: width < 1200 ? width * 0.40 : width * 0.30,
-        height: height / 2,
+        height: height / 2 + 120,
         child: ListView(children: [
           SizedBox(
             height: 50,
@@ -156,7 +157,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               child: AdaptiveText(
                 "çınar&çınar law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies.",
                 style: GoogleFonts.montserrat(
-                    fontSize: height * 0.015,
+                    fontSize: height * 0.020,
                     color: Colors.grey[500],
                     height: 1.8,
                     fontWeight: FontWeight.w400),
@@ -174,7 +175,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               child: AdaptiveText(
                 "This also enables çınar&çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. You can send your cv to info@cinarlaw.com for attorney application. \n\n",
                 style: GoogleFonts.montserrat(
-                    fontSize: height * 0.015,
+                    fontSize: height * 0.020,
                     color: Colors.grey[500],
                     height: 1.8,
                     fontWeight: FontWeight.w400),
@@ -203,7 +204,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
           borderRadius: BorderRadius.circular(12),
         ),
         width: width < 1200 ? width * 0.40 : width * 0.30,
-        height: height / 2,
+        height: height / 2 + 120,
         child: ListView(children: [
           SizedBox(
             height: 50,
@@ -229,7 +230,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 "The deadline for 2022-2023 legal internship applications is 30.04.2022. You can send your cv to info@cinarlaw.com for legal internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
                 style: GoogleFonts.montserrat(
                     color: Colors.grey[500],
-                    fontSize: height * 0.015,
+                    fontSize: height * 0.020,
                     height: 1.8,
                     fontWeight: FontWeight.w400),
                 textAlign: TextAlign.center,
@@ -263,7 +264,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 "info@cinarlaw.com ",
                 style: GoogleFonts.montserrat(
                     color: Colors.black,
-                    fontSize: height * 0.015,
+                    fontSize: height * 0.021,
                     height: 1.8,
                     fontWeight: FontWeight.w400),
               ),
@@ -287,7 +288,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
           borderRadius: BorderRadius.circular(12),
         ),
         width: width < 1200 ? width * 0.40 : width * 0.30,
-        height: height / 2,
+        height: height / 2 + 120,
         child: ListView(children: [
           SizedBox(
             height: 50,
@@ -312,7 +313,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               child: AdaptiveText(
                 "The deadline for 2022-2023 summer internship applications is 31.05.2022. You can send your cv to info@cinarlaw.com for summer internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
                 style: GoogleFonts.montserrat(
-                    fontSize: height * 0.015,
+                    fontSize: height * 0.020,
                     color: Colors.grey[500],
                     height: 1.8,
                     fontWeight: FontWeight.w400),
@@ -618,7 +619,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/carrier.jpg"),
+              image: AssetImage("assets/carrier_arka.jpeg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -684,11 +685,12 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(
@@ -963,11 +965,12 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MainPage(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

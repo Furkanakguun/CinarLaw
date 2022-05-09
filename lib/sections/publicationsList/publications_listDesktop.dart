@@ -680,10 +680,10 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 height: height * 0.50,
                 viewportFraction: 1.1,
                 enlargeCenterPage: false,
-                //autoPlayCurve: Curves.fastOutSlowIn,
+                autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
                 autoPlayAnimationDuration: Duration(seconds: 4),
-                autoPlay: false,
+                autoPlay: true,
               ),
               items: [
                 //1st Image of Slider
@@ -1018,11 +1018,12 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                   ),
                   //iconSize: height,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => AdminLogin(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   //hoverColor: kPrimaryColor,
@@ -1075,11 +1076,12 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                   hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MainPage(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

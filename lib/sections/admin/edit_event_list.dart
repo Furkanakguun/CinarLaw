@@ -41,8 +41,6 @@ class _EditEventsListState extends State<EditEventsList> {
     return feedItems;
   }
 
- 
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -70,18 +68,18 @@ class _EditEventsListState extends State<EditEventsList> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconButton(
-                        
                         icon: Icon(
                           Icons.arrow_back,
                           color: mainColor,
                           size: 32,
                         ),
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) => AdminDashboard(),
                             ),
+                            (Route<dynamic> route) => false,
                           );
                         },
                       ),

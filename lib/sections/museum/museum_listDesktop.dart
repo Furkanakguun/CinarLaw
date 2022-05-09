@@ -24,14 +24,12 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
   final List<String> _sectionsName = [
     "ABOUT US",
     "PRACTICE AREAS",
-    "CONTACT",
   ];
 
   final List<IconData> _sectionsIcons = [
     Icons.home,
     Icons.person,
     Icons.settings,
-    Icons.phone,
   ];
 
   @override
@@ -576,11 +574,12 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(
@@ -882,11 +881,12 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                   hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MainPage(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

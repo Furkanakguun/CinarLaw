@@ -56,11 +56,12 @@ class PublicationDesktop extends StatelessWidget {
               btnText: "See More",
               onPressed: () {
                 //showPublicationAlertDialog(context);
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
                     builder: (context) => PublicationsListDesktop(),
                   ),
+                  (Route<dynamic> route) => false,
                 );
                 //launchURL("https://github.com/mhmzdev");
               })

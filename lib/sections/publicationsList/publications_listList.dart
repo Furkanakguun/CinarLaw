@@ -287,11 +287,12 @@ class _PublicationsListListState extends State<PublicationsListList> {
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(
@@ -313,11 +314,12 @@ class _PublicationsListListState extends State<PublicationsListList> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                     //Navigator.pop(context);
                   },
@@ -598,11 +600,12 @@ class _PublicationsListListState extends State<PublicationsListList> {
                   hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MainPage(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

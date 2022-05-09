@@ -341,11 +341,12 @@ class _MainPageState extends State<MainPage> {
                         hoverColor: kPrimaryColor.withAlpha(70),
                         onPressed: () {
                           //_scroll(index);
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) => PublicationList(),
                             ),
+                            (Route<dynamic> route) => false,
                           );
                           //Navigator.pop(context);
                         },
@@ -406,11 +407,12 @@ class _MainPageState extends State<MainPage> {
                         hoverColor: kPrimaryColor.withAlpha(70),
                         onPressed: () {
                           //_scroll(index);
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) => MuseumList(),
                             ),
+                            (Route<dynamic> route) => false,
                           );
                           //Navigator.pop(context);
                         },
@@ -454,12 +456,15 @@ class _MainPageState extends State<MainPage> {
                         height: 60.0,
                         child: MaterialButton(
                           hoverColor: Colors.black.withOpacity(0.5),
-                          onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CarrierDesktop(),
-                            ),
-                          ),
+                          onPressed: () {
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CarrierDesktop(),
+                              ),
+                              (Route<dynamic> route) => false,
+                            );
+                          },
                           child: Text(
                             "CAREERS",
                             style: GoogleFonts.montserrat(
@@ -482,11 +487,12 @@ class _MainPageState extends State<MainPage> {
                         hoverColor: kPrimaryColor.withAlpha(70),
                         onPressed: () {
                           //_scroll(index);
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) => PublicationList(),
                             ),
+                            (Route<dynamic> route) => false,
                           );
                           //Navigator.pop(context);
                         },
@@ -521,12 +527,15 @@ class _MainPageState extends State<MainPage> {
                         height: 60.0,
                         child: MaterialButton(
                           hoverColor: Colors.black.withOpacity(0.5),
-                          onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Contact(),
-                            ),
-                          ),
+                          onPressed: () {
+                            Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Contact(),
+                              ),
+                              (Route<dynamic> route) => false,
+                            );
+                          },
                           child: Text(
                             "CONTACT",
                             style: GoogleFonts.montserrat(
@@ -549,11 +558,12 @@ class _MainPageState extends State<MainPage> {
                         hoverColor: kPrimaryColor.withAlpha(70),
                         onPressed: () {
                           //_scroll(index);
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) => Contact(),
                             ),
+                            (Route<dynamic> route) => false,
                           );
                           //Navigator.pop(context);
                         },
@@ -615,11 +625,12 @@ class _MainPageState extends State<MainPage> {
                         ),
                         //iconSize: height,
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) => AdminLogin(),
                             ),
+                            (Route<dynamic> route) => false,
                           );
                         },
                         //hoverColor: kPrimaryColor,
@@ -712,11 +723,12 @@ class _MainPageState extends State<MainPage> {
                       borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: kPrimaryColor)),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListMobile(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: ListTile(
@@ -742,11 +754,12 @@ class _MainPageState extends State<MainPage> {
                       borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: kPrimaryColor)),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MuseumListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: ListTile(

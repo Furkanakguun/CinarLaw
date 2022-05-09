@@ -42,540 +42,27 @@ class _ContactDektopState extends State<ContactDektop> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Padding(
-          padding: width < 1200
-              ? EdgeInsets.only(top: 0.0, bottom: 3)
-              : EdgeInsets.only(top: 0.0, bottom: 16),
-          child: Center(
-            child: ListView(
-              children: [
-                upBannerSection(height, width),
-                SizedBox(
-                  height: 24,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "CONTACT US",
-                    style: GoogleFonts.montserrat(
-                        color: mainColorWhite,
-                        fontSize: height * 0.018,
-                        fontWeight: FontWeight.w200),
-                  ),
-                ),
-                SizedBox(
-                  height: 7,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Communication is important to us",
-                    style: GoogleFonts.montserrat(
-                        color: Colors.black,
-                        fontSize: height * 0.045,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-                IntrinsicHeight(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: width * 0.32,
-                        height: 50,
-                        child: AdaptiveText(
-                          "",
-                          style: GoogleFonts.roboto(
-                            fontSize: height * 0.018,
-                            color: Colors.grey[500],
-                            height: 1.5,
-                          ),
-                        ),
-                      ),
-                      VerticalDivider(
-                        color: mainColorWhite,
-                        thickness: 3,
-                      ),
-                      Container(
-                        height: 50,
-                        width: width * 0.32,
-                        child: AdaptiveText(
-                          "",
-                          style: GoogleFonts.roboto(
-                            fontSize: height * 0.018,
-                            color: Colors.grey[500],
-                            height: 1.5,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                ),
-                Padding(
-                    padding: EdgeInsets.symmetric(horizontal: width * 0.20),
-                    child: Container(
-                      color: Colors.white,
-                      width: width < 1200 ? width * 0.40 : width * 0.20,
-                      height: width < 1200 ? height + 100 : height / 2,
-                      child: width < 1200
-                          ? Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.2),
-                                          blurRadius: 25.0,
-                                          offset: Offset(2.0, 2.0),
-                                        ),
-                                      ],
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    width: width < 1200
-                                        ? width * 0.80
-                                        : width * 0.25,
-                                    height: height / 2,
-                                    child: ListView(children: [
-                                      SizedBox(
-                                        height: 50,
-                                      ),
-                                      Align(
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "Ankara Office",
-                                          style: GoogleFonts.montserrat(
-                                              color: Colors.black,
-                                              fontSize: height * 0.025,
-                                              fontWeight: FontWeight.w300),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 30,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 18.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 \n" +
-                                                "Oran/Çankaya / Ankara ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "Ankara: +90 312 426 90 22 ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "info@cinarlaw.com ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          height: height / 5,
-                                          //width: 60,
-                                          decoration: BoxDecoration(
-                                            //color: Colors.transparent,
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                  "assets/cinar_ankara.PNG"),
-                                            ),
-                                          ),
-                                          // width: width < 1200
-                                          //     ? width * 0.60
-                                          //     : width * 0.20,
-                                          //height: height * 0.30,
-                                        ),
-                                      ),
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 12,
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.2),
-                                          blurRadius: 25.0,
-                                          offset: Offset(2.0, 2.0),
-                                        ),
-                                      ],
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    width: width < 1200
-                                        ? width * 0.80
-                                        : width * 0.25,
-                                    height: height / 2,
-                                    child: ListView(children: [
-                                      SizedBox(
-                                        height: 50,
-                                      ),
-                                      Align(
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "İstanbul Office",
-                                          style: GoogleFonts.montserrat(
-                                              color: Colors.black,
-                                              fontSize: height * 0.025,
-                                              fontWeight: FontWeight.w300),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 30,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 18.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 \n" +
-                                                "Maslak / Sarıyer / İstanbul  ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "İstanbul: +90 212 963 02 29  ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "info@cinarlaw.com ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          height: height / 5,
-                                          //width: 60,
-                                          decoration: BoxDecoration(
-                                            //color: Colors.transparent,
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: AssetImage(
-                                                  "assets/cinar_ist.PNG"),
-                                            ),
-                                          ),
-                                          // width: width < 1200
-                                          //     ? width * 0.60
-                                          //     : width * 0.20,
-                                          //height: height * 0.30,
-                                        ),
-                                      ),
-                                    ]),
-                                  ),
-                                ])
-                          : Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.2),
-                                          blurRadius: 25.0,
-                                          offset: Offset(2.0, 2.0),
-                                        ),
-                                      ],
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    width: width < 1200
-                                        ? width * 0.40
-                                        : width * 0.25,
-                                    height: height / 2,
-                                    child: ListView(children: [
-                                      SizedBox(
-                                        height: 50,
-                                      ),
-                                      Align(
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "Ankara Office",
-                                          style: GoogleFonts.montserrat(
-                                              color: Colors.black,
-                                              fontSize: height * 0.025,
-                                              fontWeight: FontWeight.w300),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 30,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 18.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 \n" +
-                                                "Oran/Çankaya / Ankara ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "Ankara: +90 312 426 90 22 ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "info@cinarlaw.com ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      InkWell(
-                                        onTap: () {
-                                          launchURL(
-                                              "https://www.google.com/maps?z=16&daddr=39.8518066,32.8571376");
-                                        },
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Container(
-                                            height: height / 5,
-                                            //width: 60,
-                                            decoration: BoxDecoration(
-                                              //color: Colors.transparent,
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                    "assets/cinar_ankara.PNG"),
-                                              ),
-                                            ),
-                                            // width: width < 1200
-                                            //     ? width * 0.60
-                                            //     : width * 0.20,
-                                            //height: height * 0.30,
-                                          ),
-                                        ),
-                                      ),
-                                    ]),
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.2),
-                                          blurRadius: 25.0,
-                                          offset: Offset(2.0, 2.0),
-                                        ),
-                                      ],
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    width: width < 1200
-                                        ? width * 0.40
-                                        : width * 0.25,
-                                    height: height / 2,
-                                    child: ListView(children: [
-                                      SizedBox(
-                                        height: 50,
-                                      ),
-                                      Align(
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          "İstanbul Office",
-                                          style: GoogleFonts.montserrat(
-                                              color: Colors.black,
-                                              fontSize: height * 0.025,
-                                              fontWeight: FontWeight.w300),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 30,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 18.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 \n" +
-                                                "Maslak / Sarıyer / İstanbul  ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "İstanbul: +90 212 963 02 29  ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Align(
-                                          alignment: Alignment.center,
-                                          child: AdaptiveText(
-                                            "info@cinarlaw.com ",
-                                            style: GoogleFonts.montserrat(
-                                                color: Colors.black,
-                                                fontSize: height * 0.015,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      InkWell(
-                                        onTap: () => launchURL(
-                                            "https://www.google.com/maps/dir//41.11755,29.015142/@41.1175068,28.9451,12z"),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Container(
-                                            height: height / 5,
-                                            //width: 60,
-                                            decoration: BoxDecoration(
-                                              //color: Colors.transparent,
-                                              borderRadius:
-                                                  BorderRadius.circular(12),
-                                              image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                    "assets/cinar_ist.PNG"),
-                                              ),
-                                            ),
-                                            // width: width < 1200
-                                            //     ? width * 0.60
-                                            //     : width * 0.20,
-                                            //height: height * 0.30,
-                                          ),
-                                        ),
-                                      ),
-                                    ]),
-                                  ),
-                                ]),
-                    )),
-                SizedBox(
-                  height: 15,
-                ),
-                //FooterBlack()
-              ],
-            ),
+        backgroundColor: Colors.black,
+        body: Center(
+          child: ListView(
+            children: [
+              upBannerSection(height, width),
+            ],
           ),
         ));
+  }
+
+  Align sectionTitle(double height) {
+    return Align(
+      alignment: Alignment.center,
+      child: Text(
+        "CONTACT US",
+        style: GoogleFonts.montserrat(
+            color: Colors.white,
+            fontSize: height * 0.018,
+            fontWeight: FontWeight.w200),
+      ),
+    );
   }
 
   Widget upBannerSection(double height, double width) {
@@ -584,16 +71,506 @@ class _ContactDektopState extends State<ContactDektop> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/cinar_kapak.jpg"),
+              image: AssetImage("assets/contact_arka.jpeg"),
               fit: BoxFit.cover,
             ),
           ),
-          height: height * 0.25,
+          height: height + 130,
           width: width,
           //color: Colors.yellow),
         ),
       ),
-      appBarSection(width)
+      appBarSection(width),
+
+      Padding(
+        padding: EdgeInsets.only(top: height / 4 - 120),
+        child: sectionTitle(height),
+      ),
+
+      Padding(
+        padding: EdgeInsets.only(top: height / 4 - 100),
+        child: Align(
+          alignment: Alignment.center,
+          child: Text(
+            "Communication is important to us",
+            style: GoogleFonts.montserrat(
+                color: Colors.white,
+                fontSize: height * 0.045,
+                fontWeight: FontWeight.w500),
+          ),
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(top: height / 4 - 50),
+        child: IntrinsicHeight(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: width * 0.32,
+                height: 50,
+                child: AdaptiveText(
+                  "",
+                  style: GoogleFonts.roboto(
+                    fontSize: height * 0.018,
+                    color: Colors.grey[500],
+                    height: 1.5,
+                  ),
+                ),
+              ),
+              VerticalDivider(
+                color: Colors.white,
+                thickness: 3,
+              ),
+              Container(
+                height: 50,
+                width: width * 0.32,
+                child: AdaptiveText(
+                  "",
+                  style: GoogleFonts.roboto(
+                    fontSize: height * 0.018,
+                    color: Colors.grey[500],
+                    height: 1.5,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      Padding(
+          padding: EdgeInsets.symmetric(vertical: height / 3),
+          child: width < 1200
+              ? mobileSection(width, height)
+              : desktopSection(width, height)),
+      //FooterBlack()
+    ]);
+  }
+
+  Row desktopSection(double width, double height) {
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+      Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 25.0,
+              offset: Offset(2.0, 2.0),
+            ),
+          ],
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        width: width < 1200 ? width * 0.40 : width * 0.30,
+        height: height / 2,
+        child: ListView(children: [
+          SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Ankara Office",
+              style: GoogleFonts.montserrat(
+                  color: Colors.black,
+                  fontSize: height * 0.025,
+                  fontWeight: FontWeight.w300),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 \n" +
+                    "Oran/Çankaya / Ankara ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "Ankara: +90 312 426 90 22 ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "info@cinarlaw.com ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            onTap: () {
+              launchURL(
+                  "https://www.google.com/maps?z=16&daddr=39.8518066,32.8571376");
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: height / 5,
+                //width: 60,
+                decoration: BoxDecoration(
+                  //color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage("assets/cinar_ankara.PNG"),
+                  ),
+                ),
+                // width: width < 1200
+                //     ? width * 0.60
+                //     : width * 0.20,
+                //height: height * 0.30,
+              ),
+            ),
+          ),
+        ]),
+      ),
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 25.0,
+              offset: Offset(2.0, 2.0),
+            ),
+          ],
+          borderRadius: BorderRadius.circular(12),
+        ),
+        width: width < 1200 ? width * 0.40 : width * 0.30,
+        height: height / 2,
+        child: ListView(children: [
+          SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "İstanbul Office",
+              style: GoogleFonts.montserrat(
+                  color: Colors.black,
+                  fontSize: height * 0.025,
+                  fontWeight: FontWeight.w300),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5 D:5 \n" +
+                    "Maslak / Sarıyer / İstanbul  ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "İstanbul: +90 212 963 02 29  ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "info@cinarlaw.com ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            onTap: () => launchURL(
+                "https://www.google.com/maps/dir//41.11755,29.015142/@41.1175068,28.9451,12z"),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: height / 5,
+                //width: 60,
+                decoration: BoxDecoration(
+                  //color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage("assets/cinar_ist.PNG"),
+                  ),
+                ),
+                // width: width < 1200
+                //     ? width * 0.60
+                //     : width * 0.20,
+                //height: height * 0.30,
+              ),
+            ),
+          ),
+        ]),
+      ),
+    ]);
+  }
+
+  Column mobileSection(double width, double height) {
+    return Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+      Container(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 25.0,
+              offset: Offset(2.0, 2.0),
+            ),
+          ],
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        width: width < 1200 ? width * 0.80 : width * 0.35,
+        height: height / 2,
+        child: ListView(children: [
+          SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "Ankara Office",
+              style: GoogleFonts.montserrat(
+                  color: Colors.black,
+                  fontSize: height * 0.025,
+                  fontWeight: FontWeight.w300),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "İlkbahar Mah. Galip Erdem Cad. 621. Sok. No: 17 \n" +
+                    "Oran/Çankaya / Ankara ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "Ankara: +90 312 426 90 22 ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "info@cinarlaw.com ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: height / 5,
+              //width: 60,
+              decoration: BoxDecoration(
+                //color: Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/cinar_ankara.PNG"),
+                ),
+              ),
+              // width: width < 1200
+              //     ? width * 0.60
+              //     : width * 0.20,
+              //height: height * 0.30,
+            ),
+          ),
+        ]),
+      ),
+      SizedBox(
+        height: 12,
+      ),
+      Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2),
+              blurRadius: 25.0,
+              offset: Offset(2.0, 2.0),
+            ),
+          ],
+          borderRadius: BorderRadius.circular(12),
+        ),
+        width: width < 1200 ? width * 0.80 : width * 0.25,
+        height: height / 2,
+        child: ListView(children: [
+          SizedBox(
+            height: 50,
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Text(
+              "İstanbul Office",
+              style: GoogleFonts.montserrat(
+                  color: Colors.black,
+                  fontSize: height * 0.025,
+                  fontWeight: FontWeight.w300),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "Maslak Mah. Akasya Sok. Eclipse Business E Blok Kat:5  D:5 \n" +
+                    "Maslak / Sarıyer / İstanbul  ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "İstanbul: +90 212 963 02 29  ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.center,
+              child: AdaptiveText(
+                "info@cinarlaw.com ",
+                style: GoogleFonts.montserrat(
+                    color: Colors.black,
+                    fontSize: height * 0.015,
+                    fontWeight: FontWeight.w300),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: height / 5,
+              //width: 60,
+              decoration: BoxDecoration(
+                //color: Colors.transparent,
+                borderRadius: BorderRadius.circular(12),
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/cinar_ist.PNG"),
+                ),
+              ),
+              // width: width < 1200
+              //     ? width * 0.60
+              //     : width * 0.20,
+              //height: height * 0.30,
+            ),
+          ),
+        ]),
+      ),
     ]);
   }
 
@@ -650,11 +627,12 @@ class _ContactDektopState extends State<ContactDektop> {
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(
@@ -961,11 +939,12 @@ class _ContactDektopState extends State<ContactDektop> {
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MainPage(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

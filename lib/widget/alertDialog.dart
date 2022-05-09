@@ -64,32 +64,40 @@ showImageDialog(BuildContext context, String image, String description) {
     backgroundColor: Colors.transparent,
     content: Container(
       width: width < 1200 ? width * 0.60 : width * 0.60,
-      height: height * 0.80,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: CachedNetworkImageProvider(image),
-          fit: BoxFit.fill,
+      height: height * 0.90,
+      child: ListView(children: [
+        Container(
+          width: width < 1200 ? width * 0.60 : width * 0.60,
+          height: height * 0.80,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: CachedNetworkImageProvider(image),
+              fit: BoxFit.fill,
+            ),
+            color: Colors.transparent,
+          ),
         ),
-        color: Colors.transparent,
-      ),
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            width: width < 1200 ? width * 0.60 : width * 0.40,
-            height: 100,
-            child: Text(
-              description,
-              style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w400,
-                fontSize: 24,
-                color: Colors.white,
-              ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: width < 1200 ? width * 0.60 : width * 0.40,
+              height: 100,
+              child: ListView(children: [
+                Text(
+                  description,
+                  style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 24,
+                    color: Colors.white,
+                  ),
+                ),
+              ]),
             ),
           ),
         ),
-      ),
+      ]),
     ),
     //  actions: [
     //   okButton,

@@ -398,12 +398,14 @@ class _AdminLoginState extends State<AdminLogin> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
+
                     //Navigator.pop(context);
                   },
                   child: ListTile(
@@ -453,11 +455,12 @@ class _AdminLoginState extends State<AdminLogin> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MuseumListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                     //Navigator.pop(context);
                   },
@@ -525,11 +528,12 @@ class _AdminLoginState extends State<AdminLogin> {
             child: MaterialButton(
               hoverColor: kPrimaryColor,
               onPressed: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(),
                   ),
+                  (Route<dynamic> route) => false,
                 );
               },
               child: Text(
@@ -555,11 +559,12 @@ class _AdminLoginState extends State<AdminLogin> {
                   hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MainPage(),
+                        builder: (context) => MuseumListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

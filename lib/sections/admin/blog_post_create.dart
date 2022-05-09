@@ -79,7 +79,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
               SizedBox(
                 height: height * 0.01,
               ),
-              authorField(height, width),
+              //authorField(height, width),
               SizedBox(
                 height: height * 0.01,
               ),
@@ -222,7 +222,7 @@ class _BlogPostCreateState extends State<BlogPostCreate> {
             "content": contentController.text,
             "date": dateController.text,
             "image": uploadedPhotoUrl,
-            "author": authorController.text,
+            "author": "",
             "star": star,
             "title": usernameController.text
           }).then((value) => showSubmitRequestSnackBar(context));

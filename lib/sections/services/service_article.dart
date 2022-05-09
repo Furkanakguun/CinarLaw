@@ -1,4 +1,3 @@
-
 import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
@@ -348,11 +347,12 @@ class _ServiceArticleState extends State<ServiceArticle> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                     //Navigator.pop(context);
                   },
@@ -403,11 +403,12 @@ class _ServiceArticleState extends State<ServiceArticle> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MuseumListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                     //Navigator.pop(context);
                   },
@@ -470,11 +471,12 @@ class _ServiceArticleState extends State<ServiceArticle> {
             child: MaterialButton(
               hoverColor: kPrimaryColor,
               onPressed: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(),
                   ),
+                  (Route<dynamic> route) => false,
                 );
               },
               child: Text(
@@ -500,11 +502,12 @@ class _ServiceArticleState extends State<ServiceArticle> {
                   hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MainPage(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

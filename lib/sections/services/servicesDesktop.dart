@@ -140,7 +140,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           children: [
                             InkWell(
                               onTap: () => {
-                                Navigator.push(
+                                Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => ServiceArticle(
@@ -149,6 +149,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                       author: "",
                                     ),
                                   ),
+                                  (Route<dynamic> route) => false,
                                 )
                                 //showOurAreasAlertDialog(context, index)
                               },
@@ -188,7 +189,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           children: [
                             InkWell(
                               onTap: () => {
-                                Navigator.push(
+                                Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => ServiceArticle(
@@ -197,6 +198,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                       author: "",
                                     ),
                                   ),
+                                  (Route<dynamic> route) => false,
                                 )
                                 //showOurAreasAlertDialog(context, index)
                               },
@@ -236,7 +238,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           children: [
                             InkWell(
                               onTap: () => {
-                                Navigator.push(
+                                Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => ServiceArticle(
@@ -245,6 +247,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                       author: "",
                                     ),
                                   ),
+                                  (Route<dynamic> route) => false,
                                 )
                                 //showOurAreasAlertDialog(context, index)
                               },

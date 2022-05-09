@@ -18,13 +18,13 @@ class MuseumListTab extends StatefulWidget {
 }
 
 class _MuseumListTabState extends State<MuseumListTab> {
-    final List<String> _sectionsName = [
+  final List<String> _sectionsName = [
     "ABOUT US",
     "PRACTICE AREAS",
     "OUR TEAM",
     "CONTACT",
   ];
-  
+
   final List<IconData> _sectionsIcons = [
     Icons.home,
     Icons.person,
@@ -32,7 +32,6 @@ class _MuseumListTabState extends State<MuseumListTab> {
     Icons.article,
     Icons.phone,
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +49,12 @@ class _MuseumListTabState extends State<MuseumListTab> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(height:55, width: width, color: Colors.white,child: _appBarTabDesktop(),),
+                  Container(
+                    height: 55,
+                    width: width,
+                    color: Colors.white,
+                    child: _appBarTabDesktop(),
+                  ),
                 ],
               ),
               Center(
@@ -124,8 +128,10 @@ class _MuseumListTabState extends State<MuseumListTab> {
                         ),
                       ),
                     ]),
-                    SizedBox(width: 12,),
-                   Column(children: [
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Column(children: [
                       Container(
                         width: width < 1200 ? width * 0.60 : width * 0.30,
                         height: height * 0.40,
@@ -187,7 +193,7 @@ class _MuseumListTabState extends State<MuseumListTab> {
               SizedBox(
                 height: 12,
               ),
-             Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: width < 1200 ? width * (0.20) : width * (0.35)),
                 child: Column(children: [
@@ -220,7 +226,7 @@ class _MuseumListTabState extends State<MuseumListTab> {
               SizedBox(
                 height: 12,
               ),
-             Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: width < 1200 ? width * (0.20) : width * (0.35)),
                 child: Column(children: [
@@ -253,7 +259,7 @@ class _MuseumListTabState extends State<MuseumListTab> {
               SizedBox(
                 height: 12,
               ),
-               Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: width < 1200 ? width * (0.20) : width * (0.35)),
                 child: Column(children: [
@@ -286,7 +292,7 @@ class _MuseumListTabState extends State<MuseumListTab> {
               SizedBox(
                 height: 12,
               ),
-               Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: width < 1200 ? width * (0.20) : width * (0.35)),
                 child: Column(children: [
@@ -352,7 +358,7 @@ class _MuseumListTabState extends State<MuseumListTab> {
               SizedBox(
                 height: 12,
               ),
-                Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: width < 1200 ? width * (0.20) : width * (0.35)),
                 child: Column(children: [
@@ -391,11 +397,11 @@ class _MuseumListTabState extends State<MuseumListTab> {
       ),
     );
   }
-  
+
   Widget _appBarTabDesktop() {
     return AppBar(
       elevation: 0.0,
-      backgroundColor:  Colors.white,
+      backgroundColor: Colors.white,
       // flexibleSpace: Image(
       //   image: AssetImage('assets/navbar.png'),
       //   fit: BoxFit.cover,
@@ -437,12 +443,9 @@ class _MuseumListTabState extends State<MuseumListTab> {
                     child: Text(
                       "ÇINAR ACADEMIA",
                       style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color:
-                             mainColorWhite
-                            
-                      ),
+                          fontSize: MediaQuery.of(context).size.width * 0.0070,
+                          // fontWeight: FontWeight.w300,
+                          color: mainColorWhite),
                       // style: TextStyle(
                       //   color:
                       //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -457,11 +460,12 @@ class _MuseumListTabState extends State<MuseumListTab> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                     //Navigator.pop(context);
                   },
@@ -475,8 +479,7 @@ class _MuseumListTabState extends State<MuseumListTab> {
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color:
-                            Colors.black ,
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -501,11 +504,9 @@ class _MuseumListTabState extends State<MuseumListTab> {
                     child: Text(
                       "ÇINAR MUSEUM",
                       style: GoogleFonts.montserrat(
-                        fontSize: MediaQuery.of(context).size.width * 0.0070,
-                        // fontWeight: FontWeight.w300,
-                        color:  mainColorWhite
-                            
-                      ),
+                          fontSize: MediaQuery.of(context).size.width * 0.0070,
+                          // fontWeight: FontWeight.w300,
+                          color: mainColorWhite),
                       // style: TextStyle(
                       //   color:
                       //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -520,11 +521,12 @@ class _MuseumListTabState extends State<MuseumListTab> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MuseumList(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                     //Navigator.pop(context);
                   },
@@ -538,8 +540,7 @@ class _MuseumListTabState extends State<MuseumListTab> {
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color:
-                             Colors.black ,
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -631,10 +632,11 @@ class _MuseumListTabState extends State<MuseumListTab> {
     );
   }
 
-  
-
   Widget _appBarActions(
-      String childText, int index, IconData icon,) {
+    String childText,
+    int index,
+    IconData icon,
+  ) {
     return MediaQuery.of(context).size.width > 760
         ? EntranceFader(
             offset: Offset(0, -10),
@@ -652,8 +654,7 @@ class _MuseumListTabState extends State<MuseumListTab> {
                   style: GoogleFonts.montserrat(
                     fontSize: MediaQuery.of(context).size.width * 0.0070,
                     //fontWeight: FontWeight.w300,
-                    color:
-                         Colors.white ,
+                    color: Colors.white,
                   ),
                   // style: TextStyle(
                   //   color:
@@ -677,17 +678,12 @@ class _MuseumListTabState extends State<MuseumListTab> {
                   child: Text(
                     childText,
                     style: TextStyle(
-                      color: 
-                           Colors.black
-                          ,
+                      color: Colors.black,
                     ),
                     //textAlign: TextAlign.start,
                   ),
                 ),
-                Divider(
-                  color: Colors.brown[200]
-                      
-                )
+                Divider(color: Colors.brown[200])
               ],
             ),
           );

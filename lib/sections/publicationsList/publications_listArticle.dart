@@ -19,7 +19,8 @@ class PublicationsListArticle extends StatefulWidget {
   final String title;
   final String description;
   final String author;
-  const PublicationsListArticle({Key key, this.title, this.description, this.author})
+  const PublicationsListArticle(
+      {Key key, this.title, this.description, this.author})
       : super(key: key);
 
   @override
@@ -165,7 +166,7 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                   SizedBox(
                     width: width * 0.012,
                   ),
-                     Container(
+                  Container(
                     width: width * 0.55,
                     child: Text(
                       widget.author,
@@ -180,8 +181,8 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                 ],
               ),
               SizedBox(
-                    width: height * 0.050,
-                  ),
+                width: height * 0.050,
+              ),
               Footer()
             ],
           ),
@@ -246,11 +247,12 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                     //Navigator.pop(context);
                   },
@@ -301,11 +303,12 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MuseumListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                     //Navigator.pop(context);
                   },
@@ -327,9 +330,9 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
               ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
-          MediaQuery.of(context).size.width > 760
+        MediaQuery.of(context).size.width > 760
             ? Container(
-                color: Colors.transparent,
+                color: mainColorWhite,
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
@@ -378,9 +381,9 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                   ),
                 ),
               ),
-           MediaQuery.of(context).size.width > 760
+        MediaQuery.of(context).size.width > 760
             ? Container(
-                color: Colors.transparent,
+                color: mainColorWhite,
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
@@ -448,7 +451,8 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                       size: MediaQuery.of(context).size.width * 0.0095,
                     ),
                     //iconSize: height,
-                    onPressed: () => launchURL('https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                    onPressed: () => launchURL(
+                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
                     //hoverColor: kPrimaryColor,
                   ),
                 ),
@@ -474,11 +478,12 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
             child: MaterialButton(
               hoverColor: kPrimaryColor,
               onPressed: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(),
                   ),
+                  (Route<dynamic> route) => false,
                 );
               },
               child: Text(
@@ -504,11 +509,12 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
                   hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MainPage(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

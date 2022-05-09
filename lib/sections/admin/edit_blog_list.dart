@@ -75,11 +75,12 @@ class _EditBlogsListState extends State<EditBlogsList> {
                           size: 32,
                         ),
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
                               builder: (context) => AdminDashboard(),
                             ),
+                            (Route<dynamic> route) => false,
                           );
                         },
                       ),

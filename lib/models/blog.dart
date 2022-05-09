@@ -94,10 +94,10 @@ class _BlogPostState extends State<BlogPost> {
                   Text(
                     date,
                     style: GoogleFonts.montserrat(
-                        fontSize: height * 0.015,
+                        fontSize: height * 0.020,
                         color: Colors.white,
                         height: 1.4,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.w600),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(
@@ -106,10 +106,10 @@ class _BlogPostState extends State<BlogPost> {
                   Text(
                     title,
                     style: GoogleFonts.montserrat(
-                        fontSize: height * 0.015,
+                        fontSize: height * 0.020,
                         color: Colors.white,
                         height: 1.4,
-                        fontWeight: FontWeight.w400),
+                        fontWeight: FontWeight.w600),
                     textAlign: TextAlign.center,
                   ),
                   Divider(

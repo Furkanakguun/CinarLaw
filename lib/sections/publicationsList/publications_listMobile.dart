@@ -176,7 +176,8 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                   Container(
                     width: width < 1200 ? width * 0.80 : width * 0.45,
                     child: TextRenderer(
-                      text:  "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.\n\n",
+                      text:
+                          "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.\n\n",
                       child: AdaptiveText(
                         "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.\n\n",
                         style: GoogleFonts.montserrat(
@@ -194,7 +195,8 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                   Container(
                     width: width < 1200 ? width * 0.80 : width * 0.45,
                     child: TextRenderer(
-                      text:  "Çınar&Çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law \n\n",
+                      text:
+                          "Çınar&Çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law \n\n",
                       child: AdaptiveText(
                         "Çınar&Çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law \n\n",
                         style: GoogleFonts.montserrat(
@@ -265,11 +267,10 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                     autoPlayAnimationDuration: Duration(milliseconds: 800),
                     enableInfiniteScroll: false),
               ),
-              
               SizedBox(
                 width: width * 0.012,
               ),
-               Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
                 child: TextButton.icon(
@@ -281,11 +282,12 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                     ),
                   ),
                   onPressed: () => {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListList(),
                       ),
+                      (Route<dynamic> route) => false,
                     )
                   },
                   icon: Icon(
@@ -390,11 +392,12 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                       borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: kPrimaryColor)),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PublicationsListMobile(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: ListTile(
@@ -420,11 +423,12 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                       borderRadius: BorderRadius.circular(5.0),
                       side: BorderSide(color: kPrimaryColor)),
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MuseumListDesktop(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: ListTile(
@@ -462,11 +466,12 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
             child: MaterialButton(
               hoverColor: kPrimaryColor,
               onPressed: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainPage(),
                   ),
+                  (Route<dynamic> route) => false,
                 );
               },
               child: Text(
@@ -492,11 +497,12 @@ class _PublicationsListMobileState extends State<PublicationsListMobile> {
                   hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => MainPage(),
                       ),
+                      (Route<dynamic> route) => false,
                     );
                   },
                   child: Text(

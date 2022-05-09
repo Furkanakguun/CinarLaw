@@ -19,7 +19,7 @@ Future main() async {
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();  
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -32,43 +32,41 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     getCurrentAppTheme();
-   getTestData();
+    getTestData();
     super.initState();
   }
 
   getTestData() async {
-    DocumentSnapshot doc =   await FirebaseFirestore.instance.collection('message').doc('1').get();
+    DocumentSnapshot doc =
+        await FirebaseFirestore.instance.collection('message').doc('1').get();
     print(doc.exists);
   }
 
   @override
   Widget build(BuildContext context) {
-     final deviceInfoController = Get.put(DeviceInfoController());
+    final deviceInfoController = Get.put(DeviceInfoController());
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ThemeProvider()),
       ],
-      child: GetBuilder<DeviceInfoController>(
-        builder: (contextt) {
-          return GetMaterialApp(
-            translations: CinarTranslations(),
-            locale: Locale('en','US'),
-            //navigatorObservers: <NavigatorObserver>[observer],
-            debugShowCheckedModeBanner: false,
-            title: 'Cinar Law',
-            theme: ThemeStyles.themeData(_themeProvider.lightTheme, context),
-            initialRoute: "/",
-            routes: {
-              "/": (context) => MainPage(),
-            },
-          );
-        }
-      ),
+      child: GetBuilder<DeviceInfoController>(builder: (contextt) {
+        return GetMaterialApp(
+          translations: CinarTranslations(),
+          locale: Locale('en', 'US'),
+          //navigatorObservers: <NavigatorObserver>[observer],
+          debugShowCheckedModeBanner: false,
+          title: 'Cinar Law',
+          theme: ThemeStyles.themeData(_themeProvider.lightTheme, context),
+          initialRoute: "/",
+          routes: {
+            "/": (context) => MainPage(),
+          },
+        );
+      }),
     );
   }
-
-  
 }
+
 class DeviceInfoController extends GetxController {
   Storage box = Storage();
 

@@ -126,11 +126,12 @@ class _EventEditState extends State<EventEdit> {
           .doc('1')
           .collection('items')
           .doc(widget.blogPostId)
-          .update({"star": !widget.star})
-          .then((value) => showSubmitRequestSnackBarNoPop(context));
+          .update({"star": !widget.star}).then(
+              (value) => showSubmitRequestSnackBarNoPop(context));
     });
   }
-   showSubmitRequestSnackBarNoPop(BuildContext context) async {
+
+  showSubmitRequestSnackBarNoPop(BuildContext context) async {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     //Navigator.pop(context);
@@ -240,7 +241,7 @@ class _EventEditState extends State<EventEdit> {
               )),
           IconButton(
               onPressed: () {
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
                     builder: (context) => EventPostEdit(
@@ -252,6 +253,7 @@ class _EventEditState extends State<EventEdit> {
                       star: widget.star,
                     ),
                   ),
+                  (Route<dynamic> route) => false,
                 );
               },
               icon: Icon(Icons.edit)),
