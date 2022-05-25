@@ -478,13 +478,15 @@ class _PublicationsListArticleState extends State<PublicationsListArticle> {
             child: MaterialButton(
               hoverColor: kPrimaryColor,
               onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainPage(),
-                  ),
-                  (Route<dynamic> route) => false,
-                );
+                 Navigator.pushReplacementNamed(context, '/main',
+                    arguments: {index.toString()});
+                // Navigator.pushAndRemoveUntil(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => MainPage(),
+                //   ),
+                //   (Route<dynamic> route) => false,
+                // );
               },
               child: Text(
                 childText,

@@ -939,8 +939,10 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             child: MaterialButton(
               hoverColor: Colors.black.withOpacity(0.5),
               onPressed: () {
-                Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                    builder: (BuildContext context) => MainPage()));
+                 Navigator.pushReplacementNamed(context, '/main',
+                    arguments: {index.toString()});
+                // Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                //     builder: (BuildContext context) => MainPage()));
               },
               child: Text(
                 childText,

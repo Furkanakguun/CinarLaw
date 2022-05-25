@@ -913,8 +913,10 @@ class _ContactDektopState extends State<ContactDektop> {
             child: MaterialButton(
               hoverColor: Colors.black.withOpacity(0.5),
               onPressed: () {
-                Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                    builder: (BuildContext context) => MainPage()));
+                Navigator.pushReplacementNamed(context, '/main',
+                    arguments: {index.toString()});
+                // Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                //     builder: (BuildContext context) => MainPage()));
               },
               child: Text(
                 childText,
@@ -960,4 +962,11 @@ class _ContactDektopState extends State<ContactDektop> {
             ),
           );
   }
+}
+
+class ScreenArguments {
+  final String title;
+  final String message;
+
+  ScreenArguments(this.title, this.message);
 }

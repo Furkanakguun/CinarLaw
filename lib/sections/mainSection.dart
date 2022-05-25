@@ -1,5 +1,6 @@
 import 'package:cinarlaw/animations/bottomAnimation.dart';
 import 'package:cinarlaw/sections/Carrier/carrier.dart';
+import 'package:cinarlaw/sections/contact/contactDesktop.dart';
 import 'package:cinarlaw/sections/museum/museum_list.dart';
 import 'package:cinarlaw/sections/museum/museum_listMobile.dart';
 import 'package:cinarlaw/sections/publications/publication.dart';
@@ -91,6 +92,25 @@ class _MainPageState extends State<MainPage> {
 
   @override
   void initState() {
+    Future.delayed(Duration.zero, () {
+      var data = ModalRoute.of(context).settings.arguments;
+
+      // print("Dataaa" + data.toString());
+      if (data.toString() == "{0}") {
+        _scroll(1);
+      }
+      if (data.toString() == "{1}") {
+        _scroll(2);
+      }
+      // if (data.title == "scrollIndex") {
+      //   if (data.message == 1) {
+      //     _scroll(1);
+      //   }
+
+      //   // getImage(ImageSource.camera);
+      // }
+    });
+
     _scrollController = _themeProviders.scroll;
     _scrollController.addListener(() {
       if (_scrollController.position.pixels < 100) {

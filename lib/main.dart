@@ -57,9 +57,10 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           title: 'Cinar Law',
           theme: ThemeStyles.themeData(_themeProvider.lightTheme, context),
-          initialRoute: "/",
+          initialRoute: "/main",
           routes: {
-            "/": (context) => MainPage(),
+            "/main": (context) => MainPage(),
+            
           },
         );
       }),
