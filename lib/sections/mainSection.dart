@@ -486,7 +486,7 @@ class _MainPageState extends State<MainPage> {
                             );
                           },
                           child: Text(
-                            "CAREERS",
+                            "CAREER",
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -522,7 +522,7 @@ class _MainPageState extends State<MainPage> {
                             color: kPrimaryColor,
                           ),
                           title: Text(
-                            "CAREERS",
+                            "CAREER",
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -697,7 +697,7 @@ class _MainPageState extends State<MainPage> {
                         );
                       },
                       child: Text(
-                        "CAREERS",
+                        "CAREER",
                         style: TextStyle(
                           color: Colors.black,
                         ),

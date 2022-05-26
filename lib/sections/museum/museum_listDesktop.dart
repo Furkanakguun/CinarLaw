@@ -695,7 +695,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREERS",
+                    "CAREER",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -724,7 +724,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREERS",
+                      "CAREER",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,

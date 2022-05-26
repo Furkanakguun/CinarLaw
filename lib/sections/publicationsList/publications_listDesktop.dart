@@ -677,13 +677,14 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
           // ),
           child: CarouselSlider(
               options: CarouselOptions(
-                height: height * 0.50,
-                viewportFraction: 1.1,
+                height: height * 0.60,
+                viewportFraction: 1.05,
                 enlargeCenterPage: false,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(seconds: 4),
+                autoPlayAnimationDuration: Duration(seconds: 7),
                 autoPlay: true,
+                autoPlayInterval: Duration(seconds: 7)
               ),
               items: [
                 //1st Image of Slider
@@ -894,7 +895,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREERS",
+                    "CAREER",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -923,7 +924,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREERS",
+                      "CAREER",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -1050,7 +1051,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             child: MaterialButton(
               hoverColor: Colors.black.withOpacity(0.5),
               onPressed: () {
-                 Navigator.pushReplacementNamed(context, '/main',
+                Navigator.pushReplacementNamed(context, '/main',
                     arguments: {index.toString()});
                 // Navigator.of(context).pushReplacement(new MaterialPageRoute(
                 //     builder: (BuildContext context) => MainPage()));

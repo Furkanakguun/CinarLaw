@@ -357,7 +357,7 @@ class _EventsListState extends State<EventsList> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREERS",
+                    "CAREER",
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -386,7 +386,7 @@ class _EventsListState extends State<EventsList> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREERS",
+                      "CAREER",
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,

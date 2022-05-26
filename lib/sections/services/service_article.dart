@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../constants.dart';
+import '../Carrier/carrier.dart';
+import '../contact/contactDesktop.dart';
 
 class ServiceArticle extends StatefulWidget {
   final String title;
@@ -46,7 +48,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
         child: Center(
           child: ListView(
             children: [
-              appBarSection(width),
+              // appBarSection(width),
               upBannerSection(height, width),
               SizedBox(
                 height: height * 0.03,
@@ -54,7 +56,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Practical Areas",
+                  "Practice Areas",
                   style: GoogleFonts.montserrat(
                       color: mainColorWhite,
                       fontSize: height * 0.018,
@@ -104,10 +106,11 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 ),
               ),
               SizedBox(
-                height: 5,
+                height: 50,
               ),
               Row(
                 //crossAxisAlignment: CrossAxisAlignment.,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     width: 25,
@@ -194,77 +197,38 @@ class _ServiceArticleState extends State<ServiceArticle> {
     );
   }
 
-  Column contentSection(double width, double height) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Container(
-          width: width * 0.55,
-          height: 300,
+  Container contentSection(double width, double height) {
+    return Container(
+      width: width * 0.55,
+      child: Text(
+        widget.description,
+        style: GoogleFonts.montserrat(
+          fontSize: height * 0.018,
+          color: Colors.grey[500],
+          height: 1.8,
+        ),
+        textAlign: TextAlign.left,
+      ),
+    );
+  }
+
+  Widget upBannerSection(double height, double width) {
+    return Stack(children: [
+      Center(
+        child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/CINAR_GIRIS_K.jpg"),
               fit: BoxFit.cover,
             ),
           ),
-          // child: Text(
-          //   widget.description + "1",
-          //   style: GoogleFonts.montserrat(
-          //     fontSize: height * 0.016,
-          //     color: Colors.grey[500],
-          //     height: 1.8,
-          //   ),
-          //   textAlign: TextAlign.left,
-          // ),
+          height: height * 0.40,
+          width: width,
+          //color: Colors.yellow),
         ),
-        SizedBox(
-          width: width * 0.012,
-        ),
-        Container(
-          width: width * 0.55,
-          child: Text(
-            widget.description,
-            style: GoogleFonts.montserrat(
-              fontSize: height * 0.016,
-              color: Colors.grey[500],
-              height: 1.8,
-            ),
-            textAlign: TextAlign.left,
-          ),
-        ),
-        SizedBox(
-          width: width * 0.012,
-        ),
-        Container(
-          width: width * 0.55,
-          child: Text(
-            widget.author,
-            style: GoogleFonts.montserrat(
-              fontSize: height * 0.016,
-              color: Colors.grey[500],
-              height: 1.8,
-            ),
-            textAlign: TextAlign.left,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Center upBannerSection(double height, double width) {
-    return Center(
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/CINAR_GIRIS_K.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        height: height * 0.30,
-        width: width,
-        //color: Colors.yellow),
       ),
-    );
+      appBarSection(width)
+    ]);
   }
 
   Row appBarSection(double width) {
@@ -274,7 +238,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
         Container(
           height: 55,
           width: width,
-          color: Colors.white,
+          color: Colors.transparent,
           child: _appBarTabDesktop(),
         ),
       ],
@@ -283,11 +247,8 @@ class _ServiceArticleState extends State<ServiceArticle> {
 
   Widget _appBarTabDesktop() {
     return AppBar(
-      iconTheme: IconThemeData(
-        color: Colors.black, //change your color here
-      ),
       elevation: 0.0,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       // flexibleSpace: Image(
       //   image: AssetImage('assets/navbar.png'),
       //   fit: BoxFit.cover,
@@ -308,7 +269,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 18.0, top: 10, bottom: 18),
                 child: Image.asset(
-                  'assets/cinar_Logo.png',
+                  'assets/cinar_beyaz-01.png',
                   fit: BoxFit.fitWidth,
                   height: 120,
                   width: 200,
@@ -321,19 +282,22 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PublicationsListDesktop(),
-                    ),
-                  ),
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PublicationsListDesktop(),
+                      ),
+                      (Route<dynamic> route) => false,
+                    );
+                  },
                   child: Text(
                     "ÇINAR ACADEMIA",
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color: mainColorWhite),
+                        color: Colors.white),
                     // style: TextStyle(
                     //   color:
                     //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -347,13 +311,12 @@ class _ServiceArticleState extends State<ServiceArticle> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
-                      ),
-                      (Route<dynamic> route) => false,
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => PublicationsListDesktop(),
+                    //   ),
+                    // );
                     //Navigator.pop(context);
                   },
                   child: ListTile(
@@ -377,19 +340,17 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 padding: const EdgeInsets.all(8.0),
                 height: 60.0,
                 child: MaterialButton(
-                  hoverColor: kPrimaryColor,
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => MuseumListDesktop(),
-                    ),
-                  ),
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              MuseumListDesktop())),
                   child: Text(
                     "ÇINAR MUSEUM",
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
-                        color: mainColorWhite),
+                        color: Colors.white),
                     // style: TextStyle(
                     //   color:
                     //       themeProvider.lightTheme ? Colors.black : Colors.white,
@@ -403,13 +364,9 @@ class _ServiceArticleState extends State<ServiceArticle> {
                   hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MuseumListDesktop(),
-                      ),
-                      (Route<dynamic> route) => false,
-                    );
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            MuseumListDesktop()));
                     //Navigator.pop(context);
                   },
                   child: ListTile(
@@ -428,16 +385,121 @@ class _ServiceArticleState extends State<ServiceArticle> {
                   ),
                 ),
               ),
+        VerticalDivider(
+          color: Colors.grey[300],
+          thickness: 3,
+          indent: 15,
+          endIndent: 15,
+        ),
         for (int i = 0; i < _sectionsName.length; i++)
           _appBarActions(_sectionsName[i], i, _sectionsIcons[i]),
+        MediaQuery.of(context).size.width > 760
+            ? Container(
+                color: Colors.transparent,
+                padding: const EdgeInsets.all(8.0),
+                height: 60.0,
+                child: MaterialButton(
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => {
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()))
+                  },
+                  child: Text(
+                    "CAREER",
+                    style: GoogleFonts.montserrat(
+                      fontSize: MediaQuery.of(context).size.width * 0.0070,
+                      // fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),
+                    // style: TextStyle(
+                    //   color:
+                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                    // ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => CarrierDesktop()));
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CAREER",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+        MediaQuery.of(context).size.width > 760
+            ? Container(
+                color: Colors.transparent,
+                padding: const EdgeInsets.all(8.0),
+                height: 60.0,
+                child: MaterialButton(
+                  hoverColor: Colors.black.withOpacity(0.5),
+                  onPressed: () => {
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => ContactDektop()))
+                  },
+                  child: Text(
+                    "CONTACT",
+                    style: GoogleFonts.montserrat(
+                      fontSize: MediaQuery.of(context).size.width * 0.0070,
+                      // fontWeight: FontWeight.w300,
+                      color: Colors.white,
+                    ),
+                    // style: TextStyle(
+                    //   color:
+                    //       themeProvider.lightTheme ? Colors.black : Colors.white,
+                    // ),
+                  ),
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: MaterialButton(
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () {
+                    //_scroll(index);
+                    Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) => ContactDektop()));
+                    //Navigator.pop(context);
+                  },
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.book,
+                      color: kPrimaryColor,
+                    ),
+                    title: Text(
+                      "CONTACT",
+                      style: GoogleFonts.montserrat(
+                        fontSize: MediaQuery.of(context).size.width * 0.0070,
+                        // fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
         Container(
-            color: mainColorWhite,
+            color: Colors.transparent,
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  width: 12,
-                ),
                 IconButton(
                   icon: Icon(
                     AntDesign.linkedin_square,
@@ -453,7 +515,39 @@ class _ServiceArticleState extends State<ServiceArticle> {
                   width: 10,
                 ),
               ],
-            ))
+            )),
+        // Container(
+        //     color: Colors.transparent,
+        //     child: Row(
+        //       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //       children: [
+        //         EntranceFader(
+        //           offset: Offset(0, -10),
+        //           delay: Duration(milliseconds: 100),
+        //           duration: Duration(milliseconds: 250),
+        //           child: IconButton(
+        //             icon: Icon(
+        //               Ionicons.md_exit,
+        //               color: Colors.white,
+        //               size: MediaQuery.of(context).size.width * 0.0095,
+        //             ),
+        //             //iconSize: height,
+        //             onPressed: () {
+        //               Navigator.push(
+        //                 context,
+        //                 MaterialPageRoute(
+        //                   builder: (context) => AdminLogin(),
+        //                 ),
+        //               );
+        //             },
+        //             //hoverColor: kPrimaryColor,
+        //           ),
+        //         ),
+        //         SizedBox(
+        //           width: 10,
+        //         ),
+        //       ],
+        //     ))
       ],
     );
   }
@@ -465,19 +559,16 @@ class _ServiceArticleState extends State<ServiceArticle> {
   ) {
     return MediaQuery.of(context).size.width > 760
         ? Container(
-            color: mainColorWhite,
+            color: Colors.transparent,
             padding: const EdgeInsets.all(8.0),
             height: 60.0,
             child: MaterialButton(
-              hoverColor: kPrimaryColor,
+              hoverColor: Colors.black.withOpacity(0.5),
               onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => MainPage(),
-                  ),
-                  (Route<dynamic> route) => false,
-                );
+                Navigator.pushReplacementNamed(context, '/main',
+                    arguments: {index.toString()});
+                // Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                //     builder: (BuildContext context) => MainPage()));
               },
               child: Text(
                 childText,

@@ -82,14 +82,14 @@ showImageDialog(BuildContext context, String image, String description) {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              width: width < 1200 ? width * 0.60 : width * 0.40,
+              width: width < 1200 ? width * 0.60 : width * 0.60,
               height: 100,
               child: ListView(children: [
                 Text(
                   description,
                   style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.w400,
-                    fontSize: 24,
+                    fontSize: 18,
                     color: Colors.white,
                   ),
                 ),

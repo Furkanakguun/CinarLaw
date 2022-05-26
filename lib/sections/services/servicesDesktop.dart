@@ -52,7 +52,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
               ],
             ),
             Padding(
-              padding: EdgeInsets.only(top: (height * 0.050)),
+              padding: EdgeInsets.only(top: (height * 0.010)),
               child: Center(
                 child: Container(
                   decoration: BoxDecoration(
