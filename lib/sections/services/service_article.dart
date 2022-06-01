@@ -218,7 +218,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/CINAR_GIRIS_K.jpg"),
+              image: AssetImage("assets/calisma_alani.jpg"),
               fit: BoxFit.cover,
             ),
           ),

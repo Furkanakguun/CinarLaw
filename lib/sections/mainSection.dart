@@ -13,6 +13,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
 import 'package:cinarlaw/provider/themeProvider.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:flutter/gestures.dart';
@@ -28,6 +29,7 @@ import 'package:cinarlaw/sections/services/services.dart';
 import 'package:cinarlaw/widget/arrowOnTop.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../translation/translation.dart';
 import '../widget/adaptiveText.dart';
 import 'admin/admin_login.dart';
 import 'museum/museum_listDesktop.dart';
@@ -228,7 +230,7 @@ class _MainPageState extends State<MainPage> {
                 hoverColor: Colors.black.withOpacity(0.5),
                 onPressed: () => _scroll(index + 1),
                 child: Text(
-                  childText,
+                  index == 1 ?     CinarTranslations.aboutUsMenu.tr :     CinarTranslations.practiceAreasMenu.tr,
                   style: GoogleFonts.montserrat(
                     fontSize: MediaQuery.of(context).size.width * 0.0070,
                     //fontWeight: FontWeight.w300,
@@ -255,7 +257,7 @@ class _MainPageState extends State<MainPage> {
                     Navigator.pop(context);
                   },
                   child: Text(
-                    childText,
+                   index == 1 ?     CinarTranslations.aboutUsMenu.tr :     CinarTranslations.practiceAreasMenu.tr,
                     style: TextStyle(
                       color: themeProvider.lightTheme
                           ? Colors.black
@@ -337,7 +339,7 @@ class _MainPageState extends State<MainPage> {
                                     builder: (BuildContext context) =>
                                         PublicationList())),
                             child: Text(
-                              "ÇINAR ACADEMIA",
+                              CinarTranslations.cinarAkademiMenu.tr,
                               style: GoogleFonts.montserrat(
                                 fontSize:
                                     MediaQuery.of(context).size.width * 0.0070,
@@ -376,7 +378,7 @@ class _MainPageState extends State<MainPage> {
                             color: kPrimaryColor,
                           ),
                           title: Text(
-                            "Çınar Academia",
+                            CinarTranslations.cinarAkademiMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -404,7 +406,7 @@ class _MainPageState extends State<MainPage> {
                                   builder: (BuildContext context) =>
                                       MuseumList())),
                           child: Text(
-                            "ÇINAR MUSEUM",
+                            CinarTranslations.cinarMuzeMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -442,7 +444,7 @@ class _MainPageState extends State<MainPage> {
                             color: kPrimaryColor,
                           ),
                           title: Text(
-                            "Çınar Museum",
+                            CinarTranslations.cinarMuzeMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -486,7 +488,7 @@ class _MainPageState extends State<MainPage> {
                             );
                           },
                           child: Text(
-                            "CAREER",
+                            CinarTranslations.careeeMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -522,7 +524,7 @@ class _MainPageState extends State<MainPage> {
                             color: kPrimaryColor,
                           ),
                           title: Text(
-                            "CAREER",
+                               CinarTranslations.careeeMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -557,7 +559,7 @@ class _MainPageState extends State<MainPage> {
                             );
                           },
                           child: Text(
-                            "CONTACT",
+                               CinarTranslations.contactMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -593,7 +595,7 @@ class _MainPageState extends State<MainPage> {
                             color: kPrimaryColor,
                           ),
                           title: Text(
-                            "CONTACT",
+                             CinarTranslations.contactMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,

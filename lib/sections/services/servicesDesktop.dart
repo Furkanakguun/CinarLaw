@@ -7,10 +7,12 @@ import 'package:cinarlaw/provider/themeProvider.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/customTextHeading.dart';
 import 'package:cinarlaw/widget/serviceCard.dart';
+import 'package:get/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cinarlaw/constants.dart';
 import 'package:provider/provider.dart';
 
+import '../../translation/translation.dart';
 import '../../widget/alertDialog.dart';
 
 class ServiceDesktop extends StatefulWidget {
@@ -132,7 +134,42 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 width: width * 0.30,
                 child: Column(
                   children: [
-                    for (int index = 0; index < 4; index++)
+                    Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () => {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ServiceArticle(
+                                      title: CinarTranslations.practice1.tr,
+                                      description: CinarTranslations.practiceDes1.tr,
+                                      author: "",
+                                    ),
+                                  ),
+                                  (Route<dynamic> route) => false,
+                                )
+                                //showOurAreasAlertDialog(context, index)
+                              },
+                              child: Text(
+                               CinarTranslations.practice1.tr,
+                                style: GoogleFonts.montserrat(
+                                    color: mainColor.withOpacity(0.9),
+                                    fontSize: height * 0.018,
+                                    fontWeight: FontWeight.w400),
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                            Divider(
+                              color: Colors.grey[300],
+                              thickness: 2,
+                            )
+                          ],
+                        ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -144,8 +181,8 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => ServiceArticle(
-                                      title: kServicesTitles[index],
-                                      description: kServicesLinks[index],
+                                      title: CinarTranslations.practice2.tr,
+                                      description:CinarTranslations.practiceDes2.tr,
                                       author: "",
                                     ),
                                   ),
@@ -154,7 +191,79 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                                 //showOurAreasAlertDialog(context, index)
                               },
                               child: Text(
-                                kServicesTitles[index],
+                               CinarTranslations.practice2.tr,
+                                style: GoogleFonts.montserrat(
+                                    color: mainColor.withOpacity(0.9),
+                                    fontSize: height * 0.018,
+                                    fontWeight: FontWeight.w400),
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                            Divider(
+                              color: Colors.grey[300],
+                              thickness: 2,
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () => {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ServiceArticle(
+                                      title:  CinarTranslations.practice3.tr,
+                                      description:CinarTranslations.practiceDes3.tr,
+                                      author: "",
+                                    ),
+                                  ),
+                                  (Route<dynamic> route) => false,
+                                )
+                                //showOurAreasAlertDialog(context, index)
+                              },
+                              child: Text(
+                                CinarTranslations.practice3.tr,
+                                style: GoogleFonts.montserrat(
+                                    color: mainColor.withOpacity(0.9),
+                                    fontSize: height * 0.018,
+                                    fontWeight: FontWeight.w400),
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                            Divider(
+                              color: Colors.grey[300],
+                              thickness: 2,
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () => {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ServiceArticle(
+                                      title:  CinarTranslations.practice4.tr,
+                                      description: CinarTranslations.practiceDes4.tr,
+                                      author: "",
+                                    ),
+                                  ),
+                                  (Route<dynamic> route) => false,
+                                )
+                                //showOurAreasAlertDialog(context, index)
+                              },
+                              child: Text(
+                                CinarTranslations.practice4.tr,
                                 style: GoogleFonts.montserrat(
                                     color: mainColor.withOpacity(0.9),
                                     fontSize: height * 0.018,
@@ -169,6 +278,43 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                           ],
                         ),
                       )
+                    // for (int index = 0; index < 4; index++)
+                    //   Padding(
+                    //     padding: const EdgeInsets.all(8.0),
+                    //     child: Column(
+                    //       crossAxisAlignment: CrossAxisAlignment.start,
+                    //       children: [
+                    //         InkWell(
+                    //           onTap: () => {
+                    //             Navigator.pushAndRemoveUntil(
+                    //               context,
+                    //               MaterialPageRoute(
+                    //                 builder: (context) => ServiceArticle(
+                    //                   title: kServicesTitles[index],
+                    //                   description: kServicesLinks[index],
+                    //                   author: "",
+                    //                 ),
+                    //               ),
+                    //               (Route<dynamic> route) => false,
+                    //             )
+                    //             //showOurAreasAlertDialog(context, index)
+                    //           },
+                    //           child: Text(
+                    //             kServicesTitles[index],
+                    //             style: GoogleFonts.montserrat(
+                    //                 color: mainColor.withOpacity(0.9),
+                    //                 fontSize: height * 0.018,
+                    //                 fontWeight: FontWeight.w400),
+                    //             textAlign: TextAlign.start,
+                    //           ),
+                    //         ),
+                    //         Divider(
+                    //           color: Colors.grey[300],
+                    //           thickness: 2,
+                    //         )
+                    //       ],
+                    //     ),
+                    //   )
                   ],
                 ),
               ),

@@ -256,20 +256,20 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
           SizedBox(
             height: 10,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Align(
-              alignment: Alignment.center,
-              child: AdaptiveText(
-                "info@cinarlaw.com ",
-                style: GoogleFonts.montserrat(
-                    color: Colors.black,
-                    fontSize: height * 0.021,
-                    height: 1.8,
-                    fontWeight: FontWeight.w400),
-              ),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: Align(
+          //     alignment: Alignment.center,
+          //     child: AdaptiveText(
+          //       "info@cinarlaw.com ",
+          //       style: GoogleFonts.montserrat(
+          //           color: Colors.black,
+          //           fontSize: height * 0.021,
+          //           height: 1.8,
+          //           fontWeight: FontWeight.w400),
+          //     ),
+          //   ),
+          // ),
           SizedBox(
             height: 10,
           ),
@@ -619,7 +619,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/carrier_arka.jpeg"),
+              image: AssetImage("assets/leydi_adalet.jpg"),
               fit: BoxFit.cover,
             ),
           ),

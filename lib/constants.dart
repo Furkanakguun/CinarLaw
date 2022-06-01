@@ -1,4 +1,6 @@
+import 'package:cinarlaw/translation/translation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // Colors
@@ -78,8 +80,8 @@ final kServicesIcons = [
   "assets/services/open.png",
 ];
 
-final kServicesTitles = [
-  "lnternational Commercial Transactions and lnternational Contracts",
+  List<String> kServicesTitles = [
+  CinarTranslations.practice1.tr,
   "Corporate Services ",
   "Mergers & Acquisitions",
   "Banking & Finance",
@@ -126,7 +128,7 @@ final kServicesDescriptions = [
 ];
 
 final kServicesLinks = [
-  "Expert local advice is a major element for the International Commercial Transactions and International Contracts. We represent and advise both major Turkish exporters and foreign investors in the area of international contracts and international commercial transactions including international sales agreements, agency agreements, distribution agreements, export & import issues, free trade zones, licensing agreements, know-how agreements, franchise agreements and joint-ventures. Çınar & Çınar members have been involved in many international commercial transactions. In addition to our experience, our partners have been regularly lecturing at Ankara Bar Association on International Commercial Transactions and International Contracts. ",
+   CinarTranslations.practiceDes1.tr,
   "Çınar&Çınar provides high-quality corporate advice to both international and domestic corporations from general corporate issues to most challenging matters. We consult on legal matters at ali stages of development of a business. We assist our Clients in incorporation transactions of domestic companies or companies with foreign Capital such as preparation of foundation documents, Articles of Associations and applications to relevant authorities. We also advise on share transfers, shareholder's rights, opening branches or liaison offices in or outside Turkey, corporate governance issues, general assembly meetings, board meetings, Capital increase operations, class change operations; contracting issues such as employment contracts, stock option agreements, licensing agreements, franchise agreements, supply agreements, distributorship and agency contracts. Furthermore, çınar & çınar provides consultancy servicesin a diverse set of partnership transactions such as joint venture structuring. çınar & çınar possesses outstanding reputation for further advising joint-ventures on issues related to competition law, arbitration, intellectual property law and corporate governance. We always collaborate with the parties' in-house counsels to better identify their objectives and commercial culture, and to meet their commercial needs. We develop innovative and effıcient approaches to deal with complex and challenging matters  and to structure most effıcient way to develop a business. ",
   "Mergers, acquisitions and takeovers together constitute one of çinar & çinar most common practice area. Our team members have considerable knowledge and experience in the structure and negotiation of M&A transactions. Our team has experience in all relevant aspects relevant to a business acquisition and is prepared to succeed at all stages of the acquisition transaction including pre-negotiation, extensive due diligence investigation, drafting and negotiating share transfer and asset transfer agreements, and coordinating financial arrangements. Additionally we guide our clients in matters such as employment, environmental, competition and real estate issues",
   "Our Banking & Finance team provides the well-qualified legal services both to local and foreign clients. Our team members have experience in all sorts of financing transactions including bank lending, receivable financing, debt restructuring, credit agreements, insolvency, bankruptcy process, corporate trust matters and general consultancy service to domestic and international Clients. Our practice also includes regular representation of companies, creditors such as domestic and international banks and other financial institutions, insolvency practitioners, financially troubled companies. Our considerable litigation experience proves our knowledge and success in the field of Banking & Finance",

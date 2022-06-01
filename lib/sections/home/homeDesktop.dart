@@ -51,7 +51,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
               children: [
                 SizedBox(
                   height: 30,
-                ),             
+                ),
                 SizedBox(
                   height: height * 0.04,
                 ),
@@ -66,7 +66,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       letterSpacing: 0.0),
                 ),
                 AdaptiveText(
-                  "Solutions that will\n" + "change your life",
+                  // CinarTranslations.giris2.tr + "\n" + CinarTranslations.giris3.tr,
+                  // "Solutions that will\n" + "change your life",
+                  CinarTranslations.giris2.tr,
                   style: GoogleFonts.montserrat(
                       color: _themeProvider.lightTheme
                           ? Colors.white
