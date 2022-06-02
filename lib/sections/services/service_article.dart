@@ -2,14 +2,17 @@ import 'package:cinarlaw/sections/mainSection.dart';
 import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
+import 'package:cinarlaw/translation/translation.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../constants.dart';
 import '../Carrier/carrier.dart';
 import '../contact/contactDesktop.dart';
+import '../publicationsList/publications_list.dart';
 
 class ServiceArticle extends StatefulWidget {
   final String title;
@@ -26,7 +29,6 @@ class _ServiceArticleState extends State<ServiceArticle> {
   final List<String> _sectionsName = [
     "ABOUT US",
     "PRACTICE AREAS",
-    "CONTACT",
   ];
 
   final List<IconData> _sectionsIcons = [
@@ -56,7 +58,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Practice Areas",
+                    CinarTranslations.servicesGiris.tr,
                   style: GoogleFonts.montserrat(
                       color: mainColorWhite,
                       fontSize: height * 0.018,
@@ -283,17 +285,12 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 height: 60.0,
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
-                      ),
-                      (Route<dynamic> route) => false,
-                    );
-                  },
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PublicationList())),
                   child: Text(
-                    "ÇINAR ACADEMIA",
+                    CinarTranslations.cinarAkademiMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -309,23 +306,17 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
                   hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => PublicationsListDesktop(),
-                    //   ),
-                    // );
-                    //Navigator.pop(context);
-                  },
+                   onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PublicationList())),
                   child: ListTile(
                     leading: Icon(
                       Icons.book,
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "Çınar Academia",
+                      CinarTranslations.cinarAkademiMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -346,7 +337,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                           builder: (BuildContext context) =>
                               MuseumListDesktop())),
                   child: Text(
-                    "ÇINAR MUSEUM",
+                    CinarTranslations.cinarMuzeMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -375,7 +366,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "Çınar Museum",
+                      CinarTranslations.cinarAkademiMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -405,7 +396,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREER",
+                    CinarTranslations.careeeMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -434,7 +425,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREER",
+                      CinarTranslations.careeeMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -456,7 +447,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                         builder: (BuildContext context) => ContactDektop()))
                   },
                   child: Text(
-                    "CONTACT",
+                    CinarTranslations.contactMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -485,7 +476,7 @@ class _ServiceArticleState extends State<ServiceArticle> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CONTACT",
+                      CinarTranslations.contactMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -516,38 +507,6 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 ),
               ],
             )),
-        // Container(
-        //     color: Colors.transparent,
-        //     child: Row(
-        //       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //       children: [
-        //         EntranceFader(
-        //           offset: Offset(0, -10),
-        //           delay: Duration(milliseconds: 100),
-        //           duration: Duration(milliseconds: 250),
-        //           child: IconButton(
-        //             icon: Icon(
-        //               Ionicons.md_exit,
-        //               color: Colors.white,
-        //               size: MediaQuery.of(context).size.width * 0.0095,
-        //             ),
-        //             //iconSize: height,
-        //             onPressed: () {
-        //               Navigator.push(
-        //                 context,
-        //                 MaterialPageRoute(
-        //                   builder: (context) => AdminLogin(),
-        //                 ),
-        //               );
-        //             },
-        //             //hoverColor: kPrimaryColor,
-        //           ),
-        //         ),
-        //         SizedBox(
-        //           width: 10,
-        //         ),
-        //       ],
-        //     ))
       ],
     );
   }
@@ -571,7 +530,9 @@ class _ServiceArticleState extends State<ServiceArticle> {
                 //     builder: (BuildContext context) => MainPage()));
               },
               child: Text(
-                childText,
+             index == 0
+                    ? CinarTranslations.aboutUsMenu.tr
+                    : CinarTranslations.practiceAreasMenu.tr,
                 style: GoogleFonts.montserrat(
                   fontSize: MediaQuery.of(context).size.width * 0.0070,
                   //fontWeight: FontWeight.w300,
@@ -602,7 +563,9 @@ class _ServiceArticleState extends State<ServiceArticle> {
                     );
                   },
                   child: Text(
-                    childText,
+                   index == 0
+                    ? CinarTranslations.aboutUsMenu.tr
+                    : CinarTranslations.practiceAreasMenu.tr,
                     style: TextStyle(
                       color: Colors.black,
                     ),

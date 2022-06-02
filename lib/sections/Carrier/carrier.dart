@@ -10,10 +10,12 @@ import 'package:cinarlaw/widget/footer.dart';
 import 'package:cinarlaw/widget/publication_list_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../animations/entranceFader.dart';
 import '../../constants.dart';
+import '../../translation/translation.dart';
 import '../mainSection.dart';
 
 class CarrierDesktop extends StatefulWidget {
@@ -84,7 +86,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                     child: Align(
                       //width: width < 1200 ? width * 0.80 : width * 0.45,
                       child: AdaptiveText(
-                        "Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the relative dressing code and behavioural requirements arisen from the necessities of their professions.",
+                        CinarTranslations.carrierGiris.tr,
                         style: GoogleFonts.montserrat(
                             fontSize: height * 0.021,
                             color: Colors.grey[500],
@@ -140,7 +142,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Attorneyship Application",
+              CinarTranslations.carrierSolBaslik.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
                   fontSize: height * 0.025,
@@ -155,7 +157,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             child: Align(
               //width: width < 1200 ? width * 0.80 : width * 0.45,
               child: AdaptiveText(
-                "çınar&çınar law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies.",
+                CinarTranslations.carrrierSolAciklama1.tr,
                 style: GoogleFonts.montserrat(
                     fontSize: height * 0.020,
                     color: Colors.grey[500],
@@ -173,7 +175,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             child: Align(
               alignment: Alignment.center,
               child: AdaptiveText(
-                "This also enables çınar&çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. You can send your cv to info@cinarlaw.com for attorney application. \n\n",
+                CinarTranslations.carrrierSolAciklama2.tr,
                 style: GoogleFonts.montserrat(
                     fontSize: height * 0.020,
                     color: Colors.grey[500],
@@ -212,7 +214,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Legal Internship Application",
+              CinarTranslations.carrrierOrtaBaslik.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
                   fontSize: height * 0.025,
@@ -227,7 +229,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             child: Align(
               alignment: Alignment.center,
               child: AdaptiveText(
-                "The deadline for 2022-2023 legal internship applications is 30.04.2022. You can send your cv to info@cinarlaw.com for legal internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
+                CinarTranslations.carrrierOrtaAciklama.tr,
                 style: GoogleFonts.montserrat(
                     color: Colors.grey[500],
                     fontSize: height * 0.020,
@@ -296,7 +298,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Summer Internship Application",
+              CinarTranslations.carrrierSagBaslik.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
                   fontSize: height * 0.025,
@@ -311,7 +313,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             child: Align(
               alignment: Alignment.center,
               child: AdaptiveText(
-                "The deadline for 2022-2023 summer internship applications is 31.05.2022. You can send your cv to info@cinarlaw.com for summer internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
+                CinarTranslations.carrrierSagAciklama.tr,
                 style: GoogleFonts.montserrat(
                     fontSize: height * 0.020,
                     color: Colors.grey[500],
@@ -376,7 +378,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Attorneyship Application",
+                  CinarTranslations.carrierSolBaslik.tr,
                   style: GoogleFonts.montserrat(
                       color: Colors.black,
                       fontSize: height * 0.025,
@@ -391,7 +393,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 child: Align(
                   //width: width < 1200 ? width * 0.80 : width * 0.45,
                   child: AdaptiveText(
-                    "çınar&çınar law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies.",
+                    CinarTranslations.carrrierSolAciklama1.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
                         color: Colors.grey[500],
@@ -409,7 +411,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 child: Align(
                   alignment: Alignment.center,
                   child: AdaptiveText(
-                    "This also enables çınar&çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. You can send your cv to info@cinarlaw.com for attorney application. \n\n",
+                    CinarTranslations.carrrierSolAciklama2.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
                         color: Colors.grey[500],
@@ -461,7 +463,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Legal Internship Application",
+                  CinarTranslations.carrrierOrtaBaslik.tr,
                   style: GoogleFonts.montserrat(
                       color: Colors.black,
                       fontSize: height * 0.025,
@@ -476,7 +478,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 child: Align(
                   alignment: Alignment.center,
                   child: AdaptiveText(
-                    "The deadline for 2022-2023 legal internship applications is 30.04.2022. You can send your cv to info@cinarlaw.com for legal internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
+                     CinarTranslations.carrrierOrtaAciklama.tr,
                     style: GoogleFonts.montserrat(
                         color: Colors.grey[500],
                         fontSize: height * 0.015,
@@ -545,7 +547,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Summer Internship Application",
+                  CinarTranslations.carrrierSagBaslik.tr,
                   style: GoogleFonts.montserrat(
                       color: Colors.black,
                       fontSize: height * 0.025,
@@ -560,7 +562,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 child: Align(
                   alignment: Alignment.center,
                   child: AdaptiveText(
-                    "The deadline for 2022-2023 summer internship applications is 31.05.2022. You can send your cv to info@cinarlaw.com for summer internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
+                  CinarTranslations.carrrierSagAciklama.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: height * 0.015,
                         color: Colors.grey[500],
@@ -684,17 +686,12 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 height: 60.0,
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
-                      ),
-                      (Route<dynamic> route) => false,
-                    );
-                  },
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PublicationList())),
                   child: Text(
-                    "ÇINAR ACADEMIA",
+                    CinarTranslations.cinarAkademiMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -709,24 +706,18 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
-                  onPressed: () {
-                    //_scroll(index);
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => PublicationsListDesktop(),
-                    //   ),
-                    // );
-                    //Navigator.pop(context);
-                  },
+                  hoverColor: kPrimaryColor.withAlpha(70),
+                  onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PublicationList())),
                   child: ListTile(
                     leading: Icon(
                       Icons.book,
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "Çınar Academia",
+                      CinarTranslations.cinarAkademiMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -747,7 +738,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                           builder: (BuildContext context) =>
                               MuseumListDesktop())),
                   child: Text(
-                    "ÇINAR MUSEUM",
+                    CinarTranslations.cinarMuzeMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -762,7 +753,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
+                  hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -776,7 +767,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "Çınar Museum",
+                      CinarTranslations.cinarAkademiMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -806,7 +797,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CARREER",
+                    CinarTranslations.careeeMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -822,7 +813,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
+                  hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -835,7 +826,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CARREER",
+                      CinarTranslations.careeeMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -857,7 +848,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                         builder: (BuildContext context) => ContactDektop()))
                   },
                   child: Text(
-                    "CONTACT",
+                    CinarTranslations.contactMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -873,7 +864,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
+                  hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -886,7 +877,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CONTACT",
+                      CinarTranslations.contactMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -901,27 +892,22 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      AntDesign.linkedin_square,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () => launchURL(
-                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
-                    //hoverColor: kPrimaryColor,
+                IconButton(
+                  icon: Icon(
+                    AntDesign.linkedin_square,
+                    color: Colors.white,
+                    size: MediaQuery.of(context).size.width * 0.0095,
                   ),
+                  //iconSize: height,
+                  onPressed: () => launchURL(
+                      'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                  //hoverColor: kPrimaryColor,
                 ),
                 SizedBox(
                   width: 10,
                 ),
               ],
-            ))
+            )),
       ],
     );
   }
@@ -939,13 +925,15 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
             child: MaterialButton(
               hoverColor: Colors.black.withOpacity(0.5),
               onPressed: () {
-                 Navigator.pushReplacementNamed(context, '/main',
+                Navigator.pushReplacementNamed(context, '/main',
                     arguments: {index.toString()});
                 // Navigator.of(context).pushReplacement(new MaterialPageRoute(
                 //     builder: (BuildContext context) => MainPage()));
               },
               child: Text(
-                childText,
+                index == 0
+                    ? CinarTranslations.aboutUsMenu.tr
+                    : CinarTranslations.practiceAreasMenu.tr,
                 style: GoogleFonts.montserrat(
                   fontSize: MediaQuery.of(context).size.width * 0.0070,
                   //fontWeight: FontWeight.w300,
@@ -964,7 +952,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
+                  hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
                     Navigator.pushAndRemoveUntil(
@@ -976,7 +964,9 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                     );
                   },
                   child: Text(
-                    childText,
+                    index == 0
+                        ? CinarTranslations.aboutUsMenu.tr
+                        : CinarTranslations.practiceAreasMenu.tr,
                     style: TextStyle(
                       color: Colors.black,
                     ),

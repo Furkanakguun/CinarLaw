@@ -39,20 +39,61 @@ class CinarTranslations extends Translations {
   static const aboutUsMenu = "aboutUsMenu";
   static const careeeMenu = "careeeMenu";
   static const contactMenu = "contactMenu";
+  static const cinarMuzeGiris = "cinarMuzeGiris";
+  static const cinarAkademiGiris = "cinarAkademiGiris";
+  static const cinarAkademiDesc1 = "cinarAkademiDesc1";
+  static const cinarAkademiDesc2 = "cinarAkademiDesc2";
+  static const servicesGiris = "servicesGiris";
+  static const girisUzun1 = "girisUzun";
+  static const girisUzun2 = "girisUzun2";
+  static const girisUzun3 = "girisUzun3";
+  static const girisUzun4 = "girisUzun4";
+  static const carrierGiris = "carrierGiris";
+  static const carrierSolBaslik = "carrierSolBaslik";
+  static const carrrierOrtaBaslik = "carrrierOrtaBaslik";
+  static const carrrierSagBaslik = "carrrierSagBaslik";
+  static const carrrierSolAciklama1 = "carrrierSolAciklama1";
+  static const carrrierSolAciklama2 = "carrrierSolAciklama2";
+  static const carrrierOrtaAciklama = "carrrierOrtaAciklama";
+  static const carrrierSagAciklama = "carrrierSagAciklama";
   @override
   // TODO: implement keys
   Map<String, Map<String, String>> get keys => {
         'en': {
-          cinarAkademiMenu:"CINAR ACADEMIA",
-          cinarMuzeMenu:"CINAR MUSEUM",
-          practiceAreasMenu:"PRACTICE AREAS",
-          aboutUsMenu:"ABOUT US",
-          careeeMenu:"CAREER",
-          contactMenu:"CONTACT",
+          cinarAkademiMenu: "CINAR ACADEMIA",
+          cinarMuzeMenu: "CINAR MUSEUM",
+          practiceAreasMenu: "PRACTICE AREAS",
+          aboutUsMenu: "ABOUT US",
+          careeeMenu: "CAREER",
+          contactMenu: "CONTACT",
           giris1: "We are always here for",
-          giris2: "Solutions that will",
+          giris2: "Solutions that will \nchange your life",
+          girisUzun1: "In cinar&cinar we always establish a close working\n",
+          girisUzun2:
+              "relationships with our clients. We are comitted to serving and \n",
+          girisUzun3:
+              "protecting our Client's interests in today's ever-changing\n",
+          girisUzun4: "economical and legal environment",
+          carrierGiris:
+              "Applicants must be consistent, disciplined and have a team spirit. It is also expected from the applicants, to act in accordance with the relative dressing code and behavioural requirements arisen from the necessities of their professions.",
+          carrierSolBaslik: "Attorneyship Application",
+          carrrierOrtaBaslik: "Legal Internship Application",
+          carrrierSagBaslik: "Summer Internship Application",
+          carrrierSolAciklama1:
+              "çınar&çınar law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies.",
+          carrrierSolAciklama2:
+              "This also enables çınar&çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. You can send your cv to info@cinarlaw.com for attorney application.",
+          carrrierOrtaAciklama: "The deadline for 2022-2023 legal internship applications is 30.04.2022. You can send your cv to info@cinarlaw.com for legal internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
+          carrrierSagAciklama: "The deadline for 2022-2023 summer internship applications is 31.05.2022. You can send your cv to info@cinarlaw.com for summer internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
           aboutUs: "ABOUT US",
           whoAreWe: "Who are we?",
+          servicesGiris: "Our Practice Areas",
+          cinarMuzeGiris: "Our past is our future",
+          cinarAkademiGiris: "We value he future",
+          cinarAkademiDesc1:
+              "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. ",
+          cinarAkademiDesc2:
+              "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  ",
           hakkimizda1:
               "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.",
           hakkimizda2:
@@ -96,16 +137,39 @@ class CinarTranslations extends Translations {
               "In the emerging Turkish Energy market with ever changing regulations, çınar & çınar has an excellent reputation in completing complex regulatory transactions and contracts in energy and power projects. We provide a wide range of legal Services for energy matters such as project fınance and development, drafting and fınalizing contracts (Concession Agreements, B.O.T and B.0.O Agreements, Take-or-Pay Contracts, 1NG Contracts). We also represent our Clients in administrative and fıscal transactions. Our partners have extensive knowledge in electricity market  regulations, having involved in drafting the Turkish Electricity Law No 4628. Our team has also been involved in numerous mining projects such as gold mining. At çınar & çınar, we also assist our Clients with regards to administrative and legal transactions for mining projects which includes financing prospective operations, prospective license transactions, drafting and negotiating agreements, mining lease,  renunciation of mines and other related issues. We also provide consultancy Services to companies for future  partnership opportunities.",
         },
         'tr': {
-           cinarAkademiMenu:"CINAR AKADEMİ",
-          cinarMuzeMenu:"ÇINAR MÜZE",
-          practiceAreasMenu:"ÇALIŞMLA ALANLARIMIZ",
-          aboutUsMenu:"HAKKIMIZDA",
-          careeeMenu:"KARİYER",
-          contactMenu:"İLETİŞİM",
+          cinarAkademiMenu: "CINAR AKADEMİ",
+          cinarMuzeMenu: "ÇINAR MÜZE",
+          practiceAreasMenu: "ÇALIŞMLA ALANLARIMIZ",
+          aboutUsMenu: "HAKKIMIZDA",
+          careeeMenu: "KARİYER",
+          contactMenu: "İLETİŞİM",
           giris1: "Sizin İçin",
           giris2: "Buradayiz",
+          girisUzun1:
+              "Çınar&Çınar müvekkilleri ile yakın iş ilişkileri kurmaktadır.\n",
+          girisUzun2: "ünümüzün değişen ekonomik ve yasal ortamında\n",
+          girisUzun3: "müvekkillerinin çıkarlarına hizmet etmeyi ve \n",
+          girisUzun4: "korumayı taahhüt etmektedir.",
+          carrierGiris:
+              "Başvuru sahipleri, disiplinli ve takım ruhuna sahip olmalıdır. Mesleğe yakışır şekilde kılık kıyafet kurallarına ve mesleğin gereklerinden doğan davranışsal kurallara uygun hareket etmeleri beklenmektedir.",
+          carrierSolBaslik: "Avuktalık Başvurusu",
+          carrrierOrtaBaslik: "Yasal Stajyer Başvurusu",
+          carrrierSagBaslik: "Yaz Stajı Başvurusu",
+          carrrierSolAciklama1:
+              "Çınar&Çınar, çalışma arkadaşlarını yüksek standartlarda seçmekte ve alanında uzman profesyonellerle çalışmayı tercih etmektedir. Önde gelen ulusal ve uluslararası şirketlere çok çeşitli hizmetler sunmaktadır",
+          carrrierSolAciklama2:
+              "Aynı zamanda Çınar&Çınar, çalışma arkadaşlarına birçok heyecan verici görev ve projede deneyim kazanmalarını sağlamaktadır. Çınar&Çınar ekibinde üstleneceğiniz her yeni görev, kariyerinizde bir yükseliş ve tatmin edici bir başarı hissi olarak size dönecektir. Avukatlık başvurusu için cv'nizi info@cinarlaw.com adresine gönderebilirsiniz.",
+          carrrierOrtaAciklama: "2022-2023 yasal staj başvuruları için son tarih 30.04.2022'dir. Yasal staj başvurusu için cv'nizi info@cinarlaw.com adresine gönderebilirsiniz. İngilizce yeterlilik belgesiniz mevcut ise başvurunuza eklemeniz gerekmektedir.",
+          carrrierSagAciklama: "2022-2023 yaz stajı başvuruları için son tarih 31.05.2022'dir. Yaz stajı başvurusu için özgeçmişinizi info@cinarlaw.com adresine gönderebilirsiniz. İngilizce yeterlilik belgesiniz mevcut ise başvurunuza eklemeniz gerekmektedir.",
           aboutUs: "HAKKIMIZDA",
           whoAreWe: "Biz Kimiz?",
+          servicesGiris: "Çalışma Alanlarımız",
+          cinarMuzeGiris: "Geçmişimiz , geleceğimizdir",
+          cinarAkademiGiris: "Geleceğe değer veriyoruz",
+          cinarAkademiDesc1:
+              "Çınar Hukuki ve Akademik Araştırmalar Merkezi (Çınar Akadem), özellikle hukuk alanında çalışmak isteyen profesyonelleri, şirket üst düzey yöneticilerini, hukuk öğrencilerini ve avukatları göz önünde bulundurarak kurulmuştur",
+          cinarAkademiDesc2:
+              "Çınar Akademi bünyesinde kurulan eğitim merkezinde; seminerler, konferanslar ve çeşitli eğitim programları düzenlenmektedir. Akademi, bu etkinlikler aracılığıyla katılımcılarına mesleki ve akademik yolculuğa iyi hazırlanmış ve uluslararası hukuk alanında geniş deneyime sahip hukukçular olmaları için hem rehberlik hem de yardım sunabilmektedir.",
           hakkimizda1:
               "1988 yılında kurulan Çınar & Çınar, çok çeşitli hukuk uygulamaları ve sektörlerinde yüksek kalitede profesyonel hizmetler sunan bir tam hizmet hukuk bürosudur. Odak noktası, müvekkillerin ticari ihtiyaçlarını karşılayan yaratıcı, verimli ve yenilikçi tavsiyeler sunmaktır. Çınar & Çınar Hukuk Bürosu proaktif, deneyimli ve kalifiye ekibiyle birlikte enerjisini müvekkillerin başarılarına adamaktadır",
           hakkimizda2:

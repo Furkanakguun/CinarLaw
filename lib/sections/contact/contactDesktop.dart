@@ -6,11 +6,13 @@ import 'package:cinarlaw/sections/museum/museum_listDesktop.dart';
 import 'package:cinarlaw/sections/navBar/navBarLogo.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_list.dart';
 import 'package:cinarlaw/sections/publicationsList/publications_listDesktop.dart';
+import 'package:cinarlaw/translation/translation.dart';
 import 'package:cinarlaw/widget/adaptiveText.dart';
 import 'package:cinarlaw/widget/alertDialog.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../constants.dart';
@@ -626,17 +628,12 @@ class _ContactDektopState extends State<ContactDektop> {
                 height: 60.0,
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
-                      ),
-                      (Route<dynamic> route) => false,
-                    );
-                  },
+                   onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PublicationList())),
                   child: Text(
-                    "ÇINAR ACADEMIA",
+                    CinarTranslations.cinarAkademiMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -652,23 +649,17 @@ class _ContactDektopState extends State<ContactDektop> {
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
                   hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => PublicationsListDesktop(),
-                    //   ),
-                    // );
-                    //Navigator.pop(context);
-                  },
+                   onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PublicationList())),
                   child: ListTile(
                     leading: Icon(
                       Icons.book,
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "Çınar Academia",
+                      CinarTranslations.cinarAkademiMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -689,7 +680,7 @@ class _ContactDektopState extends State<ContactDektop> {
                           builder: (BuildContext context) =>
                               MuseumListDesktop())),
                   child: Text(
-                    "ÇINAR MUSEUM",
+                    CinarTranslations.cinarMuzeMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -704,7 +695,7 @@ class _ContactDektopState extends State<ContactDektop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
+                  hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -718,7 +709,7 @@ class _ContactDektopState extends State<ContactDektop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "Çınar Museum",
+                      CinarTranslations.cinarAkademiMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -748,7 +739,7 @@ class _ContactDektopState extends State<ContactDektop> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CARREER",
+                    CinarTranslations.careeeMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -764,7 +755,7 @@ class _ContactDektopState extends State<ContactDektop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
+                  hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -777,7 +768,7 @@ class _ContactDektopState extends State<ContactDektop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CARREER",
+                      CinarTranslations.careeeMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -799,7 +790,7 @@ class _ContactDektopState extends State<ContactDektop> {
                         builder: (BuildContext context) => ContactDektop()))
                   },
                   child: Text(
-                    "CONTACT",
+                    CinarTranslations.contactMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -815,7 +806,7 @@ class _ContactDektopState extends State<ContactDektop> {
             : Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
+                  hoverColor: kPrimaryColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index);
                     Navigator.of(context).pushReplacement(new MaterialPageRoute(
@@ -828,7 +819,7 @@ class _ContactDektopState extends State<ContactDektop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CONTACT",
+                      CinarTranslations.contactMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -843,59 +834,22 @@ class _ContactDektopState extends State<ContactDektop> {
             child: Row(
               //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                EntranceFader(
-                  offset: Offset(0, -10),
-                  delay: Duration(milliseconds: 100),
-                  duration: Duration(milliseconds: 250),
-                  child: IconButton(
-                    icon: Icon(
-                      AntDesign.linkedin_square,
-                      color: Colors.white,
-                      size: MediaQuery.of(context).size.width * 0.0095,
-                    ),
-                    //iconSize: height,
-                    onPressed: () => launchURL(
-                        'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
-                    //hoverColor: kPrimaryColor,
+                IconButton(
+                  icon: Icon(
+                    AntDesign.linkedin_square,
+                    color: Colors.white,
+                    size: MediaQuery.of(context).size.width * 0.0095,
                   ),
+                  //iconSize: height,
+                  onPressed: () => launchURL(
+                      'https://www.linkedin.com/company/cinarlaw/?originalSubdomain=tr'),
+                  //hoverColor: kPrimaryColor,
                 ),
                 SizedBox(
                   width: 10,
                 ),
               ],
             )),
-        // Container(
-        //     color: Colors.transparent,
-        //     child: Row(
-        //       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //       children: [
-        //         EntranceFader(
-        //           offset: Offset(0, -10),
-        //           delay: Duration(milliseconds: 100),
-        //           duration: Duration(milliseconds: 250),
-        //           child: IconButton(
-        //             icon: Icon(
-        //               Ionicons.md_exit,
-        //               color: Colors.white,
-        //               size: MediaQuery.of(context).size.width * 0.0095,
-        //             ),
-        //             //iconSize: height,
-        //             onPressed: () {
-        //               Navigator.push(
-        //                 context,
-        //                 MaterialPageRoute(
-        //                   builder: (context) => AdminLogin(),
-        //                 ),
-        //               );
-        //             },
-        //             //hoverColor: kPrimaryColor,
-        //           ),
-        //         ),
-        //         SizedBox(
-        //           width: 10,
-        //         ),
-        //       ],
-        //     ))
       ],
     );
   }
@@ -919,7 +873,9 @@ class _ContactDektopState extends State<ContactDektop> {
                 //     builder: (BuildContext context) => MainPage()));
               },
               child: Text(
-                childText,
+                index == 0
+                    ? CinarTranslations.aboutUsMenu.tr
+                    : CinarTranslations.practiceAreasMenu.tr,
                 style: GoogleFonts.montserrat(
                   fontSize: MediaQuery.of(context).size.width * 0.0070,
                   //fontWeight: FontWeight.w300,
@@ -938,7 +894,7 @@ class _ContactDektopState extends State<ContactDektop> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 MaterialButton(
-                  hoverColor: Colors.black.withOpacity(0.5),
+                  hoverColor: mainColor.withAlpha(70),
                   onPressed: () {
                     //_scroll(index + 1);
                     Navigator.pushAndRemoveUntil(
@@ -950,7 +906,9 @@ class _ContactDektopState extends State<ContactDektop> {
                     );
                   },
                   child: Text(
-                    childText,
+                    index == 0
+                    ? CinarTranslations.aboutUsMenu.tr
+                    : CinarTranslations.practiceAreasMenu.tr,
                     style: TextStyle(
                       color: Colors.black,
                     ),

@@ -230,7 +230,9 @@ class _MainPageState extends State<MainPage> {
                 hoverColor: Colors.black.withOpacity(0.5),
                 onPressed: () => _scroll(index + 1),
                 child: Text(
-                  index == 1 ?     CinarTranslations.aboutUsMenu.tr :     CinarTranslations.practiceAreasMenu.tr,
+                  index == 0
+                      ? CinarTranslations.aboutUsMenu.tr
+                      : CinarTranslations.practiceAreasMenu.tr,
                   style: GoogleFonts.montserrat(
                     fontSize: MediaQuery.of(context).size.width * 0.0070,
                     //fontWeight: FontWeight.w300,
@@ -257,7 +259,9 @@ class _MainPageState extends State<MainPage> {
                     Navigator.pop(context);
                   },
                   child: Text(
-                   index == 1 ?     CinarTranslations.aboutUsMenu.tr :     CinarTranslations.practiceAreasMenu.tr,
+                    index == 0
+                        ? CinarTranslations.aboutUsMenu.tr
+                        : CinarTranslations.practiceAreasMenu.tr,
                     style: TextStyle(
                       color: themeProvider.lightTheme
                           ? Colors.black
@@ -524,7 +528,7 @@ class _MainPageState extends State<MainPage> {
                             color: kPrimaryColor,
                           ),
                           title: Text(
-                               CinarTranslations.careeeMenu.tr,
+                            CinarTranslations.careeeMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -559,7 +563,7 @@ class _MainPageState extends State<MainPage> {
                             );
                           },
                           child: Text(
-                               CinarTranslations.contactMenu.tr,
+                            CinarTranslations.contactMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,
@@ -595,7 +599,7 @@ class _MainPageState extends State<MainPage> {
                             color: kPrimaryColor,
                           ),
                           title: Text(
-                             CinarTranslations.contactMenu.tr,
+                            CinarTranslations.contactMenu.tr,
                             style: GoogleFonts.montserrat(
                               fontSize:
                                   MediaQuery.of(context).size.width * 0.0070,

@@ -77,7 +77,7 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Our Practice Areas",
+               CinarTranslations.servicesGiris.tr,
               style: GoogleFonts.montserrat(
                   color: mainColor.withOpacity(0.9),
                   fontSize: height * 0.040,
@@ -135,186 +135,153 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 child: Column(
                   children: [
                     Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                              onTap: () => {
-                                Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ServiceArticle(
-                                      title: CinarTranslations.practice1.tr,
-                                      description: CinarTranslations.practiceDes1.tr,
-                                      author: "",
-                                    ),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice1.tr,
+                                    description:
+                                        CinarTranslations.practiceDes1.tr,
+                                    author: "",
                                   ),
-                                  (Route<dynamic> route) => false,
-                                )
-                                //showOurAreasAlertDialog(context, index)
-                              },
-                              child: Text(
-                               CinarTranslations.practice1.tr,
-                                style: GoogleFonts.montserrat(
-                                    color: mainColor.withOpacity(0.9),
-                                    fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.start,
-                              ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice1.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
                             ),
-                            Divider(
-                              color: Colors.grey[300],
-                              thickness: 2,
-                            )
-                          ],
-                        ),
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                              onTap: () => {
-                                Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ServiceArticle(
-                                      title: CinarTranslations.practice2.tr,
-                                      description:CinarTranslations.practiceDes2.tr,
-                                      author: "",
-                                    ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice2.tr,
+                                    description:
+                                        CinarTranslations.practiceDes2.tr,
+                                    author: "",
                                   ),
-                                  (Route<dynamic> route) => false,
-                                )
-                                //showOurAreasAlertDialog(context, index)
-                              },
-                              child: Text(
-                               CinarTranslations.practice2.tr,
-                                style: GoogleFonts.montserrat(
-                                    color: mainColor.withOpacity(0.9),
-                                    fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.start,
-                              ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice2.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
                             ),
-                            Divider(
-                              color: Colors.grey[300],
-                              thickness: 2,
-                            )
-                          ],
-                        ),
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                              onTap: () => {
-                                Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ServiceArticle(
-                                      title:  CinarTranslations.practice3.tr,
-                                      description:CinarTranslations.practiceDes3.tr,
-                                      author: "",
-                                    ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice3.tr,
+                                    description:
+                                        CinarTranslations.practiceDes3.tr,
+                                    author: "",
                                   ),
-                                  (Route<dynamic> route) => false,
-                                )
-                                //showOurAreasAlertDialog(context, index)
-                              },
-                              child: Text(
-                                CinarTranslations.practice3.tr,
-                                style: GoogleFonts.montserrat(
-                                    color: mainColor.withOpacity(0.9),
-                                    fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.start,
-                              ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice3.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
                             ),
-                            Divider(
-                              color: Colors.grey[300],
-                              thickness: 2,
-                            )
-                          ],
-                        ),
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                              onTap: () => {
-                                Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ServiceArticle(
-                                      title:  CinarTranslations.practice4.tr,
-                                      description: CinarTranslations.practiceDes4.tr,
-                                      author: "",
-                                    ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice4.tr,
+                                    description:
+                                        CinarTranslations.practiceDes4.tr,
+                                    author: "",
                                   ),
-                                  (Route<dynamic> route) => false,
-                                )
-                                //showOurAreasAlertDialog(context, index)
-                              },
-                              child: Text(
-                                CinarTranslations.practice4.tr,
-                                style: GoogleFonts.montserrat(
-                                    color: mainColor.withOpacity(0.9),
-                                    fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.start,
-                              ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice4.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
                             ),
-                            Divider(
-                              color: Colors.grey[300],
-                              thickness: 2,
-                            )
-                          ],
-                        ),
-                      )
-                    // for (int index = 0; index < 4; index++)
-                    //   Padding(
-                    //     padding: const EdgeInsets.all(8.0),
-                    //     child: Column(
-                    //       crossAxisAlignment: CrossAxisAlignment.start,
-                    //       children: [
-                    //         InkWell(
-                    //           onTap: () => {
-                    //             Navigator.pushAndRemoveUntil(
-                    //               context,
-                    //               MaterialPageRoute(
-                    //                 builder: (context) => ServiceArticle(
-                    //                   title: kServicesTitles[index],
-                    //                   description: kServicesLinks[index],
-                    //                   author: "",
-                    //                 ),
-                    //               ),
-                    //               (Route<dynamic> route) => false,
-                    //             )
-                    //             //showOurAreasAlertDialog(context, index)
-                    //           },
-                    //           child: Text(
-                    //             kServicesTitles[index],
-                    //             style: GoogleFonts.montserrat(
-                    //                 color: mainColor.withOpacity(0.9),
-                    //                 fontSize: height * 0.018,
-                    //                 fontWeight: FontWeight.w400),
-                    //             textAlign: TextAlign.start,
-                    //           ),
-                    //         ),
-                    //         Divider(
-                    //           color: Colors.grey[300],
-                    //           thickness: 2,
-                    //         )
-                    //       ],
-                    //     ),
-                    //   )
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -327,43 +294,154 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 width: width * 0.30,
                 child: Column(
                   children: [
-                    for (int index = 4; index < 8; index++)
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                              onTap: () => {
-                                Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ServiceArticle(
-                                      title: kServicesTitles[index],
-                                      description: kServicesLinks[index],
-                                      author: "",
-                                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice5.tr,
+                                    description:
+                                        CinarTranslations.practiceDes5.tr,
+                                    author: "",
                                   ),
-                                  (Route<dynamic> route) => false,
-                                )
-                                //showOurAreasAlertDialog(context, index)
-                              },
-                              child: Text(
-                                kServicesTitles[index],
-                                style: GoogleFonts.montserrat(
-                                    color: mainColor.withOpacity(0.9),
-                                    fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.start,
-                              ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice5.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
                             ),
-                            Divider(
-                              color: Colors.grey[300],
-                              thickness: 2,
-                            )
-                          ],
-                        ),
-                      )
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice6.tr,
+                                    description:
+                                        CinarTranslations.practiceDes6.tr,
+                                    author: "",
+                                  ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice6.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice7.tr,
+                                    description:
+                                        CinarTranslations.practiceDes7.tr,
+                                    author: "",
+                                  ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice7.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice8.tr,
+                                    description:
+                                        CinarTranslations.practiceDes8.tr,
+                                    author: "",
+                                  ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice8.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -376,43 +454,117 @@ class _ServiceDesktopState extends State<ServiceDesktop> {
                 width: width * 0.30,
                 child: Column(
                   children: [
-                    for (int index = 8; index < 11; index++)
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                              onTap: () => {
-                                Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ServiceArticle(
-                                      title: kServicesTitles[index],
-                                      description: kServicesLinks[index],
-                                      author: "",
-                                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice9.tr,
+                                    description:
+                                        CinarTranslations.practiceDes9.tr,
+                                    author: "",
                                   ),
-                                  (Route<dynamic> route) => false,
-                                )
-                                //showOurAreasAlertDialog(context, index)
-                              },
-                              child: Text(
-                                kServicesTitles[index],
-                                style: GoogleFonts.montserrat(
-                                    color: mainColor.withOpacity(0.9),
-                                    fontSize: height * 0.018,
-                                    fontWeight: FontWeight.w400),
-                                textAlign: TextAlign.start,
-                              ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice9.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
                             ),
-                            Divider(
-                              color: Colors.grey[300],
-                              thickness: 2,
-                            )
-                          ],
-                        ),
-                      )
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice10.tr,
+                                    description:
+                                        CinarTranslations.practiceDes10.tr,
+                                    author: "",
+                                  ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice10.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                            onTap: () => {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ServiceArticle(
+                                    title: CinarTranslations.practice11.tr,
+                                    description:
+                                        CinarTranslations.practiceDes11.tr,
+                                    author: "",
+                                  ),
+                                ),
+                                (Route<dynamic> route) => false,
+                              )
+                              //showOurAreasAlertDialog(context, index)
+                            },
+                            child: Text(
+                              CinarTranslations.practice11.tr,
+                              style: GoogleFonts.montserrat(
+                                  color: mainColor.withOpacity(0.9),
+                                  fontSize: height * 0.018,
+                                  fontWeight: FontWeight.w400),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey[300],
+                            thickness: 2,
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),

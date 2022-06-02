@@ -8,10 +8,13 @@ import 'package:cinarlaw/widget/alertDialog.dart';
 import 'package:cinarlaw/widget/footer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../constants.dart';
+import '../../translation/translation.dart';
 import '../contact/contactDesktop.dart';
+import '../publicationsList/publications_list.dart';
 
 class MuseumListDesktop extends StatefulWidget {
   const MuseumListDesktop({Key key}) : super(key: key);
@@ -70,7 +73,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                 Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "Our past is our future",
+                   CinarTranslations.cinarMuzeGiris.tr,
                     style: GoogleFonts.montserrat(
                         color: Colors.black,
                         fontSize: height * 0.045,
@@ -573,17 +576,12 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                 height: 60.0,
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PublicationsListDesktop(),
-                      ),
-                      (Route<dynamic> route) => false,
-                    );
-                  },
+                    onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PublicationList())),
                   child: Text(
-                    "ÇINAR ACADEMIA",
+                    CinarTranslations.cinarAkademiMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -599,23 +597,17 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
                   hoverColor: kPrimaryColor.withAlpha(70),
-                  onPressed: () {
-                    //_scroll(index);
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => PublicationsListDesktop(),
-                    //   ),
-                    // );
-                    //Navigator.pop(context);
-                  },
+                   onPressed: () => Navigator.of(context).pushReplacement(
+                      new MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              PublicationList())),
                   child: ListTile(
                     leading: Icon(
                       Icons.book,
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "Çınar Academia",
+                      CinarTranslations.cinarAkademiMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -636,7 +628,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                           builder: (BuildContext context) =>
                               MuseumListDesktop())),
                   child: Text(
-                    "ÇINAR MUSEUM",
+                    CinarTranslations.cinarMuzeMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -665,7 +657,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "Çınar Museum",
+                      CinarTranslations.cinarAkademiMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -695,7 +687,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                    "CAREER",
+                    CinarTranslations.careeeMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -724,7 +716,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CAREER",
+                      CinarTranslations.careeeMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -746,7 +738,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                         builder: (BuildContext context) => ContactDektop()))
                   },
                   child: Text(
-                    "CONTACT",
+                    CinarTranslations.contactMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -775,7 +767,7 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                      "CONTACT",
+                      CinarTranslations.contactMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -806,38 +798,6 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                 ),
               ],
             )),
-        // Container(
-        //     color: Colors.transparent,
-        //     child: Row(
-        //       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        //       children: [
-        //         EntranceFader(
-        //           offset: Offset(0, -10),
-        //           delay: Duration(milliseconds: 100),
-        //           duration: Duration(milliseconds: 250),
-        //           child: IconButton(
-        //             icon: Icon(
-        //               Ionicons.md_exit,
-        //               color: Colors.white,
-        //               size: MediaQuery.of(context).size.width * 0.0095,
-        //             ),
-        //             //iconSize: height,
-        //             onPressed: () {
-        //               Navigator.push(
-        //                 context,
-        //                 MaterialPageRoute(
-        //                   builder: (context) => AdminLogin(),
-        //                 ),
-        //               );
-        //             },
-        //             //hoverColor: kPrimaryColor,
-        //           ),
-        //         ),
-        //         SizedBox(
-        //           width: 10,
-        //         ),
-        //       ],
-        //     ))
       ],
     );
   }
@@ -861,7 +821,9 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                 //     builder: (BuildContext context) => MainPage()));
               },
               child: Text(
-                childText,
+             index == 0
+                    ? CinarTranslations.aboutUsMenu.tr
+                    : CinarTranslations.practiceAreasMenu.tr,
                 style: GoogleFonts.montserrat(
                   fontSize: MediaQuery.of(context).size.width * 0.0070,
                   //fontWeight: FontWeight.w300,
@@ -892,7 +854,9 @@ class _MuseumListDesktopState extends State<MuseumListDesktop> {
                     );
                   },
                   child: Text(
-                    childText,
+                   index == 0
+                    ? CinarTranslations.aboutUsMenu.tr
+                    : CinarTranslations.practiceAreasMenu.tr,
                     style: TextStyle(
                       color: Colors.black,
                     ),

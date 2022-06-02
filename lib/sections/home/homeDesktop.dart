@@ -86,10 +86,10 @@ class _HomeDesktopState extends State<HomeDesktop> {
                   duration: Duration(milliseconds: 800),
                   child: TextRenderer(
                     child: AdaptiveText(
-                      "In cinar&cinar we always establish a close working\n" +
-                          "relationships with our clients. We are comitted to serving and \n" +
-                          "protecting our Client's interests in today's ever-changing\n" +
-                          "economical and legal environment",
+                       CinarTranslations.girisUzun1.tr +
+                         CinarTranslations.girisUzun2.tr +
+                           CinarTranslations.girisUzun3.tr +
+                           CinarTranslations.girisUzun4.tr ,
                       style: GoogleFonts.montserrat(
                           color: _themeProvider.lightTheme
                               ? Colors.white
