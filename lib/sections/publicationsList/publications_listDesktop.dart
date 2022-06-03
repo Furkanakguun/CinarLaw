@@ -32,6 +32,8 @@ class PublicationsListDesktop extends StatefulWidget {
 class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   List<BlogPost> starredBlogList;
   bool starredBlogPostsLoading = true;
+  bool eventEmpty = false;
+  bool blogEmpty = false;
   final List<String> _sectionsName = [
     "ABOUT US",
     "PRACTICE AREAS",
@@ -53,7 +55,15 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         .where("star", isEqualTo: true)
         .limit(3)
         .get();
-    print(snapshot.docs.isEmpty);
+    if (snapshot.docs.isEmpty) {
+      setState(() {
+        blogEmpty = true;
+      });
+    } else {
+      setState(() {
+        blogEmpty = false;
+      });
+    }
     for (var item in snapshot.docs) {
       feedItems.add(BlogPost.fromDocument(item));
     }
@@ -69,7 +79,15 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
         .where("star", isEqualTo: true)
         .limit(3)
         .get();
-    print(snapshot.docs.isEmpty);
+    if (snapshot.docs.isEmpty) {
+      setState(() {
+        eventEmpty = true;
+      });
+    } else {
+      setState(() {
+        eventEmpty = false;
+      });
+    }
     for (var item in snapshot.docs) {
       feedItems.add(BlogPost.fromDocument(item));
     }
@@ -104,7 +122,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
               Align(
                 alignment: Alignment.center,
                 child: Text(
-                   CinarTranslations.cinarAkademiGiris.tr,
+                  CinarTranslations.cinarAkademiGiris.tr,
                   style: GoogleFonts.montserrat(
                       color: Colors.black,
                       fontSize: height * 0.050,
@@ -258,150 +276,6 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                       );
                     },
                   )),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(
-              //       horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //     children: [
-              //       Stack(children: [
-              //         Container(
-              //           decoration: BoxDecoration(
-              //             //border: Border.all(color: Colors.grey),
-              //             boxShadow: [
-              //               BoxShadow(
-              //                 color: Colors.black.withOpacity(0.2),
-              //                 blurRadius: 25.0,
-              //                 offset: Offset(2.0, 2.0),
-              //               ),
-              //             ],
-              //             color: Color(0xff959190),
-              //             borderRadius: BorderRadius.circular(12),
-              //             // image: DecorationImage(
-              //             //     image: AssetImage('assets/adakemi.jpg'),
-              //             //     fit: BoxFit.cover)
-              //           ),
-              //           width: width < 1200 ? width * 0.60 : width * 0.20,
-              //           height: height * 0.30,
-              //         ),
-              //         Padding(
-              //           padding: EdgeInsets.only(
-              //               top: width * 0.10, left: 12, right: 12),
-              //           child: Center(
-              //             child: Container(
-              //               color: Colors.transparent,
-              //               width: width < 1200 ? width * 0.60 : width * 0.17,
-              //               child: Column(
-              //                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //                 children: [
-              //                   Text(
-              //                     'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
-              //                     style: GoogleFonts.montserrat(
-              //                         fontSize: height * 0.017,
-              //                         color: Colors.white,
-              //                         height: 1.5,
-              //                         fontWeight: FontWeight.w400),
-              //                     textAlign: TextAlign.center,
-              //                   ),
-              //                 ],
-              //               ),
-              //             ),
-              //           ),
-              //         )
-              //       ]),
-              //       Stack(children: [
-              //         Container(
-              //           decoration: BoxDecoration(
-              //             //border: Border.all(color: Colors.grey),
-              //             boxShadow: [
-              //               BoxShadow(
-              //                 color: Colors.black.withOpacity(0.2),
-              //                 blurRadius: 25.0,
-              //                 offset: Offset(2.0, 2.0),
-              //               ),
-              //             ],
-              //             color: Color(0xff9b8c9f),
-              //             borderRadius: BorderRadius.circular(12),
-              //             // image: DecorationImage(
-              //             //     image: AssetImage('assets/adakemi.jpg'),
-              //             //     fit: BoxFit.cover)
-              //           ),
-              //           width: width < 1200 ? width * 0.60 : width * 0.20,
-              //           height: height * 0.30,
-              //         ),
-              //         Padding(
-              //           padding: EdgeInsets.only(
-              //               top: width * 0.10, left: 12, right: 12),
-              //           child: Center(
-              //             child: Container(
-              //               color: Colors.transparent,
-              //               width: width < 1200 ? width * 0.60 : width * 0.17,
-              //               child: Column(
-              //                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //                 children: [
-              //                   Text(
-              //                     'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
-              //                     style: GoogleFonts.montserrat(
-              //                         fontSize: height * 0.017,
-              //                         color: Colors.white,
-              //                         height: 1.5,
-              //                         fontWeight: FontWeight.w400),
-              //                     textAlign: TextAlign.center,
-              //                   ),
-              //                 ],
-              //               ),
-              //             ),
-              //           ),
-              //         )
-              //       ]),
-              //       Stack(children: [
-              //         Container(
-              //           decoration: BoxDecoration(
-              //             //border: Border.all(color: Colors.grey),
-              //             boxShadow: [
-              //               BoxShadow(
-              //                 color: Colors.black.withOpacity(0.2),
-              //                 blurRadius: 25.0,
-              //                 offset: Offset(2.0, 2.0),
-              //               ),
-              //             ],
-              //             color: Color(0xffcdb68c),
-              //             borderRadius: BorderRadius.circular(12),
-              //             // image: DecorationImage(
-              //             //     image: AssetImage('assets/adakemi.jpg'),
-              //             //     fit: BoxFit.cover)
-              //           ),
-              //           width: width < 1200 ? width * 0.60 : width * 0.20,
-              //           height: height * 0.30,
-              //         ),
-              //         Padding(
-              //           padding: EdgeInsets.only(
-              //               top: width * 0.10, left: 12, right: 12),
-              //           child: Center(
-              //             child: Container(
-              //               color: Colors.transparent,
-              //               width: width < 1200 ? width * 0.60 : width * 0.17,
-              //               child: Column(
-              //                 //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //                 children: [
-              //                   Text(
-              //                     'İstanbul Hukuk Konferansı Medya ve Reklam Hukuku ',
-              //                     style: GoogleFonts.montserrat(
-              //                         fontSize: height * 0.017,
-              //                         color: Colors.white,
-              //                         height: 1.5,
-              //                         fontWeight: FontWeight.w400),
-              //                     textAlign: TextAlign.center,
-              //                   ),
-              //                 ],
-              //               ),
-              //             ),
-              //           ),
-              //         )
-              //       ]),
-              //     ],
-              //   ),
-              // ),
               SizedBox(
                 height: 15,
               ),
@@ -418,67 +292,75 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
   }
 
   Padding seeMorePublication(double width, BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
-      child: TextButton.icon(
-        style: TextButton.styleFrom(
-          textStyle: TextStyle(color: Colors.blue),
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.0),
-          ),
-        ),
-        onPressed: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => PublicationsListList(),
+    return blogEmpty
+        ? Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: width < 1200 ? width * (0.20) : width * (0.15)))
+        : Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
+            child: TextButton.icon(
+              style: TextButton.styleFrom(
+                textStyle: TextStyle(color: Colors.blue),
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24.0),
+                ),
+              ),
+              onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PublicationsListList(),
+                  ),
+                )
+              },
+              icon: Icon(
+                Icons.arrow_forward_outlined,
+                color: mainColorWhite,
+              ),
+              label: Text(
+                'See more',
+                style: TextStyle(color: mainColor),
+              ),
             ),
-          )
-        },
-        icon: Icon(
-          Icons.arrow_forward_outlined,
-          color: mainColorWhite,
-        ),
-        label: Text(
-          'See more',
-          style: TextStyle(color: mainColor),
-        ),
-      ),
-    );
+          );
   }
 
   Padding seeMoreEvent(double width, BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
-      child: TextButton.icon(
-        style: TextButton.styleFrom(
-          textStyle: TextStyle(color: Colors.blue),
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24.0),
-          ),
-        ),
-        onPressed: () => {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => EventsList(),
+    return eventEmpty
+        ? Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: width < 1200 ? width * (0.20) : width * (0.15)))
+        : Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: width < 1200 ? width * (0.20) : width * (0.15)),
+            child: TextButton.icon(
+              style: TextButton.styleFrom(
+                textStyle: TextStyle(color: Colors.blue),
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(24.0),
+                ),
+              ),
+              onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EventsList(),
+                  ),
+                )
+              },
+              icon: Icon(
+                Icons.arrow_forward_outlined,
+                color: mainColorWhite,
+              ),
+              label: Text(
+                'See more',
+                style: TextStyle(color: mainColor),
+              ),
             ),
-          )
-        },
-        icon: Icon(
-          Icons.arrow_forward_outlined,
-          color: mainColorWhite,
-        ),
-        label: Text(
-          'See more',
-          style: TextStyle(color: mainColor),
-        ),
-      ),
-    );
+          );
   }
 
   InkWell starredBlogPostCard(BuildContext context, double width, double height,
@@ -560,7 +442,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             text:
                 "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. \n\n",
             child: AdaptiveText(
-               CinarTranslations.cinarAkademiDesc1.tr + " \n\n",
+              CinarTranslations.cinarAkademiDesc1.tr + " \n\n",
               style: GoogleFonts.montserrat(
                 fontSize: height * 0.016,
                 color: Colors.grey[500],
@@ -579,7 +461,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
             text:
                 "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  \n\n",
             child: AdaptiveText(
-               CinarTranslations.cinarAkademiDesc2.tr + " \n\n",
+              CinarTranslations.cinarAkademiDesc2.tr + " \n\n",
               style: GoogleFonts.montserrat(
                 fontSize: height * 0.016,
                 color: Colors.grey[500],
@@ -679,15 +561,14 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
           // ),
           child: CarouselSlider(
               options: CarouselOptions(
-                height: height * 0.60,
-                viewportFraction: 1.05,
-                enlargeCenterPage: false,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(seconds: 7),
-                autoPlay: true,
-                autoPlayInterval: Duration(seconds: 7)
-              ),
+                  height: height * 0.60,
+                  viewportFraction: 1.05,
+                  enlargeCenterPage: false,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: true,
+                  autoPlayAnimationDuration: Duration(seconds: 7),
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 7)),
               items: [
                 //1st Image of Slider
                 Container(
@@ -785,7 +666,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                   hoverColor: Colors.black.withOpacity(0.5),
                   onPressed: () {},
                   child: Text(
-                     CinarTranslations.cinarAkademiMenu.tr,
+                    CinarTranslations.cinarAkademiMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -838,7 +719,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                           builder: (BuildContext context) =>
                               MuseumListDesktop())),
                   child: Text(
-                     CinarTranslations.cinarMuzeMenu.tr,
+                    CinarTranslations.cinarMuzeMenu.tr,
                     style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -897,7 +778,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                         builder: (BuildContext context) => CarrierDesktop()))
                   },
                   child: Text(
-                   CinarTranslations.careeeMenu.tr,
+                    CinarTranslations.careeeMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -948,7 +829,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                         builder: (BuildContext context) => ContactDektop()))
                   },
                   child: Text(
-                   CinarTranslations.contactMenu.tr,
+                    CinarTranslations.contactMenu.tr,
                     style: GoogleFonts.montserrat(
                       fontSize: MediaQuery.of(context).size.width * 0.0070,
                       // fontWeight: FontWeight.w300,
@@ -977,7 +858,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                       color: kPrimaryColor,
                     ),
                     title: Text(
-                       CinarTranslations.contactMenu.tr,
+                      CinarTranslations.contactMenu.tr,
                       style: GoogleFonts.montserrat(
                         fontSize: MediaQuery.of(context).size.width * 0.0070,
                         // fontWeight: FontWeight.w300,
@@ -1059,7 +940,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                 //     builder: (BuildContext context) => MainPage()));
               },
               child: Text(
-                 index == 0
+                index == 0
                     ? CinarTranslations.aboutUsMenu.tr
                     : CinarTranslations.practiceAreasMenu.tr,
                 style: GoogleFonts.montserrat(
@@ -1093,8 +974,8 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                   },
                   child: Text(
                     index == 0
-                    ? CinarTranslations.aboutUsMenu.tr
-                    : CinarTranslations.practiceAreasMenu.tr,
+                        ? CinarTranslations.aboutUsMenu.tr
+                        : CinarTranslations.practiceAreasMenu.tr,
                     style: TextStyle(
                       color: Colors.black,
                     ),

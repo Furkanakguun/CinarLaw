@@ -256,13 +256,13 @@ class _BlogEditState extends State<BlogEdit> {
                   (Route<dynamic> route) => false,
                 );
               },
-              icon: Icon(Icons.edit)),
+              icon: Icon(Icons.edit,color: Colors.grey,)),
           IconButton(
               onPressed: () {
                 showAlertDialog(context, 'Are you sure you want to delete?',
                     "Delete Blog?", "Delete", "Cancel");
               },
-              icon: Icon(Icons.delete)),
+              icon: Icon(Icons.delete,color: Colors.grey,)),
         ],
       ),
       title: Stack(children: [

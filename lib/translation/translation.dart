@@ -137,7 +137,7 @@ class CinarTranslations extends Translations {
               "In the emerging Turkish Energy market with ever changing regulations, çınar & çınar has an excellent reputation in completing complex regulatory transactions and contracts in energy and power projects. We provide a wide range of legal Services for energy matters such as project fınance and development, drafting and fınalizing contracts (Concession Agreements, B.O.T and B.0.O Agreements, Take-or-Pay Contracts, 1NG Contracts). We also represent our Clients in administrative and fıscal transactions. Our partners have extensive knowledge in electricity market  regulations, having involved in drafting the Turkish Electricity Law No 4628. Our team has also been involved in numerous mining projects such as gold mining. At çınar & çınar, we also assist our Clients with regards to administrative and legal transactions for mining projects which includes financing prospective operations, prospective license transactions, drafting and negotiating agreements, mining lease,  renunciation of mines and other related issues. We also provide consultancy Services to companies for future  partnership opportunities.",
         },
         'tr': {
-          cinarAkademiMenu: "CINAR AKADEMİ",
+          cinarAkademiMenu: "ÇINAR AKADEMİ",
           cinarMuzeMenu: "ÇINAR MÜZE",
           practiceAreasMenu: "ÇALIŞMLA ALANLARIMIZ",
           aboutUsMenu: "HAKKIMIZDA",
