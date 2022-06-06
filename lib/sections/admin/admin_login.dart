@@ -187,24 +187,7 @@ class _AdminLoginState extends State<AdminLogin> {
   }
 
   void _login() {
-    if (this.usernameController.text == "admincinar" &&
-        this.passwordController.text == "Cc147258*") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => AdminDashboard(),
-        ),
-      );
-    } else {
-      showErrortRequestSnackBar(context, "Username or password invalid");
-      //  Navigator.push(
-      //   context,
-      //   MaterialPageRoute(
-      //     builder: (context) => AdminDashboard(),
-      //   ),
-      // );
-      //formGlobalKey.currentState.validate();
-    }
+    
   }
 
   showErrortRequestSnackBar(BuildContext context, String text) async {
