@@ -240,7 +240,7 @@ class _PublicationsListDesktopState extends State<PublicationsListDesktop> {
                         )),
                         Padding(
                           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                          child: Text("Event",
+                          child: Text(CinarTranslations.event.tr,
                               style: GoogleFonts.montserrat(
                                   fontSize: height * 0.020,
                                   color: Colors.black,

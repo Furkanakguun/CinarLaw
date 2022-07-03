@@ -58,7 +58,7 @@ class _ContactDektopState extends State<ContactDektop> {
     return Align(
       alignment: Alignment.center,
       child: Text(
-        "CONTACT US",
+        CinarTranslations.iletisimUstBaslik.tr,
         style: GoogleFonts.montserrat(
             color: Colors.white,
             fontSize: height * 0.018,
@@ -94,7 +94,7 @@ class _ContactDektopState extends State<ContactDektop> {
         child: Align(
           alignment: Alignment.center,
           child: Text(
-            "Communication is important to us",
+            CinarTranslations.iletisimOrtaBaslik.tr,
             style: GoogleFonts.montserrat(
                 color: Colors.white,
                 fontSize: height * 0.045,
@@ -172,7 +172,7 @@ class _ContactDektopState extends State<ContactDektop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Ankara Office",
+             CinarTranslations.ankaraOfis.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
                   fontSize: height * 0.025,
@@ -279,7 +279,7 @@ class _ContactDektopState extends State<ContactDektop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "İstanbul Office",
+             CinarTranslations.istanbulOfis.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
                   fontSize: height * 0.025,
@@ -389,7 +389,7 @@ class _ContactDektopState extends State<ContactDektop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "Ankara Office",
+             CinarTranslations.ankaraOfis.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
                   fontSize: height * 0.025,
@@ -493,7 +493,7 @@ class _ContactDektopState extends State<ContactDektop> {
           Align(
             alignment: Alignment.center,
             child: Text(
-              "İstanbul Office",
+             CinarTranslations.istanbulOfis.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
                   fontSize: height * 0.025,
@@ -628,7 +628,7 @@ class _ContactDektopState extends State<ContactDektop> {
                 height: 60.0,
                 child: MaterialButton(
                   hoverColor: Colors.black.withOpacity(0.5),
-                   onPressed: () => Navigator.of(context).pushReplacement(
+                  onPressed: () => Navigator.of(context).pushReplacement(
                       new MaterialPageRoute(
                           builder: (BuildContext context) =>
                               PublicationList())),
@@ -649,7 +649,7 @@ class _ContactDektopState extends State<ContactDektop> {
                 padding: const EdgeInsets.all(8.0),
                 child: MaterialButton(
                   hoverColor: kPrimaryColor.withAlpha(70),
-                   onPressed: () => Navigator.of(context).pushReplacement(
+                  onPressed: () => Navigator.of(context).pushReplacement(
                       new MaterialPageRoute(
                           builder: (BuildContext context) =>
                               PublicationList())),
@@ -907,8 +907,8 @@ class _ContactDektopState extends State<ContactDektop> {
                   },
                   child: Text(
                     index == 0
-                    ? CinarTranslations.aboutUsMenu.tr
-                    : CinarTranslations.practiceAreasMenu.tr,
+                        ? CinarTranslations.aboutUsMenu.tr
+                        : CinarTranslations.practiceAreasMenu.tr,
                     style: TextStyle(
                       color: Colors.black,
                     ),

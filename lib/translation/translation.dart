@@ -56,6 +56,11 @@ class CinarTranslations extends Translations {
   static const carrrierSolAciklama2 = "carrrierSolAciklama2";
   static const carrrierOrtaAciklama = "carrrierOrtaAciklama";
   static const carrrierSagAciklama = "carrrierSagAciklama";
+  static const event = "event";
+  static const iletisimUstBaslik = "iletisimUstBaslik";
+  static const iletisimOrtaBaslik = "iletisimOrtaBaslik";
+  static const ankaraOfis = "ankaraOfis";
+  static const istanbulOfis = "istanbulOfis";
   @override
   // TODO: implement keys
   Map<String, Map<String, String>> get keys => {
@@ -68,7 +73,7 @@ class CinarTranslations extends Translations {
           contactMenu: "CONTACT",
           giris1: "We are always here for",
           giris2: "Solutions that will \nchange your life",
-          girisUzun1: "In cinar&cinar we always establish a close working\n",
+          girisUzun1: "In Cinar&Cinar we always establish a close working\n",
           girisUzun2:
               "relationships with our clients. We are comitted to serving and \n",
           girisUzun3:
@@ -80,24 +85,26 @@ class CinarTranslations extends Translations {
           carrrierOrtaBaslik: "Legal Internship Application",
           carrrierSagBaslik: "Summer Internship Application",
           carrrierSolAciklama1:
-              "çınar&çınar law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies.",
+              "Çınar&Çınar  law firm chooses its members with highest standards and only prefers working with professionals specialized in their fields. We offer a wide variety of services to the leading Turkish and international companies.",
           carrrierSolAciklama2:
-              "This also enables çınar&çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. You can send your cv to info@cinarlaw.com for attorney application.",
-          carrrierOrtaAciklama: "The deadline for 2022-2023 legal internship applications is 30.04.2022. You can send your cv to info@cinarlaw.com for legal internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
-          carrrierSagAciklama: "The deadline for 2022-2023 summer internship applications is 31.05.2022. You can send your cv to info@cinarlaw.com for summer internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
+              "This also enables Çınar&Çınar professionals to gain experience in many exciting and various tasks and projects. Here, within our family; every new task you’ll take on will return to you as a rise in your career and a satisfying feeling of success. You can send your cv to info@cinarlaw.com for attorney application.",
+          carrrierOrtaAciklama:
+              "The deadline for 2022-2023 legal internship applications is 30.04.2022. You can send your cv to info@cinarlaw.com for legal internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
+          carrrierSagAciklama:
+              "The deadline for 2022-2023 summer internship applications is 31.05.2022. You can send your cv to info@cinarlaw.com for summer internship application. If you have obtained an English qualification certificate, kindly add it to your application.",
           aboutUs: "ABOUT US",
           whoAreWe: "Who are we?",
           servicesGiris: "Our Practice Areas",
           cinarMuzeGiris: "Our past is our future",
-          cinarAkademiGiris: "We value he future",
+          cinarAkademiGiris: "We value the future",
           cinarAkademiDesc1:
-              "Çınar&Çınar Law Office places great importance to education, especially legal training. Çınar Legal and Academic Researches Association (‘Çınar Academy’) was founded especially in consideration of law students, lawyers and disabled citizens who intend to work within the legal sector. ",
+              "Çınar Legal and Academic Research Center (Çınar Academy) was established by considering especially professionals who intend to work in the field of law, company senior executives, law students and lawyers.",
           cinarAkademiDesc2:
-              "Within the education center established in scope of the Çınar Academy; seminars, conferences, and various educational programs are being held. Through these events, the Academy is able to offer both guidance and assistance to its attendants to become jurists who are well prepared for the professional and academic journey and who are widely experienced in the field of international law.  ",
+              "In the training center established within the body of Çınar Academy; seminars, conferences and various training programs are organized. Through these events, the Academy is able to offer both guidance and assistance to its participants to become well-prepared for their professional and academic journey and to become lawyers with extensive experience in international law. ",
           hakkimizda1:
-              "Founded in 1988, çınar & çınar is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At çınar & çınar, we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualifıed team members.",
+              "Founded in 1988, Çınar&Çınar  is a full service law offıce that provides high quality professional Services in a broad range of legal practices and industries. Our focus is to provide creative, effıcient and innovative advice that meets our Clients' commercial needs. At Çınar&Çınar , we dedicate our enthusiasm and our energy to success of our Clients with our proactive, experienced and well-qualified team members.",
           hakkimizda2:
-              "We have a diverse range of Clients from individual entrepreneurs and local companies to leading domestic and international companies, fınancial institutions and governmental authorities. At çınar & çınar, in addition to representing our Clients in complex fınancial and corporate transactions and litigations, we collaborate with leading international law firms and provide cutting edge consultancy services to local and foreign investors on their projects in Turkey",
+              "We have a diverse range of Clients from individual entrepreneurs and local companies to leading domestic and international companies, fınancial institutions and governmental authorities. At Çınar&Çınar , in addition to representing our Clients in complex fınancial and corporate transactions and litigations, we collaborate with leading international law firms and provide cutting edge consultancy services to local and foreign investors on their projects in Turkey",
           hakkimizda3:
               "Çınar&Çınar has expertise in a broad spectrum of practice areas including International Commercial Transactions and International Contracts, Corporate Services, Mergers & Acquisitions, Banking & Finance, Labour Law & Employment, Social Security Law, Litigation & Arbitration, Intellectual Property Law Data Protection Law Energy, Natural Resources and Mining Law, Privatization, Criminal Law, Insurance Law, Tax Law, Real Estate Law, Tourism Law, Construction Law, Environmental Law, Inheritance Law, Family Law and Sports Law",
           hakkimizda4:
@@ -124,22 +131,27 @@ class CinarTranslations extends Translations {
           practiceDes5:
               "Çınar&Çınar provides high-qualified consultancy services in the field of private equity and venture Capital. The field has a multidisciplinary approach to deal with legal problems that might arise from private equity and venture capital transactions such as structuring and organizing investment funds, executing acquisitions, exit transactions. In order to provide best consultancy services to private equity investors or their portfolio companies, we combine our private equity experience with our experience in related practice areas, such as general corporate services, Tax Law, Mergers and Acquisitions, Project Finance and Real Estate",
           practiceDes6:
-              "In Turkey, the relationship between employee and employer is very formal and highly regulated and the majority of the legislation is in favor of the employee and aims to protect the employee's interests rather than those of the employer.At çınar & çınar, we give legal advice to national and International employers from various sectors. Our consultancy service concerns all aspects of Turkish Labour Law and Social Security Law. We give legal advice on a broad spectrum of employment issues including but not limited to day-to-day issues, contracts and issues regarding the termination, recruitment and retention of the employee ",
+              "In Turkey, the relationship between employee and employer is very formal and highly regulated and the majority of the legislation is in favor of the employee and aims to protect the employee's interests rather than those of the employer.At Çınar&Çınar , we give legal advice to national and International employers from various sectors. Our consultancy service concerns all aspects of Turkish Labour Law and Social Security Law. We give legal advice on a broad spectrum of employment issues including but not limited to day-to-day issues, contracts and issues regarding the termination, recruitment and retention of the employee ",
           practiceDes7:
-              "Çınar & Çınar is one of the few Turkish law firms that combine international legal practice with knowledge and experience of litigation before Turkish civil, criminal and administrative courts. Our team members have extensive experience in a wide range of civil, criminal and administrative litigation matters, at first instance and appellate levels. We regularly manage commercial and individual compensation cases, unfair competition cases, real estate disputes, shareholding disputes, bankruptcy and execution proceedings, labour law cases, intellectual property infringeınent cases, recognition and enforcement of judgments ar & çınar also has considerable experience in arbitration, ınediation and negotiations. Our partners have been involved mostly in institutional arbitrations such as the Landon Court of International Arbitration. Our team has reliable knowledge about the rules of arbitration of International Chamber of Commererce, UNCITRAL, ICSID and AAA. The Firm has successfully represented Turkish and foreign clients in many recognition and enforcement procedures of arbitral awards. ",
+              "Çınar & Çınar is one of the few Turkish law firms that combine international legal practice with knowledge and experience of litigation before Turkish civil, criminal and administrative courts. Our team members have extensive experience in a wide range of civil, criminal and administrative litigation matters, at first instance and appellate levels. We regularly manage commercial and individual compensation cases, unfair competition cases, real estate disputes, shareholding disputes, bankruptcy and execution proceedings, labour law cases, intellectual property infringeınent cases, recognition and enforcement of judgments Çınar&Çınar  also has considerable experience in arbitration, ınediation and negotiations. Our partners have been involved mostly in institutional arbitrations such as the Landon Court of International Arbitration. Our team has reliable knowledge about the rules of arbitration of International Chamber of Commererce, UNCITRAL, ICSID and AAA. The Firm has successfully represented Turkish and foreign clients in many recognition and enforcement procedures of arbitral awards. ",
           practiceDes8:
               "Our Intellectual Property team is well qualified in Turkey to provide its clients with the complete range of legal services for protecting and exploiting all types of intellectual property assets. We represent our Clients in the registration and protection of patents, utility models, industrial designs, trademarks, geographical signs and copyrights. We also assist our Clients in drafting Intellectual Property Agreements, License Agreements, Transfer of Registered Trademarks and Patents Agreements, Technology Transfer Agreeınents, Technical Assistance Agreements, Franchise Agreements. In addition, we assist our Clients with respect to all formns of infringement issues in order to provide maximum protection of their intellectual property. ",
           practiceDes9:
-              "Data protection law will play a very important role in Turkish Business Life and change almost everything that the companies have been used to. Furthermore, there is no doubt that the process of complying with the Data Protection Law in Turkey will cause a significant challenge for the firms. In accordance with latest regulations on Data Protection Law in Turkey (KVKK) and GDPR çınar&çınar Data Protection team provides high-level consultansy services for its clients. We represent our clients in the registration process for data controller system (VERBIS), we give seminars and conferences in order to increase awareness about Personal Data Protection of out clients. Our team has also been experienced in fields of drafting Data Protection Policy - Clarifacition Text, creating a Data Protection know-how and train the employees with a regular plan",
+              "Data protection law will play a very important role in Turkish Business Life and change almost everything that the companies have been used to. Furthermore, there is no doubt that the process of complying with the Data Protection Law in Turkey will cause a significant challenge for the firms. In accordance with latest regulations on Data Protection Law in Turkey (KVKK) and GDPR Çınar&Çınar Data Protection team provides high-level consultansy services for its clients. We represent our clients in the registration process for data controller system (VERBIS), we give seminars and conferences in order to increase awareness about Personal Data Protection of out clients. Our team has also been experienced in fields of drafting Data Protection Policy - Clarifacition Text, creating a Data Protection know-how and train the employees with a regular plan",
           practiceDes10:
               "Since the inception of our law firm, Construction Agreements and any sort of construction related transactions have been deemed one of the most important areas of law for us. The Firm has been proudly involved in a wide variety of large construction and infrastructure projects and concluded ali of them in a timely and efficient manner. In addition to our specialized and well-qualified team members, our firm also employs construction experts and consultants to minimize risks, which may arise during construction projects. Our attorneys and outsource counsels in different countries have considerable knowledge and experience in drafting construction contracts and dealing with dispute resolutions in accordance with FIDIC as well as domestic regulations in foreign States. ",
           practiceDes11:
-              "In the emerging Turkish Energy market with ever changing regulations, çınar & çınar has an excellent reputation in completing complex regulatory transactions and contracts in energy and power projects. We provide a wide range of legal Services for energy matters such as project fınance and development, drafting and fınalizing contracts (Concession Agreements, B.O.T and B.0.O Agreements, Take-or-Pay Contracts, 1NG Contracts). We also represent our Clients in administrative and fıscal transactions. Our partners have extensive knowledge in electricity market  regulations, having involved in drafting the Turkish Electricity Law No 4628. Our team has also been involved in numerous mining projects such as gold mining. At çınar & çınar, we also assist our Clients with regards to administrative and legal transactions for mining projects which includes financing prospective operations, prospective license transactions, drafting and negotiating agreements, mining lease,  renunciation of mines and other related issues. We also provide consultancy Services to companies for future  partnership opportunities.",
+              "In the emerging Turkish Energy market with ever changing regulations, Çınar&Çınar  has an excellent reputation in completing complex regulatory transactions and contracts in energy and power projects. We provide a wide range of legal Services for energy matters such as project fınance and development, drafting and fınalizing contracts (Concession Agreements, B.O.T and B.0.O Agreements, Take-or-Pay Contracts, 1NG Contracts). We also represent our Clients in administrative and fıscal transactions. Our partners have extensive knowledge in electricity market  regulations, having involved in drafting the Turkish Electricity Law No 4628. Our team has also been involved in numerous mining projects such as gold mining. At Çınar&Çınar , we also assist our Clients with regards to administrative and legal transactions for mining projects which includes financing prospective operations, prospective license transactions, drafting and negotiating agreements, mining lease,  renunciation of mines and other related issues. We also provide consultancy Services to companies for future  partnership opportunities.",
+          event: "Event",
+          iletisimOrtaBaslik: "Communication is important to us",
+          iletisimUstBaslik: "Contact Us",
+          ankaraOfis: "Ankara Office",
+          istanbulOfis: "Istanbul Office"
         },
         'tr': {
           cinarAkademiMenu: "ÇINAR AKADEMİ",
           cinarMuzeMenu: "ÇINAR MÜZE",
-          practiceAreasMenu: "ÇALIŞMLA ALANLARIMIZ",
+          practiceAreasMenu: "ÇALIŞMA ALANLARIMIZ",
           aboutUsMenu: "HAKKIMIZDA",
           careeeMenu: "KARİYER",
           contactMenu: "İLETİŞİM",
@@ -147,27 +159,29 @@ class CinarTranslations extends Translations {
           giris2: "Buradayiz",
           girisUzun1:
               "Çınar&Çınar müvekkilleri ile yakın iş ilişkileri kurmaktadır.\n",
-          girisUzun2: "ünümüzün değişen ekonomik ve yasal ortamında\n",
+          girisUzun2: "Günümüzün değişen ekonomik ve yasal ortamında\n",
           girisUzun3: "müvekkillerinin çıkarlarına hizmet etmeyi ve \n",
           girisUzun4: "korumayı taahhüt etmektedir.",
           carrierGiris:
               "Başvuru sahipleri, disiplinli ve takım ruhuna sahip olmalıdır. Mesleğe yakışır şekilde kılık kıyafet kurallarına ve mesleğin gereklerinden doğan davranışsal kurallara uygun hareket etmeleri beklenmektedir.",
-          carrierSolBaslik: "Avuktalık Başvurusu",
+          carrierSolBaslik: "Avukatlık Başvurusu",
           carrrierOrtaBaslik: "Yasal Stajyer Başvurusu",
           carrrierSagBaslik: "Yaz Stajı Başvurusu",
           carrrierSolAciklama1:
               "Çınar&Çınar, çalışma arkadaşlarını yüksek standartlarda seçmekte ve alanında uzman profesyonellerle çalışmayı tercih etmektedir. Önde gelen ulusal ve uluslararası şirketlere çok çeşitli hizmetler sunmaktadır",
           carrrierSolAciklama2:
-              "Aynı zamanda Çınar&Çınar, çalışma arkadaşlarına birçok heyecan verici görev ve projede deneyim kazanmalarını sağlamaktadır. Çınar&Çınar ekibinde üstleneceğiniz her yeni görev, kariyerinizde bir yükseliş ve tatmin edici bir başarı hissi olarak size dönecektir. Avukatlık başvurusu için cv'nizi info@cinarlaw.com adresine gönderebilirsiniz.",
-          carrrierOrtaAciklama: "2022-2023 yasal staj başvuruları için son tarih 30.04.2022'dir. Yasal staj başvurusu için cv'nizi info@cinarlaw.com adresine gönderebilirsiniz. İngilizce yeterlilik belgesiniz mevcut ise başvurunuza eklemeniz gerekmektedir.",
-          carrrierSagAciklama: "2022-2023 yaz stajı başvuruları için son tarih 31.05.2022'dir. Yaz stajı başvurusu için özgeçmişinizi info@cinarlaw.com adresine gönderebilirsiniz. İngilizce yeterlilik belgesiniz mevcut ise başvurunuza eklemeniz gerekmektedir.",
+              "Aynı zamanda Çınar&Çınar, çalışma arkadaşlarına birçok heyecan verici görev ve projede deneyim kazanmalarını sağlamaktadır. Çınar&Çınar ekibinde üstleneceğiniz her yeni görev, kariyerinizde bir yükseliş ve tatmin edici bir başarı hissi olarak size dönecektir. Avukatlık başvurusu için özgeçmişinizi'nizi info@cinarlaw.com adresine gönderebilirsiniz.",
+          carrrierOrtaAciklama:
+              "2022-2023 yasal staj başvuruları için son tarih 30.04.2022'dir. Yasal staj başvurusu için cv'nizi info@cinarlaw.com adresine gönderebilirsiniz. İngilizce yeterlilik belgesiniz mevcut ise başvurunuza eklemeniz gerekmektedir.",
+          carrrierSagAciklama:
+              "2022-2023 yaz stajı başvuruları için son tarih 31.05.2022'dir. Yaz stajı başvurusu için özgeçmişinizi info@cinarlaw.com adresine gönderebilirsiniz. İngilizce yeterlilik belgesiniz mevcut ise başvurunuza eklemeniz gerekmektedir.",
           aboutUs: "HAKKIMIZDA",
           whoAreWe: "Biz Kimiz?",
           servicesGiris: "Çalışma Alanlarımız",
           cinarMuzeGiris: "Geçmişimiz , geleceğimizdir",
           cinarAkademiGiris: "Geleceğe değer veriyoruz",
           cinarAkademiDesc1:
-              "Çınar Hukuki ve Akademik Araştırmalar Merkezi (Çınar Akadem), özellikle hukuk alanında çalışmak isteyen profesyonelleri, şirket üst düzey yöneticilerini, hukuk öğrencilerini ve avukatları göz önünde bulundurarak kurulmuştur",
+              "Çınar Hukuki ve Akademik Araştırmalar Merkezi (Çınar Akademi), özellikle hukuk alanında çalışmak isteyen profesyonelleri, şirket üst düzey yöneticilerini, hukuk öğrencilerini ve avukatları göz önünde bulundurarak kurulmuştur",
           cinarAkademiDesc2:
               "Çınar Akademi bünyesinde kurulan eğitim merkezinde; seminerler, konferanslar ve çeşitli eğitim programları düzenlenmektedir. Akademi, bu etkinlikler aracılığıyla katılımcılarına mesleki ve akademik yolculuğa iyi hazırlanmış ve uluslararası hukuk alanında geniş deneyime sahip hukukçular olmaları için hem rehberlik hem de yardım sunabilmektedir.",
           hakkimizda1:
@@ -211,6 +225,11 @@ class CinarTranslations extends Translations {
               "Hukuk büromuzun kuruluşundan bu yana, İnşaat Sözleşmeleri ve her türlü inşaatla ilgili işlemler bizim için hukukun en önemli alanlarından biri olarak kabul edilmiştir. Büromuz, çok çeşitli büyük inşaat ve altyapı projelerinde gururla yer almış ve hepsini zamanında ve verimli bir şekilde sonuçlandırmıştır. Büromuz inşaat projelerinde oluşabilecek riskleri en aza indirmek için uzman ve kalifiye ekip arkadaşlarımızın yanı sıra inşaat uzmanları ve danışmanları da istihdam etmektedir. Farklı ülkelerdeki avukatlarımız ve taşeron danışmanlarımız, inşaat sözleşmelerinin hazırlanması ve FIDIC'e ve yabancı ülkelerdeki yerel düzenlemelere göre uyuşmazlıkların çözümüne ilişkin önemli bilgi ve deneyime sahiptir.",
           practiceDes11:
               "Sürekli değişen düzenlemelerle gelişen Türkiye Enerji piyasasında, Çınar & Çınar, enerji ve güç projelerinde karmaşık düzenleyici işlemleri ve sözleşmeleri tamamlama konusunda mükemmel bir üne sahiptir. Proje finansmanı ve geliştirme, sözleşmelerin (İmtiyaz Sözleşmeleri, B.O.T ve B.O.O Sözleşmeleri, Al ya da Öde Sözleşmeleri, TNG Sözleşmeleri) hazırlanması ve sonuçlandırılması gibi enerji konularında geniş bir yelpazede hukuki hizmetler sunulmaktadır. Ayrıca idari ve mali işlemlerde Müvekkillerimizi temsil etmekteyiz. Ortaklarımız, 4628 sayılı Türk Elektrik Kanununun hazırlanmasında yer almış, elektrik piyasası düzenlemeleri konusunda geniş bilgi birikimine sahiptir. Ekibimiz ayrıca altın madenciliği gibi çok sayıda madencilik projesinde yer almıştır. Çınar & Çınar'da ayrıca, ileriye dönük faaliyetlerin finansmanı, olası lisans işlemleri, sözleşmelerin hazırlanması ve müzakere edilmesi, maden kiralaması, madenlerin feragat edilmesi ve diğer ilgili konuları içeren madencilik projeleri için idari ve hukuki işlemler konusunda da müvekkillere yardımcı olunmaktadır. Ayrıca şirketlere gelecekteki ortaklık fırsatları için danışmanlık hizmetleri sağlanmaktadır.",
+          event: "Etkinlik",
+          iletisimOrtaBaslik: "İletişim bizim için önemli.",
+          iletisimUstBaslik: "Bizimle iletişime geçin.",
+          ankaraOfis: "Ankara Ofis",
+          istanbulOfis: "İstanbul Ofis"
         }
       };
 }

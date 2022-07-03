@@ -145,7 +145,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               CinarTranslations.carrierSolBaslik.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
-                  fontSize: height * 0.025,
+                  fontSize: height * 0.022,
                   fontWeight: FontWeight.w500),
             ),
           ),
@@ -159,7 +159,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               child: AdaptiveText(
                 CinarTranslations.carrrierSolAciklama1.tr,
                 style: GoogleFonts.montserrat(
-                    fontSize: height * 0.020,
+                    fontSize: height * 0.017,
                     color: Colors.grey[500],
                     height: 1.8,
                     fontWeight: FontWeight.w400),
@@ -177,7 +177,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               child: AdaptiveText(
                 CinarTranslations.carrrierSolAciklama2.tr,
                 style: GoogleFonts.montserrat(
-                    fontSize: height * 0.020,
+                    fontSize: height * 0.017,
                     color: Colors.grey[500],
                     height: 1.8,
                     fontWeight: FontWeight.w400),
@@ -217,7 +217,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               CinarTranslations.carrrierOrtaBaslik.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
-                  fontSize: height * 0.025,
+                  fontSize: height * 0.022,
                   fontWeight: FontWeight.w500),
             ),
           ),
@@ -232,7 +232,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
                 CinarTranslations.carrrierOrtaAciklama.tr,
                 style: GoogleFonts.montserrat(
                     color: Colors.grey[500],
-                    fontSize: height * 0.020,
+                    fontSize: height * 0.017,
                     height: 1.8,
                     fontWeight: FontWeight.w400),
                 textAlign: TextAlign.center,
@@ -301,7 +301,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               CinarTranslations.carrrierSagBaslik.tr,
               style: GoogleFonts.montserrat(
                   color: Colors.black,
-                  fontSize: height * 0.025,
+                  fontSize: height * 0.022,
                   fontWeight: FontWeight.w500),
             ),
           ),
@@ -315,7 +315,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               child: AdaptiveText(
                 CinarTranslations.carrrierSagAciklama.tr,
                 style: GoogleFonts.montserrat(
-                    fontSize: height * 0.020,
+                    fontSize: height * 0.017,
                     color: Colors.grey[500],
                     height: 1.8,
                     fontWeight: FontWeight.w400),
@@ -625,7 +625,7 @@ class _CarrierDesktopState extends State<CarrierDesktop> {
               fit: BoxFit.cover,
             ),
           ),
-          height: height * 0.45,
+          height: height * 0.60,
           width: width,
           //color: Colors.yellow),
         ),
